@@ -1,0 +1,204 @@
+{
+  "notice": "Illustrative records only; references intentionally do not resolve to real project records.",
+  "examples": [
+    {
+      "contract_version": "0.1.0",
+      "kind": "ProjectProfile",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "goals": [
+          "Convert local input predictably"
+        ],
+        "users_context": [
+          "Local operator; offline terminal"
+        ],
+        "non_goals": [
+          "No upload or hosted service"
+        ],
+        "constraints": [
+          "Preserve input files"
+        ],
+        "mode": "brownfield",
+        "baseline": "example-revision",
+        "component_scopes": [
+          "component/cli"
+        ],
+        "success_criteria": [
+          "Output matches independently prepared fixture"
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "SelectionDecision",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "policy_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "input_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "rules_version": "candidate-0.1.0",
+        "plan_status": "INCOMPLETE",
+        "choices": [
+          {
+            "target": "arch.event_queue",
+            "status": "INCOMPLETE",
+            "obligation": "optional",
+            "basis": "research",
+            "rule_id": "R-API-003",
+            "fact_refs": [
+              {
+                "id": "ua.example.ref",
+                "revision": 1,
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            ],
+            "registry_refs": [],
+            "reasons": [
+              "OWNER_UNKNOWN"
+            ],
+            "missing": [
+              "operations_owner_available"
+            ],
+            "conflicts": []
+          }
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "EvidenceRun",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "candidate": {
+          "identity": "example-candidate",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "packet_ref": {
+          "id": "ua.example.ref",
+          "revision": 1,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "oracle_refs": [
+          {
+            "id": "ua.example.ref",
+            "revision": 1,
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "command": [
+          "example-runner",
+          "fixture-1"
+        ],
+        "tool_version": "example-1",
+        "environment_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "started_at": null,
+        "ended_at": null,
+        "executed": false,
+        "status": "NOT_RUN",
+        "producer": "example-host",
+        "artifacts": [],
+        "limits": [
+          "Illustration only; no command executed"
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "GateDecision",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "gate_id": "gate.unit_integration_execution",
+        "policy_ref": {
+          "id": "ua.example.ref",
+          "revision": 1,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "candidate": {
+          "identity": "example-candidate",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "required_run_refs": [],
+        "status": "INCOMPLETE",
+        "reasons": [
+          "RUN_NOT_EXECUTED"
+        ],
+        "review_refs": []
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "Authority",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "principal": "actor",
+        "grantor": "owner",
+        "action": "local-edit",
+        "allowed_scope": [
+          "component/cli"
+        ],
+        "baseline": {
+          "identity": "example-candidate",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "status": "DECLARED",
+        "decision_refs": [],
+        "expires_at": "2026-10-31T23:00:00Z"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "ReleaseDecision",
+      "id": "ua.example.record",
+      "revision": 1,
+      "project_id": "example",
+      "scope": "component/cli",
+      "owner": "example-owner",
+      "created_at": "2026-10-31T12:00:00Z",
+      "derived_from": [],
+      "body": {
+        "candidate": {
+          "identity": "example-candidate",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "required_gate_refs": [],
+        "decision": "HOLD",
+        "authority_ref": {
+          "id": "ua.example.ref",
+          "revision": 1,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "support_owner": "owner",
+        "recovery_distribution_disposition": "No distribution authorized"
+      }
+    }
+  ]
+}
