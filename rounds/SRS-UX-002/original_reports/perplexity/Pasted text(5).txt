@@ -1,0 +1,329 @@
+# SRS-UX-002 — Round 2 independent evidence audit
+
+Audit disposition: the proposed verification mechanisms are useful, but only when each is limited to the property it actually checks. Structural validation, trace links, state tests, and baseline ratchets do not collectively establish usability, accessibility conformance, or improved maintenance productivity.
+
+The reported percentage improvements and “7/7 seeded-error” result remain **unverified**. The Gemini and DeepSeek Round 1 submissions, benchmark artifacts, and complete Round 2 architecture were not supplied. I can audit the mechanisms and claims named in this request, but cannot attribute exact statements to either reviewer or confirm their implementation.
+
+No SurfaceTrace repository was inspected, no benchmark was executed, and no frozen 003R record was changed.
+
+## 1. Source register and applicability
+
+Dates distinguish publication dates from access dates. All sources below were accessed October 31, 2026.
+
+| Source and direct URL | Date | Authority and applicability | Limits |
+|---|---|---|---|
+| [ISO 9241-210:2019](https://www.iso.org/standard/77520.html) | Published July 2019; confirmed May 22, 2025 | International Standard containing requirements and recommendations for human-centred design throughout interactive-system lifecycles. Relevant to planning, understanding users and context, and evaluating designs.  [iso](https://www.iso.org/standard/77520.html) | Not a detailed UI checklist. Public catalog material does not support clause-level conformance claims. |
+| [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html) | Published November 2018 | International Standard addressing requirements processes, information items, their contents, and format guidance. Relevant to requirement definition and engineering handoffs.  [iso](https://www.iso.org/standard/72089.html) | Does not establish that a particular JSON representation or trace attribute satisfies the standard. Full normative text was not reviewed. |
+| [WCAG 2.2, pinned Recommendation](https://www.w3.org/TR/2024/REC-WCAG22-20241212/) | December 12, 2024 | W3C Recommendation. Success criteria and conformance requirements provide the normative basis for web-accessibility assessment.  [w3](https://www.w3.org/TR/2024/REC-WCAG22-20241212/) | Supporting techniques are informative. Component checks do not establish full-page or complete-process conformance. |
+| [WAI-ARIA APG — About](https://www.w3.org/WAI/ARIA/apg/about/) and [Read Me First](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/) | Living guidance; publication date not established | Informative guidance synthesizing accessibility semantics and widget patterns. Relevant when designing and implementing interactive web controls.  [w3](https://www.w3.org/WAI/ARIA/apg/about/) | APG is not the normative WAI-ARIA specification. Examples require browser/assistive-technology interoperability testing. |
+| [JSON Schema Draft 2020-12 validation specification](https://json-schema.org/draft/2020-12/json-schema-validation) | June 16, 2022 | Technical specification for assertions and annotations over JSON instances. Relevant to machine-readable UXEC artifacts.  [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation) | The linked publication is an Internet-Draft, not an ISO standard or an IETF Standards Track RFC. Validation is limited to implemented assertions. |
+| [JSON Schema annotations](https://json-schema.org/understanding-json-schema/reference/annotations) | Living documentation; date not established | Explanatory guidance on metadata keywords such as `description`, `default`, and `readOnly`.  [json-schema](https://json-schema.org/understanding-json-schema/reference/annotations) | These annotations do not independently enforce the behavior they describe. |
+| [W3C — Selecting Web Accessibility Evaluation Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | May 13, 2024 | Informative evaluation guidance explaining automation limits and the need for human judgment.  [w3](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | A clean automated report does not determine accessibility. |
+
+### Normative versus informative: audit ruling
+
+- ISO standards contain requirements and recommendations; applicability does not itself establish project conformance.
+- WCAG success criteria and conformance requirements are the relevant normative web-accessibility checks. WCAG explicitly separates these from informative techniques. [w3](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)
+- APG supplies implementation guidance. An adopted APG pattern can become a project requirement, but that is a project decision—not proof that every APG recommendation is independently normative.
+- UXEC schemas, trace conventions, and CI policies are proposed project controls unless an applicable contract or approved requirement makes them mandatory.
+
+APG also makes a consequential distinction: adding a role does not supply keyboard behavior. A control labeled as a button must still implement the promised interaction. [w3](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/)
+
+## 2. Claim/evidence matrix
+
+The wording below describes the claims under audit, not quotations from the absent Round 1 reports.
+
+| Claim | Audit status | Evidence or missing evidence | Defensible conclusion |
+|---|---|---|---|
+| UXEC is ISO 9241-210 compliant | Not established | No clause mapping, licensed normative review, or process evidence | It may be informed by the standard; conformance is not demonstrated. |
+| Structured requirements satisfy ISO/IEC/IEEE 29148 | Not established | No assessed information-item or process mapping | Structured artifacts can support requirements engineering, but format alone is insufficient. |
+| JSON Schema validates the UX specification | Partially supported | Schema can validate implemented assertions over the instance.  [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation) | It checks encoded constraints, not whether the user need or requirement is correct. |
+| Contract validation ensures correct implementation | Conditional | Requires a defined contract, independent oracle, and runtime checks | It establishes only the evaluated contract properties under tested conditions. |
+| Traceability attributes prove requirements coverage | Unsupported as stated | Presence is not semantic correctness | They can support link discovery and coverage accounting after referential and semantic review. |
+| State tests verify all interaction behavior | Unsupported as stated | No model, transition inventory, or coverage evidence supplied | Tests verify exercised assertions; model completeness remains separate. |
+| A CI baseline ratchet ensures quality or accessibility | Unsupported as stated | A baseline may contain defects or omit entire classes | A ratchet can prevent specified detectable regressions relative to a controlled baseline. |
+| Automated checks establish WCAG 2.2 AA | Unsupported | W3C requires human evaluation alongside automation.  [w3](https://www.w3.org/WAI/test-evaluate/tools/selecting/) | Automated checks are evidence for a subset of applicable criteria. |
+| UXEC produces a percentage productivity improvement | Unverified | Exact claims, raw measurements, denominators, comparators, and protocols absent | No improvement claim is presently justified. |
+| UXEC detected 7/7 seeded errors | Unverified | Fixture, seed manifest, outputs, configuration, and adjudication absent | At most a reported result awaiting primary evidence. |
+| 7/7 establishes general detection reliability | Unsupported | Even a reproduced result concerns the selected seeds | Generalization needs independent, varied evaluation, including clean cases. |
+
+### Primary evidence required for percentage claims
+
+For each claimed percentage, require:
+
+1. Exact metric and formula.
+2. Numerator, denominator, and raw observations.
+3. Comparator and task-selection procedure.
+4. Model, agent, tool, and environment configurations.
+5. Included preparation, review, correction, and failure costs.
+6. Trial count, exclusions, uncertainty, and analysis method.
+7. Timestamped protocol and independently reviewable outputs.
+
+A proposed threshold—such as the earlier RepoKit 25% gate—is not an observed improvement and must not be cited as one.
+
+### Primary evidence required for the 7/7 benchmark
+
+Require:
+
+- Immutable fixture revision and seed manifest.
+- Independent confirmation that each seed represents a real, applicable error.
+- Definition of “detected”: correct location, issue, and consequence—not merely an alert.
+- Separation of seeded faults from naturally occurring findings.
+- Raw tool outputs and human adjudication.
+- Clean negative fixtures and false-positive counts.
+- Evidence that seed descriptions were hidden from the evaluated agent.
+- Confirmation that shared symptoms were not counted as independent detections.
+- Repeated runs with the same configuration and a separate held-out fixture.
+
+Until those artifacts are supplied, label the result “reported, not independently verified.”
+
+## 3. What each mechanism actually verifies
+
+### JSON Schema
+
+Can verify:
+
+- Required properties, types, enumerations, patterns, array constraints, and supported conditional constraints.
+- That a document conforms to the selected schema and validator configuration.
+
+Cannot independently verify:
+
+- Truth, clarity, necessity, completeness, or usability of requirements.
+- Whether a cited requirement exists outside the instance.
+- Whether the implementation behaves as described.
+
+Pin the dialect, schema hash, validator version, and options. In Draft 2020-12, `format` is ordinarily annotation behavior unless assertion support is explicitly configured. Even format assertion is syntactic; it does not establish that an identified resource exists. [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation)
+
+Keywords such as `description` and `readOnly` are metadata, not implementation enforcement. [json-schema](https://json-schema.org/understanding-json-schema/reference/annotations)
+
+### Contract validation
+
+First define what “contract” means. A document contract, API contract, and UI behavior contract have different oracles.
+
+A defensible validator should report:
+
+> “Property P held for input/state S under environment E.”
+
+It should not report “UX verified.” Include deliberately invalid examples to show that the validator rejects prohibited behavior. Keep the acceptance oracle independent of the implementation-generating agent.
+
+### Traceability attributes
+
+An attribute containing a 003R identifier proves only that the string is present.
+
+Additional checks must establish:
+
+- The identifier exists and remains unchanged.
+- The referenced record applies to that surface.
+- The link is not stale or copied indiscriminately.
+- The associated test asserts the intended requirement.
+- Required surfaces without attributes are discoverable.
+
+Prefer an external mapping initially when runtime attributes add no operational value. Do not mandate DOM instrumentation merely to make trace coverage appear measurable.
+
+### State tests
+
+State tests can verify selected outputs and transitions. They do not prove that the state model is complete.
+
+Include applicable:
+
+- Error, empty, loading, retry, cancellation, and recovery paths.
+- Repeated actions and delayed/out-of-order responses.
+- Focus and announcement behavior.
+- Permission changes and invalid transitions.
+
+Require observable assertions. A test that merely reaches a state or snapshots markup may miss incorrect behavior.
+
+### CI baseline ratchets
+
+A defensible ratchet compares identified findings, not just totals. “Ten before, ten after” can conceal one fixed minor issue and one new critical defect.
+
+Require:
+
+- Pinned tool/rule versions and inspected scope.
+- Finding identity and severity.
+- Human-reviewed exceptions with owners and review dates.
+- No silent baseline regeneration.
+- Explicit outcomes for unavailable or inconclusive checks.
+
+A ratchet is a debt-management mechanism—not certification. Automated accessibility tools can also produce false or misleading results and cannot evaluate all accessibility aspects. [w3](https://www.w3.org/WAI/test-evaluate/tools/selecting/)
+
+## 4. False-positive, false-negative, accessibility, and usability gaps
+
+| Area | False-positive risk | False-negative risk | Required supplement |
+|---|---|---|---|
+| Schema/contract | Valid legacy behavior rejected by an overconstrained contract | Incorrect but well-formed requirement passes | Approved contract review and valid/invalid fixtures |
+| Trace links | Legitimate uninstrumented code marked uncovered | Wrong or stale identifier counted as coverage | Referential checks plus semantic sampling |
+| State tests | Environment timing creates spurious failures | Missing transitions or weak assertions pass | Stable fixtures, explicit assertions, adversarial paths |
+| Accessibility scanning | Context-sensitive findings misclassified | Keyboard, focus, announcements, and content meaning missed | Manual keyboard and targeted assistive-technology testing |
+| Baseline ratchet | Tool upgrades appear as regressions | New harm hidden by counts or suppression | Controlled upgrades and finding-level comparison |
+| Usability review | Reviewer preference treated as user evidence | Learnability or comprehension failure remains unseen | Representative task evaluation and explicit evidence limits |
+
+### Accessibility boundary
+
+For changed web workflows, select applicable WCAG criteria, not a universal short checklist. Relevant areas may include keyboard access, focus, names/roles/states, status messages, errors, contrast, reflow, dragging alternatives, and target size. Exceptions and applicability must be evaluated individually. [w3](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)
+
+APG warns that its examples do not automatically establish support across relevant browser/assistive-technology combinations; interoperability testing remains necessary. [w3](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/)
+
+### Usability boundary
+
+Accessibility conformance does not establish that users understand the task or can complete it efficiently. WCAG itself acknowledges that it does not address every user need. [w3](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)
+
+Separate these conclusions:
+
+- Engineering acceptance: specified behavior works.
+- Accessibility assessment: selected applicable criteria were evaluated.
+- Usability evidence: representative users attempted meaningful tasks.
+
+Without user evaluation, report usability hypotheses or expert-review findings—not demonstrated usability improvement.
+
+## 5. Preregistered SurfaceTrace maintenance experiment
+
+This is a proposed protocol. Actual task selection requires SurfaceTrace inspection and access to the frozen 003R records.
+
+### Objective and estimand
+
+Estimate the effect of adding the approved UXEC package to the existing maintenance workflow on:
+
+1. Independently accepted maintenance outcomes.
+2. Critical defects and regressions.
+3. Total effort and cost.
+
+Do not reduce these to a single productivity score.
+
+### Conditions
+
+| Control | Treatment |
+|---|---|
+| Existing workflow, frozen 003R records, and ordinary task brief | Identical materials plus UXEC artifacts and verification controls |
+
+Both conditions must receive the same underlying approved user requirements. Otherwise the experiment confounds better requirements with better representation or enforcement.
+
+If extra analysis creates new task knowledge for treatment, either share that knowledge with control or explicitly redefine the study as an end-to-end workflow comparison.
+
+### Proposed pilot design
+
+- Select six real, bounded maintenance tasks across three applicable interaction categories.
+- Run each task in both conditions from isolated, identical starting snapshots.
+- Conduct two fresh-agent runs per task per condition: 24 runs.
+- Randomize execution order and balance operator assignment.
+- Do not let an operator see a solution before running the paired condition.
+- Freeze task suitability before results are available.
+
+This is a feasibility pilot, not a powered claim of general effectiveness. Repeated agent runs are not independent samples of different maintenance tasks.
+
+### Preregistration contents
+
+Before runs, freeze:
+
+- Task briefs, repository and dependency revisions.
+- 003R references and approved applicability decisions.
+- UXEC package and validation versions.
+- Agent/model configuration, tool access, and resource limits.
+- Independent acceptance tests and manual-review rubric.
+- Severity definitions and adjudication procedure.
+- Timing/cost accounting.
+- Exclusion, stop, and infrastructure-retry rules.
+- Analysis and continuation criteria.
+
+### Independent acceptance tests
+
+Have a reviewer who did not generate the solution define expected behavior from the approved task requirements.
+
+Include:
+
+- Positive and negative behavior.
+- Relevant recovery and regression checks.
+- Applicable manual accessibility checks.
+- Checks against superficial test-passing workarounds.
+
+Expose the requirements, but withhold selected test inputs. Blind final reviewers to condition where practical and record cases where artifact style reveals it.
+
+### Comparable conditions
+
+Hold constant:
+
+- Agent/model version and settings.
+- Starting code, dependencies, hardware, network/service availability.
+- Tool permissions, time limits, token limits, and permitted human assistance.
+
+If UXEC adds CI checks or instrumentation, include their authoring, execution, correction, and maintenance costs in treatment.
+
+### Measurements
+
+Record separately:
+
+- Accepted tasks by the time limit.
+- Critical/major defects and regressions.
+- Human preparation, intervention, review, and correction minutes.
+- Agent runtime, tokens, model charges, and compute/CI cost.
+- Elapsed time.
+- Artifact authoring and upkeep.
+- Blocked, failed, and inconclusive outcomes.
+
+Report shared setup cost separately from marginal per-task cost. Any amortization scenario must disclose the assumed number of future tasks.
+
+### Analysis and decision rules
+
+- Report paired task-level outcomes and raw observations.
+- Do not calculate speed improvement only among successful runs.
+- Keep failures and timeouts in their assigned condition.
+- Report seeded-error detection separately from real maintenance success.
+- Do not claim broad superiority from a small pilot.
+- Continue only if critical safety/correctness gates hold and the predefined quality–cost tradeoff is acceptable.
+
+No numerical improvement threshold is justified yet. The owner must approve it before results—not select one afterward.
+
+### Stop conditions
+
+Stop an individual run for:
+
+- Production access, secret exposure, destructive operations, or permission violation.
+- Frozen 003R mutation.
+- Time, token, or cost limit.
+- Invalid or changing baseline.
+
+Pause the experiment for:
+
+- Acceptance-test leakage.
+- Model/tool changes affecting comparability.
+- Corrupt ground truth or material harness faults.
+- Unexpected safety-critical scope.
+
+Retain stopped runs in the report. Fixes to the protocol require a documented new phase, not silent replacement of unfavorable results.
+
+## 6. Smallest defensible brownfield gate set
+
+Use five gates, applied incrementally to changed surfaces rather than demanding whole-repository cleanup.
+
+| Gate | Minimum evidence | Blocking result |
+|---|---|---|
+| 1. Approved change boundary | Baseline revision, unchanged 003R references, requirement, applicability, and acceptance oracle | Missing authority or consequential ambiguity |
+| 2. Artifact integrity | Schema checks if structured artifacts exist; valid references; stale-source detection | Invalid artifact, fabricated link, or frozen-record mutation |
+| 3. Behavior and regression | Independent acceptance tests and risk-selected existing checks | Required behavior fails or new critical regression |
+| 4. Changed-path accessibility and task review | Automated checks plus applicable keyboard, focus, semantic, visual, and assistive-technology checks | Required check fails or critical verification remains unknown |
+| 5. Honest release evidence | Exact results, scoped finding-level baseline comparison, reviewed debt exceptions, remaining unknowns | Hidden new finding, weakened test, unapproved suppression, or claimed-but-unrun verification |
+
+Use passed, failed, blocked, and not assessed as separate outcomes. “Unknown” must never silently become “passed.”
+
+Existing debt may remain under an explicit exception process. A baseline exception does not imply WCAG conformance or make an inaccessible task acceptable by default.
+
+## 7. Supported conclusions and unresolved risks
+
+### Supported
+
+- The cited ISO standards are applicable foundations for process and requirements work, but project conformance is not established.
+- JSON Schema can enforce encoded assertions, not requirement truth or UX quality. [json-schema](https://json-schema.org/draft/2020-12/json-schema-validation)
+- APG patterns require implemented behavior and interoperability testing. [w3](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/)
+- Accessibility verification requires more than automation. [w3](https://www.w3.org/WAI/test-evaluate/tools/selecting/)
+- A controlled SurfaceTrace pilot can evaluate the workflow if requirements, comparators, independent tests, and total costs are frozen first.
+
+### Unsupported or unresolved
+
+- Gemini/DeepSeek percentage claims and the 7/7 result.
+- The complete Round 2 architecture’s implementation quality.
+- SurfaceTrace’s existing defects, test strength, accessibility status, or maintenance cost.
+- Exact mapping to frozen 003R records.
+- Generalized productivity, usability, or defect-detection improvements.
+- Whether UXEC’s added artifact burden is worthwhile.
+
+The next evidence package should contain the two Round 1 reports, the Round 2 architecture revision, the 7/7 benchmark bundle, the frozen 003R index, and a SurfaceTrace baseline. Until then, retain UXEC as a testable verification proposal—not a validated performance claim.
