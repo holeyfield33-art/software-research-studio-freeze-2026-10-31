@@ -1,0 +1,208 @@
+STUDIO — Independent Product & Architecture Review
+Session: STUDIO-SCOPE-001
+
+Reviewer: Gemini (Independent System Architect & Security Lead)
+
+Date: October 30, 2026
+
+Status: OPEN — Independent Evaluation Submitted
+
+1. Specification A Assessment (BuildPilot)
+1. Strongest Product Value: Democratizes execution for non-technical creators by abstracting prompt engineering, context orchestration, and multi-agent management behind an outcome-driven user interface.
+
+2. Unsufficiently Solved Problem: Existing AI coding agents (Cursor, Devin, Claude Code) assume the user can evaluate code structure, diagnose environment issues, and write technical specifications. BuildPilot provides the structured intent translator and evidence guardrail that bridges raw user intent with agent execution.
+
+3. Unsupported Assumptions:
+
+Assumption: Non-technical users can make meaningful product decisions when an agent encounters technical trade-offs or silent failures.
+
+Assumption: Block-Wise presets/tools scale beyond trivial scripts without running into edge cases in complex Python environments.
+
+4. Five Most Important Edge Cases:
+
+E-A1 (Silent Execution Failure): The agent generates valid Python syntax that matches plan.json structural checks but performs logical errors (e.g., inaccurate math, bad API data transformations) that non-developers cannot spot.
+
+E-A2 (Environment & Dependency Lock): Third-party C-extension dependencies or native OS library failures (e.g., pywin32 on Windows vs. Linux runtime) that break without clear, natural-language remediations.
+
+E-A3 (Infinite Agent Loop / Token Burn): Coding agent enters a retry loop trying to fix a broken package installation, consuming API budget without user notification.
+
+E-A4 (Prompt Injection via Input Data): User requests an automation tool that ingests untrusted CSV/data files containing prompt injections, hijacking the underlying agent execution.
+
+E-A5 (Scope Creep Drift): Non-developer continuously adds "one small feature" during intake, degrading the structured plan into an unmaintainable state before initial build.
+
+5. Smallest Useful MVP: A constrained Python utility generator executing solely inside a sandboxed Python execution environment (e.g., Pyodide or local Docker runtime) that converts a single natural language spec into a verified plan.json, executes it against pre-approved Block-Wise tools, runs an automated unit test suite, and presents a visual output.
+
+6. Explicit Out of Scope: Multi-file web applications, arbitrary third-party API integrations without mock adapters, persistent backend deployment/hosting, and manual code editing UI.
+
+7. Blocking Technical Dependencies / Security Risks:
+
+Unbounded execution of agent-generated arbitrary Python code on user host systems.
+
+High API cost overhead and latency incurred by orchestrating multi-agent feedback loops for non-developers.
+
+8. Misleading Success Result: The agent marks a task "Complete" because plan.json matches structural AST rules and the script returns exit code 0, even though the generated script produced logically corrupt outputs.
+
+9. Concept Falsification Experiment: Put 5 non-technical users through BuildPilot to create a custom data-cleaning script. Measure how many can successfully verify correct operation without developer intervention when given a slightly malformed input dataset.
+
+10. Recommendation: Do NOT build first. Building an orchestration layer on top of unverified agent behavior for non-technical users compounds non-deterministic failure modes.
+
+2. Specification B Assessment (Studio RepoKit)
+1. Strongest Product Value: Low-friction, deterministic standardization of agent context, development rules, verification criteria, and project state in plain text files native to git.
+
+2. Unsufficiently Solved Problem: AI coding agents regularly context-drift, ignore implicit project conventions, or re-invent architectural patterns because repository rules live in human-oriented READMEs or unstructured chat history rather than agent-discoverable adapters (AGENTS.md, CLAUDE.md, .cursorrules).
+
+3. Unsupported Assumptions:
+
+Assumption: Agents will consistently read, honor, and execute static instruction files without hallucinating or overriding them when prompt limits are reached.
+
+Assumption: Project maintainers will manually update static docs/SDLC.md files without automated drift detection or verification backstops.
+
+4. Five Most Important Edge Cases:
+
+E-B1 (Instruction Override & Hallucination): Agent context window fills up, dropping system prompt context and causing the agent to ignore explicit constraints in AGENTS.md.
+
+E-B2 (Conflicting Adapter Directives): Differences between CLAUDE.md, .cursorrules, and AGENTS.md lead to contradictory instruction priority and loop behavior.
+
+E-B3 (Malicious Repo Injection / Poisoning): An external PR introduces adversarial prompt instructions within AGENTS.md or .cursorrules to execute unauthorized shell commands during agent discovery.
+
+E-B4 (Monorepo Isolation Breakdown): Root AGENTS.md conflicts with nested package AGENTS.md files in a multi-language or multi-framework monorepo.
+
+E-B5 (Stale Handoff State): Previous developer/agent updates code without updating handoff files, leading subsequent agent runs to execute against invalid assumptions.
+
+5. Smallest Useful MVP: A static template generator and CLI validation tool that injects, validates, and structurally checks standardized AGENTS.md and docs/SDLC.md contracts against a target repository.
+
+6. Explicit Out of Scope: Continuous documentation drift monitoring, server-based state synchronization, dynamic MCP instruction servers, and automated code generation.
+
+7. Blocking Technical Dependencies / Security Risks:
+
+Blind execution of shell commands listed inside markdown instruction files without user approval (Prompt Injection vulnerability).
+
+Lack of enforcement: Static files are advisory; agents can still bypass them.
+
+8. Misleading Success Result: An agent discovers AGENTS.md, quotes the correct SDLC workflow, but secretly fails to run the defined verification commands before marking a task ready for review.
+
+9. Concept Falsification Experiment: Hand an agent a repository with contradictory instructions in README.md vs. AGENTS.md and measure whether the agent reliably prioritizes AGENTS.md across 20 distinct task runs.
+
+10. Recommendation: Strong candidate, but insufficient on its own. Static markdown rules are passive guidelines. Without evidence-backed verification to check if rules are actually met, RepoKit is prone to decay.
+
+3. Specification C Assessment (Studio Repo Intelligence)
+1. Strongest Product Value: Replaces optimism and manual audit toil with objective, evidence-driven diagnosis of repository health, phase maturity, security stance, and SDLC compliance.
+
+2. Unsufficiently Solved Problem: Existing tools (linters, static analyzers, CI/CD runners) output isolated pass/fail signals or raw CVE counts. None synthesize structural evidence, test assertion strength, documentation accuracy, and readiness state into a coherent, actionable SDLC roadmap for AI agents.
+
+3. Unsupported Assumptions:
+
+Assumption: Read-only inspection can accurately determine project phase without executing code or running build scripts.
+
+Assumption: Test suites are present and deterministic enough to serve as automated truth verification without mock side-effects.
+
+4. Five Most Important Edge Cases:
+
+E-C1 (Assertion-Free / Tautological Tests): Test suite has 100% code coverage and 100% pass rate, but tests contain no assertions (assert True), leading the analyzer to report high correctness.
+
+E-C2 (Untrusted Repository Security Boundary): The repository under inspection contains obfuscated code, malicious build scripts (setup.py, Makefile), or prompt-injection payload inside docstrings designed to compromise the scanner.
+
+E-C3 (Missing System Dependencies): The code is completely functional, but the analyzer's environment lacks native C libraries or specific API keys, causing artificial test/build failures and incorrect phase downgrade.
+
+E-C4 (Monorepo Multi-Phase Ambiguity): Package A is production-ready (P5), while Package B in the same repo is a raw proof-of-concept (P1).
+
+E-C5 (Hallucinated / Unverifiable Documentation Claims): README claims "100% test coverage" and "Zero CVEs", but no tests or security scan configs exist in the repo.
+
+5. Smallest Useful MVP: A read-only CLI tool that executes Pass A (static AST inspection, dependency auditing, test assertion depth analysis, and docs/SDLC.md detection) on a single local repository, producing a structured ASSESSMENT.md schema with explicit evidence citations and unknown states.
+
+6. Explicit Out of Scope: Automatic code remediation, writing PRs, executing un-sandboxed shell scripts during analysis, writing external API calls, and automatic phase elevation without human signoff.
+
+7. Blocking Technical Dependencies / Security Risks:
+
+Security exposure when executing dynamic verification (build/test scripts) on untrusted third-party code.
+
+Context window limits when analyzing large or deep codebases.
+
+8. Misleading Success Result: The system assigns a project P3 (Hardening) status because tests pass and linters succeed, failing to detect that test suites mock out core business logic and skip end-to-end invariants.
+
+9. Concept Falsification Experiment: Run the assessment tool against a repository with intentionally crippled test assertions and misleading documentation claims. Measure if Pass A correctly surfaces "Low Assertion Rigor" and marks documentation claims as "Unverified".
+
+10. Recommendation: Build FIRST (as the foundational core). Without an objective diagnostic engine (Pass A), generating agent adapters (RepoKit) or guiding execution (BuildPilot) is building on unverified sand.
+
+4. Cross-Cutting Risks & Edge Cases
+Edge Case Category	Primary Risk	Mitigation Architecture
+Untrusted Repositories	Indirect Prompt Injection (IPI) embedded in README, PR comments, or source code overriding agent guardrails.	Sanitize all file inputs prior to LLM inspection; run analysis in read-only AST/lexer passes without executing embedded markdown instructions as system prompts.
+Monorepo Complexity	Conflicting build targets, multiple sub-package maturity levels, and overlapping instruction files.	Scope initial analysis strictly to explicit sub-directories or force single-package boundaries in MVP.
+Zero/Weak Test Suites	False sense of security from passing green pipelines with zero real assertions.	Include explicit AST test verification: count actual assert statements, test branches, and mock ratio.
+Permission Limits	Read-only access environments where proposed fixes cannot be written.	Strict decoupling: Output diff proposals and ASSESSMENT.md as standard stdout or local detached report artifacts.
+5. Comparison & Recommended Starting Specification
+Weighted Scoring Matrix
+Criterion	Weight	Specification A (BuildPilot)	Specification B (RepoKit)	Specification C (Repo Intelligence)
+Clear user problem & practical value	25%	75	80	92
+Feasibility using existing assets	20%	70	95	85
+Ability to produce verifiable results	20%	40	60	95
+Small, testable MVP boundary	15%	50	90	80
+Low integration & maintenance complexity	10%	40	90	75
+Extensibility without major redesign	10%	60	70	90
+Weighted Total Score	100%	58.75	80.5	87.15
+Strategic Recommendation: Start with Specification C (Pass A) merged with Specification B (Output Schema)
+Starting purely with Specification B creates a passive documentation generator. If RepoKit generates AGENTS.md or SDLC.md based on unverified repository state, it simply automates the propagation of stale or incorrect assumptions to future agents.
+
+Starting with Specification C (Pass A Read-Only Diagnostic) provides the essential ground truth.
+
+Therefore, the optimal unified sequence is:
+
+Repo Intelligence Pass A (Diagnostic) 
+→ RepoKit (Operational Adapter Output) 
+→ BuildPilot (Agent Execution)
+
+We should build Specification C's Pass A as the diagnostic engine, which outputs Specification B's AGENTS.md and docs/SDLC.md as its concrete, actionable artifacts.
+
+6. Smallest Defensible MVP Scope
+Product Name
+Studio Intelligence Engine (MVP) — Combining Read-Only Repo Diagnosis with Portable Agent SDLC Output.
+
+Primary User
+Developers, founders, and AI-assisted builders onboarding new or existing repositories.
+
+Exact MVP Input & Output
+Input: Path to a local git repository.
+
+Output:
+
+docs/ASSESSMENT.md (Read-only evidence log: architecture, AST metrics, test assertion quality, open invariants, phase diagnosis).
+
+Proposed diff for AGENTS.md and docs/SDLC.md based strictly on verified findings.
+
+Included Capabilities (Pass A Only)
+Read-only AST code and file tree structure scanning.
+
+Static verification inspection (detecting test files, counting explicit assertions, scanning for existing CI/CD configs).
+
+Conflict detection between existing README.md claims and repository evidence.
+
+Phase diagnosis hypothesis (P0–P5) with explicitly cited evidence and list of "Unknowns".
+
+Generation of deterministic AGENTS.md adapter matching verified commands.
+
+Explicit Exclusions
+No automatic code execution, test running, or shell script invocation (pure static inspection to guarantee security).
+
+No auto-committing or overwriting existing files without explicit user approval (--apply flag or manual git diff application).
+
+No multi-agent orchestration or non-developer chat interfaces (BuildPilot capabilities excluded).
+
+No web hosting or remote API server requirements; 100% local CLI utility.
+
+7. Blocking Questions
+Safety Boundary: Is the product owner willing to enforce that MVP Pass A never automatically runs arbitrary build/test scripts found in third-party repos to prevent remote code execution vectors?
+
+Schema Authority: Shall we standardize the docs/SDLC.md and AGENTS.md schema to strictly mirror the proven structure in aletheia-boundary?
+
+Product Owner Consent: Does the product owner approve locking the first iteration to Specification C (Pass A Engine) + Specification B (Artifact Spec), keeping BuildPilot deferred?
+
+8. Verdict
+VERDICT: REVISE
+Rationale for REVISE:
+The provisional recommendation (Specification B alone) creates an advisory-only documentation system vulnerable to context drift and stale state. Specification C alone provides diagnosis without standardizing agent handoff.
+
+I propose revising the unified scope to lock the MVP onto Specification C (Pass A Read-Only Diagnostic Engine) whose primary delivery output is the Specification B AGENTS.md / docs/SDLC.md artifact suite.
+
+Once this revision is accepted and blocking questions are addressed, this scope can be moved to APPROVE.
+
+Session remains OPEN awaiting cross-review, scope revision, and final Product Owner approval.

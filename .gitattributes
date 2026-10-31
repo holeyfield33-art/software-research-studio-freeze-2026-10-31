@@ -2,3 +2,4 @@ original_checkpoints/*.zip -text
 checkpoint_intake/2026-10-31/evidence/* -text
 rounds/SRS-UX-002/original_reports/**/*.txt -text
 preserved_freezes/** -text
+rounds/STUDIO-SCOPE-001/original_reports/gemini/Pasted* -text
