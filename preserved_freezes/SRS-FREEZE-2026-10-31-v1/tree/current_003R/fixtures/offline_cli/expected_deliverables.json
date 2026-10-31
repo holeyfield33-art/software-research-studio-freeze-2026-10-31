@@ -1,0 +1,107 @@
+{
+  "fixture_id": "offline_file_processing_cli_003",
+  "deliverables": [
+    {
+      "deliverable_id": "cli-contract",
+      "phase": "discovery",
+      "name": "CLI contract and input/output requirements",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Specify commands, arguments, help/examples, stdout/stderr and exit statuses.",
+        "Document local input constraints and non-destructive behavior."
+      ],
+      "record_ids": [
+        "software_type.cli_tools",
+        "sdlc.discovery_scope",
+        "sdlc.requirements_risk"
+      ],
+      "evidence_ids": [
+        "source.cli_tools.01"
+      ]
+    },
+    {
+      "deliverable_id": "local-architecture",
+      "phase": "design",
+      "name": "Minimal offline architecture and dependency decisions",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Use the smallest modular structure that meets file-processing needs.",
+        "Do not add authentication, database, network services, or queue infrastructure."
+      ],
+      "record_ids": [
+        "arch.minimal_viable_structure",
+        "sdlc.architecture_design",
+        "practice.dependency_secret_handling"
+      ],
+      "evidence_ids": [
+        "source.aws.segment_workload",
+        "source.nist.ssdf.v1_1"
+      ]
+    },
+    {
+      "deliverable_id": "implementation-plan",
+      "phase": "implementation",
+      "name": "Scoped implementation plan",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Use reviewable changes and explicit dependencies.",
+        "Keep all writes non-destructive unless separately authorized."
+      ],
+      "record_ids": [
+        "sdlc.implementation",
+        "prompt.implement_scoped_task"
+      ],
+      "evidence_ids": [
+        "source.nist.ssdf.v1_1",
+        "source.openai.prompting_codex"
+      ]
+    },
+    {
+      "deliverable_id": "verification-plan",
+      "phase": "verification",
+      "name": "Requirements-linked CLI tests and gate evidence",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Define CLI argument/stdout/stderr/exit-status cases with controlled local filesystem fixture files and error-path inputs.",
+        "Execute tests before claiming outcomes; record candidate and results."
+      ],
+      "record_ids": [
+        "practice.requirements_traceability",
+        "practice.test_strategy",
+        "sdlc.verification",
+        "gate.requirements_acceptance",
+        "gate.unit_integration_execution",
+        "prompt.add_test",
+        "reference.ripgrep"
+      ],
+      "evidence_ids": [
+        "source.nist.ssdf.v1_1",
+        "source.ripgrep.regression",
+        "source.scrum.guide.2020",
+        "source.owasp.tm.cheatsheet"
+      ]
+    },
+    {
+      "deliverable_id": "conditional-packaging-recovery",
+      "phase": "release",
+      "name": "Conditional packaging and local recovery approach",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Decide packaging only after target platforms and distribution are known.",
+        "If writes become authorized, define local backup/recovery and verify it; no service rollback/deployment.",
+        "Do not claim any release occurred."
+      ],
+      "record_ids": [
+        "sdlc.release",
+        "roadmap.smallest_releasable_increment",
+        "roadmap.dependency_aware_sequence",
+        "gate.release_readiness"
+      ],
+      "evidence_ids": [
+        "source.nist.ssdf.v1_1",
+        "source.scrum.guide.2020",
+        "source.ripgrep.release"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1407 @@
+{
+  "dataset_version": "1.2.0",
+  "schema_version": "1.1.0",
+  "inputs": {
+    "001_sha256": "30a2cd7746064c36ea24b7e43c302942db6e10b674edcc06de7ced7f97a4732c",
+    "002_sha256": "d517a85e69965d9ac764ce3ed00140684ea3edee75d03e65fc1e8dad305a8a2a",
+    "original_archives_embedded": false
+  },
+  "preservation": {
+    "001_record_count": 45,
+    "002_record_count": 522,
+    "current_record_count": 715,
+    "001_missing_ids_by_partition": {},
+    "002_missing_ids_by_partition": {},
+    "all_001_ids_preserved": true,
+    "all_002_ids_preserved": true
+  },
+  "changes_from_002": {
+    "changed_existing_records": [
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.minimal_viable_structure",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "238a2a837fbf2ff6006a37a9fa5eae3e3ca87c30a16c3aa32be10a204953e2e0",
+        "to_sha256": "5d7c69fc7110ee4a36140c67a6c5e47a862198b7042a1e451ed73bc73ceab2d6"
+      },
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.client_server_api_boundary",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "31cd02ef6bf3dfc7d709afbeb2273384c490fd85c9696a262b61f1d1756739f8",
+        "to_sha256": "056f6b2791cf5109355971781d6669d86f0fc064e3cbf3cebcfa675b7d6b7f0f"
+      },
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.layered_modular",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "e44508b84451413b909e87e489b150b64566b804f3d00bd98595c2e74d883605",
+        "to_sha256": "17f7f65a5db056747ee847313d39ac02b0d5a7d75e989c74ed6e4dfa489b182f"
+      },
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.event_queue",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "57b8350da5510ac3a4927e0254ebec7c8bbc0c365b8b19a8db17318b3a8fcb13",
+        "to_sha256": "b97f854d5f9e6b7d3c1f29a7c8142c2fefdbc8bf58d89d70ec826bf50a6ec002"
+      },
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.multitenancy_isolation",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "2269a8d7b6eaf54fc9dd3d2c2cf0d9f4264d27ecc299b2ec19f2c7890ca75672",
+        "to_sha256": "08cfd17bc94099ffe0b2d4c4d2d77bee9ef915ce8fe87a7a085b72e488b5c21e"
+      },
+      {
+        "partition": "architecture_patterns.jsonl",
+        "id": "arch.agent_tool_boundary",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "68cb4beae6cab70fe8e7ad7230dfe23dfabb98df4c0aa47bba812d9241a7cf84",
+        "to_sha256": "166f43d8b9a6a6f9708dc564cc7d86130995f6c74ff87c2c344e21207457f004"
+      },
+      {
+        "partition": "reference_projects.jsonl",
+        "id": "reference.fastapi",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "f2ee301e4d14491cd129b5e083fead97d0b4a42cc3e2dd7455e7b568fc3987bb",
+        "to_sha256": "96710f631bc3db619ff47a03870925a69256f8f2134c64fd4e72f8827396171f"
+      },
+      {
+        "partition": "reference_projects.jsonl",
+        "id": "reference.ripgrep",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "efd0a21237b93bfbd0a71569bf6715b96ad36013cbffec50270fbd6a64b09b9b",
+        "to_sha256": "25e3242a2438470c74abfec3fbbabe1047f1f27105c1b1ee53383b96d892b917"
+      },
+      {
+        "partition": "reference_projects.jsonl",
+        "id": "reference.openai_agents_sdk",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "4f530e9c4ac361f4d35e746e03274c1c3a85a375344ba7aec8661d98551e994b",
+        "to_sha256": "bc7d6f66860c4dcc438f13a86a023ddd011d4c0dfd47d470b7ff998b6d7d47a9"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.0054",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "63e5da1f125f820bd04de02b993f02000963ee899be98fa39d8ec286c3fa1f25",
+        "to_sha256": "cd332c15d4c472c8340112d66c25ca10ca9cd2ac4da10a91d732a25eba13bfa1"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.0114",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "a4c9e67c11dcb71ad0431877544927f04e172a119f126fc8a93cd1149a9491d2",
+        "to_sha256": "4e0142b5b1019aaa60d005f9acb8d70412ff172bb09bd0c8f0596c26b83e8a25"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.0164",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "b8c6c88d07f8809aee14d945bbc7eecce03bad93b8fc86b579204a39df0db2ab",
+        "to_sha256": "1e5d006f8ab52cfe054d384333a53b932f08b2851767d0b9dd9a2b588e843840"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.cli_tools.01",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "a4b8ecbcfa9823e799aa50c83e5e3285ad1df5693a773ea650d9250a3acb3c8b",
+        "to_sha256": "3f56a81eb8c1997198ac292c201cd22d04087320179b116b3933a0205eb2b604"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.cli_tools.02",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "4feb0a229f9166609b1721c7e6ced74c54fc5fb239786b067c944a11a2555e80",
+        "to_sha256": "5414c18544f40a0c8abb67a54f938d75df59aed0d1b739e623bf783d08a54775"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.cli_tools.03",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "a86a41a96abad5e8817e97567196bfc8070cefd2a7614984810772851667e5df",
+        "to_sha256": "3e29d01d51080014546c4792c3c0f14645856c1754cf293a3ee4676874945589"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.ai_agents.03",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "cc1b19ae2fbe2cdca6ea8aa301edeedb4da6f8b3413a33a19bd6367f54fd088e",
+        "to_sha256": "c7ba96b45849eb18f1c7c5a3b087452ba88cb1a17f40254257312d8bf350e135"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.iso.12207.2026.summary",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "f93cd271d7148050b883d2bff7b3970841c6ad484a319118c2ad937f66c17611",
+        "to_sha256": "42ebe9a77bdd63fddf9a019244cf8e3a5512d036a02379df49e0d52e9e0b93b6"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.agents.test",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "13762049ad91f571e5c9fe22770b7ee0de6ff69a8b0203b5044ba6db8069c5a7",
+        "to_sha256": "c7bd47625a5d576df7b9048423fb3f343324c7bf2d382609c21bf63f5576bf94"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.aws.segment_workload",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "6fdc929d8d8768e92b2b31b6aadd127febb3faad8dc635e3eb66652f35e00b9a",
+        "to_sha256": "cf0f0149cf1aa128739851cb0037ff8780b35a7227b33ee549e5f39744501bd0"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.12factor.processes",
+        "from_version": "1.0.0",
+        "to_version": "1.1.0",
+        "from_sha256": "0c353148a6308db766ee140a07f4827949636915893359736801f200bd83393d",
+        "to_sha256": "0354c854f43d25b3674f556891023dce8bb252db51201f4835df420379c3d9e4"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.requirements_acceptance",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "870e9aaffde29ea5149ce547260d51b04ad12c04e32b5fd165fb54ef93ab6ea8",
+        "to_sha256": "5c18fe0731fafb44c9978dbcc7847919db08008af88d52c679f0fe376a54ab62"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.security_risk_review",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "d61388bed31b38968a368e6e90709c1003958d4ea75c1b5055f4b3f32730b8a7",
+        "to_sha256": "31383378ccabd5c708cba37b427f47111d08fddaeb8e86cb8e4fe39e8148e719"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.unit_integration_execution",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "800d0104f30a2c85fded8768ee4c4f0709b3229ea4897a43d41b88cc46a20bb0",
+        "to_sha256": "a1ad5e40ab0003dc2dbe2eb1a1535e4e6dff3cfd6cb40ed043c4758b5fe83c82"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.dependency_provenance",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "4efbd3064d288c47649c0b05a14f950351f7c11306042688329247d3ab25e3f1",
+        "to_sha256": "21eda7f19b446c7c9982714c6c0b4f91a412b4d9dedf56005d5ee32b5c9e45d6"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.release_readiness",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "2baa19dd4dbd473ad62fcead6571374aa7f5a3eb315df571b085dadb4ed676d4",
+        "to_sha256": "e24d3bb4f8a428f39c020cb4d315ee081334e2633d02ab3d1143683fb9e4d47d"
+      },
+      {
+        "partition": "verification_gates.jsonl",
+        "id": "gate.operational_rollback",
+        "from_version": "1.1.0",
+        "to_version": "1.2.0",
+        "from_sha256": "d663f77bc17d71b79b9820292fd978bb469f796bbc53ae95f65805ef96a53392",
+        "to_sha256": "9b4bc74dac212cd23b049e98552b6e29a8ae10aece4ddebf59b926c40232bfbb"
+      }
+    ],
+    "added_records": [
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900000",
+        "version": "1.0.0",
+        "current_sha256": "b644a9a0117e3ee1af853fa7a02a73df42f21de170257c36e3a3a177e5430ee2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900001",
+        "version": "1.0.0",
+        "current_sha256": "cdda2e5b218372e5266bfc1875b99cd6022f8d3f8caeb9fdfdf6f7540f736119"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900002",
+        "version": "1.0.0",
+        "current_sha256": "e01dadb520feb081b380738a316247ddaaf9a5df9cc77ec4797d04b8fa52ff6d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900003",
+        "version": "1.0.0",
+        "current_sha256": "6cf8793035ac93605c13329cab8e4b4eb0e00d5e242dde531948590dbdbe9f57"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900004",
+        "version": "1.0.0",
+        "current_sha256": "b44f940a3d73912a353a42e24d12790fe0e16ff5c94242638d62bf27995fa33f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900005",
+        "version": "1.0.0",
+        "current_sha256": "fbf6488f7e8f08d8766f3560fb66ccc992630a7827e00089247113331e2d5f54"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900006",
+        "version": "1.0.0",
+        "current_sha256": "9633830ee1e91392d4dea8b7c578fdce06eba08fe2833598892f224c3f9bde3c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900007",
+        "version": "1.0.0",
+        "current_sha256": "75f642a2bfaa8af88dc080d1f60a19b0858de36535daf10c248b4ef2a77fe5fd"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900008",
+        "version": "1.0.0",
+        "current_sha256": "5988686dbbd87e832f5b0307c11bec3e3b72374afd001329cdd90a2955c186a0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900009",
+        "version": "1.0.0",
+        "current_sha256": "925c37b0b05c8081e6d42b4ac1081cba7785dd435588b6fba14e31a2ab9c2b55"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900010",
+        "version": "1.0.0",
+        "current_sha256": "d78792ec9de6e0718d0098f4cdbd8e976cbad034bf6d7cbdd6cdbe926010f6c3"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900011",
+        "version": "1.0.0",
+        "current_sha256": "9c296948f0562db1dcd8639c715328b0f8f4bbb8340f32d4efd9230351c1e667"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900012",
+        "version": "1.0.0",
+        "current_sha256": "8db4741d5dfc78637a194299f3332f8a3f1952ae95a67a50cffbba39203203e4"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900013",
+        "version": "1.0.0",
+        "current_sha256": "38475f961273ab43f55f663993c62ea53c6a9b32df2b626a9abea6fe8287736c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900014",
+        "version": "1.0.0",
+        "current_sha256": "45b2c4b036fc96ca137816a001d8d560ab979c2d10729eeaea60486ab0751b28"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900015",
+        "version": "1.0.0",
+        "current_sha256": "3e615b677c22a9187fdda060a2f41140949794ea05f1021c78f8d4775354750f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900016",
+        "version": "1.0.0",
+        "current_sha256": "b823135ea61526c8a8b45a8bf7c26bc81a5f2635c3631adea2f96e15573437b6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900017",
+        "version": "1.0.0",
+        "current_sha256": "9efbabd285ab6777fc76082ca0922e4075cece6636cf3e8a8830cbaa84134a4d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900018",
+        "version": "1.0.0",
+        "current_sha256": "526d071d88b50215be2f7c7d1eab9a7e51ae7e936f52e79754c8449c49c5b10a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900019",
+        "version": "1.0.0",
+        "current_sha256": "f20c29c148d0fcaab4177d878fb8edfe960bfa5ced89d591ce54766f84d2000d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900020",
+        "version": "1.0.0",
+        "current_sha256": "08e321ef7ee65dc2a4e6516e45a94c262cebe789b29027befa8eb0a2911220a8"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900021",
+        "version": "1.0.0",
+        "current_sha256": "476c7eeeaae9a86ccf23a45c4ea178bedd9e19a9aaa9adbda846ec7e93c45854"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900022",
+        "version": "1.0.0",
+        "current_sha256": "4954a5402634c3049482352e5a042910f6208c880cf6c75716440ed290814d8d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900023",
+        "version": "1.0.0",
+        "current_sha256": "17c3ae68e9f9e7671a178e8111f0e79a254135b13cade439a8dbdd4155050acf"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900024",
+        "version": "1.0.0",
+        "current_sha256": "7b2f5939f111abdd815cf6e03ccef68aee748666fc0655df51793b7c8c0bdcd1"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900025",
+        "version": "1.0.0",
+        "current_sha256": "ddbf1690b2e6eeea50e877307a1901bec80030b3134d5ef48679a8304286623d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900026",
+        "version": "1.0.0",
+        "current_sha256": "b143384e1c9a77812260ab15d52a0d0175ada04cb49b1bd001df7d91c460cc5a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900027",
+        "version": "1.0.0",
+        "current_sha256": "80d762715be7e68f10dd1ad99e4e3a1418b0ef9149c68f658b62a9446514975c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900028",
+        "version": "1.0.0",
+        "current_sha256": "d946acf1ddf0b5f46cadc3eb195cac309427f760ed2cb4a4ef4b64d91cc686e7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900029",
+        "version": "1.0.0",
+        "current_sha256": "26db50b97b319431f5b73c239b6d02e3e67eb0cb8a676409b9a9f2aa302cf94c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900030",
+        "version": "1.0.0",
+        "current_sha256": "e80588680c116f336b8f8be19d8d1fb74891bda3d59e973368ba8a8160856ab3"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900031",
+        "version": "1.0.0",
+        "current_sha256": "53670a8da1abb52f38321462b2be10e65e073de6266b7173029fab331b6d6a19"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900032",
+        "version": "1.0.0",
+        "current_sha256": "af4c8c7df6b5cc4b0e455a69b02ecbad9048c4ef2b6fbe2ec739ac2251260a4d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900033",
+        "version": "1.0.0",
+        "current_sha256": "c286b9a87b40bc23c5a7e205098f4ecb85fa3f8744705d8569e2bca299be8987"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900034",
+        "version": "1.0.0",
+        "current_sha256": "1251bce40dd4a83c9fadcbbbd6851ae447d190e9b523fd6b0a5d68d4ba2c5a2c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900035",
+        "version": "1.0.0",
+        "current_sha256": "74975bebec1314def1bb6a50d61507564060e8deedcf7b5f00c5be11d5fb6fab"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900036",
+        "version": "1.0.0",
+        "current_sha256": "8cfd263c8453fe9ac529521de59bea0f41b549ccf88c333a4ac98cd3e1b4c086"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900037",
+        "version": "1.0.0",
+        "current_sha256": "b6a9c223281ab2004a126d53f23c2854ed434c0f70f74f9e9c89ebed12c7c6f0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900038",
+        "version": "1.0.0",
+        "current_sha256": "8219a8a215d34dfa7eeddf8b2be44f194607edf83485b6b0fc397f3b9e0becfe"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900039",
+        "version": "1.0.0",
+        "current_sha256": "ff65c6b8b9e46cfddacfae2c79751997674acce013f5914084dc8a83d764e7a2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900040",
+        "version": "1.0.0",
+        "current_sha256": "49348b37badb9a9c9fb39ba4c7f7cb6ab99bd5f05ff491cc4b0c5f0b1889a2ce"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900041",
+        "version": "1.0.0",
+        "current_sha256": "4aba5b1b1702c193a9ee546d75029f03ecce5c75e9f72298ae21c79c412702d4"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900042",
+        "version": "1.0.0",
+        "current_sha256": "ba88399d97a6c7cbe01ba2bd9720776f8183708f9edd7a5226f0154e904a98fe"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900043",
+        "version": "1.0.0",
+        "current_sha256": "8ce493a51aced065bcb783152a186ded25d12c6f9cf86b6f42f76e13088956d0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900044",
+        "version": "1.0.0",
+        "current_sha256": "205c333a5c51da1560e8d0411dee61e70221b6c98e4a4597797a8ef70ffe6d4e"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900045",
+        "version": "1.0.0",
+        "current_sha256": "2d0f8059f7a05a4e0d539245fe2f0f5670f7ed13c3218d778bace038236ab0b7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900046",
+        "version": "1.0.0",
+        "current_sha256": "129e6c9575b56c64055d315bea7caf7f5332a884f7a348e1f8a773967e06cea5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900047",
+        "version": "1.0.0",
+        "current_sha256": "0b4df4e11e80e1fdf033bf36bb747845c62ce755cefc35169e082733d7dbae75"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900048",
+        "version": "1.0.0",
+        "current_sha256": "75f5d3883c431569f9e36a9a54ee45f56fd6c9acbd38e1f933ea491562f5ac59"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900049",
+        "version": "1.0.0",
+        "current_sha256": "9c02b78111ea6e2d6af708eb6c01bbe5179b112785ba46208b39a77a498daa43"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900050",
+        "version": "1.0.0",
+        "current_sha256": "5260f578577657e70a225663ce6542ba3bc02a3d3d8eabdfa42ddd2b633909b1"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900051",
+        "version": "1.0.0",
+        "current_sha256": "4b729042b930f88353e95e5765e0d20ef39cbe46b82e3bfbf163cec10b5e2e36"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900052",
+        "version": "1.0.0",
+        "current_sha256": "d03f14c5b695d30e6b6f10da2611bdad43e3448f09bb1993e7c4a0112b2038bf"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900053",
+        "version": "1.0.0",
+        "current_sha256": "43d1831849f5c1b416ea5804f2764b0dafb6701cbf06c3571de50e29ff1b3c66"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900054",
+        "version": "1.0.0",
+        "current_sha256": "e2401d338b3cc202ced84e2a2830d6d09235d1e9e54fee411d00ead3bd4c28c8"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900055",
+        "version": "1.0.0",
+        "current_sha256": "5a693e8640b427c8f0f3bf4d7ce3e363bcf866155d271e4a761c9ee8c93659cf"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900056",
+        "version": "1.0.0",
+        "current_sha256": "1c62b9f9620c1f2ae641da7e05a00731f7abd8d98ce3da246b79a2485c191a81"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900057",
+        "version": "1.0.0",
+        "current_sha256": "c951438e2e973fc30c78e4f5b60969f04826d25ebb959c2638a2129a30ba1ad5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900058",
+        "version": "1.0.0",
+        "current_sha256": "4b7a69072ab6169c92e32e754b35c782d8952b703a2126b761ed7627be1a08a4"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900059",
+        "version": "1.0.0",
+        "current_sha256": "8b88d30ea477abd9d0a1af0408d4de094f89520df2bd27f24966d409c5e08664"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900060",
+        "version": "1.0.0",
+        "current_sha256": "8cbed7e9559e33e4e35dc3d86e6dd3f3c3db8d6ec6cc87b38c98876244905e75"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900061",
+        "version": "1.0.0",
+        "current_sha256": "a6fef351f83f04649086e5395cb504b6902a077567351f4c16283734a678875b"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900062",
+        "version": "1.0.0",
+        "current_sha256": "5c2ac1e3340282df9adea1186c80dbd478fead31f3233f231d51dfa7db6fb231"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900063",
+        "version": "1.0.0",
+        "current_sha256": "16703ee1c8ae699d4cd26b7a6eae14fb00dc852ed84aed9746c9e58da9e039eb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900064",
+        "version": "1.0.0",
+        "current_sha256": "77ee0101b06c0c6055afb66015e01ccab73134440a11fc2aa3c0d36d760b9d22"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900065",
+        "version": "1.0.0",
+        "current_sha256": "0d29efe7957e10cded17622acec162d0e69db7dc8fc63c4b708654e3aa955388"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900066",
+        "version": "1.0.0",
+        "current_sha256": "de7565c4939608f616223df28d096b3fb08f6a4f91efef68a0c288f0335248fe"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900067",
+        "version": "1.0.0",
+        "current_sha256": "83c316dd70537d75b3aa5d6a9c5ffd235ffa9a50743451c4b1d44f9857dca8fc"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900068",
+        "version": "1.0.0",
+        "current_sha256": "0c36ba2f9c6d6d68dfaf454855bb9069675c342aa63f7456a9c02c916dc71fc2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900069",
+        "version": "1.0.0",
+        "current_sha256": "b3cecde3c5dfd59d28d4904e8fc82da7b212232cee9aa3190c49c2c7635d470a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900070",
+        "version": "1.0.0",
+        "current_sha256": "b852f3eb305acea2ea2cfc84d049e8c31be809ea3bdbc4473f92075d990ec771"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900071",
+        "version": "1.0.0",
+        "current_sha256": "359e0c9d1f2e4b76c3be41bc52b53751e2a8ca63f7224f19f8197eb201f445c5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900072",
+        "version": "1.0.0",
+        "current_sha256": "f091ff40d6f9f9487e5b983e9738ec08cb65bc95d5d7afd4940ef60039cbfbd8"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900073",
+        "version": "1.0.0",
+        "current_sha256": "296b5d5b30f7e8766bf0f7a07a015fe7e36f1859705ea749d2c2092e44dcfd66"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900074",
+        "version": "1.0.0",
+        "current_sha256": "d1a7b78077e1bc8a6ff4d2bc30be3941204f586055d220aa6f65b75dbfc03d4c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900075",
+        "version": "1.0.0",
+        "current_sha256": "7302d7dfd8cbefb45670c2c77b521219383c62bd5d510b0cf7c73b3e82021a23"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900076",
+        "version": "1.0.0",
+        "current_sha256": "ba19eb7a8a10cf33f5dc8adf0a559d659fffa463d2edac228502afca95c5da84"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900077",
+        "version": "1.0.0",
+        "current_sha256": "912daf58dbf4b78da612e2631134be22b214d85bab183c05fccb11661248ab02"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900078",
+        "version": "1.0.0",
+        "current_sha256": "98119c5c6c59aa21d5273481417c74d30b47949bfdcfcfaed9eb7d37e9eb2b1c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900079",
+        "version": "1.0.0",
+        "current_sha256": "569f25800c9dad61f6415d11872377fc043de167e2d910b4777540081ebd55c2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900080",
+        "version": "1.0.0",
+        "current_sha256": "eb3ba6ec15a904dcf9c9523f55d63762b99ac093b3fe2c78800b654c3332f365"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900081",
+        "version": "1.0.0",
+        "current_sha256": "c06ada4623da8d48dc82a60edf0b0ce61b1b46de34e58ff45da0083674a9f58f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900082",
+        "version": "1.0.0",
+        "current_sha256": "5ef4682465da7a850af4c4f489ddb138c94d26a96d4ecc854f885ebc9b447d69"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900083",
+        "version": "1.0.0",
+        "current_sha256": "0ba564141ba1d3cc8397223defdd770efac0d6c00eca474916831458b80b9ca5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900084",
+        "version": "1.0.0",
+        "current_sha256": "b74016c9d5c12170f3febc407931cdb3ddd7be77e12b09a6ddbdf1d681e004fc"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900085",
+        "version": "1.0.0",
+        "current_sha256": "3378f64ab89a168341f9657c0c2908a8dfe1eaa6bbf011e3b0a025f93390e781"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900086",
+        "version": "1.0.0",
+        "current_sha256": "06709386f6b6dae60125357737e88a91ccb199f04b761ce758dec115f78d2c8e"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900087",
+        "version": "1.0.0",
+        "current_sha256": "1540db593e5cb6ba51683b28e4e0e0da4da9a026a53a028a5cb1066eb9bfab2a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900088",
+        "version": "1.0.0",
+        "current_sha256": "14f54677f683894ed140124ef598245a88c7fdc0c9b93c275e5c6bd73b323950"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900089",
+        "version": "1.0.0",
+        "current_sha256": "34e8be4e31591211a8d3fc763d9b1ed3c9b6ed8a94aba6cb53efba8f443c2966"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900090",
+        "version": "1.0.0",
+        "current_sha256": "479b0c8ac9bcc2ce0f2bf01beabaf612e96343d4d09423c0ce5c46ce653d2acb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900091",
+        "version": "1.0.0",
+        "current_sha256": "648c1fab4e41f1cf57bfec5a59e11882b6b1c428b89594790c6f3bde76d9c864"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900092",
+        "version": "1.0.0",
+        "current_sha256": "551747e8f8699228258fad572b2056524e5d3c111a15274708cfbec2cebfd2e6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900093",
+        "version": "1.0.0",
+        "current_sha256": "5ba297783a149021b407def44e02d29c3cc44dc113a9c181ab0ae3ef97a398b7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900094",
+        "version": "1.0.0",
+        "current_sha256": "18c40c44fcf5b9632189aa98cbd861c775a15d2c17face4fafbb9732b6ca687a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900095",
+        "version": "1.0.0",
+        "current_sha256": "d2be0dc8ab1615a349c49d68685708394dfecfac79eff6fa58641e9d89543640"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900096",
+        "version": "1.0.0",
+        "current_sha256": "a32d8acefe145e8551c3acad0c004711de1d48995227dfa4fbd398a3816aeeee"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900097",
+        "version": "1.0.0",
+        "current_sha256": "bfc154ab256fdd0fa92b6c951e0c36af9b1cbf7f08165e1a1e0df3ad322c85b2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900098",
+        "version": "1.0.0",
+        "current_sha256": "b00863591148bb04403193850cab32224a8f381c5dc0b351c981aabdcf8c38d7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900099",
+        "version": "1.0.0",
+        "current_sha256": "0f3264b5a78cc40cfba38677bc46579568a7db85e518df997eb3b9ff77cb7ac8"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900100",
+        "version": "1.0.0",
+        "current_sha256": "db8396412369c391259d1b146d01c1dfc8ef925c06c92cbeb40664e3fc9a5b7a"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900101",
+        "version": "1.0.0",
+        "current_sha256": "ed0640e32f48907b47ec239e4d8146343729186b71db98b907943c730d33df08"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900102",
+        "version": "1.0.0",
+        "current_sha256": "dbc3d160aaca64b93ee1637add0d433499be38243e6cd0d35530e8dec2e8c2c1"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900103",
+        "version": "1.0.0",
+        "current_sha256": "e3664d7fed028c1d819ad5bf7e8e46025013beb6c9d17c30e16578cf5d1ab4cb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900104",
+        "version": "1.0.0",
+        "current_sha256": "5b2e14d838630c810ad63c710c290ffc4852c4edf530231f6179dbf4d47046c4"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900105",
+        "version": "1.0.0",
+        "current_sha256": "b9a36cbbd33e5b415cc043ccee7392450462ffdbe7fe9b79389d98be8c97d24b"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900106",
+        "version": "1.0.0",
+        "current_sha256": "097942194bb28bdadcf479cd42d78b1106a6c33c6cfe7c50844b0e97f4ec716b"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900107",
+        "version": "1.0.0",
+        "current_sha256": "1e5bed2d25924bb4edca9a0582d4c8e50d536fe5e1e422e6d0e43429ad2e47cb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900108",
+        "version": "1.0.0",
+        "current_sha256": "9d6338da75acd18b5f1b0654cd66d8c5ef8ac0163fee8f91845f86b290186af6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900109",
+        "version": "1.0.0",
+        "current_sha256": "9175d061f30dd71bbdb7d3ed17550557a79bb36c9ceb4b44187735db1ed92307"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900110",
+        "version": "1.0.0",
+        "current_sha256": "ef502017f0159aa84e3b15d1d6634cb9ed4151b356e6b24f9cdec33b0fa3b2d3"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900111",
+        "version": "1.0.0",
+        "current_sha256": "8f9ca4e4df790c0c1f1a1b4a1ebe4a5b6e8dff813e15c88f454fcf2778dedf7f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900112",
+        "version": "1.0.0",
+        "current_sha256": "9c9e667fb4e02392a5d937709bf770037df948b303fd54713d006c27c0eb268f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900113",
+        "version": "1.0.0",
+        "current_sha256": "fa011f5c95f35d9a3d3df637dca155b5023a2d327728a9c4c12b8cf54a3d1ddb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900114",
+        "version": "1.0.0",
+        "current_sha256": "0c4e104e9819f9b1f8b327135dc024aa2cb797db793255f113fb9e05e2a863a0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900115",
+        "version": "1.0.0",
+        "current_sha256": "b0dc45e39b84bf1e88bca622ac14825314d997bc00d70c648253b45e76e8150d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900116",
+        "version": "1.0.0",
+        "current_sha256": "84a49beda49fccabb3a8e8328e81d5bf48fc4dcd6b69e5a0e4662a443c472024"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900117",
+        "version": "1.0.0",
+        "current_sha256": "33791b3a09eb785cb38618b95c01fa6faaa086b725ac061d2a3cfbc7dc0f37be"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900118",
+        "version": "1.0.0",
+        "current_sha256": "807866b89215ee74612262b0ab5072fd98e3c313024e7891bdcb86d7e049bbc6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900119",
+        "version": "1.0.0",
+        "current_sha256": "e395940ccba28c8aefeb1d701a92127fd02021aeed557dd3ece48bd01ab3bc26"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900120",
+        "version": "1.0.0",
+        "current_sha256": "0397bb7449e31575593ee983e7cfea397d68754594e5bc6cbe1d3c205ffa8858"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900121",
+        "version": "1.0.0",
+        "current_sha256": "547b43de82a96e0e5e3b2de4bfb6fde12a5578b25bb878f6d6fc180c8dbbd3b5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900122",
+        "version": "1.0.0",
+        "current_sha256": "88ce713e41107caabacc894acdb863448bdff1871f5d290973cf41908dd410ea"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900123",
+        "version": "1.0.0",
+        "current_sha256": "3f30dc2fb12b8baa936bf06f74502157013998715aae8f99b4bd45f96099ec94"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900124",
+        "version": "1.0.0",
+        "current_sha256": "1251c5e296baedf18c5cf3934aea062482a2823078ccd3cd2b5fcf705d388dd7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900125",
+        "version": "1.0.0",
+        "current_sha256": "d010147d8c2eb5e8edd2e413697cf03548def056036b11c161277f393cffa2d7"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900126",
+        "version": "1.0.0",
+        "current_sha256": "704400f8116d409b2175b050dd7bd804c5fd6371269e74dbbbf61094831b3eec"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900127",
+        "version": "1.0.0",
+        "current_sha256": "8a94963725559e0df08b5334d8fa1ea6752cf993d545aade2fa7abba73a6fa42"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900128",
+        "version": "1.0.0",
+        "current_sha256": "4e39334c9a3f3582b805c2df1f90bcdd3f4446a52be7ef97f20a97508cb47697"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900129",
+        "version": "1.0.0",
+        "current_sha256": "4ef111c42dae98d0f867b634841951fd38ccae9d63f168231f577c467fecbf80"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900130",
+        "version": "1.0.0",
+        "current_sha256": "8a86c87321d2ce958d4cb91f98cd28159c4752397ce6bbaaed7aeb080ff28b19"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900131",
+        "version": "1.0.0",
+        "current_sha256": "fe37789bdd1bfbddd2230f3be4d350c6579a3270a8245161af1d165410113df6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900132",
+        "version": "1.0.0",
+        "current_sha256": "96da32963ae0f6cd792aea9659b83f94de1c06c6e2ac415cb757820f5fcd9e6e"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900133",
+        "version": "1.0.0",
+        "current_sha256": "5a52f73ba1d472607a6c42f5f2bd0e70c555c270005fd39e8304c86ad43cdeca"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900134",
+        "version": "1.0.0",
+        "current_sha256": "9650b7b6f2cf6c39b720adf6f94adca18ad8ae17b47df77865e7a7291404991b"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900135",
+        "version": "1.0.0",
+        "current_sha256": "2b6c5a2920ec20575123f2690190a80ebe10eeafc428f5f0e2bfcb4f26d9e0d6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900136",
+        "version": "1.0.0",
+        "current_sha256": "7a4cbe2b06da0383dc60751700459d545739bf718258010d6f2bff534ee4c563"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900137",
+        "version": "1.0.0",
+        "current_sha256": "f4edc63f1b825786befd3a9988b7b1f92e4ed27ce0b35252d475be8bc4d7be11"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900138",
+        "version": "1.0.0",
+        "current_sha256": "1d9452ba30e2068a95422d1cf9a8e49b43403a34e11ecc668e50aa651c24eca2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900139",
+        "version": "1.0.0",
+        "current_sha256": "637d2b3e99bf374c663f1befbbf0be745ad5757c464c60731da4c774ff7501bd"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900140",
+        "version": "1.0.0",
+        "current_sha256": "22547c3acbd2322b80de43d7254047e1df4e6e1191524626cb6f19fe17b85bd6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900141",
+        "version": "1.0.0",
+        "current_sha256": "d3653fceeade6d353c38709190a66314c248acd3fe1657aa48f193753381a2cd"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900142",
+        "version": "1.0.0",
+        "current_sha256": "567b51fabb44086a5bc4e82f5df7f04314460ff4ff0977bd7c7bba43cffc11a0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900143",
+        "version": "1.0.0",
+        "current_sha256": "a928f2e8b8888318d5706c2ce27c115895e86e603965b15c6d07780338d431a2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900144",
+        "version": "1.0.0",
+        "current_sha256": "cea107fe179f00a5d27f5ec15d0d982ee58f43f378e87edfee06fc70290e5722"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900145",
+        "version": "1.0.0",
+        "current_sha256": "84a204e4b8356a98d9041c77e858bf37319948a371a9fbb57b947ecb5e21c70f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900146",
+        "version": "1.0.0",
+        "current_sha256": "dee51b1b956062fb7f85349b9537613ca40df00832c8aa06d8816690be721c6c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900147",
+        "version": "1.0.0",
+        "current_sha256": "ceaf8bd3772f6b2fe1297a2cec17977bf3cf004289393d269f8b9a4f45f5c819"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900148",
+        "version": "1.0.0",
+        "current_sha256": "01792a9a0358fd3ed60999dc8f7d442b632eb79e489a9cfcf0c3e3707c4ac4f0"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900149",
+        "version": "1.0.0",
+        "current_sha256": "feb142b06d4bd2988ac3d7c3f348b15a4b726963204f906a95176d630e35d2fc"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900150",
+        "version": "1.0.0",
+        "current_sha256": "24ac7a5c2fddc21bb8dd49f766f6d75db252b6521f48d5f248aac8b62ad0c940"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900151",
+        "version": "1.0.0",
+        "current_sha256": "5f8399604e9b7f3db9f64c752ddccb23aa6ea10af5ff6ba168fb1d3908580069"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900152",
+        "version": "1.0.0",
+        "current_sha256": "ca970227990121f8616c54d0d8855532189486fbf8558a448a0800446b477d60"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900153",
+        "version": "1.0.0",
+        "current_sha256": "749eb3e606f68a9f6badf747c5d7d557d79734660347c033de0d54a1089526a6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900154",
+        "version": "1.0.0",
+        "current_sha256": "48f3fbf2e0d0a71850fe2dc58cb7f7b3f96cebb1b8bb2797e0b5c105ef4bf29d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900155",
+        "version": "1.0.0",
+        "current_sha256": "c2396d0a8b59cafcbbc5845366c9025139e54a6f39091778d65e750627980f53"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900156",
+        "version": "1.0.0",
+        "current_sha256": "e082aca7e57f75978b9b078acba4e526f48806a4d80b583a78ed187efe891c3e"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900157",
+        "version": "1.0.0",
+        "current_sha256": "34006e39607eddce9355c1dac2f88964ca27cad0de32cb03db0175961fcac4b4"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900158",
+        "version": "1.0.0",
+        "current_sha256": "fc22037bfbd14ca11175dfd6f06e4e007a1dd73044e802ff194181a7e41b750f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900159",
+        "version": "1.0.0",
+        "current_sha256": "a94163dafa78a73e190bd33762b9124b1048713a87ace30494eb5247f981efe6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900160",
+        "version": "1.0.0",
+        "current_sha256": "0dd37f556d82dbef671060bc758fe9d0ea987fcc7bdaf432e315616e8a1b7cbb"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900161",
+        "version": "1.0.0",
+        "current_sha256": "82a1d39144e01a20e813136d01b789cb64fcb5d115d8da75a7c3c9390d46893f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900162",
+        "version": "1.0.0",
+        "current_sha256": "617f5534afbc90ed4e1ad03cf50d42217485ebd2a48b8f222543f5457ae2a091"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900163",
+        "version": "1.0.0",
+        "current_sha256": "8f524b1a09e673acc3d0e33b0aacbc68adc18ee4484373c4041155a5cdfcb026"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900164",
+        "version": "1.0.0",
+        "current_sha256": "e5da674e7189d89a41a939c0d2231d5021d634fcd48406a54e5cb7ceee7f7a7c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900165",
+        "version": "1.0.0",
+        "current_sha256": "078758533a64f19c37351bda1493489dd661e9e6abbf27efd5aa2ec4dea08b98"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900166",
+        "version": "1.0.0",
+        "current_sha256": "3056ff5c9d4c48bda842e2cbb6fb42e8d814a2ddd69ef0edc1419eff5de3ba1e"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900167",
+        "version": "1.0.0",
+        "current_sha256": "f725ffcf9b272719d236323ab0a7a4e7627c09694e637aec3a5ed8eaff04341d"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900168",
+        "version": "1.0.0",
+        "current_sha256": "4fad48496d1c89023a99fdd70c21115f3dc78926ad013330996720b80ede4e63"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900169",
+        "version": "1.0.0",
+        "current_sha256": "3ffcbc5f1e1b1be3849f0d590437d255fb50b624774e414b81316763717b7732"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900170",
+        "version": "1.0.0",
+        "current_sha256": "c6d7c69ef264c1be84330d3a78132785f59f154d51afd1e31b88ad32072506dc"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900171",
+        "version": "1.0.0",
+        "current_sha256": "3c279435efb36d1659d6bbcb362be328e59e54c8d7e70a182d85b6dbf69e4caa"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900172",
+        "version": "1.0.0",
+        "current_sha256": "802752ea0eb0940856155b4e7a823bd78d6e1802d04e0cee6c263f1a829b5f3c"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900173",
+        "version": "1.0.0",
+        "current_sha256": "6bafb97908c2ead4e69413f4ad25aa5fc87d2185c1da0d479aea634da967bd40"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900174",
+        "version": "1.0.0",
+        "current_sha256": "53c550f53c2dc9f6c2cb70fe7ea5f25c978debdb403a089f3f80bc7d26d50541"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900175",
+        "version": "1.0.0",
+        "current_sha256": "c3c55387ec30f05ef0108dfd74aaa20109ab1b2ed56fba571f3c976abb0fc2d5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900176",
+        "version": "1.0.0",
+        "current_sha256": "14833745915b04afb8701ad926d569964f0a5a4aaf4480537b794358861278fd"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900177",
+        "version": "1.0.0",
+        "current_sha256": "3304539e005096badbae5cfe090f07cf117e8e19a5fb716392dcd0ae16ed16cf"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900178",
+        "version": "1.0.0",
+        "current_sha256": "38c0027b23365e203ca069f1b2bef76c93da131e61703a9cf2f4b730bfa47e37"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900179",
+        "version": "1.0.0",
+        "current_sha256": "7de23d201130bd8823cdc9f6568af66f974b571f204f57dd02478e4931daea22"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900180",
+        "version": "1.0.0",
+        "current_sha256": "4c0cec629731f264586d82cd12ac44e4fcbcbcc51d19032507d57eb5cda776d2"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.900181",
+        "version": "1.0.0",
+        "current_sha256": "e90733671ff34f057879b89a948fe620764b94f40f387134e9160703ac1b0c9f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800000",
+        "version": "1.0.0",
+        "current_sha256": "f209dfc6cb6a0f081067e2078e6ba20a908e93e849b87aef5ac8743038ead301"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800001",
+        "version": "1.0.0",
+        "current_sha256": "29054921a4d5d9fb5c262e101b25e19ba33826c74597cf1d4c79f6a50866f278"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800002",
+        "version": "1.0.0",
+        "current_sha256": "93975775bc1716e8fada2a86e96e13cb5b3adce80e440da27a980d7e07f8d170"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800003",
+        "version": "1.0.0",
+        "current_sha256": "6361c0f12d48b902714cb87e5a15197c87109985d1487a4029bd27d33eb0fd4f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800004",
+        "version": "1.0.0",
+        "current_sha256": "07e447bf0f2dc5eb001331ee096c999a6333ce0f4ffcc84b4b1850fc9f2fefe5"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800005",
+        "version": "1.0.0",
+        "current_sha256": "89178873a7010e7bea40ada2ea922d6007a2fbfdc62366c67c681f82b1fe4d0f"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800006",
+        "version": "1.0.0",
+        "current_sha256": "5d7966f8436276dac3972aac9b4446dc8c61c219725273172e28710e7af471f6"
+      },
+      {
+        "partition": "relationships.jsonl",
+        "id": "edge.800007",
+        "version": "1.0.0",
+        "current_sha256": "7c901796114e8ffbafccf236d1f91f3de32315efa5debc5ccb01d236b549e78f"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.fastapi.instruction_inventory",
+        "version": "1.0.0",
+        "current_sha256": "0d1a1977268123923bd662cce776206cf1cc20d85e98158ac447ae440f29a250"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.ripgrep.instruction_inventory",
+        "version": "1.0.0",
+        "current_sha256": "339db655a98b69b8938f87a913a55d44ade32cb3d412de458f9036a811992c24"
+      },
+      {
+        "partition": "sources.jsonl",
+        "id": "source.agents.instruction_inventory",
+        "version": "1.0.0",
+        "current_sha256": "e5ef4e7f928c5b874b7f93383f25356fef7132b74e6e683a85846a7f01a31438"
+      }
+    ],
+    "changed_count": 26,
+    "added_count": 193,
+    "relationship_status_counts": {
+      "active": 598,
+      "superseded": 3,
+      "superseded_ids": [
+        "edge.0054",
+        "edge.0114",
+        "edge.0164"
+      ]
+    }
+  },
+  "notes": [
+    "Stable record IDs were preserved; corrected content uses record versions and the change log.",
+    "Three out-of-scope repository applicability edges remain as superseded history rather than active candidates.",
+    "Added source and relationship records are enumerated by stable ID below.",
+    "No original 001/002 checkpoint ZIP is included in this package."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "selected_records": [
+    {
+      "record_id": "software_type.apis",
+      "status": "RECOMMENDED",
+      "reason": "The target is an authenticated network API; this category does not resolve feature or architecture choices.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.minimal_viable_structure",
+      "status": "CONDITIONAL",
+      "reason": "AWS workload-segmentation advice and Twelve-Factor process-state guidance have different scopes; choose only with project evidence.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "project-specific workload and organization evidence"
+      ]
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "status": "INCOMPLETE",
+      "reason": "The test file and workflow exist, but no candidate-bound run record is supplied.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "candidate identity",
+        "actual test execution artifact"
+      ]
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "INCOMPLETE",
+      "reason": "No candidate identity, completed gate evidence, or release approval is supplied.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "candidate identity",
+        "actual test execution artifact"
+      ]
+    }
+  ],
+  "gate_outcomes": {
+    "gate.unit_integration_execution": "INCOMPLETE",
+    "gate.release_readiness": "INCOMPLETE"
+  }
+}

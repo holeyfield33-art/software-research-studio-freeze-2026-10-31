@@ -1,0 +1,104 @@
+{
+  "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+  "deliverables": [
+    {
+      "deliverable_id": "deliverable.scope_requirements",
+      "phase": "discovery",
+      "name": "Scoped requirements and authority boundary",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Versioned goals, workflows, data sensitivity, user roles, action impact and acceptance criteria are documented; unknowns are explicit."
+      ],
+      "record_ids": [
+        "software_type.ai_agents",
+        "practice.requirements_traceability"
+      ],
+      "evidence_ids": [
+        "source.ai_agents.01"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.threat_model",
+      "phase": "design",
+      "name": "Trust-boundary and threat model",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "External content and model output are untrusted; data flows, read/write privileges, source-to-sink side effects, authorization, prompt injection, residual risks and approval triggers are documented."
+      ],
+      "record_ids": [
+        "arch.agent_tool_boundary",
+        "practice.threat_modeling",
+        "prompt.threat_model"
+      ],
+      "evidence_ids": [
+        "source.openai.prompt_injection",
+        "source.agents.instructions"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.authorization_controls",
+      "phase": "design",
+      "name": "Tool authorization and high-impact approval controls",
+      "status": "PROPOSED",
+      "acceptance_criteria": [
+        "Application-enforced allowlist, least privilege, schema/input validation, authorization checks and bounded iteration; explicit per-action human approval required for high-impact actions; no standing approval inferred."
+      ],
+      "record_ids": [
+        "arch.agent_tool_boundary"
+      ],
+      "evidence_ids": [
+        "source.openai.prompt_injection",
+        "source.agents.instructions"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.recovery_plan",
+      "phase": "design",
+      "name": "Rollback and recovery plan",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Name accountable owner, recovery target, health/stop thresholds, rollback mechanism and recovery test evidence before any release; topology and targets still missing."
+      ],
+      "record_ids": [
+        "gate.operational_rollback"
+      ],
+      "evidence_ids": [
+        "source.scrum.guide.2020",
+        "source.google.sre.release"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.validation_evidence",
+      "phase": "verification",
+      "name": "Candidate-bound test and CI evidence plan",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Define test cases for untrusted content, authorization bypass, bounded writes, duplicate/unsafe side effects, high-impact approval, recovery and sensitive-data handling; record candidate digest and actual logs/results. Do not equate authored assertions or CI configuration with execution."
+      ],
+      "record_ids": [
+        "practice.test_strategy",
+        "practice.ci_reproducible_release",
+        "gate.unit_integration_execution"
+      ],
+      "evidence_ids": [
+        "source.agents.test",
+        "source.agents.ci"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.release_decision",
+      "phase": "release",
+      "name": "Release readiness decision",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "No release or deployment until candidate identity, required test/security/operational evidence, explicit owner disposition and approval are recorded; no gate PASS asserted."
+      ],
+      "record_ids": [
+        "gate.release_readiness"
+      ],
+      "evidence_ids": [
+        "source.agents.ci"
+      ]
+    }
+  ]
+}

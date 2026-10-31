@@ -1,0 +1,63 @@
+{
+  "output_version": "1.0.0",
+  "input_sha256": "6d80886764aa964316d3fd289cb39164344b2d709e5907276e0d9809c0a0abfe",
+  "rejected_records": [
+    {
+      "record_id": "arch.event_queue",
+      "status": "INCOMPLETE",
+      "rule_id": "R-API-003",
+      "reason_code": "QUEUE_JUSTIFICATION_OR_OWNER_MISSING"
+    },
+    {
+      "record_id": "arch.multitenancy_isolation",
+      "status": "CONDITIONAL",
+      "rule_id": "R-API-002",
+      "reason_code": "TENANCY_NOT_REQUIRED"
+    }
+  ],
+  "feature_decisions": [
+    {
+      "decision_id": "feature.authentication",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-001",
+      "reason_code": "EXPLICIT_AUTHENTICATED_USER_REQUIREMENT"
+    },
+    {
+      "decision_id": "feature.authorization",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-001",
+      "reason_code": "EXPLICIT_ROLE_AUTHORIZATION_REQUIREMENT"
+    },
+    {
+      "decision_id": "feature.billing",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.kubernetes",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.microservices",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.queue",
+      "status": "INCOMPLETE",
+      "rule_id": "R-API-003",
+      "reason_code": "QUEUE_JUSTIFICATION_OR_OWNER_MISSING"
+    }
+  ],
+  "authority_decisions": [],
+  "unsupported_categories": [],
+  "missing_or_unknown_facts": [],
+  "unknown_fact_ids": [],
+  "conflicting_fact_ids": [],
+  "schema_errors": [],
+  "unverified_evidence_facts": []
+}

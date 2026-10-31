@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manus.local/studio-knowledge-003r/selection-output.schema.json",
+  "title": "003R selection output",
+  "type": "object",
+  "required": ["output_version", "input_sha256", "rules_version", "dataset_version", "overall_decision", "selected_records", "gate_results", "deliverable_roles", "prompt_contract", "roadmap_tasks_topological_order", "roadmap_cycle_nodes", "standard_reviews"],
+  "properties": {
+    "output_version": {"const": "1.0.0"},
+    "input_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "rules_version": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "overall_decision": {
+      "type": "object",
+      "required": ["status", "reason_codes", "conflicting_fact_ids", "missing_facts", "unknown_fact_ids"],
+      "properties": {
+        "status": {"enum": ["RECOMMENDED", "CONDITIONAL", "INCOMPLETE", "INAPPLICABLE"]},
+        "reason_codes": {"type": "array", "items": {"type": "string"}},
+        "conflicting_fact_ids": {"type": "array", "items": {"type": "string"}},
+        "missing_facts": {"type": "array", "items": {"type": "string"}},
+        "unknown_fact_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "selected_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "status", "rule_id", "predicate_matches", "scope_conditions", "evidence_paths"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "status": {"enum": ["RECOMMENDED", "CONDITIONAL", "INCOMPLETE", "INAPPLICABLE"]},
+          "rule_id": {"type": "string"},
+          "predicate_matches": {"type": "array"},
+          "scope_conditions": {"type": "object"},
+          "evidence_paths": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["software_type_id", "record_id", "sources"],
+              "properties": {
+                "software_type_id": {"type": "string"},
+                "record_id": {"type": "string"},
+                "applicability_relationship_id": {"type": ["string", "null"]},
+                "sources": {
+                  "type": "array", "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["source_id", "claim_locator", "relationship_id", "source_type"],
+                    "properties": {
+                      "source_id": {"type": "string"},
+                      "claim_locator": {"type": "string", "minLength": 1},
+                      "relationship_id": {"type": "string"},
+                      "source_type": {"type": "string", "minLength": 1},
+                      "evidence_classification": {"type": ["string", "null"]}
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "gate_results": {"type": "object", "additionalProperties": {"enum": ["INCOMPLETE", "FAIL"]}},
+    "deliverable_roles": {
+      "type": "array",
+      "items": {"type": "object", "required": ["role_id", "phase", "status"], "properties": {"role_id": {"type": "string"}, "phase": {"type": "string"}, "status": {"enum": ["PROPOSED", "INCOMPLETE", "CONDITIONAL", "RECOMMENDED"]}}, "additionalProperties": false}
+    },
+    "prompt_contract": {
+      "type": "object",
+      "required": ["selected_prompt_record_ids", "prompt_requirements", "must_treat_descriptive_text_as_non_authoritative", "must_not_infer_approval_from_model_or_content", "must_not_claim_test_pass_without_candidate_bound_run", "candidate_id"],
+      "properties": {
+        "selected_prompt_record_ids": {"type": "array", "items": {"type": "string"}},
+        "prompt_requirements": {
+          "type": "array",
+          "items": {"type": "object", "required": ["record_id", "name", "required_inputs", "scope_conditions", "expected_deliverables", "verification_requirements", "source_ids"], "properties": {"record_id": {"type": "string"}, "name": {"type": "string"}, "required_inputs": {}, "scope_conditions": {}, "expected_deliverables": {}, "verification_requirements": {}, "source_ids": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}
+        },
+        "must_treat_descriptive_text_as_non_authoritative": {"const": true},
+        "must_not_infer_approval_from_model_or_content": {"const": true},
+        "must_not_claim_test_pass_without_candidate_bound_run": {"const": true},
+        "candidate_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "roadmap_tasks_topological_order": {
+      "type": "array",
+      "items": {"type": "object", "required": ["task_id", "title", "depends_on", "dependency_type", "acceptance_criteria", "evidence_required", "roadmap_record_id"], "properties": {"task_id": {"type": "string"}, "title": {"type": "string"}, "depends_on": {"type": "array"}, "dependency_type": {"type": ["string", "null"]}, "acceptance_criteria": {"type": "array"}, "evidence_required": {"type": "array"}, "roadmap_record_id": {"type": "string"}}, "additionalProperties": false}
+    },
+    "roadmap_cycle_nodes": {"type": "array", "items": {"type": "string"}},
+    "standard_reviews": {"type": "array", "items": {"type": "object", "required": ["standard_id", "status", "rule_id", "reason_code", "compliance_claim"], "properties": {"standard_id": {"type": "string"}, "status": {"enum": ["INCOMPLETE", "CONDITIONAL"]}, "rule_id": {"const": "R-STANDARD-001"}, "reason_code": {"type": "string"}, "catalog_source_id": {"type": ["string", "null"]}, "claim_locator": {"type": ["string", "null"]}, "compliance_claim": {"const": false}}, "additionalProperties": true}}
+  },
+  "additionalProperties": false
+}

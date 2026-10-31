@@ -1,0 +1,215 @@
+{
+  "input_contract_version": "1.0.0",
+  "software_type_ids": [
+    "software_type.cli_tools",
+    "software_type.libraries"
+  ],
+  "facts": [
+    {
+      "fact_id": "account_boundary",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "api_gateway_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "async_queue_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "authentication_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "candidate_identified",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "cloud_hosting_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "container_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "database_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "destructive_overwrite_requested",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "destructive_write_authorized",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "distinct_responsibilities",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "distribution_target_known",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_requirement"
+    },
+    {
+      "fact_id": "library_distribution_requested",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_requirement"
+    },
+    {
+      "fact_id": "local_filesystem_input",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "multi_tenant",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "network_service_boundary",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "network_upload_authorized",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "network_upload_requested",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "offline_only",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "package_distribution_planned",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_requirement"
+    },
+    {
+      "fact_id": "persistent_shared_state",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "reference_example_requested",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "release_plan_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "selected_dependencies_known",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "service_deployment_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_requirement"
+    },
+    {
+      "fact_id": "tenant_boundary",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "tests_executed",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    }
+  ],
+  "authority": {
+    "high_impact_approver": {
+      "state": "unknown",
+      "principal_id": null,
+      "evidence_id": null
+    },
+    "write_scope_authorized": {
+      "state": "unknown",
+      "principal_id": null,
+      "evidence_id": null
+    }
+  },
+  "evidence": {
+    "candidate": {
+      "state": "unknown",
+      "candidate_id": null
+    },
+    "tests": {
+      "state": "false",
+      "candidate_id": null,
+      "execution_record_id": null,
+      "result": "not_run"
+    },
+    "approval": {
+      "state": "unknown",
+      "approval_record_id": null,
+      "approver_id": null
+    }
+  },
+  "standards": [],
+  "descriptive_text": {
+    "text": "Offline file-processing CLI with local filesystem input only; no network, service, account, or tenant boundary. No destructive-write behavior is authorized. Packaging and local recovery are conditional on distribution and write behavior. No tests, CI, or release execution occurred.",
+    "authority": "non_authoritative"
+  },
+  "missing_inputs": [
+    "acceptance examples and performance constraints",
+    "packaging/distribution target",
+    "precise file formats and size limits",
+    "recovery requirements if future writes are authorized",
+    "selected dependencies and credential/build-input use",
+    "target platforms and runtime/toolchain",
+    "tests have not been executed",
+    "whether results are stdout, a new output path, or in-place changes"
+  ]
+}

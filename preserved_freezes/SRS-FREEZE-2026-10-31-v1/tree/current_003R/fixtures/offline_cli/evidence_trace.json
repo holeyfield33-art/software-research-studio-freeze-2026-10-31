@@ -1,0 +1,732 @@
+{
+  "fixture_id": "offline_file_processing_cli_003",
+  "traces": [
+    {
+      "knowledge_record_id": "software_type.cli_tools",
+      "source_id": "source.cli_tools.01",
+      "path": [
+        "software_type.cli_tools",
+        "source.cli_tools.01"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "Introduction; Philosophy > Human-first design and Simple parts that work together; Ease of discovery; Signals and control characters; Help; Documentation",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "software_type.cli_tools",
+      "source_id": "source.cli_tools.02",
+      "path": [
+        "software_type.cli_tools",
+        "source.cli_tools.02"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "README.md at commit adbc8813901bba65827259daa8e22ff94ec1f30e, sections Overview and Concepts",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "software_type.cli_tools",
+      "source_id": "source.cli_tools.03",
+      "path": [
+        "software_type.cli_tools",
+        "source.cli_tools.03"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "README.md at commit 91f5d22ef48bde459d90a8c7dbeab416e97d0f2b, opening description; sections Quick examples comparing tools and feature overview",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "software_type.cli_tools",
+      "source_id": "source.cli_tools.04",
+      "path": [
+        "software_type.cli_tools",
+        "source.cli_tools.04"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "NAME; DESCRIPTION; Documentation tests; OPTIONS > Test Options",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "arch.minimal_viable_structure",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.aws.segment_workload",
+      "path": [
+        "software_type.cli_tools",
+        "arch.minimal_viable_structure",
+        "source.aws.segment_workload"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Page heading and opening scope; Implementation guidance; Common anti-patterns; closing implementation guidance",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.12factor.processes",
+      "path": [
+        "software_type.cli_tools",
+        "arch.minimal_viable_structure",
+        "source.12factor.processes"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "VI. Processes; Execute the app as one or more stateless processes",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.requirements_traceability",
+      "source_id": "source.nasa.npr7150_2d.ch4",
+      "path": [
+        "software_type.cli_tools",
+        "practice.requirements_traceability",
+        "source.nasa.npr7150_2d.ch4"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.requirements_traceability",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "practice.requirements_traceability",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.test_strategy",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "practice.test_strategy",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.test_strategy",
+      "source_id": "source.fastapi.tests",
+      "path": [
+        "software_type.cli_tools",
+        "practice.test_strategy",
+        "source.fastapi.tests"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "practice.test_strategy",
+      "source_id": "source.ripgrep.regression",
+      "path": [
+        "software_type.cli_tools",
+        "practice.test_strategy",
+        "source.ripgrep.regression"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "practice.test_strategy",
+      "source_id": "source.agents.test",
+      "path": [
+        "software_type.cli_tools",
+        "practice.test_strategy",
+        "source.agents.test"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "practice.dependency_secret_handling",
+      "source_id": "source.github.dep_review",
+      "path": [
+        "software_type.cli_tools",
+        "practice.dependency_secret_handling",
+        "source.github.dep_review"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "About dependency review; enabling dependency review; dependency review action",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.dependency_secret_handling",
+      "source_id": "source.slsa.v1.verify",
+      "path": [
+        "software_type.cli_tools",
+        "practice.dependency_secret_handling",
+        "source.slsa.v1.verify"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "How to verify; check SLSA build level; check expectations; optional recursive dependency check",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "practice.dependency_secret_handling",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "practice.dependency_secret_handling",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.discovery_scope",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.discovery_scope",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.discovery_scope",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.discovery_scope",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.requirements_risk",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.requirements_risk",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.requirements_risk",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.requirements_risk",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.architecture_design",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.architecture_design",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.architecture_design",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.architecture_design",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.implementation",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.implementation",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.implementation",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.implementation",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.verification",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.verification",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "sdlc.verification",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.cli_tools",
+        "sdlc.verification",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "gate.requirements_acceptance",
+      "source_id": "source.nasa.npr7150_2d.ch4",
+      "path": [
+        "software_type.cli_tools",
+        "gate.requirements_acceptance",
+        "source.nasa.npr7150_2d.ch4"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "gate.requirements_acceptance",
+      "source_id": "source.scrum.guide.2020",
+      "path": [
+        "software_type.cli_tools",
+        "gate.requirements_acceptance",
+        "source.scrum.guide.2020"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.fastapi.tests",
+      "path": [
+        "software_type.cli_tools",
+        "gate.unit_integration_execution",
+        "source.fastapi.tests"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.ripgrep.regression",
+      "path": [
+        "software_type.cli_tools",
+        "gate.unit_integration_execution",
+        "source.ripgrep.regression"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.agents.test",
+      "path": [
+        "software_type.cli_tools",
+        "gate.unit_integration_execution",
+        "source.agents.test"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "gate.unit_integration_execution",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "roadmap.smallest_releasable_increment",
+      "source_id": "source.scrum.guide.2020",
+      "path": [
+        "software_type.cli_tools",
+        "roadmap.smallest_releasable_increment",
+        "source.scrum.guide.2020"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "roadmap.smallest_releasable_increment",
+      "source_id": "source.fastapi.tests",
+      "path": [
+        "software_type.cli_tools",
+        "roadmap.smallest_releasable_increment",
+        "source.fastapi.tests"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "roadmap.dependency_aware_sequence",
+      "source_id": "source.scrum.guide.2020",
+      "path": [
+        "software_type.cli_tools",
+        "roadmap.dependency_aware_sequence",
+        "source.scrum.guide.2020"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "roadmap.dependency_aware_sequence",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "roadmap.dependency_aware_sequence",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.implement_scoped_task",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.implement_scoped_task",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.implement_scoped_task",
+      "source_id": "source.owasp.tm.cheatsheet",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.implement_scoped_task",
+        "source.owasp.tm.cheatsheet"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.implement_scoped_task",
+      "source_id": "source.agents.instructions",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.implement_scoped_task",
+        "source.agents.instructions"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "prompt.implement_scoped_task",
+      "source_id": "source.openai.prompting_codex",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.implement_scoped_task",
+        "source.openai.prompting_codex"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.implement_scoped_task",
+      "source_id": "source.github.copilot_task_practices",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.implement_scoped_task",
+        "source.github.copilot_task_practices"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.add_test",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.add_test",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.add_test",
+      "source_id": "source.owasp.tm.cheatsheet",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.add_test",
+        "source.owasp.tm.cheatsheet"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "prompt.add_test",
+      "source_id": "source.agents.instructions",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.add_test",
+        "source.agents.instructions"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "prompt.add_test",
+      "source_id": "source.openai.prompting_codex",
+      "path": [
+        "software_type.cli_tools",
+        "prompt.add_test",
+        "source.openai.prompting_codex"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "reference.ripgrep",
+      "source_id": "source.ripgrep.readme",
+      "path": [
+        "software_type.cli_tools",
+        "reference.ripgrep",
+        "source.ripgrep.readme"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Product description; performance rationale; building/testing",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "reference.ripgrep",
+      "source_id": "source.ripgrep.regression",
+      "path": [
+        "software_type.cli_tools",
+        "reference.ripgrep",
+        "source.ripgrep.regression"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "reference.ripgrep",
+      "source_id": "source.ripgrep.release",
+      "path": [
+        "software_type.cli_tools",
+        "reference.ripgrep",
+        "source.ripgrep.release"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "reference.ripgrep",
+      "source_id": "source.ripgrep.instruction_inventory",
+      "path": [
+        "software_type.cli_tools",
+        "reference.ripgrep",
+        "source.ripgrep.instruction_inventory"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Git tree recursive endpoint plus root/subtree traversal; checked named agent-guidance paths",
+      "evidence_classification": "observed_repository_file"
+    }
+  ]
+}

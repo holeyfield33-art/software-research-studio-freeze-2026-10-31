@@ -1,0 +1,18 @@
+{
+  "migration": "STUDIO-KNOWLEDGE-003",
+  "baseline_record_index": "research/record-index-002.json",
+  "completed_on_utc_date": "2026-10-31",
+  "dataset_jsonl_sha256": {
+    "architecture_patterns.jsonl": "163677756cd30a08bbd5b0952915e8c981fd3aefc628fc8a9f524c679d7e2b39",
+    "engineering_practices.jsonl": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66",
+    "prompt_patterns.jsonl": "db5406b61cbb38f7d857065dafd9e287cfd32d4215ea2e53de103731dd8648ab",
+    "reference_projects.jsonl": "0fd1c4621a16136fb5750da78f7ac7d32490d3655c2bb3827350459530889171",
+    "relationships.jsonl": "05e8b75a515c2a586ffd798af8162a0effa200bc47e9e5bc292a23d0b6cbaec6",
+    "roadmap_patterns.jsonl": "ffc58f804d848f25b626fa6240ff40c375d863969ebf449b06d703fe43dd8a41",
+    "sdlc_stages.jsonl": "614662541ad76977a4a305fd500e70bce5973680d2941b30869c7f3f27fe29d5",
+    "software_types.jsonl": "5a59f96ddfc493d67867d46279ff27cb6626cd7ee27f3dbc5772dfeb149559ec",
+    "sources.jsonl": "9546a38f0b63fad87af49af995b1cbfa1393549e95d9236ea941d07d41a7b9b1",
+    "verification_gates.jsonl": "c6bca575a05382f66fb53d062c48c51a5b2c4cfb93bd8d53b9da8b0eb15bac5a"
+  },
+  "marker_note": "Created after the prior 003 migration had completed and passed; prevents any rerun from overwriting future user enrichment."
+}

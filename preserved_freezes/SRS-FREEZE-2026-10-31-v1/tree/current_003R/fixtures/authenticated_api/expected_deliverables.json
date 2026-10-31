@@ -1,0 +1,96 @@
+{
+  "fixture_id": "fixture.authenticated_single_service_api",
+  "deliverables": [
+    {
+      "deliverable_id": "deliverable.scope",
+      "phase": "discovery",
+      "name": "Scope and assumptions",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Single service; API boundary, roles, persisted records, exclusions, and unresolved choices recorded."
+      ],
+      "record_ids": [
+        "sdlc.discovery_scope",
+        "sdlc.requirements_risk",
+        "software_type.apis"
+      ],
+      "evidence_ids": [
+        "source.apis.01",
+        "source.apis.02",
+        "source.apis.03"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.design",
+      "phase": "design",
+      "name": "API and security design",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Define operations, authorization decisions, data ownership, and persistence behavior without presuming database/token/gateway/deployment."
+      ],
+      "record_ids": [
+        "arch.client_server_api_boundary",
+        "arch.minimal_viable_structure",
+        "practice.threat_modeling",
+        "sdlc.architecture_design"
+      ],
+      "evidence_ids": [
+        "source.apis.02",
+        "source.apis.03"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.implementation",
+      "phase": "implementation",
+      "name": "Service implementation plan",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Implement scoped endpoints and role checks with reviewable changes; no execution asserted."
+      ],
+      "record_ids": [
+        "sdlc.implementation",
+        "practice.version_control_review",
+        "prompt.implement_scoped_task"
+      ],
+      "evidence_ids": [
+        "source.nist.ssdf.v1_1"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.tests",
+      "phase": "verification",
+      "name": "Verification plan and evidence",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Author tests for allowed/denied roles, persistence behavior and HTTP responses; record actual runs before any pass claim."
+      ],
+      "record_ids": [
+        "practice.test_strategy",
+        "gate.unit_integration_execution",
+        "prompt.add_test",
+        "reference.fastapi"
+      ],
+      "evidence_ids": [
+        "source.fastapi.tests"
+      ]
+    },
+    {
+      "deliverable_id": "deliverable.release",
+      "phase": "release",
+      "name": "Release readiness evidence",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Verify candidate, CI/test execution, approval and recovery evidence before release; all remain incomplete."
+      ],
+      "record_ids": [
+        "sdlc.release",
+        "gate.release_readiness",
+        "gate.dependency_provenance",
+        "roadmap.smallest_releasable_increment"
+      ],
+      "evidence_ids": [
+        "source.fastapi.ci"
+      ]
+    }
+  ]
+}

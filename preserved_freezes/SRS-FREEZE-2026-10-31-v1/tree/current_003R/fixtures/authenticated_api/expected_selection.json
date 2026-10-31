@@ -1,0 +1,300 @@
+{
+  "fixture_id": "fixture.authenticated_single_service_api",
+  "selected_records": [
+    {
+      "record_id": "software_type.apis",
+      "status": "RECOMMENDED",
+      "reason": "Network interfaces with explicit operations, request/response behavior, authentication and authorization; HTTP, OpenAPI, gateways and persistence are conditional choices.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.minimal_viable_structure",
+      "status": "RECOMMENDED",
+      "reason": "Start with the simplest architecture that satisfies validated needs; preserve module boundaries for change.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.single_service"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.client_server_api_boundary",
+      "status": "RECOMMENDED",
+      "reason": "Separate client interface from server-side domain and authorization boundaries when networked behavior is needed.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.authenticated_users",
+          "attributes.role_based_authorization"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.layered_modular",
+      "status": "RECOMMENDED",
+      "reason": "Separate responsibilities where change ownership or testability benefits outweigh indirection.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.single_service"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "status": "RECOMMENDED",
+      "reason": "Link stakeholder needs and risk controls to implementation and evidence.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.authenticated_users"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.version_control_review",
+      "status": "RECOMMENDED",
+      "reason": "Use controlled history and proportionate peer review for changes.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "status": "RECOMMENDED",
+      "reason": "Select test levels and cases from requirements, risk and architecture.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.authenticated_users",
+          "attributes.persisted_records"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.threat_modeling",
+      "status": "RECOMMENDED",
+      "reason": "Identify assets, trust boundaries, abuse paths and mitigations early and on material change.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.authenticated_users"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.ci_reproducible_release",
+      "status": "RECOMMENDED",
+      "reason": "Automate repeatable checks and bind release evidence to a candidate.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.discovery_scope",
+      "status": "RECOMMENDED",
+      "reason": "Establish intended users, outcomes, boundaries, constraints and unresolved assumptions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.requirements_risk",
+      "status": "RECOMMENDED",
+      "reason": "Define testable needs and risk assumptions before design commitments.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.architecture_design",
+      "status": "RECOMMENDED",
+      "reason": "Select the smallest structure that satisfies known requirements and quality attributes.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.implementation",
+      "status": "RECOMMENDED",
+      "reason": "Make scoped changes with reviewable history and controlled dependencies.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.verification",
+      "status": "RECOMMENDED",
+      "reason": "Evaluate the candidate against requirements and risk controls using actual evidence.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.release",
+      "status": "RECOMMENDED",
+      "reason": "Authorize and deliver a known candidate through a controlled, recoverable process.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "roadmap.smallest_releasable_increment",
+      "status": "RECOMMENDED",
+      "reason": "Sequence a coherent, testable increment that delivers usable value, with prerequisite enablers explicit.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "status": "RECOMMENDED",
+      "reason": "Represent tasks and prerequisites as a directed graph; distinguish hard prerequisites from optional enhancements.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.add_test",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.review_change",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.threat_model",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "status": "RECOMMENDED",
+      "reason": "Verify stated acceptance criteria and requirement ownership before implementation/release.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "status": "RECOMMENDED",
+      "reason": "Review threats and unresolved risks for changes within selected threat-model scope.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "status": "RECOMMENDED",
+      "reason": "Evaluate required tests against the candidate build/revision.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.dependency_provenance",
+      "status": "RECOMMENDED",
+      "reason": "Review dependency changes and artifact provenance under project policy.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "RECOMMENDED",
+      "reason": "Confirm release candidate, required checks, approvals and communications are complete.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "reference.fastapi",
+      "status": "CONDITIONAL",
+      "reason": "Observed Python API framework repository at pinned commit 192b12197eb04c2b4a691cce7d87261b21716714. README documents framework and dependencies; tests include TestClient/status/schema assertions; CI declares matrix and coverage jobs. No tests were run.",
+      "branch_condition": {
+        "all_true": [
+          "attributes.single_service"
+        ],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "language/framework selection"
+      ]
+    }
+  ],
+  "gate_outcomes": {
+    "gate.requirements_acceptance": "INCOMPLETE",
+    "gate.security_risk_review": "INCOMPLETE",
+    "gate.unit_integration_execution": "INCOMPLETE",
+    "gate.dependency_provenance": "INCOMPLETE",
+    "gate.release_readiness": "INCOMPLETE"
+  }
+}

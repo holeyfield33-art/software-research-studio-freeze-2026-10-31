@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://studio-knowledge.example/schemas/selector-input.schema.json",
+  "title":"003R structured selection brief",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["input_contract_version","software_type_ids","facts","authority","evidence","standards","descriptive_text","missing_inputs"],
+  "properties":{
+    "input_contract_version":{"const":"1.0.0"},
+    "software_type_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^software_type\\.[a-z0-9_]+$"}},
+    "facts":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/fact"}},
+    "authority":{"type":"object","additionalProperties":false,"required":["high_impact_approver","write_scope_authorized"],"properties":{"high_impact_approver":{"$ref":"#/$defs/authorityFact"},"write_scope_authorized":{"$ref":"#/$defs/authorityFact"}}},
+    "evidence":{"type":"object","additionalProperties":false,"required":["candidate","tests","approval"],"properties":{"candidate":{"type":"object","additionalProperties":false,"required":["state","candidate_id"],"properties":{"state":{"enum":["true","false","unknown"]},"candidate_id":{"type":["string","null"]}}},"tests":{"type":"object","additionalProperties":false,"required":["state","candidate_id","execution_record_id","result"],"properties":{"state":{"enum":["true","false","unknown"]},"candidate_id":{"type":["string","null"]},"execution_record_id":{"type":["string","null"]},"result":{"enum":["not_run","passed","failed","unknown"]}}},"approval":{"type":"object","additionalProperties":false,"required":["state","approval_record_id","approver_id"],"properties":{"state":{"enum":["true","false","unknown"]},"approval_record_id":{"type":["string","null"]},"approver_id":{"type":["string","null"]}}}}},
+    "standards":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["standard_id","requested","requested_edition","organization_adoption","evidence_id"],"properties":{"standard_id":{"type":"string","minLength":1},"requested":{"type":"boolean"},"requested_edition":{"type":["string","null"]},"organization_adoption":{"enum":["true","false","unknown"]},"evidence_id":{"type":["string","null"]}}}},
+    "descriptive_text":{"type":"object","additionalProperties":false,"required":["text","authority"],"properties":{"text":{"type":"string"},"authority":{"const":"non_authoritative"}}},
+    "missing_inputs":{"type":"array","items":{"type":"string"},"uniqueItems":true}
+  },
+  "$defs":{
+    "fact":{"type":"object","additionalProperties":false,"required":["fact_id","state","scope","origin"],"properties":{"fact_id":{"type":"string","pattern":"^[a-z][a-z0-9_]*$"},"state":{"enum":["true","false","unknown"]},"scope":{"type":"string","minLength":1},"origin":{"enum":["explicit_scope","explicit_requirement","verified_evidence","not_provided"]},"evidence_ref":{"type":["string","null"]}}},
+    "authorityFact":{"type":"object","additionalProperties":false,"required":["state","principal_id","evidence_id"],"properties":{"state":{"enum":["true","false","unknown"]},"principal_id":{"type":["string","null"]},"evidence_id":{"type":["string","null"]}}}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "project": "STUDIO-KNOWLEDGE-003R",
+  "scope": "research-only deterministic selector calibration; no Stage 004 or Studio integration",
+  "status": "PASS",
+  "dataset_integrity": {
+    "status": "PASS",
+    "errors": 0,
+    "all_001_ids_preserved": true,
+    "all_002_ids_preserved": true,
+    "003_parent_dataset_unchanged": true,
+    "003_parent_dataset_member_count": 10
+  },
+  "fixture_integrity": {
+    "status": "PASS",
+    "fixture_count": 4
+  },
+  "selection_reliability": {
+    "cases": 13,
+    "frozen_oracle_pass": 13,
+    "frozen_oracle_fail": 0,
+    "cleanroom_no_oracle_access": "PASS"
+  },
+  "safety_abstention": {
+    "negative_controls": 5,
+    "status": "PASS",
+    "mutation_controls": 4,
+    "mutation_status": "PASS",
+    "gate_PASS_emitted": false
+  },
+  "studio_integration_readiness": "NO-GO / NOT STARTED",
+  "stage_004_authorized": false,
+  "limitations": [
+    "Only three calibrated archetypes are represented, with one base case each and nine+ structured counterfactual cases.",
+    "No product runtime, tests, CI, deployment, release, or compliance outcome is claimed.",
+    "Passing these research checks is not authorization for production or Studio integration."
+  ]
+}

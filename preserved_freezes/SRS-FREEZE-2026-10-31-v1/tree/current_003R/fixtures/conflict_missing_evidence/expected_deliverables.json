@@ -1,0 +1,31 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "deliverables": [
+    {
+      "deliverable_id": "negative-control-abstention",
+      "phase": "verification",
+      "name": "Scoped evidence disposition",
+      "status": "INCOMPLETE",
+      "acceptance_criteria": [
+        "Keep every evidence claim within source scope.",
+        "Resolve the organization’s standard adoption and review the relevant normative text before asserting conformance.",
+        "Do not mark a test gate PASS without a candidate-bound execution record.",
+        "Keep architecture selection conditional on project-specific workload and operational evidence."
+      ],
+      "record_ids": [
+        "software_type.apis",
+        "arch.minimal_viable_structure",
+        "gate.unit_integration_execution",
+        "gate.release_readiness"
+      ],
+      "evidence_ids": [
+        "source.mobile_applications.01",
+        "source.iso.12207.2026.summary",
+        "source.fastapi.tests",
+        "source.fastapi.ci",
+        "source.aws.segment_workload",
+        "source.12factor.processes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "oracle_cases": 13,
+  "oracle_pass": 13,
+  "oracle_fail": 0,
+  "case_results": [
+    {
+      "case": "base_ai_agent",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "base_authenticated_api",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "base_offline_cli",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "agent_no_write_tool",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "agent_write_no_approver",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "agent_production_without_candidate_tests",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "api_public_read_only",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "api_explicit_multitenant",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "api_queue_without_justification",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "api_changed_standard_edition",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "cli_destructive_overwrite_unauthorized",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "cli_network_upload_unknown_scope",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "cli_library_distribution_no_service",
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "negative_controls": {
+    "count": 5,
+    "status": "PASS",
+    "errors": []
+  },
+  "cleanroom_no_oracle_access": "PASS"
+}

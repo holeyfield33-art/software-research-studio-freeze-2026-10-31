@@ -1,0 +1,183 @@
+{
+  "fixture_id": "offline_file_processing_cli_003",
+  "selected_records": [
+    {
+      "record_id": "software_type.cli_tools",
+      "status": "RECOMMENDED",
+      "reason": "Terminal-operated software with command/input contracts, predictable exit status and output streams; packaging and safeguards depend on user, platform and privilege.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.minimal_viable_structure",
+      "status": "RECOMMENDED",
+      "reason": "Start with the simplest architecture that satisfies validated needs; preserve module boundaries for change.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "status": "RECOMMENDED",
+      "reason": "Link stakeholder needs and risk controls to implementation and evidence.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "status": "RECOMMENDED",
+      "reason": "Select test levels and cases from requirements, risk and architecture.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.dependency_secret_handling",
+      "status": "CONDITIONAL",
+      "reason": "Know dependencies and protect credentials and build inputs.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "selected dependencies and credential/build-input use"
+      ]
+    },
+    {
+      "record_id": "sdlc.discovery_scope",
+      "status": "RECOMMENDED",
+      "reason": "Establish intended users, outcomes, boundaries, constraints and unresolved assumptions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.requirements_risk",
+      "status": "RECOMMENDED",
+      "reason": "Define testable needs and risk assumptions before design commitments.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.architecture_design",
+      "status": "RECOMMENDED",
+      "reason": "Select the smallest structure that satisfies known requirements and quality attributes.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.implementation",
+      "status": "RECOMMENDED",
+      "reason": "Make scoped changes with reviewable history and controlled dependencies.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "sdlc.verification",
+      "status": "RECOMMENDED",
+      "reason": "Evaluate the candidate against requirements and risk controls using actual evidence.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "status": "INCOMPLETE",
+      "reason": "Verify stated acceptance criteria and requirement ownership before implementation/release.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "status": "INCOMPLETE",
+      "reason": "Evaluate required tests against the candidate build/revision.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "roadmap.smallest_releasable_increment",
+      "status": "RECOMMENDED",
+      "reason": "Sequence a coherent, testable increment that delivers usable value, with prerequisite enablers explicit.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "status": "RECOMMENDED",
+      "reason": "Represent tasks and prerequisites as a directed graph; distinguish hard prerequisites from optional enhancements.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.add_test",
+      "status": "RECOMMENDED",
+      "reason": "Reusable prompt contract for a bounded coding workflow; must be rendered with project context and validated permissions.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": [
+        "tests have not been executed"
+      ]
+    },
+    {
+      "record_id": "reference.ripgrep",
+      "status": "RECOMMENDED",
+      "reason": "Observed CLI repository at pinned commit 91f5d22ef48bde459d90a8c7dbeab416e97d0f2b. README/GUIDE describe behavior; regression test source and tag-based release workflow are present. No tests or release were run.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    }
+  ],
+  "gate_outcomes": {
+    "gate.requirements_acceptance": "INCOMPLETE",
+    "gate.unit_integration_execution": "INCOMPLETE"
+  }
+}

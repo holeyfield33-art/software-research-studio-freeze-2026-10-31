@@ -1,0 +1,28 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "rejected_requirements": [
+    {
+      "requirement_id": "apply_mobile_source_to_api",
+      "reason": "The source is stack-specific and is not evidence for the API target.",
+      "source_record_ids": [
+        "source.mobile_applications.01"
+      ]
+    },
+    {
+      "requirement_id": "claim_tests_passed_from_repository_presence",
+      "reason": "A source file and workflow configuration are not a candidate-bound execution record.",
+      "source_record_ids": [
+        "source.fastapi.tests",
+        "source.fastapi.ci"
+      ]
+    },
+    {
+      "requirement_id": "requirement.unknown_telemetry_target",
+      "reason": "No stable catalog match exists; abstain rather than infer an unsupported requirement.",
+      "source_record_ids": [
+        "source.github.copilot_task_practices"
+      ]
+    }
+  ],
+  "rejected_records": []
+}

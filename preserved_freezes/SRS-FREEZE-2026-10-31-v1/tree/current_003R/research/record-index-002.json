@@ -1,0 +1,2632 @@
+{
+  "architecture_patterns.jsonl": [
+    {
+      "id": "arch.minimal_viable_structure",
+      "version": "1.1.0",
+      "canonical_sha256": "238a2a837fbf2ff6006a37a9fa5eae3e3ca87c30a16c3aa32be10a204953e2e0"
+    },
+    {
+      "id": "arch.client_server_api_boundary",
+      "version": "1.1.0",
+      "canonical_sha256": "31cd02ef6bf3dfc7d709afbeb2273384c490fd85c9696a262b61f1d1756739f8"
+    },
+    {
+      "id": "arch.layered_modular",
+      "version": "1.1.0",
+      "canonical_sha256": "e44508b84451413b909e87e489b150b64566b804f3d00bd98595c2e74d883605"
+    },
+    {
+      "id": "arch.event_queue",
+      "version": "1.1.0",
+      "canonical_sha256": "57b8350da5510ac3a4927e0254ebec7c8bbc0c365b8b19a8db17318b3a8fcb13"
+    },
+    {
+      "id": "arch.multitenancy_isolation",
+      "version": "1.1.0",
+      "canonical_sha256": "2269a8d7b6eaf54fc9dd3d2c2cf0d9f4264d27ecc299b2ec19f2c7890ca75672"
+    },
+    {
+      "id": "arch.agent_tool_boundary",
+      "version": "1.1.0",
+      "canonical_sha256": "68cb4beae6cab70fe8e7ad7230dfe23dfabb98df4c0aa47bba812d9241a7cf84"
+    }
+  ],
+  "engineering_practices.jsonl": [
+    {
+      "id": "practice.requirements_traceability",
+      "version": "1.1.0",
+      "canonical_sha256": "f4da6a09197515e10bdb479fa3fd94b5da7dddbfbd53e99f70b704c557220ab8"
+    },
+    {
+      "id": "practice.version_control_review",
+      "version": "1.1.0",
+      "canonical_sha256": "9d448694a2187386f05246e0e8c1f5d870854e54ff84de85f82fdc7baa0475b3"
+    },
+    {
+      "id": "practice.dependency_secret_handling",
+      "version": "1.1.0",
+      "canonical_sha256": "2644c6305aebc45cd262228b551d9afd20e9c4431d49904ce47aca1149131961"
+    },
+    {
+      "id": "practice.test_strategy",
+      "version": "1.1.0",
+      "canonical_sha256": "b91a23f01fce30fe4c5e3abf94013a503445718de2ffdff80acd988d8d235ecd"
+    },
+    {
+      "id": "practice.threat_modeling",
+      "version": "1.1.0",
+      "canonical_sha256": "2fe5994517bdeb6955145d320d9e364ca70c8c58f64f03dc2a02296595d34060"
+    },
+    {
+      "id": "practice.ci_reproducible_release",
+      "version": "1.1.0",
+      "canonical_sha256": "5ddf18d3d9a0feef471638aadfb7302f23869360e0ec9d7c063c701cbc24fe59"
+    },
+    {
+      "id": "practice.observability_incident",
+      "version": "1.1.0",
+      "canonical_sha256": "4008c6698eaee3a90f62b232fe829481f82fa635cc5d65e3cec50247e4d3aed7"
+    },
+    {
+      "id": "practice.change_maintenance",
+      "version": "1.1.0",
+      "canonical_sha256": "b4725efa8b29209cfd3aa17122154b4dd623246423e927e0803cb18198f7770e"
+    }
+  ],
+  "prompt_patterns.jsonl": [
+    {
+      "id": "prompt.implement_scoped_task",
+      "version": "1.1.0",
+      "canonical_sha256": "d04bd69ff817c113193d469cf4ec8734a0eefccf16dfe583789944802d611e9b"
+    },
+    {
+      "id": "prompt.add_test",
+      "version": "1.1.0",
+      "canonical_sha256": "d2eee79c29095f30d6b3dbe620fff0c17cc1a071b3f6b2d54a8db26c92cfd278"
+    },
+    {
+      "id": "prompt.review_change",
+      "version": "1.1.0",
+      "canonical_sha256": "6d7aeb179b9bb079dc40c22445431937e71a55946ceb0bd1b1f11c879c5449b4"
+    },
+    {
+      "id": "prompt.threat_model",
+      "version": "1.1.0",
+      "canonical_sha256": "9d0820c523c30c5d0a4e4e43bc2225a9261d3e4d785d31a270d35b20abaf410f"
+    },
+    {
+      "id": "prompt.investigate_failure",
+      "version": "1.1.0",
+      "canonical_sha256": "375d6ef954039f741f0535398dd30567a865148bffa4d39cce1f069c34841c46"
+    },
+    {
+      "id": "prompt.prepare_release",
+      "version": "1.1.0",
+      "canonical_sha256": "2e5d3d41571f290a2abae67c74e8d0acfdd30cf05d9567005753863dfb08960b"
+    }
+  ],
+  "reference_projects.jsonl": [
+    {
+      "id": "reference.fastapi",
+      "version": "1.1.0",
+      "canonical_sha256": "f2ee301e4d14491cd129b5e083fead97d0b4a42cc3e2dd7455e7b568fc3987bb"
+    },
+    {
+      "id": "reference.ripgrep",
+      "version": "1.1.0",
+      "canonical_sha256": "efd0a21237b93bfbd0a71569bf6715b96ad36013cbffec50270fbd6a64b09b9b"
+    },
+    {
+      "id": "reference.openai_agents_sdk",
+      "version": "1.1.0",
+      "canonical_sha256": "4f530e9c4ac361f4d35e746e03274c1c3a85a375344ba7aec8661d98551e994b"
+    }
+  ],
+  "relationships.jsonl": [
+    {
+      "id": "edge.0001",
+      "version": "1.0.0",
+      "canonical_sha256": "961fdf055c726237225ad616fd14e611eb9479c2b508fec6bddbe0778553848c"
+    },
+    {
+      "id": "edge.0002",
+      "version": "1.0.0",
+      "canonical_sha256": "a7de1bd70fc16b68ed37809edd90defe032bfe2cdf27f7bced281a3a816c1a31"
+    },
+    {
+      "id": "edge.0003",
+      "version": "1.0.0",
+      "canonical_sha256": "dd770c37cc20099e2eab6441e41a15805acedb6e104e1aec47875dddc2bd7715"
+    },
+    {
+      "id": "edge.0004",
+      "version": "1.0.0",
+      "canonical_sha256": "0bead2be07ab3076834ede66ed97b05d723c34bd22614b3449dbb344837aa123"
+    },
+    {
+      "id": "edge.0005",
+      "version": "1.0.0",
+      "canonical_sha256": "3e4d99ba8129883919af217e6f1ac53bf40e243380c5919373018ead465adb74"
+    },
+    {
+      "id": "edge.0006",
+      "version": "1.0.0",
+      "canonical_sha256": "995bacb5558a45bf0a8e2951e62331c446d4f80ae3401ab0160744f1598c3a8e"
+    },
+    {
+      "id": "edge.0007",
+      "version": "1.0.0",
+      "canonical_sha256": "8b12a0ca4e0f952fadc295ac92ec2170b68ee889e83abc31d668c98dba2605ac"
+    },
+    {
+      "id": "edge.0008",
+      "version": "1.0.0",
+      "canonical_sha256": "908874dcacd0df342b5058dae15ca0da52deb5d4f40d675ba7c092ba48c5e424"
+    },
+    {
+      "id": "edge.0009",
+      "version": "1.0.0",
+      "canonical_sha256": "7243d7c2e148c06719143d656aeab154c6473077e16cf475cf46f04bf7f666f1"
+    },
+    {
+      "id": "edge.0010",
+      "version": "1.0.0",
+      "canonical_sha256": "ab333f269e1dfe969907b14236ae009432529aaf0a640cd496a1060239937139"
+    },
+    {
+      "id": "edge.0011",
+      "version": "1.0.0",
+      "canonical_sha256": "fcf9d6e5bcf56a51bd85182e01bab46e83651eee1398683b580831c8789efc03"
+    },
+    {
+      "id": "edge.0012",
+      "version": "1.0.0",
+      "canonical_sha256": "0662dea55538f4241db454c7872ee33f0e974e0ec68323b6c746610286f83291"
+    },
+    {
+      "id": "edge.0013",
+      "version": "1.1.0",
+      "canonical_sha256": "64f9d205c87c2ff302cfd1e7749ba8c6d8724bdc7df1b0733f9fe4d1a8b37189"
+    },
+    {
+      "id": "edge.0014",
+      "version": "1.1.0",
+      "canonical_sha256": "5bd1cf6eec1e54383c5fcd23093d4335ba97f96add55554af651c6f67d422379"
+    },
+    {
+      "id": "edge.0015",
+      "version": "1.1.0",
+      "canonical_sha256": "6faa706e47cfcdcc6adcd59275b19fc27923a75545a9f5b49df57aa4150d30f9"
+    },
+    {
+      "id": "edge.0016",
+      "version": "1.1.0",
+      "canonical_sha256": "efb71ac1ce0deeb81ff20f26dcd9143a83a4a92b4d6445bbad339486f748342d"
+    },
+    {
+      "id": "edge.0017",
+      "version": "1.1.0",
+      "canonical_sha256": "0ddd0cc0b3b2826c3bfee0d01a8675dfad142901de38c3bc71af93a25f1d359e"
+    },
+    {
+      "id": "edge.0018",
+      "version": "1.0.0",
+      "canonical_sha256": "ad98738e19da66d6f04f93665c8d3f5e80c354a9dff5afd2bdc0784f564935f0"
+    },
+    {
+      "id": "edge.0019",
+      "version": "1.0.0",
+      "canonical_sha256": "6f330f6982b1d1e1a7f3f50bd46a3d7ec3a51483c52a02c65a278572384a8df2"
+    },
+    {
+      "id": "edge.0020",
+      "version": "1.0.0",
+      "canonical_sha256": "354fbffb1525adde0a4c44a98207488396cf409fa325164a967b9f63ace22af1"
+    },
+    {
+      "id": "edge.0021",
+      "version": "1.0.0",
+      "canonical_sha256": "b4f4274474e00a8f6e546a5400da729182baaf8f882d8bf136551326c2452651"
+    },
+    {
+      "id": "edge.0022",
+      "version": "1.0.0",
+      "canonical_sha256": "951b647d4cc1adc5fd70ee1ac8f31d4018c96f72d412881b07325e0e5adc4cae"
+    },
+    {
+      "id": "edge.0023",
+      "version": "1.0.0",
+      "canonical_sha256": "fcd302b73c65f4b42fae86ff664247fec50737465782075cdbb12043e96794dd"
+    },
+    {
+      "id": "edge.0024",
+      "version": "1.0.0",
+      "canonical_sha256": "152cf3422525058b570be8905bace56a606ec12f3b63a27009e3e02ad82953f4"
+    },
+    {
+      "id": "edge.0025",
+      "version": "1.0.0",
+      "canonical_sha256": "346b2c497c25cc5a66734555a7356596be96647265053427ec8423d2ee82af5b"
+    },
+    {
+      "id": "edge.0026",
+      "version": "1.0.0",
+      "canonical_sha256": "897b0470396aa1216fbf1d646577400e30152c1a816b16b5577e2408ffb58fb5"
+    },
+    {
+      "id": "edge.0027",
+      "version": "1.0.0",
+      "canonical_sha256": "7232e7f97b4e6964615ea0191ec760c31857d95878b1c670bba1cb1e5869f0e0"
+    },
+    {
+      "id": "edge.0028",
+      "version": "1.0.0",
+      "canonical_sha256": "fb4faa6d2283748cb4671a6ded741dddaf3f41afbbf6cad650bba45cff65bedd"
+    },
+    {
+      "id": "edge.0029",
+      "version": "1.0.0",
+      "canonical_sha256": "c67669d9815a12e81d069c81a0e67e094b2c8dc95d8d73032585d74ab99d46ac"
+    },
+    {
+      "id": "edge.0030",
+      "version": "1.0.0",
+      "canonical_sha256": "2319704b4182481ed2039a5a4af44708c5021e6fa4c71ae7323e60103aec295c"
+    },
+    {
+      "id": "edge.0031",
+      "version": "1.0.0",
+      "canonical_sha256": "ae4522dd27213e4670577e8c4b7156680921d64b6142021d742f17ba5d0ec766"
+    },
+    {
+      "id": "edge.0032",
+      "version": "1.0.0",
+      "canonical_sha256": "b267e894979d47bb9604d0d4c20e1a10e908e107adb9e7b8e609f50aa3b2fda6"
+    },
+    {
+      "id": "edge.0033",
+      "version": "1.0.0",
+      "canonical_sha256": "cf3ecd4ac93c01481bdce0e367c1472edfb26a04df2b64c8767220cf4c9c8629"
+    },
+    {
+      "id": "edge.0034",
+      "version": "1.0.0",
+      "canonical_sha256": "ccf77befa4dfb6592adb5fb57cb90449ff1c039082166f5ac6cd2fe6d8652f37"
+    },
+    {
+      "id": "edge.0035",
+      "version": "1.0.0",
+      "canonical_sha256": "2e7073e9ff5a4a5d5466651fa61153c9cb5b5567cb6ff7503f2b078cc405ba60"
+    },
+    {
+      "id": "edge.0036",
+      "version": "1.0.0",
+      "canonical_sha256": "e4f3f4cd4aac21ca39435668027f959c08daa43b6a1100bb7cd7e46d242e294a"
+    },
+    {
+      "id": "edge.0037",
+      "version": "1.0.0",
+      "canonical_sha256": "08bd0a2d09b0b59a07087b06363bce0f773c9e19e98c75eee40b80a4467564b6"
+    },
+    {
+      "id": "edge.0038",
+      "version": "1.0.0",
+      "canonical_sha256": "f9474117850a0325001835a66ecfaf732d7f13cae9a49fbfbdae8b050af89a6c"
+    },
+    {
+      "id": "edge.0039",
+      "version": "1.0.0",
+      "canonical_sha256": "2bf85247c7fa5c9ae7ec76b07b5039855c95ca6be515419bd41dac1012a7cb61"
+    },
+    {
+      "id": "edge.0040",
+      "version": "1.1.0",
+      "canonical_sha256": "56e144efa8f56c243514b12166a167b7bc92363a634ac7432f108e3f98bd2fb5"
+    },
+    {
+      "id": "edge.0041",
+      "version": "1.1.0",
+      "canonical_sha256": "080b67ddd60614539eafc956402cb8d9b1287a301905acc568d89463548d04ed"
+    },
+    {
+      "id": "edge.0042",
+      "version": "1.1.0",
+      "canonical_sha256": "ac0544f4f7229d15d849b77a9f3d91101c8cddc39b01b582dcd3ddf7d41e1952"
+    },
+    {
+      "id": "edge.0043",
+      "version": "1.1.0",
+      "canonical_sha256": "9111f84faa3ceb80d91741f88b4f8b3ed4e90f577470054bbe9a7857cd66fde6"
+    },
+    {
+      "id": "edge.0044",
+      "version": "1.1.0",
+      "canonical_sha256": "7c2e778c6d4a105ac63cd882dd93601ff459714f590df5306e2ef2b34ff4a4ba"
+    },
+    {
+      "id": "edge.0045",
+      "version": "1.1.0",
+      "canonical_sha256": "31f2e33b41bc156a6eb11a4ff486f01b9fc988a6b14802fdbd40848c78039eb6"
+    },
+    {
+      "id": "edge.0046",
+      "version": "1.0.0",
+      "canonical_sha256": "b3311a1ce716a5822adf5657d8b47b174df963f0d148fde20d238774057c8fd0"
+    },
+    {
+      "id": "edge.0047",
+      "version": "1.0.0",
+      "canonical_sha256": "b27ba916afa8e94525578fee5fd1219136a7e3c05ba40f50cca539f2acbe2459"
+    },
+    {
+      "id": "edge.0048",
+      "version": "1.0.0",
+      "canonical_sha256": "291184f2c21a965b15e789860f166ca40b981e7f6bcd2227c468174680bf523f"
+    },
+    {
+      "id": "edge.0049",
+      "version": "1.0.0",
+      "canonical_sha256": "eb15bda77256013f250adbc5c4b55bc875d359549b1c2d565778caa3e4c60e8f"
+    },
+    {
+      "id": "edge.0050",
+      "version": "1.0.0",
+      "canonical_sha256": "c2aee4e026f2ed9cb6538ba8cddde597e1a9b0c49cc39a3d8a41381b2b1911af"
+    },
+    {
+      "id": "edge.0051",
+      "version": "1.0.0",
+      "canonical_sha256": "fefb9dbdc176fd3524ce3182351468cb0407f68cab58c260c7f49362d25a70c6"
+    },
+    {
+      "id": "edge.0052",
+      "version": "1.0.0",
+      "canonical_sha256": "f2877b6fce26a37900b662b39d71ad0a00491b7cf426c56e814de0953c2935de"
+    },
+    {
+      "id": "edge.0053",
+      "version": "1.0.0",
+      "canonical_sha256": "ab2f30946d5486e1c56f00806c6b3e1e6d30a9b7e6f8cb8ce60128ba9a997e97"
+    },
+    {
+      "id": "edge.0054",
+      "version": "1.0.0",
+      "canonical_sha256": "63e5da1f125f820bd04de02b993f02000963ee899be98fa39d8ec286c3fa1f25"
+    },
+    {
+      "id": "edge.0055",
+      "version": "1.0.0",
+      "canonical_sha256": "e19fef4424809182274e6ebf80119d79212532608707b29d74e4b66f54c3b3b6"
+    },
+    {
+      "id": "edge.0056",
+      "version": "1.0.0",
+      "canonical_sha256": "843ae4c0f1cbc65143e2845dfc940e910441e53220bcb1ecef3d29a67f1670f6"
+    },
+    {
+      "id": "edge.0057",
+      "version": "1.0.0",
+      "canonical_sha256": "0bab6113796443e5ac5d2b9b3319dd4617fe46c01fd618e3a92b0038ae044043"
+    },
+    {
+      "id": "edge.0058",
+      "version": "1.0.0",
+      "canonical_sha256": "3954603f1a4083d609284d23621c6b3fb5f89aad3185a36f5afb4e57ece452d4"
+    },
+    {
+      "id": "edge.0059",
+      "version": "1.0.0",
+      "canonical_sha256": "6d1cb3af0c450933fc83375f2bcce450ddfeae2d6ca8d2df9590b3661e9faaae"
+    },
+    {
+      "id": "edge.0060",
+      "version": "1.0.0",
+      "canonical_sha256": "7d4d89dc98e62505143812553c694c27c0f306d02647b979677f33c2d397eea5"
+    },
+    {
+      "id": "edge.0061",
+      "version": "1.0.0",
+      "canonical_sha256": "e51d9bd0c4d35514ea25da9e6316df3e769bc31dca6b4875ffad36f66aa3aa91"
+    },
+    {
+      "id": "edge.0062",
+      "version": "1.0.0",
+      "canonical_sha256": "f678e06496cc00e605f86a01e254a686f46a3e62efbf25a96d892c6644069f38"
+    },
+    {
+      "id": "edge.0063",
+      "version": "1.0.0",
+      "canonical_sha256": "cb51087c6ec6ac06728fa47882e9a1e81a2360e0f971ad2393cb02b1f5c846a0"
+    },
+    {
+      "id": "edge.0064",
+      "version": "1.0.0",
+      "canonical_sha256": "a1dd3e6979f02696127bbe136e1d5be879355b08df969909086306e60666412c"
+    },
+    {
+      "id": "edge.0065",
+      "version": "1.0.0",
+      "canonical_sha256": "8971472de1c9bb9c1e6db82e7931dbb5a8aecccc9eb84eae944b8a5856e72d3f"
+    },
+    {
+      "id": "edge.0066",
+      "version": "1.0.0",
+      "canonical_sha256": "bfb0ac568f7988d6b1b788f5bb09de6f10269aa78a6e39c2177e0ce75574a191"
+    },
+    {
+      "id": "edge.0067",
+      "version": "1.0.0",
+      "canonical_sha256": "2a90ba1838f0955f05b06540ca00a955233288478db8e1c4c72f50a739c99250"
+    },
+    {
+      "id": "edge.0068",
+      "version": "1.0.0",
+      "canonical_sha256": "13b119605f2b36d3a1c68d08d730dcc143008a92f912e5fb3b71a1c2687d65d8"
+    },
+    {
+      "id": "edge.0069",
+      "version": "1.0.0",
+      "canonical_sha256": "0053aab010d6dc7ea642418eda64332b0dcf8481c6790ad44174e7ac7b78685e"
+    },
+    {
+      "id": "edge.0070",
+      "version": "1.1.0",
+      "canonical_sha256": "32f234d7e7968276832524d594a0dd1ae32e0d85f3e2dcd7a6c4a8665351cbaa"
+    },
+    {
+      "id": "edge.0071",
+      "version": "1.1.0",
+      "canonical_sha256": "bcd50c097c8a293408a35de5dd7a9cf1464754346f65d27ab4f41a5b07b4f818"
+    },
+    {
+      "id": "edge.0072",
+      "version": "1.1.0",
+      "canonical_sha256": "c994857b3c4a0784f1ea11e9a9d27000ed72213ba24d6c9cd3cefd6f164c7c8d"
+    },
+    {
+      "id": "edge.0073",
+      "version": "1.1.0",
+      "canonical_sha256": "ce89a4d4fb90b5689db98908f428765e9175b71f42b2c54368b4de56b8b06154"
+    },
+    {
+      "id": "edge.0074",
+      "version": "1.1.0",
+      "canonical_sha256": "153f870a3ccf8751f990435de86a4faf16c17cb4530bab791b85f7dca5e5a353"
+    },
+    {
+      "id": "edge.0075",
+      "version": "1.0.0",
+      "canonical_sha256": "51e5c7e4a0a8b68ee47868571cfd6e586c3a59873ae0dc45f81e301ff24fcfe2"
+    },
+    {
+      "id": "edge.0076",
+      "version": "1.0.0",
+      "canonical_sha256": "5417d75f1f0f6d717ea537ffbdcdf4bb052ab8443f86c77e8fa48676fc0e1bbc"
+    },
+    {
+      "id": "edge.0077",
+      "version": "1.0.0",
+      "canonical_sha256": "91b9d833407b9d62dac9f7df8510d9365f85d94fbfcae7bad1f16b1477fc90ad"
+    },
+    {
+      "id": "edge.0078",
+      "version": "1.0.0",
+      "canonical_sha256": "729c0498a3c9a6b908b190989678acce10a97985b66941a8d8c6c120a8f39e65"
+    },
+    {
+      "id": "edge.0079",
+      "version": "1.0.0",
+      "canonical_sha256": "44025b6456bc290b5aec4c74af3ed54b6df6d603752af402f5ab85219caf255e"
+    },
+    {
+      "id": "edge.0080",
+      "version": "1.0.0",
+      "canonical_sha256": "d1263e1223b93ed6a435637058dfee08a1509904a1667de2b3935e0153b25a07"
+    },
+    {
+      "id": "edge.0081",
+      "version": "1.0.0",
+      "canonical_sha256": "8d6ca7d7b657df315ca73a0ebc2f4b700f5d71c3bfc9236af5104ddbf156b869"
+    },
+    {
+      "id": "edge.0082",
+      "version": "1.0.0",
+      "canonical_sha256": "78c724c38ce4befbcd23ca7bc5736b21ed0e2fe25dd404ccc02b846aa08fd29f"
+    },
+    {
+      "id": "edge.0083",
+      "version": "1.0.0",
+      "canonical_sha256": "dbaaa083d868e705d632a5117e34d59047e074d78414c0878949ceca8a8aa439"
+    },
+    {
+      "id": "edge.0084",
+      "version": "1.0.0",
+      "canonical_sha256": "963fa368fecfdbe21c10482adebf84a44cdf2658717a3b1b0b6afb47e62f076f"
+    },
+    {
+      "id": "edge.0085",
+      "version": "1.0.0",
+      "canonical_sha256": "0672cb6d3b7a88abb81de06bfd0e8868b0a8303bdcd050aafab94a3204a88555"
+    },
+    {
+      "id": "edge.0086",
+      "version": "1.0.0",
+      "canonical_sha256": "89dce58c6882c52753a4fe25e43113c52f3d69c7b7032539e8202330324a4402"
+    },
+    {
+      "id": "edge.0087",
+      "version": "1.0.0",
+      "canonical_sha256": "6802c4837d20da526160818a0f4d152b265db19cf25e053aee880a7ccfdbe895"
+    },
+    {
+      "id": "edge.0088",
+      "version": "1.0.0",
+      "canonical_sha256": "5a6ea99ae9d1d0ef9d81d0bcd9edd9cdbcc30ad5cdc154e2fc19915e44dc81e7"
+    },
+    {
+      "id": "edge.0089",
+      "version": "1.0.0",
+      "canonical_sha256": "af24803959627ade7fa0c62ddf47b09d59f6962dbb99bbcc845c9b1b2a75399c"
+    },
+    {
+      "id": "edge.0090",
+      "version": "1.0.0",
+      "canonical_sha256": "5a3fba3ec0f61da8e1e2381cb5918a6acec472e5e7c5dc8c81bdb5e8ca2cc9fa"
+    },
+    {
+      "id": "edge.0091",
+      "version": "1.0.0",
+      "canonical_sha256": "2e6015c18983ad644641a85dbf7b3f09dc0b8a37b6b41f064b7b14a2cf5ed34b"
+    },
+    {
+      "id": "edge.0092",
+      "version": "1.0.0",
+      "canonical_sha256": "20d90ec124dbbb062fa5270bb339e53aa36c513a36912000bc5a5253f7dd04a7"
+    },
+    {
+      "id": "edge.0093",
+      "version": "1.0.0",
+      "canonical_sha256": "2b948bd9aec6351d7118d07d1d6ec229b22f04828e0478c45710a2e054e6aa44"
+    },
+    {
+      "id": "edge.0094",
+      "version": "1.0.0",
+      "canonical_sha256": "d1739dfa0dcf2f1b1d7d4dd1be072653188bab5d89ff1a9e3793c512007e54ee"
+    },
+    {
+      "id": "edge.0095",
+      "version": "1.0.0",
+      "canonical_sha256": "3812bd6c2e89b04322e2a703a69f00c9f30bde020eaddb28d843f6d6e4060dce"
+    },
+    {
+      "id": "edge.0096",
+      "version": "1.0.0",
+      "canonical_sha256": "2d7871d1be9b8e70a2f87eb5a3e26d836df349407bf1a24e0aa1bf4b1721f1b9"
+    },
+    {
+      "id": "edge.0097",
+      "version": "1.0.0",
+      "canonical_sha256": "1075195b7dc2c34e0326418741a36e2050b8a47aded0e84d2f9dde3f025a767e"
+    },
+    {
+      "id": "edge.0098",
+      "version": "1.0.0",
+      "canonical_sha256": "fe601029ade85e5ac2f6d8d0adbeff00ee45a4c1152a82ffc2db25718c97c10b"
+    },
+    {
+      "id": "edge.0099",
+      "version": "1.1.0",
+      "canonical_sha256": "494332ba2d715731b4e99da7e0617fd688d3da7c2eaca0118881e8372f2d4963"
+    },
+    {
+      "id": "edge.0100",
+      "version": "1.1.0",
+      "canonical_sha256": "f19cbb0dcbc0e9abe41b7310cc05169252afd456cecd914b9dc8ffa9d41bc5bb"
+    },
+    {
+      "id": "edge.0101",
+      "version": "1.1.0",
+      "canonical_sha256": "87a83bbcab2d1a3415f13e7fe8eca4288798871431483ca2f4a421c63a44f741"
+    },
+    {
+      "id": "edge.0102",
+      "version": "1.1.0",
+      "canonical_sha256": "66e0074ef30820f5d8d5f3ab37f129975b22ecd546520f94729c95b5e975c3d7"
+    },
+    {
+      "id": "edge.0103",
+      "version": "1.1.0",
+      "canonical_sha256": "b526f838e7c0eb81591dc32a40c956db97f7559afdbac2224703e674f9f4a928"
+    },
+    {
+      "id": "edge.0104",
+      "version": "1.1.0",
+      "canonical_sha256": "91ce9375c9f9aad887a4a1130ee41045760c6e12f4753dde59ac39faeeecfe7d"
+    },
+    {
+      "id": "edge.0105",
+      "version": "1.0.0",
+      "canonical_sha256": "4f2924f706bff46636c8ba140a4fc4a98f1cd7f11f8c29982e814047512ccb78"
+    },
+    {
+      "id": "edge.0106",
+      "version": "1.0.0",
+      "canonical_sha256": "8f8dfa4318fb36b988e03c5fa73db1702f2d7b98e6aa8a0059f6a720a9168e09"
+    },
+    {
+      "id": "edge.0107",
+      "version": "1.0.0",
+      "canonical_sha256": "add788458416417cfc885ea5241f5538b8ae12ff46c6001c00fd11b48e70d5c4"
+    },
+    {
+      "id": "edge.0108",
+      "version": "1.0.0",
+      "canonical_sha256": "5cd67660970b198d6d5f5c3ccd6ffb3a18d7fb27f3699961af887555eda31da7"
+    },
+    {
+      "id": "edge.0109",
+      "version": "1.0.0",
+      "canonical_sha256": "d0d9e5c41a523788ced5064213c18dc68a4d0e7fba7570669969aad442e53dae"
+    },
+    {
+      "id": "edge.0110",
+      "version": "1.0.0",
+      "canonical_sha256": "736c97a063edb048d2bca1ad207155dbf194764575d64c350604b5906db321ae"
+    },
+    {
+      "id": "edge.0111",
+      "version": "1.0.0",
+      "canonical_sha256": "c4e567e9869e5b4a8f7c3edb93fa3519f336ae901454396a183c642c480c4e61"
+    },
+    {
+      "id": "edge.0112",
+      "version": "1.0.0",
+      "canonical_sha256": "f1e9a872f1475378bfa38fe5ee9d9fe683a3d6a2efe7852f5d2ff8e9d2b2bedd"
+    },
+    {
+      "id": "edge.0113",
+      "version": "1.0.0",
+      "canonical_sha256": "ebcc8c11b637bf170da3a867167beba312c7fc89b60a88cfd5c730df5fce1545"
+    },
+    {
+      "id": "edge.0114",
+      "version": "1.0.0",
+      "canonical_sha256": "a4c9e67c11dcb71ad0431877544927f04e172a119f126fc8a93cd1149a9491d2"
+    },
+    {
+      "id": "edge.0115",
+      "version": "1.0.0",
+      "canonical_sha256": "26ef49dba367d00902186ced0fcfda2c3adb0cd97756f2a91d5a805687bc96cc"
+    },
+    {
+      "id": "edge.0116",
+      "version": "1.0.0",
+      "canonical_sha256": "b4f1429193458c61ee0b0b223f784fa59e9cadf4e8cb8ead47669ae3abf19540"
+    },
+    {
+      "id": "edge.0117",
+      "version": "1.0.0",
+      "canonical_sha256": "d6f09628ed01bd0a1ce2ee75b18192a584d586cd3c527076bdddf5c61f137f4c"
+    },
+    {
+      "id": "edge.0118",
+      "version": "1.0.0",
+      "canonical_sha256": "d24c584d35aa81c70c1d961c66e5392f0f265577a2041a525b58cbcf1fdd0633"
+    },
+    {
+      "id": "edge.0119",
+      "version": "1.0.0",
+      "canonical_sha256": "7d24d5d45c90c56364cea7aa3f855fc67021a68120923f5f4c36a7270702b8fa"
+    },
+    {
+      "id": "edge.0120",
+      "version": "1.0.0",
+      "canonical_sha256": "24ec1762b1597cf4af2b5e4d87f658bb107f4657d88753e6c2450cc8c1681ca3"
+    },
+    {
+      "id": "edge.0121",
+      "version": "1.0.0",
+      "canonical_sha256": "a83793570120e1b8cf962c295d8b5615e1d0b1625f3b28328fec98dda168735a"
+    },
+    {
+      "id": "edge.0122",
+      "version": "1.0.0",
+      "canonical_sha256": "2d65c550d6f71381064c2a80213db9a65608e57c25ff58d4f053e59fb6e1fc78"
+    },
+    {
+      "id": "edge.0123",
+      "version": "1.0.0",
+      "canonical_sha256": "a2c0d624fc0f6e51df1f0e178dad863d163c8dd39e2b12cc75cf5224049e4de1"
+    },
+    {
+      "id": "edge.0124",
+      "version": "1.0.0",
+      "canonical_sha256": "6347970d14feb4783e96a04a253807b2f67590d7ef6f2ea957906cefcc9c018b"
+    },
+    {
+      "id": "edge.0125",
+      "version": "1.0.0",
+      "canonical_sha256": "2bf844853102cdaebb3e5a8e1a20ab0fb50968b5bc3c9b436e754d5e8cd17285"
+    },
+    {
+      "id": "edge.0126",
+      "version": "1.0.0",
+      "canonical_sha256": "f126a525d78b79b45057c8c54ddc34e9498107f7e579dc4532deef748e182840"
+    },
+    {
+      "id": "edge.0127",
+      "version": "1.1.0",
+      "canonical_sha256": "28e83d1cab38c94d6742cda66efb66a540070f302f75d744bbadcbd6e56f0dea"
+    },
+    {
+      "id": "edge.0128",
+      "version": "1.1.0",
+      "canonical_sha256": "f71996bce782df5cf32de044fdb458d405aa5abfe70e116718b0ae007e817fe3"
+    },
+    {
+      "id": "edge.0129",
+      "version": "1.1.0",
+      "canonical_sha256": "9afad9f9efbd6b3e7e15d7a796c5891411334c92dac7da3d2c4daa4ad705d12b"
+    },
+    {
+      "id": "edge.0130",
+      "version": "1.1.0",
+      "canonical_sha256": "c7c0aa4266451dbcf6a1f8b3d8c05dc7f5fedb9f2c27bbf3c17567dcb67c300f"
+    },
+    {
+      "id": "edge.0131",
+      "version": "1.0.0",
+      "canonical_sha256": "9f7718f8be0b6dfac379a5b760831daeea3fb4698b05a525405c32d9b7524137"
+    },
+    {
+      "id": "edge.0132",
+      "version": "1.0.0",
+      "canonical_sha256": "4feeb6cd64842b53fdd41f0cb855a9bf8c79b224d52c5955e95dffcdf0f31a22"
+    },
+    {
+      "id": "edge.0133",
+      "version": "1.0.0",
+      "canonical_sha256": "a8ff956779434ce214f6804d8331ae9151c2d58c5649a0971ac54d2f43d255be"
+    },
+    {
+      "id": "edge.0134",
+      "version": "1.0.0",
+      "canonical_sha256": "0a3915981e6849ec9548e456669bb3f166e3980b1bbadc8fdbbf4ed0b9e7caf2"
+    },
+    {
+      "id": "edge.0135",
+      "version": "1.0.0",
+      "canonical_sha256": "60d8f6062761d629c1ed7806377c056da004f35fc602f8fb875986dfc2521150"
+    },
+    {
+      "id": "edge.0136",
+      "version": "1.0.0",
+      "canonical_sha256": "7d23f95745af0638c52a2222c6f3b7224a58a2b055183083113434fd9fb6e056"
+    },
+    {
+      "id": "edge.0137",
+      "version": "1.0.0",
+      "canonical_sha256": "8ccc5c5437896f3a196e3cb831c35e8a37ff3d45964558aff08aefcd6c156d82"
+    },
+    {
+      "id": "edge.0138",
+      "version": "1.0.0",
+      "canonical_sha256": "52edf930029b87220d4f97183f3f0b9de34bc864788076cba5e1e711c32d4d4c"
+    },
+    {
+      "id": "edge.0139",
+      "version": "1.0.0",
+      "canonical_sha256": "42ed01bd4d16926e131e86288b31dedf34d0ed51017e192f46b2b6f96753b3b6"
+    },
+    {
+      "id": "edge.0140",
+      "version": "1.0.0",
+      "canonical_sha256": "0918b93978c0c7d8653d756e28c7627d6823479a09d3ffd248aa8d352ebed1cf"
+    },
+    {
+      "id": "edge.0141",
+      "version": "1.0.0",
+      "canonical_sha256": "160d65de873ac268e4f47da9fb9bf7cfe5f9e69a8fae9a06327b6f3e1c5f27ff"
+    },
+    {
+      "id": "edge.0142",
+      "version": "1.0.0",
+      "canonical_sha256": "80cbed6cfa8a7c29d9cc95fdc7029d515c0dfbb236949e5938d27c39a43de14a"
+    },
+    {
+      "id": "edge.0143",
+      "version": "1.0.0",
+      "canonical_sha256": "e556dbe62ac59f3fc701d749b9519adae669257ce0c578ed5f49fd8b8eda077a"
+    },
+    {
+      "id": "edge.0144",
+      "version": "1.0.0",
+      "canonical_sha256": "4c3ca6dd50b8fbb320ba3700536509a4ad81dc1acbd16e67c8e8b8c7dad26660"
+    },
+    {
+      "id": "edge.0145",
+      "version": "1.0.0",
+      "canonical_sha256": "d2d8be08a0855d64967dc9c0b29c731a650b05d443286d7a15b9f502239e7e11"
+    },
+    {
+      "id": "edge.0146",
+      "version": "1.0.0",
+      "canonical_sha256": "65fe17e6881618dd55d60eb6023d917bb70732bdd2be28a0f6f77277f6a22e38"
+    },
+    {
+      "id": "edge.0147",
+      "version": "1.0.0",
+      "canonical_sha256": "2d316106038903623cd4e5410475a9c540455464f175c77da88b2fa99534ed28"
+    },
+    {
+      "id": "edge.0148",
+      "version": "1.0.0",
+      "canonical_sha256": "6e9e2d32c035b9a253ec1e0982a79a602f1af0ec2f203d1d169de107bad186a6"
+    },
+    {
+      "id": "edge.0149",
+      "version": "1.0.0",
+      "canonical_sha256": "8a4a26c1fd01d8fa9b7a5c846f82b309237a04a1f94a095aea0ef33db9f99835"
+    },
+    {
+      "id": "edge.0150",
+      "version": "1.0.0",
+      "canonical_sha256": "225a9d46c6dd48808edc75ef2e1e6bc2b2afcfc7f1fcd1868105c3e85d061950"
+    },
+    {
+      "id": "edge.0151",
+      "version": "1.0.0",
+      "canonical_sha256": "ff0c2f9018af799ffdd71cf0c3cea5fbeddb731f3f33dae5d6ad75eb89ba9324"
+    },
+    {
+      "id": "edge.0152",
+      "version": "1.0.0",
+      "canonical_sha256": "fdea4ab30a98fe8cd94452aba91c67eb92c09f2a1c93fb9e53e7369b632f6a19"
+    },
+    {
+      "id": "edge.0153",
+      "version": "1.1.0",
+      "canonical_sha256": "87ddc1341447c9573d596b30b49c88af714222ae5efe3f72d5006f37cd4cb2cc"
+    },
+    {
+      "id": "edge.0154",
+      "version": "1.1.0",
+      "canonical_sha256": "725edbf4392567bae633201e869da1e253c1e496687cb0c753389921683f1f66"
+    },
+    {
+      "id": "edge.0155",
+      "version": "1.1.0",
+      "canonical_sha256": "4c933cf53f9ece8ff0db049e74e1f8c3c4b2a7dba8fa81e71e42328f7fdca620"
+    },
+    {
+      "id": "edge.0156",
+      "version": "1.1.0",
+      "canonical_sha256": "4863dd0e0e4ad07167a547ed295edc5ac5b606eef013b2e740d0aef3bbacb311"
+    },
+    {
+      "id": "edge.0157",
+      "version": "1.0.0",
+      "canonical_sha256": "2e31aba89b46f75229ccde48ab2c490c87e009723dced434da8ecb0bd5d1015a"
+    },
+    {
+      "id": "edge.0158",
+      "version": "1.0.0",
+      "canonical_sha256": "ee458b7c7e5844ffaa59cf4b5ec8905b3c18a34ff27550f1059478f25a74c1fd"
+    },
+    {
+      "id": "edge.0159",
+      "version": "1.0.0",
+      "canonical_sha256": "9dd124dc4ca383f10e8a97c4fe725d0f953866b3632ed01bfa71965270dfa060"
+    },
+    {
+      "id": "edge.0160",
+      "version": "1.0.0",
+      "canonical_sha256": "a067ae761ed6cea328d09683459e1f7162e8d716db9278afa98f196f75e3dc5e"
+    },
+    {
+      "id": "edge.0161",
+      "version": "1.0.0",
+      "canonical_sha256": "c9b2dbf5e6b9f019956b81cce4380a60c6646088b4b1978a850e2b8b9405542b"
+    },
+    {
+      "id": "edge.0162",
+      "version": "1.0.0",
+      "canonical_sha256": "8d1297c2ce08661a2d987b24e5080f6cf3e6bd4eb9720f2f27749bfa22321ffe"
+    },
+    {
+      "id": "edge.0163",
+      "version": "1.0.0",
+      "canonical_sha256": "ccc2a0bf03892118d56edd4f8b2a3f9607b095239549c213e338c55ffded2f5c"
+    },
+    {
+      "id": "edge.0164",
+      "version": "1.0.0",
+      "canonical_sha256": "b8c6c88d07f8809aee14d945bbc7eecce03bad93b8fc86b579204a39df0db2ab"
+    },
+    {
+      "id": "edge.0165",
+      "version": "1.0.0",
+      "canonical_sha256": "b0a1c0916f9abac4eaf073eb617de8d0e8c550ad9349ff78a73b2091b70e317d"
+    },
+    {
+      "id": "edge.0166",
+      "version": "1.0.0",
+      "canonical_sha256": "8acca06738e2ee641ea564a3daec23884bcbeaf449d2e87140a9bf16ad6d4076"
+    },
+    {
+      "id": "edge.0167",
+      "version": "1.0.0",
+      "canonical_sha256": "548d9792b6ae699d6f963155bcc7843685b6095df1179cbb8bb9ddf71ab8b593"
+    },
+    {
+      "id": "edge.0168",
+      "version": "1.0.0",
+      "canonical_sha256": "c13c790c7d05672ec876bd7b3495cf3108d04290ec9736fa8f1b0680d9ad8731"
+    },
+    {
+      "id": "edge.0169",
+      "version": "1.0.0",
+      "canonical_sha256": "b4d054f446a161d1f9cb5cedbce4f537a4b155dfaf97f8c1c7bc881036e117f9"
+    },
+    {
+      "id": "edge.0170",
+      "version": "1.0.0",
+      "canonical_sha256": "aee612d0f75457392c3c3361aa8e3d403618389e7930f84be6204e2370ccce65"
+    },
+    {
+      "id": "edge.0171",
+      "version": "1.0.0",
+      "canonical_sha256": "1978a69e0f633c8e0491076e5edaa8896c223802ea3b768b90a6430cf51c5ac6"
+    },
+    {
+      "id": "edge.0172",
+      "version": "1.0.0",
+      "canonical_sha256": "830a211ef9bb0bfbaf74672d0363d6e4bb21895916eaffad2d8ff4013578e52b"
+    },
+    {
+      "id": "edge.0173",
+      "version": "1.0.0",
+      "canonical_sha256": "29c67bd0838daac80573609705d1feb96233eb414797a301776095c0d721d39a"
+    },
+    {
+      "id": "edge.0174",
+      "version": "1.0.0",
+      "canonical_sha256": "c808e6b08181bea4a26be94280d990da2f4c5b5c01b395b5246a995a861d9b06"
+    },
+    {
+      "id": "edge.0175",
+      "version": "1.0.0",
+      "canonical_sha256": "6e41b63de465aabdf04a74ed2ad5a4475b59bc61748ca0d83ec7edb4094eae27"
+    },
+    {
+      "id": "edge.0176",
+      "version": "1.0.0",
+      "canonical_sha256": "e611104975c41f79ea24a191ffd5a8374147a88f06524eebfbef4b1288f8b95c"
+    },
+    {
+      "id": "edge.0177",
+      "version": "1.0.0",
+      "canonical_sha256": "c4223ee9facdbab46d6c6d44e0d0024383648dfc7c2373cb22f6d16d73c5019d"
+    },
+    {
+      "id": "edge.0178",
+      "version": "1.0.0",
+      "canonical_sha256": "a1a6478cfb0441e0015dfebae4e450557fec57fac69fc1aee0fc064b7ab231c8"
+    },
+    {
+      "id": "edge.0179",
+      "version": "1.0.0",
+      "canonical_sha256": "90a76ba9bb04a324f2cdd766448e08d4408451aba5deaa873ff6c1643ae7b373"
+    },
+    {
+      "id": "edge.0180",
+      "version": "1.0.0",
+      "canonical_sha256": "fe48ebd7aa6aa8e5c1c4a49235b3d14c4f28088bac507323203adebce8480a8f"
+    },
+    {
+      "id": "edge.0181",
+      "version": "1.0.0",
+      "canonical_sha256": "d04515ddd27dfe414d224e5dca832ff9b19b496be9df8ca6923186c489c4c2bd"
+    },
+    {
+      "id": "edge.0182",
+      "version": "1.0.0",
+      "canonical_sha256": "22e8d0947864d65e65af6115bd39efaec4f7580ee496fd48b31cd7678368f73f"
+    },
+    {
+      "id": "edge.0183",
+      "version": "1.0.0",
+      "canonical_sha256": "0983416def54332fe5b0f820790fa3840dc462197c1aeacaa065208c5122c3f4"
+    },
+    {
+      "id": "edge.0184",
+      "version": "1.0.0",
+      "canonical_sha256": "7b49f530b6dbaec75a349a512abfcf5a55a0a34e1d29725cef3412bfaa94292f"
+    },
+    {
+      "id": "edge.0185",
+      "version": "1.0.0",
+      "canonical_sha256": "ca378b9a988e26a01c0c84e7342d83767127a27c8259de16c45645a5a0465f5a"
+    },
+    {
+      "id": "edge.0186",
+      "version": "1.0.0",
+      "canonical_sha256": "a855f55b7bc53e224fececc70c6560838e917b1847ad3f96b9fce8b91d28f282"
+    },
+    {
+      "id": "edge.0187",
+      "version": "1.0.0",
+      "canonical_sha256": "464f2f96be955afcb36cad610e3cdc4455ffbbcc3e223e7cb04d6fb569896a4c"
+    },
+    {
+      "id": "edge.0188",
+      "version": "1.0.0",
+      "canonical_sha256": "70002c7a184e92b61169380dc6b35ac626bd95fef58ba22cd70339815ce02d70"
+    },
+    {
+      "id": "edge.0189",
+      "version": "1.0.0",
+      "canonical_sha256": "52c02c6748bce16aa3e419f6d9897ec3f3507fe24b13d830156ebd4a8800e902"
+    },
+    {
+      "id": "edge.0190",
+      "version": "1.0.0",
+      "canonical_sha256": "5b560d5730cb8a420f8b49ae5147945d56c512aa199dda3a3f7850c83b1b7ac2"
+    },
+    {
+      "id": "edge.0191",
+      "version": "1.0.0",
+      "canonical_sha256": "e2e78fdab83334eec3461a0588e525553ff8ec19d25d218fe69a711ab7f9e88c"
+    },
+    {
+      "id": "edge.0192",
+      "version": "1.0.0",
+      "canonical_sha256": "fcf45f337982c900921bf54193c7059a9a70762864f67e3e38c63b4a022c8d89"
+    },
+    {
+      "id": "edge.0193",
+      "version": "1.0.0",
+      "canonical_sha256": "86a84d4d3cacd9f39d397028fac5befdcd0bb45ae5838261435344eee7bf650a"
+    },
+    {
+      "id": "edge.0194",
+      "version": "1.0.0",
+      "canonical_sha256": "3d1e81eb0c3e53496495709d73fd608447943f11a6d29869475860027084f819"
+    },
+    {
+      "id": "edge.0195",
+      "version": "1.0.0",
+      "canonical_sha256": "195609aa6f4e10e90c4c05bdf6ceee6ec28e3c8e17b343b19b2b23cbcc645645"
+    },
+    {
+      "id": "edge.0196",
+      "version": "1.0.0",
+      "canonical_sha256": "5aeb2441eeda404e0aced0c8ce94ba4a0f15648d7bfe47ac3de719284a0eef4b"
+    },
+    {
+      "id": "edge.0197",
+      "version": "1.0.0",
+      "canonical_sha256": "498df10e5e1624966627e6181a3de5e6922f03650b1649f6bd005d5f3486ca15"
+    },
+    {
+      "id": "edge.0198",
+      "version": "1.0.0",
+      "canonical_sha256": "e69816b6e1affb5728441dcb34dd1cd5fc05759e654db98e5a0f2754c557db95"
+    },
+    {
+      "id": "edge.0199",
+      "version": "1.0.0",
+      "canonical_sha256": "803ccc93062be0c2634e30107b54c0f3aecf79c9502b381acb8bba5a3c18f611"
+    },
+    {
+      "id": "edge.0200",
+      "version": "1.0.0",
+      "canonical_sha256": "01b73961f59e8c109126a5120caa0530093f790670bfab1f71eb2546674763cd"
+    },
+    {
+      "id": "edge.0201",
+      "version": "1.0.0",
+      "canonical_sha256": "adedeaef37f672d57d3ed4da5636989ba4794e5623532f0556fcfa3ddf430391"
+    },
+    {
+      "id": "edge.0202",
+      "version": "1.0.0",
+      "canonical_sha256": "485c867ca4ff28dcad99e29eaf5f3d30c980dd6c7dcf923ba877ef383bc2189d"
+    },
+    {
+      "id": "edge.0203",
+      "version": "1.0.0",
+      "canonical_sha256": "bbff4fc67226cf84b1832ca90fb59922a60a48da4b6ac9f9a15fb71f2ef6afd1"
+    },
+    {
+      "id": "edge.0204",
+      "version": "1.0.0",
+      "canonical_sha256": "450431734109fcef324825c5061f403e9b5b390e4bdebabbed75eb6a269448ad"
+    },
+    {
+      "id": "edge.0205",
+      "version": "1.0.0",
+      "canonical_sha256": "30604c1fec46a74ebd4ae434c0ebceb191266d7a34db89e5edf453ebcc54ab86"
+    },
+    {
+      "id": "edge.0206",
+      "version": "1.0.0",
+      "canonical_sha256": "44069641f6c24428428ffeea04943de55c77b1633ac0b8b7d1cb08a3114e034f"
+    },
+    {
+      "id": "edge.0207",
+      "version": "1.0.0",
+      "canonical_sha256": "ca6f0d7ab2fdbeff290c9cfba46c430101b152271bc723f22f96d635e7187bc4"
+    },
+    {
+      "id": "edge.0208",
+      "version": "1.0.0",
+      "canonical_sha256": "baf2c220b2eaca46c02a516dd963584b9f26e763fda2528d1340f2f3cf53e5f9"
+    },
+    {
+      "id": "edge.0209",
+      "version": "1.0.0",
+      "canonical_sha256": "a1812f70a89cb43a1bb64355b64d5000197a0fd60a809d1ea7db688d9f70ad6f"
+    },
+    {
+      "id": "edge.0210",
+      "version": "1.0.0",
+      "canonical_sha256": "85169c598be520f31eb74a4f2c1db0365a4284dddb723157f72f1d72b44e3ca8"
+    },
+    {
+      "id": "edge.0211",
+      "version": "1.0.0",
+      "canonical_sha256": "7c9923ec51aafa710e6a80a8c55dc0d10ff4bbf4ff4fbced2b754a04307e6853"
+    },
+    {
+      "id": "edge.0212",
+      "version": "1.0.0",
+      "canonical_sha256": "35b46e39c72369175ffa8ee79b68661d8f1d26a7876c1cfdf44dbcfd9ffcc224"
+    },
+    {
+      "id": "edge.0213",
+      "version": "1.0.0",
+      "canonical_sha256": "c6c54f5b543318900b8a3fe5e84e851573efb7585293ad973a22a48e834c3336"
+    },
+    {
+      "id": "edge.0214",
+      "version": "1.0.0",
+      "canonical_sha256": "885ed67e82b1ced10e78148ee29ad89373f8765a7c33fea1c1594de751521a15"
+    },
+    {
+      "id": "edge.0215",
+      "version": "1.0.0",
+      "canonical_sha256": "66e10df8342811fd17f9924ef01c2159f63659b213aeb244bd64e871e928eaa3"
+    },
+    {
+      "id": "edge.0216",
+      "version": "1.0.0",
+      "canonical_sha256": "c690e4392163f39fe8febf243518cd56c51897977fd281e6a1e289bb0d6524c7"
+    },
+    {
+      "id": "edge.0217",
+      "version": "1.0.0",
+      "canonical_sha256": "a742b6d3a7500c6d5537a7657e9229733288c579e14c027e81e37fe022479926"
+    },
+    {
+      "id": "edge.0218",
+      "version": "1.0.0",
+      "canonical_sha256": "d34a00432c5dd170156420687f3ae4e7d3893f7298391689ff994a1c015ede2a"
+    },
+    {
+      "id": "edge.0219",
+      "version": "1.0.0",
+      "canonical_sha256": "0c468a3c3e0ca47ac24cba447b03e97a8b66699ccae41cc6831eca297b5899e9"
+    },
+    {
+      "id": "edge.0220",
+      "version": "1.0.0",
+      "canonical_sha256": "6c5f80258b80296046071f22631e595cd0465ffe65dd64002d2bf72271550424"
+    },
+    {
+      "id": "edge.0221",
+      "version": "1.0.0",
+      "canonical_sha256": "e742a9e453abe9a20836600c8f40098373c4a70697f119e8db844d3da4cbed3b"
+    },
+    {
+      "id": "edge.0222",
+      "version": "1.0.0",
+      "canonical_sha256": "638597b0b40fda25817f137acdfc2d8d5c4176ffbdc5dc8a88654c841eef6bf9"
+    },
+    {
+      "id": "edge.0223",
+      "version": "1.0.0",
+      "canonical_sha256": "c14db7d1141e86d08b69d04c293b1180b806472f5a77532a2835047150453dbd"
+    },
+    {
+      "id": "edge.0224",
+      "version": "1.0.0",
+      "canonical_sha256": "93db90e49113e3add98290fa10d33d115a013670d99a8da20fff0fc653e1c92e"
+    },
+    {
+      "id": "edge.0225",
+      "version": "1.0.0",
+      "canonical_sha256": "efd419dacc7b4c1e8406f30540f6b10ec857a754bfcfe75a426f3af70e656e52"
+    },
+    {
+      "id": "edge.0226",
+      "version": "1.0.0",
+      "canonical_sha256": "e296695d3aa439b5f88a8210ac6502c518ca557bed2685adb07c9b75b529b2d8"
+    },
+    {
+      "id": "edge.0227",
+      "version": "1.0.0",
+      "canonical_sha256": "b0aad10ea4940b77b48ff32c04fb9fa63a4ab275d8c935e901c05516bc39007f"
+    },
+    {
+      "id": "edge.0228",
+      "version": "1.0.0",
+      "canonical_sha256": "abae6293859c01347b2b05235518bf6edc6122416ac5ee45c65f92161fa472dc"
+    },
+    {
+      "id": "edge.0229",
+      "version": "1.0.0",
+      "canonical_sha256": "c4f759f2c825f90b0aa10359606b75f1d0414cf169ba9f891df94cd827e1e048"
+    },
+    {
+      "id": "edge.0230",
+      "version": "1.0.0",
+      "canonical_sha256": "1181350b31cc42832fb0c1b6247d7ddd3023da6ede4285fb3c9688d7cd34f23f"
+    },
+    {
+      "id": "edge.0231",
+      "version": "1.0.0",
+      "canonical_sha256": "0fdb01b6f33b813249d8b0a573e1b4e4f7dcbb81f0b8d04c1e69d66247cf0c56"
+    },
+    {
+      "id": "edge.0232",
+      "version": "1.0.0",
+      "canonical_sha256": "48f6993339ca8c2bf15dd95df5f110b79f57ded54943bd544c42ec4a4f3254ab"
+    },
+    {
+      "id": "edge.0233",
+      "version": "1.0.0",
+      "canonical_sha256": "5001c0a81a678fcd66b2b69c5f0c592f5aea307d37e045ae6893c0664f13765b"
+    },
+    {
+      "id": "edge.0234",
+      "version": "1.0.0",
+      "canonical_sha256": "0c834a087ce9560e6e041c607690926aba369f7db2330998f68d0c00053d7c71"
+    },
+    {
+      "id": "edge.0235",
+      "version": "1.0.0",
+      "canonical_sha256": "9e60411a1144765b6c880e930e0ff5d27029f43aa03b0609fa8cfeac1da61b03"
+    },
+    {
+      "id": "edge.0236",
+      "version": "1.0.0",
+      "canonical_sha256": "205aebba5421d3a291cd7ace459364490b55951d753a0277aa840b1fbb86aded"
+    },
+    {
+      "id": "edge.0237",
+      "version": "1.0.0",
+      "canonical_sha256": "a5c8db461bd59e2b621279c8d897913deb4e17fb1859ddb3ed10602c227d57f5"
+    },
+    {
+      "id": "edge.0238",
+      "version": "1.0.0",
+      "canonical_sha256": "4c2cfe840afe7536ada8899761672fa393e012012e7671561438cb07e9a77f12"
+    },
+    {
+      "id": "edge.0239",
+      "version": "1.0.0",
+      "canonical_sha256": "c5e6c08923de98208d5ce55ac187cf439b93b75b94b8ef24f8b3e5bd9ba6e107"
+    },
+    {
+      "id": "edge.0240",
+      "version": "1.0.0",
+      "canonical_sha256": "3b5ebbf7837156532f2373c094f3853170caa0aecd223c2ece73caacc2f41dd2"
+    },
+    {
+      "id": "edge.0241",
+      "version": "1.0.0",
+      "canonical_sha256": "8bbbbd9beca2954db47d09ff0b284372c9f8de0e5e63d30ee6047f69481ffc78"
+    },
+    {
+      "id": "edge.0242",
+      "version": "1.0.0",
+      "canonical_sha256": "c3ab2034d02ab0eb2c9675eb54e44c407701d09f5917b7f2009c8d570001fe7f"
+    },
+    {
+      "id": "edge.0243",
+      "version": "1.0.0",
+      "canonical_sha256": "a2313d41fbe93bbb9aceb9887d1acf686be25a0a44fd5174ea3a3acb3498c3b5"
+    },
+    {
+      "id": "edge.0244",
+      "version": "1.0.0",
+      "canonical_sha256": "a420fffbedb5ad1031816e080f494fbfc807f3b95888363b40ee55f5d5696bda"
+    },
+    {
+      "id": "edge.0245",
+      "version": "1.0.0",
+      "canonical_sha256": "9bfaa24e41417398dab79c113f3ffd414f71aa731bc0802da392cca009cfd138"
+    },
+    {
+      "id": "edge.0246",
+      "version": "1.0.0",
+      "canonical_sha256": "bce6c6280edd48eaa6b9699db7b7213c23a250b1d4cfa51a06a9cf2dfc821601"
+    },
+    {
+      "id": "edge.0247",
+      "version": "1.0.0",
+      "canonical_sha256": "34906cbfb77dee5763110a0a1c2d98c5f1ef803f8359ef4ff9d1bfe3b77b0f6f"
+    },
+    {
+      "id": "edge.0248",
+      "version": "1.0.0",
+      "canonical_sha256": "3d0c714694d59f9e4b6a882f7f478c101981488d785184ff97d337e3b926dbb1"
+    },
+    {
+      "id": "edge.0249",
+      "version": "1.0.0",
+      "canonical_sha256": "4e9445985e4d4315fd8c6e0cd402f0d454b5980b93e5c4801c817eaf02072b51"
+    },
+    {
+      "id": "edge.0250",
+      "version": "1.0.0",
+      "canonical_sha256": "d8ea35447433719ceeaa45f66e6da30e88d55445abb7eb42eca534e3c0fa5158"
+    },
+    {
+      "id": "edge.0251",
+      "version": "1.0.0",
+      "canonical_sha256": "7b130e0b531a26f69fd9407ee5524e31fa1acad241f44a2293182172ddce3a97"
+    },
+    {
+      "id": "edge.0252",
+      "version": "1.0.0",
+      "canonical_sha256": "fec43f1f1c39fa523dbb110a6b01a56c56c352b36ced244e2159cfd28f7ee3d6"
+    },
+    {
+      "id": "edge.0253",
+      "version": "1.0.0",
+      "canonical_sha256": "1cdbca9acaf14e682751ec3dc0ff8275de1ae31f480b23d28555b176199759c7"
+    },
+    {
+      "id": "edge.0254",
+      "version": "1.0.0",
+      "canonical_sha256": "69abe53875fa05e6fd6b1c99cdea245904276c156fff30abe31eb362636d9dc9"
+    },
+    {
+      "id": "edge.0255",
+      "version": "1.0.0",
+      "canonical_sha256": "af1a49ff0107df6fc17ba09c3ec269a3c88411848b8bc76db6e1a8c3cde4a53d"
+    },
+    {
+      "id": "edge.0256",
+      "version": "1.0.0",
+      "canonical_sha256": "e573faa03f64910a828fd56c8cfb40a695db7097ed1d0fe0fecdd1d1b00939dd"
+    },
+    {
+      "id": "edge.0257",
+      "version": "1.0.0",
+      "canonical_sha256": "bc00da663a0bd7818f8ceb48edd2ae8777a74072b77f2d089d7f69784c4cfaf7"
+    },
+    {
+      "id": "edge.0258",
+      "version": "1.0.0",
+      "canonical_sha256": "98fe67e21d0c9042902d477474033b5a81da2a7b1f7cee5d47eead28df4700ec"
+    },
+    {
+      "id": "edge.0259",
+      "version": "1.0.0",
+      "canonical_sha256": "b36a51d2012202c27c57c5ebb6059809c122c8beae261ae0d2b7d948738d3e44"
+    },
+    {
+      "id": "edge.0260",
+      "version": "1.0.0",
+      "canonical_sha256": "8c36c979ac465ee1a0739de0bb87f9898a2ccc46f5e7d823dd43619904293034"
+    },
+    {
+      "id": "edge.0261",
+      "version": "1.0.0",
+      "canonical_sha256": "3e205e7fc8e74d7446ccc85d0f7b5023598f100f81197d0a3be336a22abbfed9"
+    },
+    {
+      "id": "edge.0262",
+      "version": "1.0.0",
+      "canonical_sha256": "a4ee95a0a4c54d3e164574a74104b02b51b73ec783a8799838d36cdcc1526d65"
+    },
+    {
+      "id": "edge.0263",
+      "version": "1.0.0",
+      "canonical_sha256": "42390347636589d88055dca3936292524f60d73c5afe14b9ae2d0f372917ec91"
+    },
+    {
+      "id": "edge.0264",
+      "version": "1.0.0",
+      "canonical_sha256": "b386d126456aa0e8beb4eaf4a04dc054d60aea0dd74956e1877a6ec6e765d813"
+    },
+    {
+      "id": "edge.0265",
+      "version": "1.0.0",
+      "canonical_sha256": "d7c55033e7fc66ebe97632801b01a96e9746d2d02e2497c04e744cb21a721d27"
+    },
+    {
+      "id": "edge.0266",
+      "version": "1.0.0",
+      "canonical_sha256": "0b5b7c9a0d2dc3df4a39081fa7c5cf859df7b7896d38de2daca99cfa09abfafe"
+    },
+    {
+      "id": "edge.0267",
+      "version": "1.0.0",
+      "canonical_sha256": "2c2fad8c8c7ec289d060ff940ae3e43bb837d895167d24235a47ab10ed9e6322"
+    },
+    {
+      "id": "edge.0268",
+      "version": "1.0.0",
+      "canonical_sha256": "699739c2bf2f3a2965cd3d870b3a75013ad604a6d7f6c21fe4464d5fe28f39ba"
+    },
+    {
+      "id": "edge.0269",
+      "version": "1.0.0",
+      "canonical_sha256": "be42da4ed2f38e62d966c1e9411b9e23bbfadbf6bb8bf730efe3203c55d4e85d"
+    },
+    {
+      "id": "edge.0270",
+      "version": "1.0.0",
+      "canonical_sha256": "2686425db52360704f3e8d038f5cc20cff06711e9fac6efb42abeb432f90cf13"
+    },
+    {
+      "id": "edge.0271",
+      "version": "1.0.0",
+      "canonical_sha256": "1824c59d53b771aa59d2ecf98bc1aa7d48ae6c97536edd892c3df24e2b432ac9"
+    },
+    {
+      "id": "edge.0272",
+      "version": "1.0.0",
+      "canonical_sha256": "8992c89e606de5df89cdcd6a95288e095186579da70f7a53b3c444fe7e5de444"
+    },
+    {
+      "id": "edge.0273",
+      "version": "1.0.0",
+      "canonical_sha256": "98775a1e23c208c7b603d07f3166cd06799a9236ad02c8353fceeac879dfdb73"
+    },
+    {
+      "id": "edge.0274",
+      "version": "1.0.0",
+      "canonical_sha256": "7a55c3c9571bfceb942f0e8d1b058e7e43028f9d1018d705f1171df2fb4452e8"
+    },
+    {
+      "id": "edge.0275",
+      "version": "1.0.0",
+      "canonical_sha256": "b2fb5d560f8154cec285ec7cbdd4ef4173501b02d9371ab6da609482655dc4c0"
+    },
+    {
+      "id": "edge.0276",
+      "version": "1.0.0",
+      "canonical_sha256": "b61fb5366425264f7ba5e9b5a082434bf46fc6141a18831e2bb2ad72ac3ba95f"
+    },
+    {
+      "id": "edge.0277",
+      "version": "1.0.0",
+      "canonical_sha256": "b74b95c5da2801333911c30b78f392522855adfb70d630b0bb7337cb19ae9e3a"
+    },
+    {
+      "id": "edge.0278",
+      "version": "1.0.0",
+      "canonical_sha256": "dccc5227d0e5dc30e185b9734c23311b2127aa9d38804c5ed77cf175a0e3fa46"
+    },
+    {
+      "id": "edge.0279",
+      "version": "1.0.0",
+      "canonical_sha256": "0ebde2c5ba7911c0d18b630b0086f76c93979886ce7f366acf53ede0fdb4dd64"
+    },
+    {
+      "id": "edge.0280",
+      "version": "1.0.0",
+      "canonical_sha256": "5f15a474a78fd22442c13ad2ee202e4b502df6ff8cda48d85ccbd55869943ba0"
+    },
+    {
+      "id": "edge.0281",
+      "version": "1.0.0",
+      "canonical_sha256": "a42ae3e8178d5b29dbabe95b497856d328d2d9ae8da1691d9d1e92e592f75852"
+    },
+    {
+      "id": "edge.0282",
+      "version": "1.0.0",
+      "canonical_sha256": "1f02afabb106af55da464fb7c24fee8cabef0c7ead05cf10c2b7d82d62c2aa5f"
+    },
+    {
+      "id": "edge.0283",
+      "version": "1.0.0",
+      "canonical_sha256": "e2a914ca4031fcc51ddb4b6a008110f2b39a571a2bd04c3939e89b7b1894ba0b"
+    },
+    {
+      "id": "edge.0284",
+      "version": "1.0.0",
+      "canonical_sha256": "8e5e609bd367d1aaee7efeb148f13b2c703959d2cd918db36da43f069e71fcac"
+    },
+    {
+      "id": "edge.0285",
+      "version": "1.0.0",
+      "canonical_sha256": "ab60c8ae69703c2a4bc280051540c66ef6215c0e330e26d22284e6191ae14e56"
+    },
+    {
+      "id": "edge.0286",
+      "version": "1.0.0",
+      "canonical_sha256": "42b372526683c3188fe42e1503665d3ece78f64f549921f1eb93d6d93251d43d"
+    },
+    {
+      "id": "edge.0287",
+      "version": "1.0.0",
+      "canonical_sha256": "a77d621c7cdca695c18d33df54f56332e7f1f8cd09ee4f7e7cca9076b43aaa97"
+    },
+    {
+      "id": "edge.0288",
+      "version": "1.0.0",
+      "canonical_sha256": "1f9c32116c2da46b445e290e0f96533d24f663ec4e8fe967255c4b907e856ab7"
+    },
+    {
+      "id": "edge.0289",
+      "version": "1.0.0",
+      "canonical_sha256": "1b4549778a1fdc09fdcc0f33a2b12b7a71a19afff6612233ffb9dd308740afd2"
+    },
+    {
+      "id": "edge.0290",
+      "version": "1.0.0",
+      "canonical_sha256": "d534c10402f8a3b37c6ef73ee7b8482acd371a254c7ff66861b4b377f1d99678"
+    },
+    {
+      "id": "edge.0291",
+      "version": "1.0.0",
+      "canonical_sha256": "a490b081de5b11e4c45e80981b4fb72c1b44ac5f5c6dcadf9412a88a9b816e8a"
+    },
+    {
+      "id": "edge.0292",
+      "version": "1.0.0",
+      "canonical_sha256": "d624f446adf710a32c663cf5341781150c17bd25dad6df0fc378b82a6686fc0e"
+    },
+    {
+      "id": "edge.0293",
+      "version": "1.0.0",
+      "canonical_sha256": "9fbd6634ebe7ce8bdc6053f16ff033248cb06a3dc0319e2d9f3628e3bd580b38"
+    },
+    {
+      "id": "edge.0294",
+      "version": "1.0.0",
+      "canonical_sha256": "bb64abfa314146a4b4341113a7e51dafbe04b85567d74102f4cd730672a4466f"
+    },
+    {
+      "id": "edge.0295",
+      "version": "1.0.0",
+      "canonical_sha256": "3efca88451554df1d3f1b5bacabda914924b9989bab66ae4324e5e804f92f4d1"
+    },
+    {
+      "id": "edge.0296",
+      "version": "1.0.0",
+      "canonical_sha256": "5dbce4067a745784e2c2d55a4f61707dc8cfff99f9cbfda909ba05bffa4fd290"
+    },
+    {
+      "id": "edge.0297",
+      "version": "1.0.0",
+      "canonical_sha256": "144efe007c22c9fd74b61bfbe014eb2f9ba578882bfd28f0ab6b438a48b8dc3f"
+    },
+    {
+      "id": "edge.0298",
+      "version": "1.0.0",
+      "canonical_sha256": "7483d9443b68852e73d103b41f8ffbef1e26481fa503ab60765206f862077ae9"
+    },
+    {
+      "id": "edge.0299",
+      "version": "1.0.0",
+      "canonical_sha256": "ab704e7882c9f0364d1e60c4b1dd6b5810c2a3397d69c1c136d01c24ac2a24bd"
+    },
+    {
+      "id": "edge.0300",
+      "version": "1.0.0",
+      "canonical_sha256": "7ace7eb20e301ec2617fb5b1cd490838809f30a0a8aa2c1b57ac36f8e90a66d6"
+    },
+    {
+      "id": "edge.0301",
+      "version": "1.0.0",
+      "canonical_sha256": "0364f9e7f0daac571bd010f63d7420e30ae403f3eee6e9e0b8653be8c8e5fb67"
+    },
+    {
+      "id": "edge.0302",
+      "version": "1.0.0",
+      "canonical_sha256": "69082c765e10278d39e256f177b8e2940577a9f1a98db41f5d6ebd44406e05af"
+    },
+    {
+      "id": "edge.0303",
+      "version": "1.0.0",
+      "canonical_sha256": "1ee28c822c8e7068206edff4752f003a17e4eba307a810c96b82cc4cfa149c81"
+    },
+    {
+      "id": "edge.0304",
+      "version": "1.0.0",
+      "canonical_sha256": "b893ef8aa89fed3ec824ce112de935454aa2c8168711d8fae32f5a4a3d53c0a4"
+    },
+    {
+      "id": "edge.0305",
+      "version": "1.0.0",
+      "canonical_sha256": "212308cfa85ee6e9083e0867e80a7104bd005c9e93931b9a1af9c99d32f0ae74"
+    },
+    {
+      "id": "edge.0306",
+      "version": "1.0.0",
+      "canonical_sha256": "28ca4b61c445aef605f3ecbf0dc6917870d962d7496cb7ff405e59512f8ddc8c"
+    },
+    {
+      "id": "edge.0307",
+      "version": "1.0.0",
+      "canonical_sha256": "17770c28d5cc6fcfd720f13f06cdc9a947b34093fd030d123abf65581a03a402"
+    },
+    {
+      "id": "edge.0308",
+      "version": "1.0.0",
+      "canonical_sha256": "64d38570d6cf4c353565b987ccae67eda130b35156c3f76b76ffc3ae537f3929"
+    },
+    {
+      "id": "edge.0309",
+      "version": "1.0.0",
+      "canonical_sha256": "94987e4555bda104a943ce7a233162069eb6ee910fc12b5eab900ac64f139e65"
+    },
+    {
+      "id": "edge.0310",
+      "version": "1.0.0",
+      "canonical_sha256": "b9fff4914f03db1d122b0be19e51e77616d35d23b8dc7fd76b7f0c9fdaca2fa8"
+    },
+    {
+      "id": "edge.0311",
+      "version": "1.0.0",
+      "canonical_sha256": "cb4e09c870e7fd292ced09e3c56f24b2576a9e2bc758d72738ca5cc58d474a83"
+    },
+    {
+      "id": "edge.0312",
+      "version": "1.0.0",
+      "canonical_sha256": "87ce4acb49ad6c8781f7963e3bb1a36e0417a840ec5685b20ab0824866023842"
+    },
+    {
+      "id": "edge.0313",
+      "version": "1.0.0",
+      "canonical_sha256": "471719a0e471e17b496a3eac6fb92e8bd3810bbf2961c53db6ca78dbbbdfe478"
+    },
+    {
+      "id": "edge.0314",
+      "version": "1.0.0",
+      "canonical_sha256": "26e32d422b696479391382bc06f9629f0c961c89b1294729023b5bf32dee346c"
+    },
+    {
+      "id": "edge.0315",
+      "version": "1.0.0",
+      "canonical_sha256": "aa7b2da65ee20ee03f694ee2e2761e71a00fae8f0dceb7bca6e97403c5ceee91"
+    },
+    {
+      "id": "edge.0316",
+      "version": "1.0.0",
+      "canonical_sha256": "20233fb130aee798849cf0d813cf0ac3e433e2f2b4fbbdbd2a1166b4c7973c78"
+    },
+    {
+      "id": "edge.0317",
+      "version": "1.0.0",
+      "canonical_sha256": "215024513a45b0419045d54662c2d99f4a308385d1705d09993f6e80aab154f2"
+    },
+    {
+      "id": "edge.0318",
+      "version": "1.0.0",
+      "canonical_sha256": "0c33ec47e63fb7803632887115d1ced319862b5fad4cad7bfa417b37109595c5"
+    },
+    {
+      "id": "edge.0319",
+      "version": "1.0.0",
+      "canonical_sha256": "9d13089bdd6cb7598a1228ce5b6db1383b29a0772d4eed8253dc69d23beb8a7d"
+    },
+    {
+      "id": "edge.0320",
+      "version": "1.0.0",
+      "canonical_sha256": "cfae3332d3d9f6dea7845a4d18b94dc11520a3db268a1120b68fceaa3fd03e02"
+    },
+    {
+      "id": "edge.0321",
+      "version": "1.0.0",
+      "canonical_sha256": "8b41c34a07010359fc7dfde9268625d002bd735188a6b3c0402b1199a84267e3"
+    },
+    {
+      "id": "edge.0322",
+      "version": "1.0.0",
+      "canonical_sha256": "43ff195c96f0963f80a7b0e28cfb22c98a74f8d36cbf9143932a82a1fe14a269"
+    },
+    {
+      "id": "edge.0323",
+      "version": "1.0.0",
+      "canonical_sha256": "0ee74e18cdfbe31271c94e4317384c2700a2dc415112c953507364b1a4c43a5b"
+    },
+    {
+      "id": "edge.0324",
+      "version": "1.0.0",
+      "canonical_sha256": "5ed08973460ccddb6ebe594421a5f13f729a521bc373687147c8ca6f18310653"
+    },
+    {
+      "id": "edge.0325",
+      "version": "1.0.0",
+      "canonical_sha256": "735bb2c9105ecc9d7a5e0f24189e132a339a25ce3ab85250e84c269b9152ef32"
+    },
+    {
+      "id": "edge.0326",
+      "version": "1.0.0",
+      "canonical_sha256": "21ade96fbf5c4c7185bf2c2c6a0bf0d55f2ee893baeffaf62fba7d29a21daf75"
+    },
+    {
+      "id": "edge.0327",
+      "version": "1.0.0",
+      "canonical_sha256": "e29a1ec7b42267ac91b640a93f2b8d4912b973987d1629c49e9168e2fea9da2f"
+    },
+    {
+      "id": "edge.0328",
+      "version": "1.0.0",
+      "canonical_sha256": "a0ec247bb709403743a957a54d39f539746e85d6e63824795bce27c07dce559a"
+    },
+    {
+      "id": "edge.0329",
+      "version": "1.0.0",
+      "canonical_sha256": "b6582b7809c8a5202136683ee841d4c5591c6ee3c6f5a865348c4f169a99012e"
+    },
+    {
+      "id": "edge.0330",
+      "version": "1.0.0",
+      "canonical_sha256": "8218f08c87ac229943cdc68839dbe14dbe3a992694e20cfa69f06796ac7e95a0"
+    },
+    {
+      "id": "edge.0331",
+      "version": "1.0.0",
+      "canonical_sha256": "d27b83a54ddf91ad8633fdd6d4310d0ab673ac08d9a41d0c7747a51d0b7bace4"
+    },
+    {
+      "id": "edge.0332",
+      "version": "1.0.0",
+      "canonical_sha256": "e95c7b0316f3384d23d33bb7010ac66a723869bc4afacb5920814d085a96a7d0"
+    },
+    {
+      "id": "edge.0333",
+      "version": "1.0.0",
+      "canonical_sha256": "3e8daa13782207aa433a0d2389c826c8fd198bd20c5d8882a6c0413f375e63e6"
+    },
+    {
+      "id": "edge.0334",
+      "version": "1.0.0",
+      "canonical_sha256": "8d4b150f459700190b9b12108ea473891a06c660ff9619bfbc1b928b7fd48281"
+    },
+    {
+      "id": "edge.0335",
+      "version": "1.0.0",
+      "canonical_sha256": "88698022885e133178049f379f8bf972582e0f10e9dc2975a594e6216346bc56"
+    },
+    {
+      "id": "edge.0336",
+      "version": "1.0.0",
+      "canonical_sha256": "7c93213d195b159c86c88ca99736336bbce1d1802b6964202baf303a30f28bbf"
+    },
+    {
+      "id": "edge.0337",
+      "version": "1.0.0",
+      "canonical_sha256": "3b4e312c1d713a1c8c71d86a7a9a1e501cf6c6bf14f3f0ac2c88e284c888de84"
+    },
+    {
+      "id": "edge.0338",
+      "version": "1.0.0",
+      "canonical_sha256": "555d8b04f3633ab8539ccbc0b45b7bb8cf5e891e91dbfbb79919fff9a4e04486"
+    },
+    {
+      "id": "edge.0339",
+      "version": "1.0.0",
+      "canonical_sha256": "dc050ccd1588b301966f29189660daf8b1288987d8a2ea0db5b3a1ec5b274a19"
+    },
+    {
+      "id": "edge.0340",
+      "version": "1.0.0",
+      "canonical_sha256": "b09eda35b050cf2aa38bb3fc1d4a8da77212738ba2694917b08046330da04f09"
+    },
+    {
+      "id": "edge.0341",
+      "version": "1.0.0",
+      "canonical_sha256": "4c78e6ae02e294d0d34c5b5f74e0d2248b3bfd3785a90f12487142dde2920f4f"
+    },
+    {
+      "id": "edge.0342",
+      "version": "1.0.0",
+      "canonical_sha256": "cf2a121e4e943e94b1d6c59928f8224d95b24146c25044e3de3280cdfb1317f6"
+    },
+    {
+      "id": "edge.0343",
+      "version": "1.0.0",
+      "canonical_sha256": "20fa18f6a9b651905d5821cc1f31e1f5f26aee069105a15c1611cdbff3e78d8d"
+    },
+    {
+      "id": "edge.0344",
+      "version": "1.0.0",
+      "canonical_sha256": "c460a3423d66e3cfd90f19cce81176dcd322ed282a7933de7084252b0c22685e"
+    },
+    {
+      "id": "edge.0345",
+      "version": "1.0.0",
+      "canonical_sha256": "3305ddcfe052de6b4491600c9d008aad1aff42fc9ca5eed1b3ab79d1ce5aa4f0"
+    },
+    {
+      "id": "edge.0346",
+      "version": "1.0.0",
+      "canonical_sha256": "878fcac6c67d5a885f28e2e7b614aec59a7e79cf86391e5acd7d70fde752e6e7"
+    },
+    {
+      "id": "edge.0347",
+      "version": "1.0.0",
+      "canonical_sha256": "c5a54208e148dd431192b19c15b572544c135ff7e78421cb36ae2322cda25ed1"
+    },
+    {
+      "id": "edge.0348",
+      "version": "1.0.0",
+      "canonical_sha256": "062af57ddaabe78f61b45bce70da6199d1eaf3a451c0265e0fbcd7214f8176fd"
+    },
+    {
+      "id": "edge.0349",
+      "version": "1.0.0",
+      "canonical_sha256": "ee4221638791c821eaed96255ceca73ea84a0dd1a6bd93843570cc79eff88981"
+    },
+    {
+      "id": "edge.0350",
+      "version": "1.0.0",
+      "canonical_sha256": "f75c15c7aa7fa3b02417047ce754468ae38c30fa99af30fc9f3332052d201ff2"
+    },
+    {
+      "id": "edge.0351",
+      "version": "1.0.0",
+      "canonical_sha256": "a5251ca19dd2d697f8b78a82458a48cfda864f1f00f3e4500e4b0d08f46a63a0"
+    },
+    {
+      "id": "edge.0352",
+      "version": "1.0.0",
+      "canonical_sha256": "83bff33134b5608d381c32dd54b921bcfd8be2ad6a6702cbdf371ad10ed85dcc"
+    },
+    {
+      "id": "edge.0353",
+      "version": "1.0.0",
+      "canonical_sha256": "921385bb6336d694d6377a0d6d9f7738904b3641099c2007af166827432f8793"
+    },
+    {
+      "id": "edge.0354",
+      "version": "1.0.0",
+      "canonical_sha256": "013a93ea0735dbf5a6e6a6153ef74ae8cdf5b8b07431aa408a7fbe3b491c084d"
+    },
+    {
+      "id": "edge.0355",
+      "version": "1.0.0",
+      "canonical_sha256": "3e93c891307bf834653ce331f80aaeec21cd0fb4a292f6c439d474410a54dd51"
+    },
+    {
+      "id": "edge.0356",
+      "version": "1.0.0",
+      "canonical_sha256": "70dd37c515c895badcfca7165fa2bd28a2c8b2c33f4937f258846ed0af5f7cdc"
+    },
+    {
+      "id": "edge.0357",
+      "version": "1.0.0",
+      "canonical_sha256": "46c5b0457e0d7afd3cb127d27ad280f53019b2544301e57da52e655aeafbb410"
+    },
+    {
+      "id": "edge.0358",
+      "version": "1.0.0",
+      "canonical_sha256": "42e7be10a13d32752a6bc14bedbc46f4fc9ff0b277dec67853d0844bb417d94d"
+    },
+    {
+      "id": "edge.0359",
+      "version": "1.0.0",
+      "canonical_sha256": "9e615c5299c31468841898b17d01a3969458bd789dc8ed3c351231c50d7cbac9"
+    },
+    {
+      "id": "edge.0360",
+      "version": "1.0.0",
+      "canonical_sha256": "707ef2070dc9955fddd94e2b31f375ed7ae7f0ba5b1fc914d10495aac32a699c"
+    },
+    {
+      "id": "edge.0361",
+      "version": "1.0.0",
+      "canonical_sha256": "a462762bb1583841fcb9a75d661720fd2f57f1ed519838a66a4a53dabaf390f4"
+    },
+    {
+      "id": "edge.0362",
+      "version": "1.0.0",
+      "canonical_sha256": "0d062a5f5ee9cc83783236b0b99d77fea3639e6fdf02b48fba8f4cf6cb465717"
+    },
+    {
+      "id": "edge.0363",
+      "version": "1.0.0",
+      "canonical_sha256": "43c407bd901602255be2cd0100c13ac0f1c635ef85e447a67e3dd3372cd8b65d"
+    },
+    {
+      "id": "edge.0364",
+      "version": "1.0.0",
+      "canonical_sha256": "d18e50dd6c28a8f3236527a3ae70ec7d0bf9099b9d96ce7af917674e0e36dd48"
+    },
+    {
+      "id": "edge.0365",
+      "version": "1.0.0",
+      "canonical_sha256": "83a99eff0f956302eadcfd40efe8ded2610dc6bd4a1d83d9d17e1ee3862ec3c7"
+    },
+    {
+      "id": "edge.0366",
+      "version": "1.0.0",
+      "canonical_sha256": "76639a1d7fa7717eb95d315c11c0192ca36798773e54eabbf886d63d6d0d3eb2"
+    },
+    {
+      "id": "edge.0367",
+      "version": "1.0.0",
+      "canonical_sha256": "eeb2c826278cdd43862d6d9d4d76e89b35d2aea5d1f77b34faa6ca2ab8b1ab08"
+    },
+    {
+      "id": "edge.0368",
+      "version": "1.0.0",
+      "canonical_sha256": "e075bf059c86093e077cfa7447ec022c37a40a4768241adabce8d2e1f7f43e41"
+    },
+    {
+      "id": "edge.0369",
+      "version": "1.0.0",
+      "canonical_sha256": "891cda20ff42f5bfc8860534dad5a02b9dd4ece71f939c6d85c19e4dd17fdbcf"
+    },
+    {
+      "id": "edge.0370",
+      "version": "1.0.0",
+      "canonical_sha256": "dee8cfeee4faf379427f62cfacb4e3576c0570295aac8e8639d51c431b8da316"
+    },
+    {
+      "id": "edge.0371",
+      "version": "1.0.0",
+      "canonical_sha256": "60f74dc1c02154b4f1385d2bba76428173d3991dc6922e499d89311fdceb8db1"
+    },
+    {
+      "id": "edge.0372",
+      "version": "1.0.0",
+      "canonical_sha256": "a5f40a8904fc20aadb8bafca569c3d70941dbb55c38c17a5848c8885040138a7"
+    },
+    {
+      "id": "edge.0373",
+      "version": "1.0.0",
+      "canonical_sha256": "151781d829f653c100646342cb6a840f4657d04ee8d2c11ab837ef8e5f565512"
+    },
+    {
+      "id": "edge.0374",
+      "version": "1.0.0",
+      "canonical_sha256": "4a742d6db5432250f0a7126b052db5c97c367389696b6d80a88683c08f9fca6f"
+    },
+    {
+      "id": "edge.0375",
+      "version": "1.0.0",
+      "canonical_sha256": "a76c352d2ecb2cb9d84a65bbef7bf9830d9f63c22af7cf7b1ff7758337c62718"
+    },
+    {
+      "id": "edge.0376",
+      "version": "1.0.0",
+      "canonical_sha256": "55247565aba58f9b1b1e7c09c20aba565122de1d2a9399c1a76b1f79f004769a"
+    },
+    {
+      "id": "edge.0377",
+      "version": "1.0.0",
+      "canonical_sha256": "6f9b90f64f72b24de7e802afa8d1d1d3ff8655a72cf18cbcf666b67c9b9ed400"
+    },
+    {
+      "id": "edge.0378",
+      "version": "1.0.0",
+      "canonical_sha256": "1717d20ce255213d1ffbda8e0c5a39ef7ec19e17460a8e963b965af128ff1d9a"
+    },
+    {
+      "id": "edge.0379",
+      "version": "1.0.0",
+      "canonical_sha256": "b933c54105927cf7e237573c5e56a26a3a5c2e28937771234e0eeb33c4c521a4"
+    },
+    {
+      "id": "edge.0380",
+      "version": "1.0.0",
+      "canonical_sha256": "41279b327b7f88e0f258fd3157bc4cdf1cf28c5340afa56e66759cba44c378e9"
+    },
+    {
+      "id": "edge.0381",
+      "version": "1.0.0",
+      "canonical_sha256": "3133346e611277cb9b21b4bed38feb031610c0d46c950fec74503e70d315cc5e"
+    },
+    {
+      "id": "edge.0382",
+      "version": "1.0.0",
+      "canonical_sha256": "fd56923c14a0a3d42eca12f6a80bcb24b135efdf8d2f4cfc0d7e351b0a93535f"
+    },
+    {
+      "id": "edge.0383",
+      "version": "1.0.0",
+      "canonical_sha256": "305d30b1122fcb9c6e4ccae392e23c8530da215fcf653deceeb62e4b3f20c2d0"
+    },
+    {
+      "id": "edge.0384",
+      "version": "1.0.0",
+      "canonical_sha256": "42c91c8ad9302a598e60f78e2212cb19f3ed66fcfa02481cd50a3fa5838fb2d6"
+    },
+    {
+      "id": "edge.0385",
+      "version": "1.0.0",
+      "canonical_sha256": "2491acd47de6f106f9ca8200b3f1e67c2c3c5e58f0bfc58acd7e7c04920c8828"
+    },
+    {
+      "id": "edge.0386",
+      "version": "1.0.0",
+      "canonical_sha256": "84d7cf2be60e004cc756ee0ef99c02e4d4e5871d4fa0ae2997712421b3480a2a"
+    },
+    {
+      "id": "edge.0387",
+      "version": "1.0.0",
+      "canonical_sha256": "be7fd60f88eeb4295f9ff4c04aca4b0c15be44251a080febf341205e6e050683"
+    },
+    {
+      "id": "edge.0388",
+      "version": "1.0.0",
+      "canonical_sha256": "3c3f378dea170e0c1e7dd986801c5dbb7fdafd39b6c6fb6a95d2e8ce4c9819b6"
+    },
+    {
+      "id": "edge.0389",
+      "version": "1.0.0",
+      "canonical_sha256": "b1505d1bce0332f8cc9aaad7a0bd6563176fe8b31e14f1a2a8e59faa0a31165e"
+    },
+    {
+      "id": "edge.0390",
+      "version": "1.0.0",
+      "canonical_sha256": "cd20b8f74c32a89329cd1f314b2aa46ac255cb019310d727707d75d53818a4c6"
+    },
+    {
+      "id": "edge.0391",
+      "version": "1.0.0",
+      "canonical_sha256": "531db94a0738495b237847504ad2708e0a616e63e194510c9736dca7eb70dc81"
+    },
+    {
+      "id": "edge.0392",
+      "version": "1.0.0",
+      "canonical_sha256": "4a2e73ebf287460e14a0e7182d1b32917d1858a24d21bd7300ae6e97fcb8784e"
+    },
+    {
+      "id": "edge.0393",
+      "version": "1.0.0",
+      "canonical_sha256": "3dd081921603a5e7e7c3ff0de045060eb22da2b3485e802395d3b87725b2078f"
+    },
+    {
+      "id": "edge.0394",
+      "version": "1.0.0",
+      "canonical_sha256": "8b4549de86ac4e5d2a713fd39b1895f3aa373192bdef9c1ffbcdc2e872ae1ef8"
+    },
+    {
+      "id": "edge.0395",
+      "version": "1.0.0",
+      "canonical_sha256": "9e1e6706a6e14c0ccaea17561a5d51d53acc21e20f9d23da9366b571addba04f"
+    },
+    {
+      "id": "edge.0396",
+      "version": "1.0.0",
+      "canonical_sha256": "2746eb23e706834d603d50ab55417a6000c8f60c13933a5199b012c45a8c7360"
+    },
+    {
+      "id": "edge.0397",
+      "version": "1.0.0",
+      "canonical_sha256": "dbb077a389460c7cab5e4af11d99cae31776cd4afa227fe65aad7335c9718e5e"
+    },
+    {
+      "id": "edge.0398",
+      "version": "1.0.0",
+      "canonical_sha256": "60bc6fc0d33ba2b20d9e8c05c5666e0f067441f44a256e6add4528ebab3bd816"
+    },
+    {
+      "id": "edge.0399",
+      "version": "1.0.0",
+      "canonical_sha256": "04864a1cb1d1d49a5bab4b8b8b0b7370884fe0e58b52668d8b96a98176d78827"
+    },
+    {
+      "id": "edge.0400",
+      "version": "1.0.0",
+      "canonical_sha256": "a6602a71b1fea334d6ce40d314dfcdd4235a9145484adb55fd8efc95828c128a"
+    },
+    {
+      "id": "edge.0401",
+      "version": "1.0.0",
+      "canonical_sha256": "73dd81a8735b80a73e0ba81e7506e06a2dbef1e4700f058ed11870483f4e12d7"
+    },
+    {
+      "id": "edge.0402",
+      "version": "1.0.0",
+      "canonical_sha256": "2fa7ed5a6e14687397d167e32411cdeccdcfc71e3de54c713182e8c7ea691e3d"
+    },
+    {
+      "id": "edge.0403",
+      "version": "1.0.0",
+      "canonical_sha256": "607a8afe936acb2fa131dfeee8246fceea906da0d5101e71342f78762a5cdd36"
+    },
+    {
+      "id": "edge.0404",
+      "version": "1.0.0",
+      "canonical_sha256": "0953d24a1b6b12bedccf62df258bd939a8a88ccb41c9af7bde76c249acff2cbf"
+    },
+    {
+      "id": "edge.0405",
+      "version": "1.0.0",
+      "canonical_sha256": "eab9f1a77ecdf53d1ac5876b7d54577b26ca5bd2a7089a724d8f0f119993f04b"
+    },
+    {
+      "id": "edge.0406",
+      "version": "1.0.0",
+      "canonical_sha256": "fd37523458a1ed7aeb4d1938ed87567af4f447d30162ea711e7367e25d622148"
+    },
+    {
+      "id": "edge.0407",
+      "version": "1.0.0",
+      "canonical_sha256": "d0c0899fdcb69ce7e0cbfbe67735f1b6a9463a8f78c56103c62b466175ee2a0b"
+    },
+    {
+      "id": "edge.0408",
+      "version": "1.0.0",
+      "canonical_sha256": "ab3acca32d7cca68ed9d94e56d86b3f75cd28685b485288b2d270dcb61c26680"
+    },
+    {
+      "id": "edge.0409",
+      "version": "1.0.0",
+      "canonical_sha256": "7db1cbb4372a08855542d37ab4c2cfcbf63999231d3b89f0b36d238459c3cae7"
+    },
+    {
+      "id": "edge.0410",
+      "version": "1.0.0",
+      "canonical_sha256": "f062374329e1a91bac435f8cfd91c4a4795a6ed7f017865dbf0d0887fd2ab48f"
+    },
+    {
+      "id": "edge.0411",
+      "version": "1.0.0",
+      "canonical_sha256": "f5cedeec4ccab05aa686ea72382e80dbce851afffc2c9490fa1791e5437799a6"
+    }
+  ],
+  "roadmap_patterns.jsonl": [
+    {
+      "id": "roadmap.smallest_releasable_increment",
+      "version": "1.1.0",
+      "canonical_sha256": "343204d73d0baa42ff5be858e0a92bfc7af05ca31194d38121d2d3397aba7303"
+    },
+    {
+      "id": "roadmap.dependency_aware_sequence",
+      "version": "1.1.0",
+      "canonical_sha256": "2bd1851af5ad7fcaf3e6ab4a23ccff57f03b4e3bab730d47e472ac0e803994e5"
+    },
+    {
+      "id": "roadmap.risk_first_poc",
+      "version": "1.1.0",
+      "canonical_sha256": "85d8012d3d9003439f04d1dc70c90fe86ef2ff862173cf453bd152e6fa37dcfc"
+    }
+  ],
+  "sdlc_stages.jsonl": [
+    {
+      "id": "sdlc.discovery_scope",
+      "version": "1.1.0",
+      "canonical_sha256": "30731e46bccfee48da5767f00234f6e31d2ef1dc326343b224f7d531ac6f997f"
+    },
+    {
+      "id": "sdlc.requirements_risk",
+      "version": "1.1.0",
+      "canonical_sha256": "d9016c0b523dc8d66e0391e5b42a09ff9788d2548a3c4c2e0ef35b97ffd65073"
+    },
+    {
+      "id": "sdlc.architecture_design",
+      "version": "1.1.0",
+      "canonical_sha256": "12b154c83cd54232672de068d85e9bf8f4b74ff44845e885a5d51b792213c1dd"
+    },
+    {
+      "id": "sdlc.implementation",
+      "version": "1.1.0",
+      "canonical_sha256": "0f789a17cfaf558549e5428047d72f289841921e6b98902e7f236c71b08f608b"
+    },
+    {
+      "id": "sdlc.verification",
+      "version": "1.1.0",
+      "canonical_sha256": "02ec9beef096eed926fab90248c3d64ff324c7dfc3c6d39ca623a22178bd1ad2"
+    },
+    {
+      "id": "sdlc.release",
+      "version": "1.1.0",
+      "canonical_sha256": "5e8ef5881c979aa054984244095a03b9cd0b0a2646b53c13f381435c5a5ac7eb"
+    },
+    {
+      "id": "sdlc.maintenance_feedback",
+      "version": "1.1.0",
+      "canonical_sha256": "5106b6f555c3366b7f4f4ea192497cf7790620544ad19fd3bea1838742e00eed"
+    }
+  ],
+  "software_types.jsonl": [
+    {
+      "id": "software_type.web_applications",
+      "version": "1.1.0",
+      "canonical_sha256": "cb32007f312d0e3cb9d20d04f8664182b6647f3375f4ce38b939959e89539884"
+    },
+    {
+      "id": "software_type.saas",
+      "version": "1.1.0",
+      "canonical_sha256": "f52b44bab2801e76dadb5e5985a84b442f1a58c668c3735c96dbd7d632bf0bf3"
+    },
+    {
+      "id": "software_type.apis",
+      "version": "1.1.0",
+      "canonical_sha256": "756bf7606155e9d596c4d6685ee27be806a48d72ba5ad96dc8d1281d8fda9407"
+    },
+    {
+      "id": "software_type.mobile_applications",
+      "version": "1.1.0",
+      "canonical_sha256": "e35dc6b07a1cb89c5616e1f2936c2a54ee06456613503f6a6c395db2e1588b88"
+    },
+    {
+      "id": "software_type.cli_tools",
+      "version": "1.1.0",
+      "canonical_sha256": "ee8ea04d2c44b198dd7862e70787442a0d2c144863d4a5855be274e1679602b0"
+    },
+    {
+      "id": "software_type.developer_tools",
+      "version": "1.1.0",
+      "canonical_sha256": "2196c6726dd9f287927395f0cb2465cef57284a6e5e54ead4dd0c5b04ddc4c72"
+    },
+    {
+      "id": "software_type.ai_agents",
+      "version": "1.1.0",
+      "canonical_sha256": "34eb0ad64d0b696df24c0d88004ee895bc9e078c9cbca441d9b9bb1bd6901ae7"
+    },
+    {
+      "id": "software_type.security_products",
+      "version": "1.1.0",
+      "canonical_sha256": "227c2ebefa405f54db8bea4dc89bdc87a19a194b7731af3cf3c3731a6bc51578"
+    },
+    {
+      "id": "software_type.data_pipelines",
+      "version": "1.1.0",
+      "canonical_sha256": "7260b0ef34197884cb249487bdc42965a4c676b252dc15cb0ce92d120f2f0b64"
+    },
+    {
+      "id": "software_type.libraries",
+      "version": "1.1.0",
+      "canonical_sha256": "c8f60ae4092525466ea2966c3da1ea9e86a68eeaa1b862679f6c8b41cf35901c"
+    }
+  ],
+  "sources.jsonl": [
+    {
+      "id": "source.web_applications.01",
+      "version": "1.1.0",
+      "canonical_sha256": "f35208ef2153ba59ec72b161dfac70ff39416c05f60eb9b1276e301870ac4ee4"
+    },
+    {
+      "id": "source.web_applications.02",
+      "version": "1.1.0",
+      "canonical_sha256": "3791c891be2fdb69124fac1267f07f41d8173f3f6739f32622ec5b5bc6d77ea3"
+    },
+    {
+      "id": "source.web_applications.03",
+      "version": "1.1.0",
+      "canonical_sha256": "384c86f4c1f1891c8d842659f67de8b6b8c044fed5c7b7e3dbcbad3026836ea0"
+    },
+    {
+      "id": "source.saas.01",
+      "version": "1.1.0",
+      "canonical_sha256": "64f43885e0131624fc258a3a283177f64e9f7392bb76ad2d599fe98970da92e0"
+    },
+    {
+      "id": "source.saas.02",
+      "version": "1.1.0",
+      "canonical_sha256": "102d2d82cbae4ae516acd0234dcf822efa487fb827adb308cf80e2e3564fc56d"
+    },
+    {
+      "id": "source.saas.03",
+      "version": "1.1.0",
+      "canonical_sha256": "8a59fc698a9d4d7667d7472cc387758326a1b0dfcc559346d40a3ee36e7865b7"
+    },
+    {
+      "id": "source.saas.04",
+      "version": "1.1.0",
+      "canonical_sha256": "9864d7230202ab89e2de2ddadc9c76107c4ba424829aee9d52a7261d3ca124f4"
+    },
+    {
+      "id": "source.apis.01",
+      "version": "1.1.0",
+      "canonical_sha256": "9b6fe9b2d5e422194bf565bd816e513ab12e5e6585e452fe105e27bf5e5f14ce"
+    },
+    {
+      "id": "source.apis.02",
+      "version": "1.1.0",
+      "canonical_sha256": "f2ca5d53d3c0273e2f7fbeacbfd8cbed471e6ad097da2f81e49909a1c77d7c90"
+    },
+    {
+      "id": "source.apis.03",
+      "version": "1.1.0",
+      "canonical_sha256": "07e763eb2d4e1aa4e26661f5715db494ad0e14563e29dbe88cba2a10a83c99d4"
+    },
+    {
+      "id": "source.mobile_applications.01",
+      "version": "1.1.0",
+      "canonical_sha256": "edc8e800521286bf734ed58a838e662c5bd73ec784a7a820e0032c586d070dd7"
+    },
+    {
+      "id": "source.mobile_applications.02",
+      "version": "1.1.0",
+      "canonical_sha256": "a659f4110812b32afaf82ec7e23a924472ac22081300967425dced74b2cdaef1"
+    },
+    {
+      "id": "source.mobile_applications.03",
+      "version": "1.1.0",
+      "canonical_sha256": "d5a274970bd04ac09fa4ec253443716b4a77fbc7b38e438290bd56b223cf0be2"
+    },
+    {
+      "id": "source.mobile_applications.04",
+      "version": "1.1.0",
+      "canonical_sha256": "ec31a8f707359e0a6282b707f4913b1ef654602d617e1b985b857f659c4b5a88"
+    },
+    {
+      "id": "source.cli_tools.01",
+      "version": "1.1.0",
+      "canonical_sha256": "a4b8ecbcfa9823e799aa50c83e5e3285ad1df5693a773ea650d9250a3acb3c8b"
+    },
+    {
+      "id": "source.cli_tools.02",
+      "version": "1.1.0",
+      "canonical_sha256": "4feb0a229f9166609b1721c7e6ced74c54fc5fb239786b067c944a11a2555e80"
+    },
+    {
+      "id": "source.cli_tools.03",
+      "version": "1.1.0",
+      "canonical_sha256": "a86a41a96abad5e8817e97567196bfc8070cefd2a7614984810772851667e5df"
+    },
+    {
+      "id": "source.cli_tools.04",
+      "version": "1.1.0",
+      "canonical_sha256": "064849412d88cc1e1fab604ecfed809aa60fc1286a31945387f0b8a4b8dd7a13"
+    },
+    {
+      "id": "source.developer_tools.01",
+      "version": "1.1.0",
+      "canonical_sha256": "bf6cc7e2a7e28c7ed939d903e084357adcdea38ead771e493e0c00c646796399"
+    },
+    {
+      "id": "source.developer_tools.02",
+      "version": "1.1.0",
+      "canonical_sha256": "e4b66e8b0e9e9c241daed717cc9b7e36beac37cb7ce79e4de34c16aa81ec711f"
+    },
+    {
+      "id": "source.developer_tools.03",
+      "version": "1.1.0",
+      "canonical_sha256": "0bebee82e67c500e97e5405c479a1b7392af2271500fbae81f146024350dd0a5"
+    },
+    {
+      "id": "source.developer_tools.04",
+      "version": "1.1.0",
+      "canonical_sha256": "da79d1eae49a5b2d0bf197da44e9d18faf4cdb4f19ac5857ae264ae65065fd93"
+    },
+    {
+      "id": "source.ai_agents.01",
+      "version": "1.1.0",
+      "canonical_sha256": "4926cdcbfedb053512598e9bb6688aaaafb2099d95db0e5d81c1ac6167e833a2"
+    },
+    {
+      "id": "source.ai_agents.02",
+      "version": "1.1.0",
+      "canonical_sha256": "1eb4518a18ed39024f1efb0154be324252fee79075fab3cca607ddc8d207628e"
+    },
+    {
+      "id": "source.ai_agents.03",
+      "version": "1.1.0",
+      "canonical_sha256": "cc1b19ae2fbe2cdca6ea8aa301edeedb4da6f8b3413a33a19bd6367f54fd088e"
+    },
+    {
+      "id": "source.ai_agents.04",
+      "version": "1.1.0",
+      "canonical_sha256": "e4064c987c9d0427e5b7be179d53e9357b0a1f2c50b303a43648ee3016cd6dc8"
+    },
+    {
+      "id": "source.security_products.01",
+      "version": "1.1.0",
+      "canonical_sha256": "a030ef88a292071b0224a5bcc8b59139d76f67535c7f05de9130c12b11ed5957"
+    },
+    {
+      "id": "source.security_products.02",
+      "version": "1.1.0",
+      "canonical_sha256": "9302f03fa38d7fd675e0857c63ad98cddda07a4236736761e23d4dbd84f8643c"
+    },
+    {
+      "id": "source.security_products.03",
+      "version": "1.1.0",
+      "canonical_sha256": "d12bf44f1c4e8442b212cc790667ad3ab6c7bbeca4d88ba03bade33da413f962"
+    },
+    {
+      "id": "source.data_pipelines.01",
+      "version": "1.1.0",
+      "canonical_sha256": "ef9c70cffe1340df9c048075ce6a783f002332300394821d2f9f38e1f4a54cf3"
+    },
+    {
+      "id": "source.data_pipelines.02",
+      "version": "1.1.0",
+      "canonical_sha256": "e9acefc8ad62ed27eba024a8faa960e58884a09977f21b292a300ac7d016fbc9"
+    },
+    {
+      "id": "source.data_pipelines.03",
+      "version": "1.1.0",
+      "canonical_sha256": "995f457c0f26c0fb65dab7343972c10929d2aa085210601b25bcddcc898eeeab"
+    },
+    {
+      "id": "source.libraries.01",
+      "version": "1.1.0",
+      "canonical_sha256": "cac3dd0d473d670ce2aa7d02e095aed0bd4b2d265a8aaf7eb344b5c9d0a5ca63"
+    },
+    {
+      "id": "source.libraries.02",
+      "version": "1.1.0",
+      "canonical_sha256": "3bfdecc3530238e4746f0dd0f9ac81e29bff0b10f832e77d25b3d5531b3b5421"
+    },
+    {
+      "id": "source.libraries.03",
+      "version": "1.1.0",
+      "canonical_sha256": "00ec3392996ecf4a8d2733478931716244aab5cef3b4154494665a8b6e325fd4"
+    },
+    {
+      "id": "source.nist.ssdf.v1_1",
+      "version": "1.0.0",
+      "canonical_sha256": "3f1ad41f6765979619fb0897655ed3166b0d777cda9077b4fc3f9d98f762427c"
+    },
+    {
+      "id": "source.nasa.npr7150_2d.ch4",
+      "version": "1.0.0",
+      "canonical_sha256": "0018284f0c652810595fede490950a2151321388fc5a594f0acf5b91dec30d2b"
+    },
+    {
+      "id": "source.iso.12207.2026.summary",
+      "version": "1.0.0",
+      "canonical_sha256": "f93cd271d7148050b883d2bff7b3970841c6ad484a319118c2ad937f66c17611"
+    },
+    {
+      "id": "source.owasp.tm.cheatsheet",
+      "version": "1.0.0",
+      "canonical_sha256": "0175922e6203bbd3579d0673ba9565a4675ab0974db62d7531f08a0a7f51b67e"
+    },
+    {
+      "id": "source.owasp.multitenant",
+      "version": "1.0.0",
+      "canonical_sha256": "530b4cbeac3d285aaac3482286f667159bfc50b442147c6d8b56e1641c6b80ba"
+    },
+    {
+      "id": "source.github.dep_review",
+      "version": "1.0.0",
+      "canonical_sha256": "ac071eb7941e0468d29b0f43130deba28873483ffe1e550c3e0ca881e1a232de"
+    },
+    {
+      "id": "source.slsa.v1.verify",
+      "version": "1.0.0",
+      "canonical_sha256": "f2abaeaa4ee203bbd8fa98328728f86374fd5bff77c333abec5fd298b719aa89"
+    },
+    {
+      "id": "source.scrum.guide.2020",
+      "version": "1.0.0",
+      "canonical_sha256": "815ca9ee56e0b5f09248aa5c6ca8f253bdb116d522047a7b747ec8cf7eb5e378"
+    },
+    {
+      "id": "source.fastapi.readme",
+      "version": "1.0.0",
+      "canonical_sha256": "e1e088d9303919400f30b8db82e1df80138c3a45dfb955d7a0a89a727964c579"
+    },
+    {
+      "id": "source.fastapi.tests",
+      "version": "1.0.0",
+      "canonical_sha256": "2c02a0c81933a0aefdd6f6963828e96c9a3d9a90f2ee079f13e7ecb126c03874"
+    },
+    {
+      "id": "source.fastapi.ci",
+      "version": "1.0.0",
+      "canonical_sha256": "b3deb31424c25b42d597a37d6b5235e06a9ac7579177d115bfc4174796e466c1"
+    },
+    {
+      "id": "source.ripgrep.readme",
+      "version": "1.0.0",
+      "canonical_sha256": "e491605f8966b6f07c0b98244b448d8497b841243033a26664c69ca3ee514a7c"
+    },
+    {
+      "id": "source.ripgrep.regression",
+      "version": "1.0.0",
+      "canonical_sha256": "0ed072c186ad5f3d4ce99f41357a667c11a587f9ebbdb1abda7552ec066fef87"
+    },
+    {
+      "id": "source.ripgrep.release",
+      "version": "1.0.0",
+      "canonical_sha256": "7e22c6c790952676abf074135da198c8c31d775291b62db5d4621b4f322f212d"
+    },
+    {
+      "id": "source.agents.readme",
+      "version": "1.0.0",
+      "canonical_sha256": "d0b22f29d0fc89630b232bccef340bc8108324123ffa9f90094a3302eada78bb"
+    },
+    {
+      "id": "source.agents.policy",
+      "version": "1.0.0",
+      "canonical_sha256": "5fa0c7c0d503a4d6ebf185b3d74da0d05bb25b1f2ccb9346a52bac9827f77314"
+    },
+    {
+      "id": "source.agents.instructions",
+      "version": "1.0.0",
+      "canonical_sha256": "bbdd3065247c060403e895a336b38fbd5023f19881025f72cf379648a7eeec47"
+    },
+    {
+      "id": "source.agents.test",
+      "version": "1.0.0",
+      "canonical_sha256": "13762049ad91f571e5c9fe22770b7ee0de6ff69a8b0203b5044ba6db8069c5a7"
+    },
+    {
+      "id": "source.agents.ci",
+      "version": "1.0.0",
+      "canonical_sha256": "3ec26a20bba8e592811a24fe428a75e7bc538d7a114ac1dbae16c62f14c143ef"
+    },
+    {
+      "id": "source.aws.segment_workload",
+      "version": "1.0.0",
+      "canonical_sha256": "6fdc929d8d8768e92b2b31b6aadd127febb3faad8dc635e3eb66652f35e00b9a"
+    },
+    {
+      "id": "source.google.microservices_intro",
+      "version": "1.0.0",
+      "canonical_sha256": "c64bdbe75cea20834ec23654ac4fa54daafd26b9eea2f216864bccb096d711b1"
+    },
+    {
+      "id": "source.12factor.processes",
+      "version": "1.0.0",
+      "canonical_sha256": "0c353148a6308db766ee140a07f4827949636915893359736801f200bd83393d"
+    },
+    {
+      "id": "source.openai.prompt_injection",
+      "version": "1.0.0",
+      "canonical_sha256": "bfc1c916407dfda1a8495aaac3cdd50a5b988823eca3ff942bc2e6114a9e0b77"
+    },
+    {
+      "id": "source.openai.prompting_codex",
+      "version": "1.0.0",
+      "canonical_sha256": "26313016f0eef0d9d675bc04829561898138e0d21ca358381f014cc89ab1013d"
+    },
+    {
+      "id": "source.github.copilot_task_practices",
+      "version": "1.0.0",
+      "canonical_sha256": "6a5ca84a4d93e4d0a6a0067a5b2438e53653f706c41bcd389ac2e94c18c730d2"
+    },
+    {
+      "id": "source.google.sre.release",
+      "version": "1.0.0",
+      "canonical_sha256": "9af57062f6ad2d38588346419ae074b5f8d3f0053b1330512c7eed9bd6e59fb4"
+    },
+    {
+      "id": "source.google.sre.canary",
+      "version": "1.0.0",
+      "canonical_sha256": "e8a00e37f6db3382122502a52bd4cfdeb3673a21c872793af8abd0a00c54453a"
+    }
+  ],
+  "verification_gates.jsonl": [
+    {
+      "id": "gate.requirements_acceptance",
+      "version": "1.1.0",
+      "canonical_sha256": "870e9aaffde29ea5149ce547260d51b04ad12c04e32b5fd165fb54ef93ab6ea8"
+    },
+    {
+      "id": "gate.security_risk_review",
+      "version": "1.1.0",
+      "canonical_sha256": "d61388bed31b38968a368e6e90709c1003958d4ea75c1b5055f4b3f32730b8a7"
+    },
+    {
+      "id": "gate.unit_integration_execution",
+      "version": "1.1.0",
+      "canonical_sha256": "800d0104f30a2c85fded8768ee4c4f0709b3229ea4897a43d41b88cc46a20bb0"
+    },
+    {
+      "id": "gate.dependency_provenance",
+      "version": "1.1.0",
+      "canonical_sha256": "4efbd3064d288c47649c0b05a14f950351f7c11306042688329247d3ab25e3f1"
+    },
+    {
+      "id": "gate.release_readiness",
+      "version": "1.1.0",
+      "canonical_sha256": "2baa19dd4dbd473ad62fcead6571374aa7f5a3eb315df571b085dadb4ed676d4"
+    },
+    {
+      "id": "gate.operational_rollback",
+      "version": "1.1.0",
+      "canonical_sha256": "d663f77bc17d71b79b9820292fd978bb469f796bbc53ae95f65805ef96a53392"
+    }
+  ]
+}

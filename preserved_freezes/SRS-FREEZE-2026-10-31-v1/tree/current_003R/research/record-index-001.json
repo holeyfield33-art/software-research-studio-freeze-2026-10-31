@@ -1,0 +1,239 @@
+{
+  "software_types.jsonl": [
+    {
+      "id": "software_type.web_applications",
+      "version": "1.0.0",
+      "canonical_sha256": "3c415f1f2efd9ce20a9c51ec8fb585ef0b9c46a28e36a17776965132f2f038fe"
+    },
+    {
+      "id": "software_type.saas",
+      "version": "1.0.0",
+      "canonical_sha256": "dadf3dc06d594f0fa1e675187ae051438820eb3858763968ef4a32915f899c51"
+    },
+    {
+      "id": "software_type.apis",
+      "version": "1.0.0",
+      "canonical_sha256": "6f60573495772b8bf0938f7a98cd2c9f87f43720806f14641b14a818ddc428c9"
+    },
+    {
+      "id": "software_type.mobile_applications",
+      "version": "1.0.0",
+      "canonical_sha256": "bf283a09867d25d636b3eca600327a9fc62add6423054f047d662c3794de22e6"
+    },
+    {
+      "id": "software_type.cli_tools",
+      "version": "1.0.0",
+      "canonical_sha256": "69bf76412b7f7da3cef95fe0a2b154486260ca0b0fb3e2d25d02ffd2b9474744"
+    },
+    {
+      "id": "software_type.developer_tools",
+      "version": "1.0.0",
+      "canonical_sha256": "6f743c11965674240b7eb250587b09a86246f1ce16db2395f96080bbfd3dd8ca"
+    },
+    {
+      "id": "software_type.ai_agents",
+      "version": "1.0.0",
+      "canonical_sha256": "f807abe45c371e06784b9fb712c14894c599a245d66aa9aa5bf96c204c633c33"
+    },
+    {
+      "id": "software_type.security_products",
+      "version": "1.0.0",
+      "canonical_sha256": "398ab37663fd1325a31d6018bcab6dcb1169b9b8fb6364c80ce250723d0db7be"
+    },
+    {
+      "id": "software_type.data_pipelines",
+      "version": "1.0.0",
+      "canonical_sha256": "47fd178dc939d05cbf8a80f36819dd2ad1afe97bd5d7bb9a0f63f849bf287208"
+    },
+    {
+      "id": "software_type.libraries",
+      "version": "1.0.0",
+      "canonical_sha256": "753c691ca5dcdb386bcfebd4f2365677d4ae00308cd563af484ba86de97220d0"
+    }
+  ],
+  "sources.jsonl": [
+    {
+      "id": "source.web_applications.01",
+      "version": "1.0.0",
+      "canonical_sha256": "ad5c7deaedb1615ad12270ffcb6b70a303d4652a4985d1824bd84d29dda0c414"
+    },
+    {
+      "id": "source.web_applications.02",
+      "version": "1.0.0",
+      "canonical_sha256": "ad2aef02424ce3f17c88ba7b9f00a4fc64d4e849435e406ae03cf678211b7358"
+    },
+    {
+      "id": "source.web_applications.03",
+      "version": "1.0.0",
+      "canonical_sha256": "ff8d96eb0443afa8e79a479c072a06a99eb2642406a0ef0798c63f23584630f5"
+    },
+    {
+      "id": "source.saas.01",
+      "version": "1.0.0",
+      "canonical_sha256": "36ac631c750248c1e5878daa7f7b3e751d42db080af924bd9d3a887a5367277b"
+    },
+    {
+      "id": "source.saas.02",
+      "version": "1.0.0",
+      "canonical_sha256": "69776ed0fa08ff398756063d0d1019a327e265061b90bd095be85eb54dc1a19f"
+    },
+    {
+      "id": "source.saas.03",
+      "version": "1.0.0",
+      "canonical_sha256": "4218b5a21d80b48d6deb14ca0ec527b813f8c0504208bd46592cb8f9b449e2d2"
+    },
+    {
+      "id": "source.saas.04",
+      "version": "1.0.0",
+      "canonical_sha256": "e5ae01ba273af806d2d42e4e6e41ddecd95203207d1387996085cb0dcb0d0e68"
+    },
+    {
+      "id": "source.apis.01",
+      "version": "1.0.0",
+      "canonical_sha256": "1200286c70be39b03363d3e747c97371b7e3ad795f492c56cf9d24f3a198e4fc"
+    },
+    {
+      "id": "source.apis.02",
+      "version": "1.0.0",
+      "canonical_sha256": "1133c4181879b1df3b59f48d25c8c8a05c889ce7e51a9632e715ebb12972db79"
+    },
+    {
+      "id": "source.apis.03",
+      "version": "1.0.0",
+      "canonical_sha256": "2eece56c80125fad7df2858e3677d26e94187806b733ece69b15be879d3debf7"
+    },
+    {
+      "id": "source.mobile_applications.01",
+      "version": "1.0.0",
+      "canonical_sha256": "bf140a5fb62d07170edd8c46041091d0341d74b52bfa035a5b412948912550ef"
+    },
+    {
+      "id": "source.mobile_applications.02",
+      "version": "1.0.0",
+      "canonical_sha256": "4504820e75529bddd7c92d086336eeb8c634cbbd4cc8cee1bfb62feed5529c42"
+    },
+    {
+      "id": "source.mobile_applications.03",
+      "version": "1.0.0",
+      "canonical_sha256": "b650da0274a5f559d4d657698c67121c6425e0c21ab89db2300b693933deb07e"
+    },
+    {
+      "id": "source.mobile_applications.04",
+      "version": "1.0.0",
+      "canonical_sha256": "8ccd654e1075f8d183ed8cfe5bbfe4c2cb59b6c85f6486008f86ca959ccd0e70"
+    },
+    {
+      "id": "source.cli_tools.01",
+      "version": "1.0.0",
+      "canonical_sha256": "95faca77f84716335e589b0befae0150e0a0ba0e807e5bcd707c8eb1a5e57fe6"
+    },
+    {
+      "id": "source.cli_tools.02",
+      "version": "1.0.0",
+      "canonical_sha256": "a9330ec44827cf9683c46a1a19bb3680075a8afad1b125e7c261649f69d08123"
+    },
+    {
+      "id": "source.cli_tools.03",
+      "version": "1.0.0",
+      "canonical_sha256": "4533b3bf7069119c79f9c9501eb27e1b99300e24302db4e5c5ab6939cda0e8b3"
+    },
+    {
+      "id": "source.cli_tools.04",
+      "version": "1.0.0",
+      "canonical_sha256": "d0183644f0513ff13dfb9e06341ae353ea5a80fe2ee3365cd17c763ceffd73dd"
+    },
+    {
+      "id": "source.developer_tools.01",
+      "version": "1.0.0",
+      "canonical_sha256": "886c68958a1f0549f12d3cd98d649940cec661a5118c2b406187f3cecfb8a1ce"
+    },
+    {
+      "id": "source.developer_tools.02",
+      "version": "1.0.0",
+      "canonical_sha256": "10fb8044183c5d32e23741d0d6fa271aa84ebfc98f9235f4e71d60fdb18595ef"
+    },
+    {
+      "id": "source.developer_tools.03",
+      "version": "1.0.0",
+      "canonical_sha256": "65684e131bad14f1c2bc3aa265302485e5759df2c8d2e44ea90e1455e48cc624"
+    },
+    {
+      "id": "source.developer_tools.04",
+      "version": "1.0.0",
+      "canonical_sha256": "b7cc0c9e7fd0ec393e00990c75c82aee9641a65945eab8500a49eb6c498705a5"
+    },
+    {
+      "id": "source.ai_agents.01",
+      "version": "1.0.0",
+      "canonical_sha256": "93124b2ac31d8094b5d8cb14b2a16fb87c55dd7abd519cf7664c927868d3bd47"
+    },
+    {
+      "id": "source.ai_agents.02",
+      "version": "1.0.0",
+      "canonical_sha256": "3084220132abce190c4734cdc0d27bbcfdcf796fc81bd69e55975bfa6963db45"
+    },
+    {
+      "id": "source.ai_agents.03",
+      "version": "1.0.0",
+      "canonical_sha256": "ab7f52bf8a07cfad8120119960bc0175aa10ebfb53801b787d7d81273534c170"
+    },
+    {
+      "id": "source.ai_agents.04",
+      "version": "1.0.0",
+      "canonical_sha256": "5bb7616a697e192f12e204a2e18db22d7aac38564ec70e5240d8dcab66f416ad"
+    },
+    {
+      "id": "source.security_products.01",
+      "version": "1.0.0",
+      "canonical_sha256": "df2b934fd0333a3840077690fd22fbbb5395bd250cc3c2714a07326246202136"
+    },
+    {
+      "id": "source.security_products.02",
+      "version": "1.0.0",
+      "canonical_sha256": "a72781762cef4e6108489bcf7837be07e63a82c17e6ee0ffc2207c44e8bd0216"
+    },
+    {
+      "id": "source.security_products.03",
+      "version": "1.0.0",
+      "canonical_sha256": "6a660eaa9b5203497e5489cb5ba8db96c4a47a528582c7d8416114aba1dea6dc"
+    },
+    {
+      "id": "source.data_pipelines.01",
+      "version": "1.0.0",
+      "canonical_sha256": "55a26240ddb8a096e0f4d8d61bfb93f4c5ebad566543cc4fa56d2fdba1ddf561"
+    },
+    {
+      "id": "source.data_pipelines.02",
+      "version": "1.0.0",
+      "canonical_sha256": "005096d49a1a47c1320cf49eb1507691260115b75d2e9732db153d113f0aa9fc"
+    },
+    {
+      "id": "source.data_pipelines.03",
+      "version": "1.0.0",
+      "canonical_sha256": "bb1f4dcbd5fd82cc259ea699a7286498185303c2c689a0e60afaf4f1b38d46d6"
+    },
+    {
+      "id": "source.libraries.01",
+      "version": "1.0.0",
+      "canonical_sha256": "7e57e551227ef9f7799df29074565a7702496b29685fd86a63edfda18cff70cf"
+    },
+    {
+      "id": "source.libraries.02",
+      "version": "1.0.0",
+      "canonical_sha256": "54cfa62788be151e78bb2a59d80d536ae46bbb0e7ced9a0b192553188f456bc5"
+    },
+    {
+      "id": "source.libraries.03",
+      "version": "1.0.0",
+      "canonical_sha256": "d60e86cb0f6f361834b2781755199fc66fc478e52adb74b4d71f75c8ae6118f6"
+    }
+  ],
+  "engineering_practices.jsonl": [],
+  "sdlc_stages.jsonl": [],
+  "architecture_patterns.jsonl": [],
+  "prompt_patterns.jsonl": [],
+  "roadmap_patterns.jsonl": [],
+  "verification_gates.jsonl": [],
+  "reference_projects.jsonl": [],
+  "relationships.jsonl": []
+}

@@ -1,0 +1,3068 @@
+{
+  "oracle_version": "1.0.0",
+  "frozen_before_selector_implementation": true,
+  "independent_basis": "Base selections copied from immutable 003 fixture contracts, then assigned stable 003R rule IDs; ten counterfactuals manually specified from structured facts and directive acceptance criteria. No selector outputs were read.",
+  "base_and_counterfactual_cases": {
+    "base_ai_agent": {
+      "case_path": "selection_cases/base_ai_agent/brief.json",
+      "software_type_ids": [
+        "software_type.ai_agents"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.agent_tool_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.change_maintenance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "reference.openai_agents_sdk",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.risk_first_poc",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "software_type.ai_agents",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.multi_agent_autonomy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.production_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.vector_database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [
+        {
+          "decision_id": "feature.high_impact_write",
+          "status": "INCOMPLETE",
+          "rule_id": "R-AUTHORITY-001",
+          "reason_code": "ACCOUNTABLE_APPROVER_EVIDENCE_MISSING"
+        }
+      ],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE",
+        "gate.operational_rollback": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope_requirements",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.threat_model",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.authorization_controls",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.recovery_plan",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.validation_evidence",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release_decision",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "poc.assumption",
+        "dep.map",
+        "poc.design",
+        "dep.prove",
+        "poc.run",
+        "dep.deliver",
+        "poc.decision"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "base_authenticated_api": {
+      "case_path": "selection_cases/base_authenticated_api/brief.json",
+      "software_type_ids": [
+        "software_type.apis"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.layered_modular",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "gate.dependency_provenance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "practice.version_control_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.review_change",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "reference.fastapi",
+          "status": "CONDITIONAL",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.apis",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.event_queue",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-003",
+          "reason_code": "NOT_REQUIRED_BY_BRIEF"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002",
+          "reason_code": "TENANCY_NOT_REQUIRED"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.authentication",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_AUTHENTICATED_USER_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.authorization",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_ROLE_AUTHORIZATION_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.billing",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.kubernetes",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.microservices",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.dependency_provenance": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.design",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.implementation",
+          "phase": "implementation",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tests",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "base_offline_cli": {
+      "case_path": "selection_cases/base_offline_cli/brief.json",
+      "software_type_ids": [
+        "software_type.cli_tools"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-CLI-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.dependency_secret_handling",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-002"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "reference.ripgrep",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.cli_tools",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_NETWORK_SERVICE_BOUNDARY"
+        },
+        {
+          "record_id": "arch.event_queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_ASYNC_WORKLOAD"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_TENANT_BOUNDARY"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_SERVICE_DEPLOYMENT"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_REQUEST"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NOT_IN_CURRENT_RISK_SCOPE"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_PLAN"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.api_gateway",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.authentication",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.cloud_hosting",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.container",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.multitenancy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.service_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "cli-contract",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "local-architecture",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "implementation-plan",
+          "phase": "implementation",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "verification-plan",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "conditional-packaging-recovery",
+          "phase": "release",
+          "status": "PROPOSED"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "agent_no_write_tool": {
+      "case_path": "selection_cases/agent_no_write_tool/brief.json",
+      "software_type_ids": [
+        "software_type.ai_agents"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.agent_tool_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.change_maintenance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "reference.openai_agents_sdk",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.risk_first_poc",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "software_type.ai_agents",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.multi_agent_autonomy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.production_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.vector_database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [
+        {
+          "decision_id": "feature.high_impact_write",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-AGENT-003",
+          "reason_code": "NO_WRITE_CAPABILITY"
+        }
+      ],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE",
+        "gate.operational_rollback": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope_requirements",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.threat_model",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.authorization_controls",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.recovery_plan",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.validation_evidence",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release_decision",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "poc.assumption",
+        "dep.map",
+        "poc.design",
+        "dep.prove",
+        "poc.run",
+        "dep.deliver",
+        "poc.decision"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "agent_write_no_approver": {
+      "case_path": "selection_cases/agent_write_no_approver/brief.json",
+      "software_type_ids": [
+        "software_type.ai_agents"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.agent_tool_boundary",
+          "status": "INCOMPLETE",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.change_maintenance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "reference.openai_agents_sdk",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.risk_first_poc",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "software_type.ai_agents",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.multi_agent_autonomy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.production_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.vector_database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [
+        {
+          "decision_id": "feature.high_impact_write",
+          "status": "INCOMPLETE",
+          "rule_id": "R-AUTHORITY-001",
+          "reason_code": "ACCOUNTABLE_APPROVER_EVIDENCE_MISSING"
+        }
+      ],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE",
+        "gate.operational_rollback": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope_requirements",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.threat_model",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.authorization_controls",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.recovery_plan",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.validation_evidence",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release_decision",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "poc.assumption",
+        "dep.map",
+        "poc.design",
+        "dep.prove",
+        "poc.run",
+        "dep.deliver",
+        "poc.decision"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "agent_production_without_candidate_tests": {
+      "case_path": "selection_cases/agent_production_without_candidate_tests/brief.json",
+      "software_type_ids": [
+        "software_type.ai_agents"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.agent_tool_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.change_maintenance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "INCOMPLETE",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-AGENT-001"
+        },
+        {
+          "record_id": "reference.openai_agents_sdk",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.risk_first_poc",
+          "status": "INCOMPLETE",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "INCOMPLETE",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "software_type.ai_agents",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.multi_agent_autonomy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.production_deployment",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001",
+          "reason_code": "NO_CANDIDATE_BOUND_TESTS_OR_APPROVAL"
+        },
+        {
+          "decision_id": "feature.vector_database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [
+        {
+          "decision_id": "feature.high_impact_write",
+          "status": "INCOMPLETE",
+          "rule_id": "R-AUTHORITY-001",
+          "reason_code": "ACCOUNTABLE_APPROVER_EVIDENCE_MISSING"
+        }
+      ],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE",
+        "gate.operational_rollback": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope_requirements",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.threat_model",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.authorization_controls",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.recovery_plan",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.validation_evidence",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release_decision",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release_plan",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "poc.assumption",
+        "dep.map",
+        "poc.design",
+        "dep.prove",
+        "poc.run",
+        "dep.deliver",
+        "poc.decision"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "api_public_read_only": {
+      "case_path": "selection_cases/api_public_read_only/brief.json",
+      "software_type_ids": [
+        "software_type.apis"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.layered_modular",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "gate.dependency_provenance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "practice.version_control_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.review_change",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "reference.fastapi",
+          "status": "CONDITIONAL",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.apis",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.event_queue",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-003",
+          "reason_code": "NOT_REQUIRED_BY_BRIEF"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002",
+          "reason_code": "TENANCY_NOT_REQUIRED"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.authentication",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-API-AUTH-001",
+          "reason_code": "PUBLIC_READ_ONLY_NO_AUTH_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.authorization",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-API-AUTH-001",
+          "reason_code": "PUBLIC_READ_ONLY_NO_ROLE_AUTHORIZATION"
+        },
+        {
+          "decision_id": "feature.billing",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.kubernetes",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.microservices",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.dependency_provenance": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.design",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.implementation",
+          "phase": "implementation",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tests",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "api_explicit_multitenant": {
+      "case_path": "selection_cases/api_explicit_multitenant/brief.json",
+      "software_type_ids": [
+        "software_type.apis"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.layered_modular",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002"
+        },
+        {
+          "record_id": "gate.dependency_provenance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "practice.version_control_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.review_change",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "reference.fastapi",
+          "status": "CONDITIONAL",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.apis",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.event_queue",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-003",
+          "reason_code": "NOT_REQUIRED_BY_BRIEF"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.authentication",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_AUTHENTICATED_USER_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.authorization",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_ROLE_AUTHORIZATION_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.billing",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.kubernetes",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.microservices",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.multitenancy",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002",
+          "reason_code": "TENANT_ISOLATION_EVIDENCE_PENDING"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.dependency_provenance": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.design",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.implementation",
+          "phase": "implementation",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tests",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tenant_isolation_review",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "api_queue_without_justification": {
+      "case_path": "selection_cases/api_queue_without_justification/brief.json",
+      "software_type_ids": [
+        "software_type.apis"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.layered_modular",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "gate.dependency_provenance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "practice.version_control_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.review_change",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "reference.fastapi",
+          "status": "CONDITIONAL",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.apis",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.event_queue",
+          "status": "INCOMPLETE",
+          "rule_id": "R-API-003",
+          "reason_code": "QUEUE_JUSTIFICATION_OR_OWNER_MISSING"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002",
+          "reason_code": "TENANCY_NOT_REQUIRED"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.authentication",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_AUTHENTICATED_USER_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.authorization",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_ROLE_AUTHORIZATION_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.billing",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.kubernetes",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.microservices",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INCOMPLETE",
+          "rule_id": "R-API-003",
+          "reason_code": "QUEUE_JUSTIFICATION_OR_OWNER_MISSING"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.dependency_provenance": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.design",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.implementation",
+          "phase": "implementation",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tests",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.queue_justification",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "api_changed_standard_edition": {
+      "case_path": "selection_cases/api_changed_standard_edition/brief.json",
+      "software_type_ids": [
+        "software_type.apis"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.layered_modular",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001"
+        },
+        {
+          "record_id": "gate.dependency_provenance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.ci_reproducible_release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "practice.threat_modeling",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "practice.version_control_review",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.review_change",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.threat_model",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-004"
+        },
+        {
+          "record_id": "reference.fastapi",
+          "status": "CONDITIONAL",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "RECOMMENDED",
+          "rule_id": "R-RELEASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.apis",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.event_queue",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-003",
+          "reason_code": "NOT_REQUIRED_BY_BRIEF"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "CONDITIONAL",
+          "rule_id": "R-API-002",
+          "reason_code": "TENANCY_NOT_REQUIRED"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.authentication",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_AUTHENTICATED_USER_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.authorization",
+          "status": "RECOMMENDED",
+          "rule_id": "R-API-001",
+          "reason_code": "EXPLICIT_ROLE_AUTHORIZATION_REQUIREMENT"
+        },
+        {
+          "decision_id": "feature.billing",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.kubernetes",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.microservices",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [
+        {
+          "standard_id": "ISO/IEC/IEEE 12207",
+          "requested_edition": "2017",
+          "status": "INCOMPLETE",
+          "rule_id": "R-STANDARD-001",
+          "reason_code": "EDITION_OR_ORGANIZATIONAL_ADOPTION_UNRESOLVED",
+          "catalog_source_id": "source.iso.12207.2026.summary",
+          "compliance_claim": false,
+          "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract"
+        }
+      ],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.security_risk_review": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE",
+        "gate.dependency_provenance": "INCOMPLETE",
+        "gate.release_readiness": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "deliverable.scope",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.design",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.implementation",
+          "phase": "implementation",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.tests",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.release",
+          "phase": "release",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "deliverable.standard_adoption_review",
+          "phase": "discovery",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "cli_destructive_overwrite_unauthorized": {
+      "case_path": "selection_cases/cli_destructive_overwrite_unauthorized/brief.json",
+      "software_type_ids": [
+        "software_type.cli_tools"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-CLI-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.dependency_secret_handling",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-002"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "reference.ripgrep",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.cli_tools",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_NETWORK_SERVICE_BOUNDARY"
+        },
+        {
+          "record_id": "arch.event_queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_ASYNC_WORKLOAD"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_TENANT_BOUNDARY"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_SERVICE_DEPLOYMENT"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_REQUEST"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NOT_IN_CURRENT_RISK_SCOPE"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_PLAN"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.api_gateway",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.authentication",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.cloud_hosting",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.container",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.destructive_overwrite",
+          "status": "INCOMPLETE",
+          "rule_id": "R-AUTHORITY-001",
+          "reason_code": "DESTRUCTIVE_WRITE_NOT_AUTHORIZED"
+        },
+        {
+          "decision_id": "feature.multitenancy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.service_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "cli-contract",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "local-architecture",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "implementation-plan",
+          "phase": "implementation",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "verification-plan",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "conditional-packaging-recovery",
+          "phase": "release",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.non_destructive_alternative",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "cli_network_upload_unknown_scope": {
+      "case_path": "selection_cases/cli_network_upload_unknown_scope/brief.json",
+      "software_type_ids": [
+        "software_type.cli_tools"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-CLI-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.dependency_secret_handling",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-002"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "reference.ripgrep",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.cli_tools",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_NETWORK_SERVICE_BOUNDARY"
+        },
+        {
+          "record_id": "arch.event_queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_ASYNC_WORKLOAD"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_TENANT_BOUNDARY"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_SERVICE_DEPLOYMENT"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_REQUEST"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NOT_IN_CURRENT_RISK_SCOPE"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_PLAN"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.api_gateway",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.authentication",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.cloud_hosting",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.container",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.multitenancy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.network_upload",
+          "status": "INCOMPLETE",
+          "rule_id": "R-CLI-002",
+          "reason_code": "DESTINATION_DATA_SCOPE_OR_AUTHORITY_UNKNOWN"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.service_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "cli-contract",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "local-architecture",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "implementation-plan",
+          "phase": "implementation",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "verification-plan",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "conditional-packaging-recovery",
+          "phase": "release",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "deliverable.upload_boundary_review",
+          "phase": "design",
+          "status": "INCOMPLETE"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task"
+      ],
+      "descriptive_text_effect": "ignored"
+    },
+    "cli_library_distribution_no_service": {
+      "case_path": "selection_cases/cli_library_distribution_no_service/brief.json",
+      "software_type_ids": [
+        "software_type.cli_tools",
+        "software_type.libraries"
+      ],
+      "selected_records": [
+        {
+          "record_id": "arch.minimal_viable_structure",
+          "status": "RECOMMENDED",
+          "rule_id": "R-CLI-001"
+        },
+        {
+          "record_id": "gate.requirements_acceptance",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "gate.unit_integration_execution",
+          "status": "INCOMPLETE",
+          "rule_id": "R-EVIDENCE-001"
+        },
+        {
+          "record_id": "practice.dependency_secret_handling",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-002"
+        },
+        {
+          "record_id": "practice.requirements_traceability",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-001"
+        },
+        {
+          "record_id": "practice.test_strategy",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PRACTICE-002"
+        },
+        {
+          "record_id": "prompt.add_test",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "prompt.implement_scoped_task",
+          "status": "RECOMMENDED",
+          "rule_id": "R-PROMPT-001"
+        },
+        {
+          "record_id": "reference.ripgrep",
+          "status": "RECOMMENDED",
+          "rule_id": "R-EXAMPLE-001"
+        },
+        {
+          "record_id": "roadmap.dependency_aware_sequence",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "roadmap.smallest_releasable_increment",
+          "status": "RECOMMENDED",
+          "rule_id": "R-ROADMAP-001"
+        },
+        {
+          "record_id": "sdlc.architecture_design",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.discovery_scope",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.implementation",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.requirements_risk",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "sdlc.verification",
+          "status": "RECOMMENDED",
+          "rule_id": "R-BASE-001"
+        },
+        {
+          "record_id": "software_type.cli_tools",
+          "status": "RECOMMENDED",
+          "rule_id": "R-TYPE-BASE-001"
+        }
+      ],
+      "rejected_records": [
+        {
+          "record_id": "arch.client_server_api_boundary",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_NETWORK_SERVICE_BOUNDARY"
+        },
+        {
+          "record_id": "arch.event_queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_ASYNC_WORKLOAD"
+        },
+        {
+          "record_id": "arch.multitenancy_isolation",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_TENANT_BOUNDARY"
+        },
+        {
+          "record_id": "gate.operational_rollback",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_SERVICE_DEPLOYMENT"
+        },
+        {
+          "record_id": "gate.release_readiness",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_REQUEST"
+        },
+        {
+          "record_id": "gate.security_risk_review",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NOT_IN_CURRENT_RISK_SCOPE"
+        },
+        {
+          "record_id": "sdlc.release",
+          "status": "CONDITIONAL",
+          "rule_id": "R-CLI-001",
+          "reason_code": "NO_RELEASE_PLAN"
+        }
+      ],
+      "feature_decisions": [
+        {
+          "decision_id": "feature.api_gateway",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.authentication",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.cloud_hosting",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.container",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.database",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.multitenancy",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.queue",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "feature.service_deployment",
+          "status": "INAPPLICABLE",
+          "rule_id": "R-EXCLUSION-001",
+          "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+        },
+        {
+          "decision_id": "software_type.libraries",
+          "status": "INCOMPLETE",
+          "rule_id": "R-CATEGORY-001",
+          "reason_code": "KNOWN_NOT_CALIBRATED"
+        }
+      ],
+      "authority_decisions": [],
+      "standard_reviews": [],
+      "gate_results": {
+        "gate.requirements_acceptance": "INCOMPLETE",
+        "gate.unit_integration_execution": "INCOMPLETE"
+      },
+      "deliverable_roles": [
+        {
+          "role_id": "cli-contract",
+          "phase": "discovery",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "local-architecture",
+          "phase": "design",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "implementation-plan",
+          "phase": "implementation",
+          "status": "PROPOSED"
+        },
+        {
+          "role_id": "verification-plan",
+          "phase": "verification",
+          "status": "INCOMPLETE"
+        },
+        {
+          "role_id": "conditional-packaging-recovery",
+          "phase": "release",
+          "status": "PROPOSED"
+        }
+      ],
+      "roadmap_task_ids": [
+        "dep.discover",
+        "inc.scope",
+        "dep.map",
+        "inc.build",
+        "dep.prove",
+        "inc.verify",
+        "dep.deliver",
+        "inc.release"
+      ],
+      "prompt_record_ids": [
+        "prompt.add_test",
+        "prompt.implement_scoped_task"
+      ],
+      "descriptive_text_effect": "ignored"
+    }
+  },
+  "inherited_negative_controls": [
+    {
+      "case_id": "mobile_source_cannot_support_api_claim",
+      "case_type": "stack_mismatch",
+      "expected_status": "INAPPLICABLE",
+      "evidence_source_ids": [
+        "source.mobile_applications.01"
+      ],
+      "details": {
+        "target_software_type_id": "software_type.apis",
+        "source_claimed_scope": "Android/native mobile-app guidance",
+        "selection_policy": "Do not infer API behavior from a different software stack."
+      }
+    },
+    {
+      "case_id": "superseded_edition_without_adoption",
+      "case_type": "superseded_standard",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.iso.12207.2026.summary"
+      ],
+      "details": {
+        "claimed_current_edition": "ISO/IEC/IEEE 12207:2017",
+        "catalogued_current_edition": "ISO/IEC/IEEE 12207:2026",
+        "organization_adoption_known": false,
+        "full_normative_text_reviewed": false
+      }
+    },
+    {
+      "case_id": "repository_test_source_without_run",
+      "case_type": "missing_test_execution",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.fastapi.tests",
+        "source.fastapi.ci"
+      ],
+      "details": {
+        "gate_id": "gate.unit_integration_execution",
+        "candidate_id": null,
+        "test_execution_artifact": null,
+        "workflow_configuration_is_execution": false,
+        "expected_gate_outcome": "INCOMPLETE"
+      }
+    },
+    {
+      "case_id": "source_specific_guidance_is_not_a_universal_default",
+      "case_type": "source_tension",
+      "expected_status": "CONDITIONAL",
+      "evidence_source_ids": [
+        "source.aws.segment_workload",
+        "source.12factor.processes"
+      ],
+      "details": {
+        "architecture_record_id": "arch.minimal_viable_structure",
+        "decision_policy": "context_specific_options_only",
+        "rule": "Keep AWS workload segmentation and Twelve-Factor process-state guidance within their own scopes; neither independently proves a universal architecture choice."
+      }
+    },
+    {
+      "case_id": "unknown_requirement_abstains",
+      "case_type": "unknown_requirement",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.github.copilot_task_practices"
+      ],
+      "details": {
+        "unknown_requirement_id": "requirement.unknown_telemetry_target",
+        "no_catalog_match": true,
+        "selection_policy": "abstain",
+        "rationale": "No stable record or source maps this requirement; clarify it or extend the reviewed catalog before recommending."
+      }
+    }
+  ],
+  "mutation_controls": [
+    "flip_recommended_status",
+    "reverse_typed_rejection_reason",
+    "inject_fake_test_or_deployment_pass",
+    "contradict_descriptive_text_with_authoritative_facts"
+  ]
+}
