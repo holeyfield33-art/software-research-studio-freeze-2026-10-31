@@ -28,6 +28,10 @@ If the user's intent spans two modes, provide the primary requested deliverable 
 - MOTHERSHIP and D-004 are separate evidence domains. Existing frozen files and historical reports are never rewritten to align with new claims.
 - A third-party "finished" report is an **incoming candidate**, not an accepted checkpoint, until independent checks pass; do not infer its name or promote 003R2/004 from a status message alone.
 
+## Maintenance and OWASP-informed engineering
+
+For repository upkeep, dependency changes, releases, incident response and health checks, use the [repository maintenance section](docs/REPOSITORY_KNOWLEDGE_LAYOUT.md#repository-maintenance--standard-section-for-studio-assisted-projects) in the existing knowledge-layout guide. It covers OWASP testing phases, task-selected security standards, before/after change verification, periodic health review and one living STATUS authority. Apply it by product type/risk, not as compulsory paperwork or an engine feature. A release/testing claim requires observed evidence.
+
 ## Runbook
 
 Follow the intake, output template and stop conditions in [docs/AGENT_INTAKE.md](docs/AGENT_INTAKE.md). The current kernel can validate, plan, persist, import signed evidence and propose gates; it cannot execute project commands or enforce host capabilities.
