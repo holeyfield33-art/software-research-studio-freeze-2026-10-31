@@ -1,6 +1,6 @@
 # Software Research Studio
 
-**Status (2026-11-01): active experimental universal software-development system; frozen research preserved.** Studio is intended to help an agent understand a software project, select justified lifecycle work, maintain connected requirements and tasks, verify evidence and make conservative release decisions. It is **not** a production autonomous developer.
+**Status (2026-11-01): experimental engineering-intelligence toolkit for frontier coding models; frozen research preserved.** Studio helps models build, maintain and improve vibecoded projects by recognizing missing engineering needs and selecting appropriate established practices **without requiring users to know what to ask for**. The model keeps using its normal coding tools. Studio is not a mandatory lifecycle manager, autonomous developer or reporting bureaucracy. See [product intent](docs/PRODUCT_INTENT.md).
 
 > New agents: start with [AGENTS.md](AGENTS.md), [universal intake](docs/AGENT_INTAKE.md), and [getting started](docs/GETTING_STARTED.md). Do not treat an assessment target as a linked product.
 
@@ -26,7 +26,7 @@ python -m pip install -r studio_kernel/requirements.txt
 python -m unittest studio_kernel.test_receipts studio_kernel.test_planning studio_kernel.test_kernel studio_contracts.test_validate
 ```
 
-Those checks test the implemented kernel, **not** a real project's lifecycle. See [Getting Started](docs/GETTING_STARTED.md) for planning and evidence commands and the isolated greenfield build.
+Those checks test the implemented kernel, **not** a real project's lifecycle. See [Getting Started](docs/GETTING_STARTED.md) for the model-assistance workflow, optional planning/evidence commands and the isolated greenfield build. A complete canonical lifecycle run is not a prerequisite for Studio to provide useful engineering guidance.
 
 ## Research and safety boundaries
 
