@@ -1,6 +1,6 @@
 # Current agent handoff — 2026-11-01
 
-**Start here instead of the historical `NEW_THREAD_HANDOFF.md`.**
+**Historical handoff; superseded by [current Studio status](CURRENT_STATUS.md) and [agent instructions](../AGENTS.md) for current decisions.** The remainder of this file documents earlier checkpoints and is not an instruction to resume old kernel expansion.
 
 ## Current identities
 
