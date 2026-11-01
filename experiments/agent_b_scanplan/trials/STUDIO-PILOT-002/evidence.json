@@ -99,5 +99,15 @@
   "source_sha256": {
     "scanplan/core.py": "4d25d17619caea6ef3dbd95bc30d6c016ff853236467bfe4e1a5baa35b658f76",
     "tests/test_unicode_boundary.py": "9923a5e82ee1bb8dd46c3c78d625a3cb55031c2c0d8086f7e9a9c041c4472b50"
+  },
+  "ci": {
+    "workflow": ".github/workflows/studio-kernel.yml",
+    "runner_platforms": [
+      "ubuntu-latest",
+      "windows-latest"
+    ],
+    "test_command": "python -m unittest discover -s tests -v",
+    "state": "NOT_RUN",
+    "reason": "Added regression step; hosted GitHub Actions run of this branch has not executed"
   }
 }
