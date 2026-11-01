@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.1.0",
+  "pilot_id": "STUDIO-PILOT-002",
+  "date_utc": "2026-11-01",
+  "mode": "IMPLEMENTATION_VERIFICATION",
+  "subject": "experiments/agent_b_scanplan",
+  "studio_base_commit": "3795c1736b20ac3d6955e1587f4c7f7a8c778ec3",
+  "prechange_blobs": {
+    "scanplan/core.py": "6b6851fd1d294fe7113bddfcd5e2ab2937704545",
+    "tests/test_scanplan.py": "629e04e9a4fb88c13622308bced434af2d84410b"
+  },
+  "changed_blobs": {
+    "scanplan/core.py": "b4392ca21bed68de95ce83520729fe9232e57a91",
+    "tests/test_unicode_boundary.py": "72ee69bf180f2a52b20382d5ab0b5dab333dcd37"
+  },
+  "permissions": {
+    "repo_changes": "Studio experimental source, test, documentation only",
+    "local_commands": "unittest and offline CLI",
+    "external_scanning": "FORBIDDEN",
+    "release": "NOT_AUTHORIZED",
+    "host_enforcement": "NOT_ESTABLISHED"
+  },
+  "bug": {
+    "input": "valid JSON with escaped unpaired Unicode surrogate in subject/reviewer/component/observation",
+    "before": "UnicodeEncodeError traceback during canonical UTF-8 encoding",
+    "after": "IntakeError; CLI exit 1 with concise error and no output file"
+  },
+  "env": {
+    "python": "3.13.5",
+    "os": "local isolated container",
+    "dependencies": "Python standard library only for ScanPlan"
+  },
+  "runs": [
+    {
+      "stage": "baseline",
+      "command": "PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "PASS",
+      "test_count": 19,
+      "exit_code": 0,
+      "notes": "Before adding regression tests, baseline 19/19 passed."
+    },
+    {
+      "stage": "red",
+      "command": "PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "FAIL",
+      "test_count": 23,
+      "failures": 1,
+      "errors": 4,
+      "exit_code": 1,
+      "log_sha256": "006b0f8d6e02e4979c548b4e173fb961890b0941705898a59cc3af52f932ad30"
+    },
+    {
+      "stage": "green",
+      "command": "PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "PASS",
+      "test_count": 23,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "log_sha256": "da66c685db256525b6c6e339a08419a17d2dcd19ffda12a03cee50cfa9ec3da0"
+    },
+    {
+      "stage": "replay",
+      "command": "PYTHONPATH=. python -m unittest discover -s tests",
+      "status": "PASS",
+      "test_count": 23,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "log_sha256": "310529392f76d8f8ee5656caf40fb0fe2b77fa8044d89e7e11061f0861415552"
+    },
+    {
+      "stage": "demo",
+      "command": "PYTHONPATH=. python -m scanplan plan examples/demo.json",
+      "status": "PASS",
+      "exit_code": 0,
+      "output_sha256": "e46237e1e3573ca04f260d1fb0d4b6cbe84ce8564a62561d2cba56c52d0ac373",
+      "planned_cases": 4,
+      "executed_cases": 0
+    }
+  ],
+  "outcome": {
+    "unit_regression": "PASS",
+    "negative_controls": "PASS",
+    "demo_output_unchanged": true,
+    "studio_canonical_plan": "NOT_RUN",
+    "signed_independent_review": "NOT_RUN",
+    "trusted_host_receipt_import": "NOT_RUN",
+    "release": "HOLD",
+    "end_to_end_studio_integration": "NO_GO",
+    "comparative_study": "NOT_RUN"
+  },
+  "limitations": [
+    "Test evidence collected by the same builder session; not signed by an independent trusted host.",
+    "GitHub hosted CI previously failed before running steps; this is not a test failure.",
+    "Command times and token expenditure were not measured against a blinded baseline.",
+    "Cannot assert a canonical Studio TaskPacket/Plan was accepted without executing studio_kernel."
+  ],
+  "source_sha256": {
+    "scanplan/core.py": "4d25d17619caea6ef3dbd95bc30d6c016ff853236467bfe4e1a5baa35b658f76",
+    "tests/test_unicode_boundary.py": "9923a5e82ee1bb8dd46c3c78d625a3cb55031c2c0d8086f7e9a9c041c4472b50"
+  }
+}
