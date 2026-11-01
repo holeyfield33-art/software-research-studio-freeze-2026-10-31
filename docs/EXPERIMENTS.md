@@ -8,10 +8,14 @@ Experiments test whether **the same capable coding model is a more context-aware
 
 ## New-build pilot: Agent B ScanPlan v0.1
 
-[Open the standalone code sample](../experiments/agent_b_scanplan/README.md). A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. A local 19-test suite passed on Python 3.13.5; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
+[Open the standalone code sample](../experiments/agent_b_scanplan/README.md). A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. The initial 19-test suite and the scoped 23-test follow-up passed locally; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
 
 **Studio comparison scorecard (not yet measured):** independently scored overlooked requirements, correct working result, surgical edit scope, regressions, UX/product fit, test quality, user clarifications, actual time/tokens and unnecessary feature additions. No claimed 50–75% productivity gain without a measured baseline and repeatable comparison.
 
 ## Next experimental gate
 
 **Pause new feature trials.** The current reports, SDLCs and example builds already supply practical evidence of broader engineering guidance. Next, streamline how a new agent consumes and preserves that guidance, using [the adaptive documentation layout](REPOSITORY_KNOWLEDGE_LAYOUT.md). Keep existing kernel/evidence functionality available for appropriate tasks; do not mandate its invocation in every edit. Measured productivity gains remain unquantified.
+
+## Bounded change trial: STUDIO-PILOT-002
+
+[See the ScanPlan Unicode regression and comparison protocol](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/README.md). This actual red→green intervention retained test logs, source identities and a narrow negative control. 23/23 local tests passed after a one-line guard; the old 19-test baseline is historical. It **does not** demonstrate canonical `studio_kernel plan` execution, a host-signed receipt or an A/B improvement measurement. Those gates remain open and their missing results are recorded as NOT_RUN.

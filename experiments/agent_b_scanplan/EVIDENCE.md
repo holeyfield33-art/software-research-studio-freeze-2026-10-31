@@ -17,3 +17,7 @@ Some checks use static source inspection; these do not constitute OS-level isola
 ## Next bounded experiment
 
 Measure whether Studio can accept a reviewed canonical intake for this experiment, emit task packets retaining unknown risks, record an externally executed test with a trusted host receipt, and decide a single verification gate. Compare setup effort, defects and resulting evidence quality against the same small build without Studio. No claimed 50–75% improvement from this pilot alone.
+
+## Targeted follow-up — STUDIO-PILOT-002
+
+The original v0.1 evidence above remains historical (19 tests). The subsequent Unicode validation fix [has its own evidence ledger](trials/STUDIO-PILOT-002/evidence.json) and [report](trials/STUDIO-PILOT-002/README.md): red phase 23 tests with 1 failure/4 errors, then **23/23 PASS** after one scoped change; deterministic demo SHA unchanged. The test runner and builder are the same session, so authenticated independent acceptance and Studio canonical planner execution remain NOT_RUN. Release continues HOLD.
