@@ -11,7 +11,7 @@
 
 ## What changed
 
-A default `UNIVERSAL_PROJECT_ASSESSMENT` report structure now governs new repo assessments. Brownfield STUDIO-PILOT-001 recorded evidence checks, not product or release acceptance. Agent B ScanPlan is the first new-build experiment: an offline stdlib-only generator with tests and a traceable spec. This repository does not bind or modify Agent B's existing scanner code.
+A default `UNIVERSAL_PROJECT_ASSESSMENT` report structure now governs new repo assessments. Brownfield STUDIO-PILOT-001 recorded evidence checks, not product or release acceptance. Agent B ScanPlan is the first new-build experiment: an offline stdlib-only generator with 19 local passing tests and a traceable spec. This repository does not bind or modify Agent B's existing scanner code.
 
 ## Operator next action
 
