@@ -9,7 +9,7 @@
 | Universal architecture | CANDIDATE | [Design checkpoint](../architecture/UNIVERSAL-ARCH-001/README.md) |
 | Canonical kernel, reviewed planning, signed evidence and SQLite history | Partial implementation with local tests | [Kernel contract and limitations](../studio_kernel/README.md); no enforcing host |
 | Brownfield evidence pilot | Started / HOLD | [STUDIO-PILOT-001](../pilots/STUDIO-PILOT-001/README.md); report-mode and evidence controls only |
-| Greenfield build | Local MVP tests PASS; lifecycle HOLD | [Agent B ScanPlan](../experiments/agent_b_scanplan/README.md), an offline non-scanning CLI |
+| Greenfield build | Local MVP 19 tests PASS; lifecycle HOLD | [Agent B ScanPlan](../experiments/agent_b_scanplan/README.md), an offline non-scanning CLI |
 | General product integration and release | **NO-GO** | No independent complete lifecycle trial, approved selector, or production authorization |
 
 ## What not to infer
