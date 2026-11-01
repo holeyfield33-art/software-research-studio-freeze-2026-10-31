@@ -14,3 +14,11 @@ This file records **additive Studio development changes**. Frozen research manif
 ## Preserved historical boundaries
 
 `SRS-FREEZE-2026-10-31-v1` and `STUDIO-KNOWLEDGE-003R` remain immutable. Novel-input selector generalization and product integration remain NO-GO. MOTHERSHIP/D-004 remain separate.
+
+
+### Studio purpose and operator experience correction
+
+- Defined the product as **contextual engineering knowledge and decision support for frontier models helping vibecoders**, rather than an autonomous SDLC controller.
+- Set `MODEL_ASSISTED_ENGINEERING` as default for normal build/fix/maintain requests. Formal assessment reports and canonical planning are optional/intensity-dependent.
+- Updated README, agent intake, getting started, experiment scorecard, current status and handoff without changing frozen research or partial runtime kernel.
+- Introduced a paired-model evaluation protocol focused on missed engineering needs, surgical precision, working code, regressions, unnecessary features and resource cost. Existing 19-test ScanPlan MVP and separate PR #8 remain distinct; no performance increase claimed.
