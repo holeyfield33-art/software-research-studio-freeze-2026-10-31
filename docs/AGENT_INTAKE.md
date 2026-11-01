@@ -2,19 +2,20 @@
 
 **Status:** active *agent workflow* documentation; additive to, not part of, the immutable `SRS-FREEZE-2026-10-31-v1` baseline. This contract selects report structure and evidence expectations. It does **not** change `UNIVERSAL-ARCH-001` from a design candidate, authorize execution, or promote the unreliable 003R selector.
 
-**Purpose:** An agent given a repo or software idea should assess the **software project across its lifecycle**, not infer from a prior conversation or neighboring project that it was asked for a one-off architecture mapping. The target is temporary input to an assessment, not a registered or linked Studio product.
+**Purpose:** A frontier coding model should use Studio knowledge to notice engineering and product needs a vibecoder did not know to request, then build or maintain surgically using its normal tools. Lifecycle coverage is a knowledge lens, **not a mandatory process**. Comprehensive reports are only for explicit assessments. See [product intent](PRODUCT_INTENT.md). A target remains a temporary subject, not a linked Studio product.
 
 ## 1. Identify the deliverable before using tools
 
 | Request | Required mode | Output |
 | --- | --- | --- |
-| "Assess this repo", "point Studio at this", "dogfood the framework", "what does it need?" | `UNIVERSAL_PROJECT_ASSESSMENT` (default) | Current state, prioritized development gaps, risk-adaptive practices, connected specifications/tasks, and verification plan |
+| "Build this", "fix this", "add this feature", "make it usable", "use Studio on this repo" | `MODEL_ASSISTED_ENGINEERING` (**default for normal coding help**) | Working code/artifact or surgical patch; important inferred needs; proportional verification; concise explanation |
+| "Assess this repo comprehensively", "produce a Studio report", "audit its engineering" | `UNIVERSAL_PROJECT_ASSESSMENT` | Scoped product/engineering gap assessment and actionable priorities |
 | "Run these tests", "verify this checkpoint", "validate implementation" | `IMPLEMENTATION_VERIFICATION` | Exact commands, pinned candidate, observed outputs/results and residual uncertainty |
 | "Review this architecture/spec" | `DESIGN_REVIEW` | Evidence-linked design findings, gaps, proposed changes and review disposition |
 | "Manus/another agent finished checkpoint N", "review these new research files" | `RESEARCH_CHECKPOINT_REVIEW` | Receipt/inventory, hashes, structural checks, deltas, adversarial results, provenance and an explicit accept/hold decision |
 | "Map project A to B", "make an advisory crosswalk" | `CROSS_PROJECT_MAPPING` (**explicit request only**) | Advisory comparison with clear non-authority boundaries |
 
-A previous report type is **not** inherited when the user changes the deliverable. If a corrected report already exists, review/use it as supplied evidence rather than silently repeat it. When the request lacks a report type, use the default mode; record missing facts as `UNKNOWN` instead of inventing them.
+A previous report type is **not** inherited when the user changes the deliverable. If a corrected report already exists, review/use it as supplied evidence rather than silently repeat it. When the request lacks a report type, use `MODEL_ASSISTED_ENGINEERING` for building/maintenance and `UNIVERSAL_PROJECT_ASSESSMENT` for clearly requested comprehensive evaluation. Do not invent missing requirements or block on nonessential questions.
 
 ## 2. Open a scoped intake record
 
@@ -42,9 +43,9 @@ Classify each consequential statement:
 
 An upstream CI job with no executed steps is `NOT_RUN` or `INCOMPLETE`, not a code-test failure and not a PASS. Previous local test counts are `DECLARED` until results are verified for the exact candidate and environment.
 
-## 4. Apply the universal lifecycle, not a product-specific checklist
+## 4. Use engineering knowledge selectively; the lifecycle is not a mandatory checklist
 
-Proceed through this risk-adaptive control loop (start at the relevant state; do not manufacture steps already done):
+For ordinary work, first inspect only enough context to understand the product type and local conventions; infer likely overlooked product, UX, reliability, security or maintenance needs, justify the **few applicable** research patterns, execute the smallest coherent change with normal model tools, and test proportionally. Skip irrelevant stages, documents, canonical records and approval machinery. For **explicit comprehensive assessments or consequential work**, the following risk-adaptive reference loop may help:
 
 1. **Understand:** goals, user experience, current code/state, ownership, constraints, acceptance criteria, unknowns.
 2. **Assess:** nine risk dimensions (severity, exposure, reversibility, data sensitivity, privilege, operational dependence, side effects, novelty, uncertainty) with evidence and an explicit provisional T0–T3 tier. Unknown risk cannot be silently scored low.
@@ -57,9 +58,9 @@ Proceed through this risk-adaptive control loop (start at the relevant state; do
 
 If working with the kernel CLI, read [planning](../studio_kernel/PLANNING.md) and [evidence](../studio_kernel/EVIDENCE.md) first. It requires validated canonical inputs and trusted receipts for acceptance. It does **not** inspect repositories, run arbitrary projects or sign real execution.
 
-## 5. Mandatory assessment/report layout
+## 5. Comprehensive assessment/report layout — only when requested
 
-Every report starts with an explicit header:
+**Routine coding requests should not produce this report.** Return the requested working result, the highest-leverage inferred gaps and tests. Only an explicit report/audit needs the following header:
 
 ```text
 Report type: UNIVERSAL_PROJECT_ASSESSMENT | IMPLEMENTATION_VERIFICATION | DESIGN_REVIEW | RESEARCH_CHECKPOINT_REVIEW | CROSS_PROJECT_MAPPING
@@ -71,7 +72,7 @@ Scope/actions authorized: [read-only / bounded commands / edit review]
 Disposition: [GO / CONDITIONAL / NO-GO / HOLD / INCOMPLETE, with explicit scope]
 ```
 
-For `UNIVERSAL_PROJECT_ASSESSMENT`, use these **nine sections in order**:
+For an explicitly requested `UNIVERSAL_PROJECT_ASSESSMENT`, use these **nine sections in order**:
 
 1. **Executive finding:** what the project is, where it stands, why the assessment was requested.
 2. **Intake and factual baseline:** goals, users/UX, constraints, code/revision, observed artifacts, known unknowns.
@@ -108,6 +109,6 @@ Stop or hold if the target commit is unpinned for consequential claims; requirem
 Studio may **evaluate** any consenting project. It must **not** create persistent "linked products" entries, reciprocal links, forks/submodules, dependency edges or target-repo documentation solely because an assessment occurred. Any actual integration is a separate, explicit decision with its own authority, design, tests and release gates.
 
 
-## 9. Greenfield experiment reference — no automatic acceptance
+## 9. Greenfield experiment reference — test the model's engineering judgment, not documentation volume
 
 [Agent B ScanPlan v0.1](../experiments/agent_b_scanplan/README.md) demonstrates *writing* an intake, UX/CLI interaction, requirement-to-task specification, positive/negative test cases, evidence log and explicit HOLD. This new offline utility is not a linked product and is not a vulnerability scanner. Its local 19-test result is an observed **project** check; it does not establish that Studio's canonical planner, host executor or task-bound independent receipt verification ran. A correct agent must preserve that boundary in any report, even when the newly built code works.
