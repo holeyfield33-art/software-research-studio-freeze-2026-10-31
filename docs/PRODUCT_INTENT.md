@@ -50,11 +50,13 @@ Detailed report templates, canonical records, risk classifications and signed ev
 
 ## Research and implementation boundaries
 
-The original 001/002/003/003R research archives and their IDs remain unchanged. 003R novel-input selector generalization is **NO-GO**. The partial canonical Studio kernel is a possible support component, **not the product definition or a prerequisite to every useful interaction**. MOTHERSHIP is separate. Evaluating another repository does not create a product link.
+The original 001/002/003/003R research archives and their IDs remain unchanged. 003R novel-input selector generalization is **NO-GO**. The existing canonical Studio kernel (records, planning, SQLite history and signed-evidence checks) **remains a supported component of the toolkit**. It is neither discarded nor a prerequisite to every useful interaction; use it when the task benefits from formal planning/evidence. MOTHERSHIP is separate. Evaluating another repository does not create a product link.
 
-The central research question is: **Does access to Studio's appropriate engineering knowledge and context allow a frontier model to make materially better product and maintenance decisions than the same model without it, when given a normal underspecified vibecoder request?**
+The current generated reports and SDLC-guided builds already provide qualitative examples of improved engineering awareness and more surgical project work. They do not establish a numerical productivity multiplier. **Next priority is organizing that knowledge for reuse in every repo, not expanding the Studio engine or repeating trials.** See [repository knowledge layout](REPOSITORY_KNOWLEDGE_LAYOUT.md).
 
-## Appropriate experimental design
+The central research question remains: **Does access to Studio's appropriate engineering knowledge and context allow a frontier model to make materially better product and maintenance decisions than the same model without it, when given a normal underspecified vibecoder request?**
+
+## Existing evidence and future evaluation (not a new feature milestone)
 
 Pin comparable tasks and repositories; use the same model and equivalent tool permissions in two independent arms. Ask in ordinary vibecoder language, without enumerating all overlooked engineering requirements. The Studio-assisted arm may consult relevant verified patterns, references and guidelines; the control arm uses ordinary model/tool behavior. An independent reviewer scores:
 
