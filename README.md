@@ -1,6 +1,6 @@
 # Software Research Studio
 
-**Status (2026-11-01): experimental engineering-intelligence toolkit for frontier coding models; frozen research preserved.** Studio helps models build, maintain and improve vibecoded projects by recognizing missing engineering needs and selecting appropriate established practices **without requiring users to know what to ask for**. The model keeps using its normal coding tools. Studio is not a mandatory lifecycle manager, autonomous developer or reporting bureaucracy. See [product intent](docs/PRODUCT_INTENT.md).
+**Status (2026-11-01): experimental engineering-intelligence toolkit for frontier coding models; frozen research preserved.** Studio helps models build, maintain and improve vibecoded projects by recognizing missing engineering needs and selecting appropriate established practices **without requiring users to know what to ask for**. The model keeps using its normal coding tools, supported by Studio's **existing research and canonical planning/evidence engine**. The engine is retained, not deprecated or replaced; its depth should be proportionate to the task. Studio is not a mandatory lifecycle bureaucracy. See [product intent](docs/PRODUCT_INTENT.md) and [the adaptive repository knowledge layout](docs/REPOSITORY_KNOWLEDGE_LAYOUT.md).
 
 > New agents: start with [AGENTS.md](AGENTS.md), [universal intake](docs/AGENT_INTAKE.md), and [getting started](docs/GETTING_STARTED.md). Do not treat an assessment target as a linked product.
 
