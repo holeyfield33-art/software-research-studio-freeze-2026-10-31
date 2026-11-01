@@ -21,3 +21,10 @@ A default `UNIVERSAL_PROJECT_ASSESSMENT` report structure now governs new repo a
 4. Repeat without Studio for a controlled efficiency/defect comparison. Do not extend to network scanning or Stage 004.
 
 Legacy `NEW_THREAD_HANDOFF.md` describes the 2026-10-31 archival state and must not be rewritten as a modern status document.
+
+
+## Product-purpose correction — authoritative for new agent sessions
+
+Read [PRODUCT_INTENT.md](PRODUCT_INTENT.md) first. Studio is not meant to *run* a development lifecycle or turn frontier coding models into workflow operators; it supplies trusted, task-appropriate software engineering/product knowledge so the model can **infer missing needs and make surgical build or maintenance changes for vibecoders**. Default coding mode is `MODEL_ASSISTED_ENGINEERING`, with normal tooling and proportional checks. A lengthy report, canonical kernel invocation or independent signature is not a prerequisite to routine engineering assistance. Formal workflows still apply when requested or justified by risk.
+
+**Revised next experiment:** independent A/B model sessions receive a natural underspecified vibecoder request against a pinned small repository. Same model, permissions, budget and hidden acceptance tests. Studio treatment sees relevant frozen practices and contextual guidance; control receives standard coding context. Evaluate *working result*, high-value gaps noticed, unnecessary changes/regressions, user clarifications and actual cost/time. See [MODEL_ASSISTED_EVALUATION](MODEL_ASSISTED_EVALUATION.md). Prior ScanPlan bug-fix evidence tests ScanPlan behavior but not Studio's comparative value. Keep PR #8 separate.
