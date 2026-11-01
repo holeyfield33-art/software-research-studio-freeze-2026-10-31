@@ -18,8 +18,8 @@ An agent's report is not a verified code change. A plan's COMPLETE status is not
 
 ## Smallest next milestones
 
-1. **Evaluate the actual model-assistance value:** give separate frontier-model sessions the same natural, under-specified vibecoder request, with and without curated Studio context. Ask for a working change, not a report.
-2. **Score engineering outcomes:** independent acceptance, relevant omissions discovered, unnecessary modifications, regressions, user clarifications, UX fit and actual time/token cost.
-3. **Improve knowledge selection:** use the evidence to determine which research records helped, distracted or caused feature creep; repair applicability before automating recommendations. Canonical planning and trusted receipts remain optional supporting gates where risk warrants them. No 50–75% improvement claim without comparable trials.
+1. **Pause Studio engine expansion.** Keep the research and implemented kernel intact. Existing open work remains independently reviewable; do not add features just to increase process coverage.
+2. **Consolidate agent-facing repository context.** Apply [the adaptive knowledge layout](REPOSITORY_KNOWLEDGE_LAYOUT.md) to one project at a time. A small README/AGENTS/current-status route should point to deeper project-specific SDLC and immutable evidence.
+3. **Preserve lessons already demonstrated by Studio reports and SDLCs.** Study practical engineering improvements and context handoff, not more gate-count benchmarks. No quantified performance claim from qualitative observations.
 
 No product links, Stage 004 expansion, additional autonomous scanners or deployment work are authorized by these milestones.
