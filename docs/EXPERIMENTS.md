@@ -8,7 +8,7 @@ Experiments test the **universal software-development method**, not a permanent 
 
 ## New-build pilot: Agent B ScanPlan v0.1
 
-[Open the standalone code sample](../experiments/agent_b_scanplan/README.md). A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. A local 18-test suite passed on Python 3.13.5; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
+[Open the standalone code sample](../experiments/agent_b_scanplan/README.md). A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. A local 19-test suite passed on Python 3.13.5; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
 
 **Studio comparison scorecard (not yet measured):** setup effort, lead time, required versus implemented acceptance criteria, post-build defects, number of unauthorized side effects, independent evidence completeness, human corrections, and maintenance effort. No claimed 50–75% productivity gain without a measured baseline and repeatable comparison.
 
