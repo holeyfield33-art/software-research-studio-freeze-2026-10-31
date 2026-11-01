@@ -1,62 +1,38 @@
-# SOFTWARE RESEARCH STUDIO — FROZEN BASELINE (2026-10-31)
+# Software Research Studio
 
-**Freeze ID:** SRS-FREEZE-2026-10-31-v1  
-**Latest research checkpoint:** STUDIO-KNOWLEDGE-003R  
-**Disposition:** dataset integrity GO; bounded frozen-case replay GO; novel-input selector reliability NO-GO; Studio product integration NO-GO.
+**Status (2026-11-01): active experimental universal software-development system; frozen research preserved.** Studio is intended to help an agent understand a software project, select justified lifecycle work, maintain connected requirements and tasks, verify evidence and make conservative release decisions. It is **not** a production autonomous developer.
 
-> **This repository is an immutable archival baseline.** Do not edit files in place. Any new research or selector fixes require a separately named checkpoint and new manifest/digest.
+> New agents: start with [AGENTS.md](AGENTS.md), [universal intake](docs/AGENT_INTAKE.md), and [getting started](docs/GETTING_STARTED.md). Do not treat an assessment target as a linked product.
 
-## What this preserves
+## What lives here
 
-- `current_003R/` — complete 003R snapshot (715 knowledge records, deterministic selector, 13-case oracle, rules, schemas, tests, fixtures, decision traces)
-- `original_checkpoints/` — exact 001 → 002 → 003 → 003R source checkpoint ZIPs + detached SHA-256
-- `independent_reviews/` — prior independent audits and directives
-- `next_unexecuted/` — the 003R2 corrective directive (not implemented)
-- Top-level: `FROZEN_STATE.json`, `INVENTORY.json`, `SHA256SUMS.txt`, `VERIFY_FREEZE.py`
+| Area | Purpose | Current state |
+|---|---|---|
+| `preserved_freezes/SRS-FREEZE-2026-10-31-v1/`, `original_checkpoints/`, `checkpoint_intake/` | Immutable research/history and later independent verification receipts | 003/003R research archival integrity verified in scoped checks; 003R selector generalization **NO-GO** |
+| `architecture/UNIVERSAL-ARCH-001/` | Evidence-linked universal lifecycle, schema, risk policy and gates | Design **candidate**, not full verified product |
+| `studio_kernel/` | Canonical record checking, reviewed planning, SQLite history/replay and signed evidence acceptance | Implemented partial kernel; trusted execution host and end-to-end trials **missing** |
+| `pilots/STUDIO-PILOT-001/` | Existing-repository intake/evidence-contract pilot | Started; narrow negative-control gate passed; lifecycle completion **HOLD** |
+| `experiments/agent_b_scanplan/` | New greenfield CLI build exercising the documented Studio workflow | Offline prototype and tests; no network scanning or Studio host execution |
+| `docs/` | Current intake, user guides, status and handoff | Active instructions |
 
-## Inventory (003R only)
+The root-level `FROZEN_STATE.json`, `VERIFY_FREEZE.py` and `NEW_THREAD_HANDOFF.md` are historical archival artifacts. Do not rewrite them to pretend the original freeze changed, and do not use them as the latest operating instructions. The frozen archive itself must remain byte-identical. MOTHERSHIP and D-004 are separate evidence domains.
 
-| Collection | Records |
-|---|---:|
-| Software types | 10 |
-| SDLC stages | 7 |
-| Engineering practices | 8 |
-| Architecture patterns | 6 |
-| Prompt patterns | 6 |
-| Roadmap patterns | 3 |
-| Verification gates | 6 |
-| Reference projects | 3 |
-| Sources | 65 |
-| Relationships | 601 (598 active) |
-| **Total** | **715** |
+## Start here
 
-## Known blockers (why selector is NO-GO for generalization)
+```bash
+git clone https://github.com/holeyfield33-art/software-research-studio.git
+cd software-research-studio
+python -m pip install -r studio_kernel/requirements.txt
+python -m unittest studio_kernel.test_receipts studio_kernel.test_planning studio_kernel.test_kernel studio_contracts.test_validate
+```
 
-- Misleading queue rationale when justification + owner are both present
-- Cross-field authority / authentication contradictions not always detected
-- Malformed facts can raise unhandled AttributeError
-- Unjustified tool/side-effect recommendations can survive explicit exclusions
+Those checks test the implemented kernel, **not** a real project's lifecycle. See [Getting Started](docs/GETTING_STARTED.md) for planning and evidence commands and the isolated greenfield build.
 
-## How to use this freeze
+## Research and safety boundaries
 
-1. Clone or download the full tree (or the original freeze ZIP from the conversation).
-2. Run `python3 VERIFY_FREEZE.py` (stdlib only) to confirm integrity.
-3. For current artifacts: `current_003R/README.md` and `current_003R/manifest.json`.
-4. Next corrective work: follow `next_unexecuted/STUDIO_KNOWLEDGE_003R2_DIRECTIVE_UNEXECUTED.md` and produce a **new** checkpoint. Do not mutate this one.
-5. Read the independent 003R audit before claiming selection reliability.
+- `SRS-FREEZE-2026-10-31-v1` / `STUDIO-KNOWLEDGE-003R` is immutable. Its 715 records and 601 relationships are research input, not permission to run the unreliable selector.
+- The resubmitted research-only 003 checkpoint was independently rechecked and receipt merged in [the 2026-11-01 checkpoint intake](checkpoint_intake/2026-11-01/STUDIO_003_REVERIFICATION.md). Curated-fixture GO is **not** novel-input GO.
+- Reviewed planning produces proposals, not command authorization. Signed receipts authenticate attestations but do not establish their real-world truth without a trusted host and independent oracles.
+- Software Research Studio can assess any authorized external project without editing or linking that project's repository.
 
-## Project boundaries
-
-- This is **Software Research Studio** knowledge (for Block-Wise Studio).
-- **MOTHERSHIP** (vulnerability/advisory intelligence) and D-004 acquisition archive are deliberately excluded.
-- No silent cross-project merge was performed.
-
-## Verification status at freeze
-
-- Dataset schema + graph validation: PASS (0 errors)
-- Manifest integrity: PASS (151 files)
-- Frozen 13-case oracle: PASS (per prior independent audit; not re-run at freeze time)
-- Novel-input generalization: **NO-GO**
-- Studio product integration: **NO-GO**
-
-Freeze policy: preserve bytes and status.
+For current distinctions and gates, read [CURRENT_STATUS](docs/CURRENT_STATUS.md), [EXPERIMENTS](docs/EXPERIMENTS.md), [kernel implementation](studio_kernel/IMPLEMENTATION_STATUS.md), and [CHANGELOG](CHANGELOG.md).
