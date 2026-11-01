@@ -23,3 +23,7 @@ An agent's report is not a verified code change. A plan's COMPLETE status is not
 3. **Measured comparison:** run the same small change with and without Studio, compare acceptance-criteria coverage, observed defects, agent interventions and minutes/tokens. Do not claim the target 50–75% boost until the comparison has replicable results.
 
 No product links, Stage 004 expansion, additional autonomous scanners or deployment work are authorized by these milestones.
+
+## STUDIO-PILOT-002 update (2026-11-01)
+
+The first narrow change to the new greenfield ScanPlan program found and fixed a malformed-Unicode traceback, then passed **23/23 local tests** with a stable demo output. [Trial and evidence](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/README.md). The previously reported 19 tests were the initial baseline. **Canonical Studio planner run, trusted-host execution and independently signed task acceptance remain NOT_RUN**; product integration and release stay NO-GO/HOLD. [The comparative study protocol](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/COMPARISON_PROTOCOL.md) is pre-registered but not executed.

@@ -14,3 +14,10 @@ This file records **additive Studio development changes**. Frozen research manif
 ## Preserved historical boundaries
 
 `SRS-FREEZE-2026-10-31-v1` and `STUDIO-KNOWLEDGE-003R` remain immutable. Novel-input selector generalization and product integration remain NO-GO. MOTHERSHIP/D-004 remain separate.
+
+### STUDIO-PILOT-002 — bounded Unicode input repair
+
+- Added a failing negative-control suite for escaped unpaired surrogates in four free-text inputs (red phase: 1 failure, 4 errors).
+- Rejected surrogate code points at input validation; added four tests and reproduced **23/23 PASS** with unchanged deterministic example output.
+- Preserved exact local source Git blob identity and machine-readable executed-command evidence; published a scoped trial record and an unexecuted A/B protocol.
+- Marked canonical Studio planning, trusted signed host evidence and independent baseline as **NOT_RUN**; no GO or productivity gain claim.

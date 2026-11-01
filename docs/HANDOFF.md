@@ -21,3 +21,7 @@ A default `UNIVERSAL_PROJECT_ASSESSMENT` report structure now governs new repo a
 4. Repeat without Studio for a controlled efficiency/defect comparison. Do not extend to network scanning or Stage 004.
 
 Legacy `NEW_THREAD_HANDOFF.md` describes the 2026-10-31 archival state and must not be rewritten as a modern status document.
+
+## Latest bounded trial
+
+[STUDIO-PILOT-002](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/README.md) contains the first red→green ScanPlan validation change (23/23 local tests PASS) and reproducible exact file/log identities. It remains **INCOMPLETE** as a Studio kernel lifecycle trial: canonical reviewed planning, enforcing signing host, independent task-bound review and [comparison baseline](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/COMPARISON_PROTOCOL.md) have not run. Do not promote a local builder test into a signed acceptance or production release claim.

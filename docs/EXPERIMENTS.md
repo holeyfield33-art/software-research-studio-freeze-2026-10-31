@@ -15,3 +15,7 @@ Experiments test the **universal software-development method**, not a permanent 
 ## Next experimental gate
 
 Construct a canonical `studio_kernel` planning intake from the new-build spec, explicitly resolve unknown risk and independent review, then capture a pinned, scoped execution receipt for **one** test. Passing local tests alone cannot close that gate. Do not expand to live scanning or product integration merely because the offline generator passes.
+
+## Bounded change trial: STUDIO-PILOT-002
+
+[See the ScanPlan Unicode regression and comparison protocol](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/README.md). This actual red→green intervention retained test logs, source identities and a narrow negative control. 23/23 local tests passed after a one-line guard; the old 19-test baseline is historical. It **does not** demonstrate canonical `studio_kernel plan` execution, a host-signed receipt or an A/B improvement measurement. Those gates remain open and their missing results are recorded as NOT_RUN.
