@@ -9,7 +9,7 @@ This file records **additive Studio development changes**. Frozen research manif
 - Merged STUDIO-PILOT-001's pinned brownfield intake/evidence negative-control checkpoint (PR #6); complete lifecycle verdict remains HOLD.
 - Replaced outdated archive-only top-level README with active Studio guidance and current truth-of-implementation matrix.
 - Added user-facing getting-started, status and experiments guides.
-- Started Agent B ScanPlan v0.1 as a standalone offline greenfield experiment, with deterministic CLI output, test controls and explicit limitations. Local execution: 18 tests PASS. **No full Studio kernel plan/host acceptance ran** for this greenfield build.
+- Started Agent B ScanPlan v0.1 as a standalone offline greenfield experiment, with deterministic CLI output, test controls and explicit limitations. Local execution: 19 tests PASS (including malformed-kind regression). **No full Studio kernel plan/host acceptance ran** for this greenfield build.
 
 ## Preserved historical boundaries
 
