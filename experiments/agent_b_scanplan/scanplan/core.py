@@ -101,7 +101,7 @@ def validate_intake(data: dict) -> None:
         if not isinstance(tid, str) or not _ID.fullmatch(tid) or tid in seen:
             raise IntakeError("Threat IDs must be valid and unique")
         seen.add(tid)
-        if threat["kind"] not in PATTERNS:
+        if not isinstance(threat["kind"], str) or threat["kind"] not in PATTERNS:
             raise IntakeError(f"Unknown threat kind in {tid}")
         _safe_string(threat["component"], f"component {tid}", 120)
         _safe_string(threat["observation"], f"observation {tid}", 500)
