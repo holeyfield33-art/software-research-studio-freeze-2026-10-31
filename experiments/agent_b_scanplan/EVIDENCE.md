@@ -4,7 +4,7 @@
 
 | Evidence | Result | Limit |
 |---|---|---|
-| `PYTHONPATH=. python -m unittest discover -s tests -v` | **PASS: 18/18** | Local suite only; includes malicious-input/negative controls |
+| `PYTHONPATH=. python -m unittest discover -s tests -v` | **PASS: 19/19** | Local suite only; includes malicious-input/negative controls |
 | `PYTHONPATH=. python -m scanplan plan examples/demo.json --output /mnt/data/scanplan_work/scanplan_demo_output.json` | **PASS: exit 0**, 4 proposals, none executed | Static test plans, not actual vulnerability findings |
 | `python -m json.tool <output>` | PASS: valid JSON | Syntactic only |
 | SHA-256 of generated output | `e46237e1e3573ca04f260d1fb0d4b6cbe84ce8564a62561d2cba56c52d0ac373` | Output bytes from this exact code/input snapshot only |
