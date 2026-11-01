@@ -1,5 +1,7 @@
 # Universal Studio project contracts — 0.1.0
 
+Superseded for new implementation: `studio_kernel/` now implements the canonical schema, semantic checks and transactional history. This simplified prototype is retained unchanged as a traceable experiment; its schema is not accepted by the new kernel.
+
 Integration note: the concurrently merged `architecture/UNIVERSAL-ARCH-001/` package is the canonical **candidate design**. This module is an experimental semantic-validation prototype using a simplified packet dialect; it does not validate that package's Draft 2020-12 schema or replace it. See `system_design/UNIVERSAL-001/CONTRACT_RECONCILIATION.md` for differences and migration work. Passing these tests does not establish its G3 kernel acceptance.
 
 This is the first executable core of UNIVERSAL-001 milestone M1: a versioned project packet with facts, requirements, applicability decisions, tasks, attempts, artifacts, evidence, findings and gates. It works with project-relative records across software categories. It does not implement the applicability evaluator, planner, execution adapters or development system as a whole.

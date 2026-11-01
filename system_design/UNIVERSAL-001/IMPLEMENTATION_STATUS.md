@@ -1,5 +1,7 @@
 # Implementation checkpoint — project contracts 0.1.0
 
+Latest continuation: `studio_kernel/` now directly validates the canonical candidate schema and adds exact digest references, conservative evidence/release checks and persistent atomic history. See its README for implemented guarantees, CLI and remaining acceptance gates. The prototype-specific status below describes the preceding checkpoint.
+
 The shared branch concurrently received `architecture/UNIVERSAL-ARCH-001/` through PR #2. Its canonical candidate contracts are more complete than this simplified prototype. The new implementation is an experimental semantic-checking slice, not a replacement contract or a claim of canonical schema conformance. `CONTRACT_RECONCILIATION.md` records the integration boundary and next work.
 
 The universal design now has an executable project-packet validator under `studio_contracts/`, a declared contract, five unexecuted examples across software categories, and adversarial unit tests. This is the first M1 implementation slice; M1 is still in progress.
