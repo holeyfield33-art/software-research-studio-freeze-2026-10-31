@@ -42,7 +42,7 @@
 1. Clone or download the full tree (or the original freeze ZIP from the conversation).
 2. Run `python3 VERIFY_FREEZE.py` (stdlib only) to confirm integrity.
 3. For current artifacts: `current_003R/README.md` and `current_003R/manifest.json`.
-4. Next corrective work: follow `next_unexecuted/STUDIO_KNOWLEDGE_003R2_DIRECTIVE_UNEXECUTED.md` and produce a **new** checkpoint. Do not mutate this one.
+4. Next corrective work: follow `next_unexecuted/` and produce a **new** checkpoint. Do not mutate this one.
 5. Read the independent 003R audit before claiming selection reliability.
 
 ## Project boundaries
@@ -50,6 +50,16 @@
 - This is **Software Research Studio** knowledge (for Block-Wise Studio).
 - **MOTHERSHIP** (vulnerability/advisory intelligence) and D-004 acquisition archive are deliberately excluded.
 - No silent cross-project merge was performed.
+
+## Linked products (outside this freeze)
+
+Active product repositories are **not** part of the immutable 003R freeze. They are tracked only as pointers:
+
+| Product | Repo | Notes |
+|---|---|---|
+| **mcp-behavior** | [holeyfield33-art/mcp-behavior](https://github.com/holeyfield33-art/mcp-behavior) | MCP behavioral test harness. See [linked_products/mcp-behavior.md](linked_products/mcp-behavior.md). Helper live evidence recorded; full containment PASS still open. |
+
+Do not copy product source into this archive. Do not treat Studio selector GO on frozen cases as product release authority.
 
 ## Verification status at freeze
 
