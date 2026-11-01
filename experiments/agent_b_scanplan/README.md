@@ -1,6 +1,6 @@
-# Agent B ScanPlan — greenfield Studio lifecycle experiment
+# Agent B ScanPlan — preserved Studio greenfield experiment
 
-**Status: experimental offline plan generator v0.1.0 (not a live scanner).**
+**Historical experiment only.** Ongoing development moved to the independent [ScanPlan repository](https://github.com/holeyfield33-art/ScanPlan) after the Studio test/fix baseline was preserved. The standalone repository uses Studio-derived product/engineering knowledge, not the Studio engine as a runtime dependency. This directory retains the originally executed example, provenance and negative-control evidence; do **not** maintain two active copies or silently migrate fixes between repositories. The archived tool was an experimental offline plan generator, never a live scanner.
 
 This is a self-contained **greenfield trial** of Software Research Studio's documented lifecycle approach, inspired by Agent B's threat-to-test planning pattern. It does **not** incorporate or link the existing Agent B scanner codebase, does not assess live targets, and is not a Studio product integration.
 
