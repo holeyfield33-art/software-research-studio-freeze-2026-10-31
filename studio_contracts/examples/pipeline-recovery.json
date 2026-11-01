@@ -1,0 +1,192 @@
+{
+  "contract_version": "0.1.0",
+  "project": {
+    "id": "example-pipeline-recovery",
+    "categories": [
+      "software_type.data_pipelines"
+    ],
+    "entry_stage": "sdlc.maintenance_feedback",
+    "candidate_revision": "example-revision-1",
+    "outcomes": [
+      "Recover an interrupted batch without silently duplicating committed records"
+    ],
+    "non_goals": [
+      "No platform-wide refactor or unrelated feature"
+    ],
+    "owners": [
+      "example-owner"
+    ]
+  },
+  "records": [
+    {
+      "id": "example-pipeline-recovery:fact",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "fact",
+      "data": {
+        "subject": "requested-behavior",
+        "scope": "pipeline",
+        "value": "Recover an interrupted batch without silently duplicating committed records",
+        "knowledge": "known",
+        "revision": "example-revision-1"
+      }
+    },
+    {
+      "id": "example-pipeline-recovery:requirement",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "requirement",
+      "data": {
+        "need": "Recover an interrupted batch without silently duplicating committed records",
+        "acceptance": "Retry after an injected interruption produces expected records and surfaces invalid input",
+        "owner": "example-owner",
+        "oracle": "Independently specified expected result for supplied valid and invalid inputs"
+      }
+    },
+    {
+      "id": "example-pipeline-recovery:decision",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-pipeline-recovery:requirement",
+          "version": 1
+        }
+      ],
+      "type": "decision",
+      "data": {
+        "facts": [
+          {
+            "id": "example-pipeline-recovery:fact",
+            "version": 1
+          }
+        ],
+        "outcome": "selected",
+        "rationale": "This bounded increment requires explicit acceptance and test planning",
+        "predicate_version": "manual-example-1",
+        "research": [
+          {
+            "id": "practice.test_strategy",
+            "checkpoint": "STUDIO-KNOWLEDGE-003R",
+            "partition_sha256": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-pipeline-recovery:task",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "planned",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-pipeline-recovery:decision",
+          "version": 1
+        }
+      ],
+      "type": "task",
+      "data": {
+        "objective": "Recover an interrupted batch without silently duplicating committed records",
+        "requirements": [
+          {
+            "id": "example-pipeline-recovery:requirement",
+            "version": 1
+          }
+        ],
+        "prerequisites": [],
+        "actions": [
+          "read",
+          "edit",
+          "test"
+        ],
+        "paths": [
+          "pipeline"
+        ],
+        "grant": "example-grant",
+        "budget_steps": 20,
+        "stop_conditions": [
+          "Stop on unexpected access requirement or contradictory facts"
+        ],
+        "candidate_revision": "example-revision-1",
+        "acceptance_gate": {
+          "id": "example-pipeline-recovery:gate",
+          "version": 1
+        }
+      }
+    },
+    {
+      "id": "example-pipeline-recovery:evidence",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "evidence",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-pipeline-recovery:requirement",
+            "version": 1
+          }
+        ],
+        "property": "Retry after an injected interruption produces expected records and surfaces invalid input",
+        "method": "Synthetic placeholder; actual commands and captured outputs required during real work",
+        "candidate_revision": "example-revision-1",
+        "result": "NOT_RUN",
+        "origin": "proposed",
+        "environment": "example environment, not executed",
+        "input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "output_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reviewer": "fixture-author"
+      }
+    },
+    {
+      "id": "example-pipeline-recovery:gate",
+      "version": 1,
+      "project_id": "example-pipeline-recovery",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "gate",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-pipeline-recovery:requirement",
+            "version": 1
+          }
+        ],
+        "evidence": [
+          {
+            "id": "example-pipeline-recovery:evidence",
+            "version": 1
+          }
+        ],
+        "result": "NOT_RUN",
+        "rationale": "No implementation or behavioral execution claimed",
+        "reviewer": "fixture-author"
+      }
+    }
+  ],
+  "events": []
+}

@@ -1,0 +1,32 @@
+name: Studio kernel checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  kernel:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned validation dependencies
+        run: python -m pip install -r studio_kernel/requirements.txt
+      - name: Kernel, planning, receipts and prototype regression tests
+        run: python -m unittest studio_kernel.test_receipts studio_kernel.test_planning studio_kernel.test_kernel studio_contracts.test_validate
+      - name: Frozen archival integrity
+        run: python checkpoint_intake/2026-10-31/VERIFY_RECOVERED_FREEZE.py
+      - name: Exact research mapping
+        run: python system_design/UNIVERSAL-001/build_research_mapping.py --check

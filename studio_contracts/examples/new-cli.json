@@ -1,0 +1,192 @@
+{
+  "contract_version": "0.1.0",
+  "project": {
+    "id": "example-new-cli",
+    "categories": [
+      "software_type.cli_tools"
+    ],
+    "entry_stage": "sdlc.discovery_scope",
+    "candidate_revision": "example-revision-1",
+    "outcomes": [
+      "Produce deterministic transformed output from a local input file"
+    ],
+    "non_goals": [
+      "No platform-wide refactor or unrelated feature"
+    ],
+    "owners": [
+      "example-owner"
+    ]
+  },
+  "records": [
+    {
+      "id": "example-new-cli:fact",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "fact",
+      "data": {
+        "subject": "requested-behavior",
+        "scope": "cli",
+        "value": "Produce deterministic transformed output from a local input file",
+        "knowledge": "known",
+        "revision": "example-revision-1"
+      }
+    },
+    {
+      "id": "example-new-cli:requirement",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "requirement",
+      "data": {
+        "need": "Produce deterministic transformed output from a local input file",
+        "acceptance": "Known inputs produce expected output; malformed input produces a documented error and exit status",
+        "owner": "example-owner",
+        "oracle": "Independently specified expected result for supplied valid and invalid inputs"
+      }
+    },
+    {
+      "id": "example-new-cli:decision",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-new-cli:requirement",
+          "version": 1
+        }
+      ],
+      "type": "decision",
+      "data": {
+        "facts": [
+          {
+            "id": "example-new-cli:fact",
+            "version": 1
+          }
+        ],
+        "outcome": "selected",
+        "rationale": "This bounded increment requires explicit acceptance and test planning",
+        "predicate_version": "manual-example-1",
+        "research": [
+          {
+            "id": "practice.test_strategy",
+            "checkpoint": "STUDIO-KNOWLEDGE-003R",
+            "partition_sha256": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-new-cli:task",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "planned",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-new-cli:decision",
+          "version": 1
+        }
+      ],
+      "type": "task",
+      "data": {
+        "objective": "Produce deterministic transformed output from a local input file",
+        "requirements": [
+          {
+            "id": "example-new-cli:requirement",
+            "version": 1
+          }
+        ],
+        "prerequisites": [],
+        "actions": [
+          "read",
+          "edit",
+          "test"
+        ],
+        "paths": [
+          "cli"
+        ],
+        "grant": "example-grant",
+        "budget_steps": 20,
+        "stop_conditions": [
+          "Stop on unexpected access requirement or contradictory facts"
+        ],
+        "candidate_revision": "example-revision-1",
+        "acceptance_gate": {
+          "id": "example-new-cli:gate",
+          "version": 1
+        }
+      }
+    },
+    {
+      "id": "example-new-cli:evidence",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "evidence",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-new-cli:requirement",
+            "version": 1
+          }
+        ],
+        "property": "Known inputs produce expected output; malformed input produces a documented error and exit status",
+        "method": "Synthetic placeholder; actual commands and captured outputs required during real work",
+        "candidate_revision": "example-revision-1",
+        "result": "NOT_RUN",
+        "origin": "proposed",
+        "environment": "example environment, not executed",
+        "input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "output_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reviewer": "fixture-author"
+      }
+    },
+    {
+      "id": "example-new-cli:gate",
+      "version": 1,
+      "project_id": "example-new-cli",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "gate",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-new-cli:requirement",
+            "version": 1
+          }
+        ],
+        "evidence": [
+          {
+            "id": "example-new-cli:evidence",
+            "version": 1
+          }
+        ],
+        "result": "NOT_RUN",
+        "rationale": "No implementation or behavioral execution claimed",
+        "reviewer": "fixture-author"
+      }
+    }
+  ],
+  "events": []
+}

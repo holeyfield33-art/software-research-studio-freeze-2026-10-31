@@ -1,0 +1,192 @@
+{
+  "contract_version": "0.1.0",
+  "project": {
+    "id": "example-api-change",
+    "categories": [
+      "software_type.apis"
+    ],
+    "entry_stage": "sdlc.architecture_design",
+    "candidate_revision": "example-revision-1",
+    "outcomes": [
+      "Restrict access to a private operation by verified identity"
+    ],
+    "non_goals": [
+      "No platform-wide refactor or unrelated feature"
+    ],
+    "owners": [
+      "example-owner"
+    ]
+  },
+  "records": [
+    {
+      "id": "example-api-change:fact",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "fact",
+      "data": {
+        "subject": "requested-behavior",
+        "scope": "api",
+        "value": "Restrict access to a private operation by verified identity",
+        "knowledge": "known",
+        "revision": "example-revision-1"
+      }
+    },
+    {
+      "id": "example-api-change:requirement",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "requirement",
+      "data": {
+        "need": "Restrict access to a private operation by verified identity",
+        "acceptance": "Authorized identity succeeds; unauthorized and missing identity are denied",
+        "owner": "example-owner",
+        "oracle": "Independently specified expected result for supplied valid and invalid inputs"
+      }
+    },
+    {
+      "id": "example-api-change:decision",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-api-change:requirement",
+          "version": 1
+        }
+      ],
+      "type": "decision",
+      "data": {
+        "facts": [
+          {
+            "id": "example-api-change:fact",
+            "version": 1
+          }
+        ],
+        "outcome": "selected",
+        "rationale": "This bounded increment requires explicit acceptance and test planning",
+        "predicate_version": "manual-example-1",
+        "research": [
+          {
+            "id": "practice.test_strategy",
+            "checkpoint": "STUDIO-KNOWLEDGE-003R",
+            "partition_sha256": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-api-change:task",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "planned",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-api-change:decision",
+          "version": 1
+        }
+      ],
+      "type": "task",
+      "data": {
+        "objective": "Restrict access to a private operation by verified identity",
+        "requirements": [
+          {
+            "id": "example-api-change:requirement",
+            "version": 1
+          }
+        ],
+        "prerequisites": [],
+        "actions": [
+          "read",
+          "edit",
+          "test"
+        ],
+        "paths": [
+          "api"
+        ],
+        "grant": "example-grant",
+        "budget_steps": 20,
+        "stop_conditions": [
+          "Stop on unexpected access requirement or contradictory facts"
+        ],
+        "candidate_revision": "example-revision-1",
+        "acceptance_gate": {
+          "id": "example-api-change:gate",
+          "version": 1
+        }
+      }
+    },
+    {
+      "id": "example-api-change:evidence",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "evidence",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-api-change:requirement",
+            "version": 1
+          }
+        ],
+        "property": "Authorized identity succeeds; unauthorized and missing identity are denied",
+        "method": "Synthetic placeholder; actual commands and captured outputs required during real work",
+        "candidate_revision": "example-revision-1",
+        "result": "NOT_RUN",
+        "origin": "proposed",
+        "environment": "example environment, not executed",
+        "input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "output_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reviewer": "fixture-author"
+      }
+    },
+    {
+      "id": "example-api-change:gate",
+      "version": 1,
+      "project_id": "example-api-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "gate",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-api-change:requirement",
+            "version": 1
+          }
+        ],
+        "evidence": [
+          {
+            "id": "example-api-change:evidence",
+            "version": 1
+          }
+        ],
+        "result": "NOT_RUN",
+        "rationale": "No implementation or behavioral execution claimed",
+        "reviewer": "fixture-author"
+      }
+    }
+  ],
+  "events": []
+}

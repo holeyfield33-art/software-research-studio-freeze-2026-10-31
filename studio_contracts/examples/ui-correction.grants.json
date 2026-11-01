@@ -1,0 +1,14 @@
+{
+  "example-grant": {
+    "project_id": "example-ui-correction",
+    "actions": [
+      "read",
+      "edit",
+      "test"
+    ],
+    "paths": [
+      "ui"
+    ],
+    "max_steps": 20
+  }
+}

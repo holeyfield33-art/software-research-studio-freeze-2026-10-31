@@ -1,0 +1,14 @@
+{
+  "example-grant": {
+    "project_id": "example-new-cli",
+    "actions": [
+      "read",
+      "edit",
+      "test"
+    ],
+    "paths": [
+      "cli"
+    ],
+    "max_steps": 20
+  }
+}
