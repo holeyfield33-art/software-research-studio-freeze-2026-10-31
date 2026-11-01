@@ -73,7 +73,7 @@ def _closed(obj: Any, keys: set[str], label: str):
 
 
 def _safe_string(value: Any, field: str, limit: int = 240) -> str:
-    if not isinstance(value, str) or not value.strip() or len(value) > limit or any(ord(ch) < 32 for ch in value):
+    if not isinstance(value, str) or not value.strip() or len(value) > limit or any(ord(ch) < 32 or 0xD800 <= ord(ch) <= 0xDFFF for ch in value):
         raise IntakeError(f"{field} must be a nonempty short printable string")
     return value.strip()
 
