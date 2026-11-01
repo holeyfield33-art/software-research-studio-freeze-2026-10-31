@@ -1,0 +1,244 @@
+{
+  "intake_version": "0.1.0",
+  "project_id": "example-api",
+  "profile_id": "ua.intake.api.profile",
+  "created_at": "2026-10-31T00:00:00Z",
+  "expected_state_revision": 0,
+  "candidate": {
+    "identity": "synthetic-api-1",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "records": [
+    {
+      "contract_version": "0.1.0",
+      "kind": "ProjectProfile",
+      "id": "ua.intake.api.profile",
+      "revision": 1,
+      "project_id": "example-api",
+      "scope": "component/api",
+      "owner": "reviewer",
+      "created_at": "2026-10-31T00:00:00Z",
+      "derived_from": [],
+      "body": {
+        "goals": [
+          "Bounded api change"
+        ],
+        "users_context": [
+          "Synthetic development fixture"
+        ],
+        "non_goals": [
+          "No unrelated work"
+        ],
+        "constraints": [
+          "Explicit permissions"
+        ],
+        "mode": "brownfield",
+        "baseline": "synthetic-api-1",
+        "component_scopes": [
+          "component/api"
+        ],
+        "success_criteria": [
+          "Expected behavior and explicit error result"
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "Fact",
+      "id": "ua.intake.api.fact",
+      "revision": 1,
+      "project_id": "example-api",
+      "scope": "component/api",
+      "owner": "reviewer",
+      "created_at": "2026-10-31T00:00:00Z",
+      "derived_from": [],
+      "body": {
+        "predicate": "change_required",
+        "state": "true",
+        "value": null,
+        "unit": null,
+        "origin": "declared",
+        "evidence_refs": []
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "DesignDecision",
+      "id": "ua.intake.api.review",
+      "revision": 1,
+      "project_id": "example-api",
+      "scope": "component/api",
+      "owner": "reviewer",
+      "created_at": "2026-10-31T00:00:00Z",
+      "derived_from": [],
+      "body": {
+        "problem": "Select a proportionate verification strategy",
+        "alternatives": [
+          {
+            "name": "practice.test_strategy",
+            "conditions": [
+              "Bounded behavior change"
+            ],
+            "costs": [
+              "Author behavioral checks"
+            ],
+            "exclusions": []
+          }
+        ],
+        "chosen": "practice.test_strategy",
+        "rationale": "Synthetic recorded human review; not an authenticated approval",
+        "status": "ACCEPTED"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "kind": "Requirement",
+      "id": "ua.intake.api.requirement",
+      "revision": 1,
+      "project_id": "example-api",
+      "scope": "component/api",
+      "owner": "reviewer",
+      "created_at": "2026-10-31T00:00:00Z",
+      "derived_from": [],
+      "body": {
+        "outcome": "The requested change behaves as specified",
+        "acceptance": [
+          "Valid and invalid inputs match independently authored expectations"
+        ],
+        "priority": "required",
+        "acceptance_owner": "oracle-owner",
+        "oracle_refs": [
+          {
+            "id": "ua.intake.api.review",
+            "revision": 1,
+            "sha256": "e65bd4e7b042b9c35606aeb7273d1c3d537f7e358eb9baaea8a0b478d17fb754"
+          }
+        ]
+      }
+    }
+  ],
+  "risk_dimensions": {
+    "severity": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "exposure": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "reversibility": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "data_sensitivity": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "privilege": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "operational_dependence": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "external_side_effects": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "novelty": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    },
+    "uncertainty": {
+      "state": "known",
+      "consequence": "contained",
+      "rationale": "Synthetic local/reversible scope; no actual assessment claimed",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "target": "practice.test_strategy",
+      "review_id": "ua.intake.api.review",
+      "reviewer": "reviewer",
+      "fact_ids": [
+        "ua.intake.api.fact"
+      ],
+      "status": "RECOMMENDED",
+      "obligation": "mandatory",
+      "reasons": [
+        "Selected in this synthetic scoped review"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "key": "change",
+      "goal": "Make the bounded api change",
+      "owner": "builder",
+      "requirement_ids": [
+        "ua.intake.api.requirement"
+      ],
+      "oracle_ids": [
+        "ua.intake.api.review"
+      ],
+      "paths": [
+        "api"
+      ],
+      "operations": [
+        "edit",
+        "test"
+      ],
+      "forbidden_operations": [
+        "deploy"
+      ],
+      "budget": {
+        "seconds": 120,
+        "attempts": 2,
+        "tokens": 1000,
+        "cost_limit": 1,
+        "currency": "USD"
+      },
+      "depends_on": [],
+      "grant_ids": [],
+      "stop_triggers": [
+        "Stop on contradictory facts, unexpected access or failed acceptance"
+      ]
+    }
+  ]
+}

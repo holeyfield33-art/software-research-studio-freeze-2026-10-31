@@ -2,6 +2,8 @@
 
 This module targets the existing `architecture/UNIVERSAL-ARCH-001/contracts.schema.json` directly. No new record dialect is introduced. The old `studio_contracts/` prototype remains a historical experiment; new kernel work belongs here. The architecture remains a candidate, and broader acceptance gates remain pending.
 
+Connected planning is now available through `python -m studio_kernel plan`; see `PLANNING.md` for the intake contract, reviewed risk/selection boundary, five synthetic examples and history handoff. Planning creates proposals, never execution permission.
+
 ## What works
 
 - Full declared Draft 2020-12 structural validation through `jsonschema` with format checking, using the canonical candidate schema unchanged.

@@ -1,5 +1,7 @@
 # Canonical kernel checkpoint
 
+Connected continuation: `planning.py` now assembles canonical profile/fact/requirement/review inputs into risk, reviewed research-selection and dependency-ordered task proposals. It reports missing information, holds critical/unknown risk, checks coverage and preserves a history-ready record batch. `PLANNING.md` records its scope: deterministic assembly of recorded judgments, not reliable automatic applicability selection or authorization. The CLI planning→history→replay path is tested.
+
 Implemented: direct validation against the canonical candidate schema; exact record/digest reference resolution; structured fact conflicts; source/edge registry membership; candidate/input invalidation; host-receipt-dependent authority/run/release checks; byte-verified output artifacts; gate aggregation and effective release HOLD; transactional history, hash-linked canonical events, stale-writer exclusion and replay-derived snapshots.
 
 Verified with synthetic fixtures: five category profiles share the same canonical envelope; real local artifact corruption is rejected; old dialects and malformed inputs fail; expired/revoked/wrong-principal grants fail; missing external evidence yields INCOMPLETE; false gate/release assertions cannot produce effective approval. History tests cover reopen, update/delete rejection, input-change invalidation, simultaneous stale writers, process exit before commit and corruption detection. These are kernel tests, not real development workflow trials.
