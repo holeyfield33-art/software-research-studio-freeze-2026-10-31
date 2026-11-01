@@ -11,6 +11,13 @@ This file records **additive Studio development changes**. Frozen research manif
 - Added user-facing getting-started, status and experiments guides.
 - Started Agent B ScanPlan v0.1 as a standalone offline greenfield experiment, with deterministic CLI output, test controls and explicit limitations. Local execution: 19 tests PASS (including malformed-kind regression). **No full Studio kernel plan/host acceptance ran** for this greenfield build.
 
+### OWASP SDLC alignment and repository maintenance guidance
+
+- Reviewed the OWASP Web Security Testing Framework's five testing phases against existing Studio engineering guidance. Documentation gaps were most pronounced around early security standards/metrics, distinction between walkthrough and code review, deployed-configuration verification and recurring maintenance.
+- Added a task-adaptive OWASP phase crosswalk and a **repository maintenance** section to the existing `docs/REPOSITORY_KNOWLEDGE_LAYOUT.md`; linked from agent intake, AGENTS and getting started rather than creating another competing status or SDLC file.
+- Defined change-triggered and risk-based periodic health checks, dependency/advisory response, post-deployment verification where relevant and a minimal single-STATUS maintenance record.
+- Documentation-only guidance. **No** Studio engine changes, frozen-research edits, automatic maintenance execution, third-party repo changes, or OWASP compliance/certification claims.
+
 ## Preserved historical boundaries
 
 `SRS-FREEZE-2026-10-31-v1` and `STUDIO-KNOWLEDGE-003R` remain immutable. Novel-input selector generalization and product integration remain NO-GO. MOTHERSHIP/D-004 remain separate.
