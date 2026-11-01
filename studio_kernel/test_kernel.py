@@ -31,9 +31,12 @@ def fixtures():
     release_grant = grant('release-grant', 'release')
     task = row('TaskPacket', 'task', {'goal': 'Synthetic bounded local task', 'requirement_refs': [reference(requirement)], 'baseline': CANDIDATE, 'expected_state_revision': 0, 'allowed_paths': ['src'], 'allowed_operations': ['local-edit'], 'forbidden_operations': ['network'], 'budget': {'seconds': 30, 'attempts': 1, 'tokens': 0, 'cost_limit': 0, 'currency': 'USD'}, 'dependencies': [], 'oracle_refs': [reference(policy)], 'grant_refs': [reference(edit)], 'stop_triggers': ['unexpected permission need']})
     run = row('EvidenceRun', 'run', {'candidate': CANDIDATE, 'packet_ref': reference(task), 'oracle_refs': [reference(policy)], 'command': ['synthetic-runner'], 'tool_version': 'fixture-1', 'environment_sha256': 'e' * 64, 'started_at': '2026-10-31T00:00:00Z', 'ended_at': '2026-10-31T00:00:01Z', 'executed': True, 'status': 'PASS', 'producer': 'synthetic-host', 'artifacts': [{'path': 'output.txt', 'sha256': hashlib.sha256(b'expected\n').hexdigest()}], 'limits': ['Synthetic fixture; no project execution demonstrated']})
-    gate = row('GateDecision', 'gate', {'gate_id': 'gate.unit_integration_execution', 'policy_ref': reference(policy), 'candidate': CANDIDATE, 'required_run_refs': [reference(run)], 'status': 'PASS', 'reasons': ['Synthetic review'], 'review_refs': [reference(policy)]})
+    review = row('DesignDecision', 'task-review', copy.deepcopy(policy['body']))
+    review['owner'] = 'independent-reviewer'
+    review['derived_from'] = [reference(task), reference(run)]
+    gate = row('GateDecision', 'gate', {'gate_id': 'gate.unit_integration_execution', 'policy_ref': reference(policy), 'candidate': CANDIDATE, 'required_run_refs': [reference(run)], 'status': 'PASS', 'reasons': ['Synthetic review'], 'review_refs': [reference(review)]})
     release = row('ReleaseDecision', 'release', {'candidate': CANDIDATE, 'required_gate_refs': [reference(gate)], 'decision': 'APPROVE', 'authority_ref': reference(release_grant), 'support_owner': 'operator', 'recovery_distribution_disposition': 'Synthetic rollback and support declaration; no real release'})
-    return [policy, requirement, edit, release_grant, task, run, gate, release]
+    return [policy, requirement, edit, release_grant, task, run, review, gate, release]
 
 
 class KernelTests(unittest.TestCase):
@@ -78,7 +81,7 @@ class KernelTests(unittest.TestCase):
     def test_canonical_full_schema(self):
         for record in self.records:
             self.assertEqual(schema_errors(record), [])
-        self.assertEqual(self.check(authority_receipt=lambda g: True, run_receipt=lambda r: True, release_receipt=lambda r: True)['status'], 'PASS')
+        self.assertEqual(self.check(authority_receipt=lambda g: True, run_receipt=lambda r: True, review_receipt=lambda r: True, release_receipt=lambda r: True)['status'], 'PASS')
 
     def test_external_receipts_are_required(self):
         self.assertEqual(self.code('RUN_RECEIPT')['status'], 'INCOMPLETE')
@@ -226,7 +229,7 @@ class KernelTests(unittest.TestCase):
         fact = entity('Fact', 'ua.fact.selection', 'example', 'owner', {'predicate': 'local_only', 'state': 'true', 'value': None, 'unit': None, 'origin': 'declared', 'evidence_refs': []})
         decision = entity('SelectionDecision', 'ua.selection.example', 'example', 'owner', {'policy_sha256': digest(self.records[0]), 'input_sha256': digest(fact), 'rules_version': 'synthetic-policy-1', 'plan_status': 'COMPLETE', 'choices': [{'target': original['id'], 'status': 'RECOMMENDED', 'obligation': 'optional', 'basis': 'research', 'rule_id': 'example-rule', 'fact_refs': [reference(fact)], 'registry_refs': [reg], 'reasons': ['Synthetic applicability proposal; not autonomous selection'], 'missing': [], 'conflicts': []}]})
         self.records.extend([fact, decision])
-        self.assertEqual(self.check(authority_receipt=lambda g: True, run_receipt=lambda r: True, release_receipt=lambda r: True)['status'], 'PASS')
+        self.assertEqual(self.check(authority_receipt=lambda g: True, run_receipt=lambda r: True, review_receipt=lambda r: True, release_receipt=lambda r: True)['status'], 'PASS')
         decision['body']['choices'][0]['registry_refs'][0]['record_id'] = '003R-DISC-001'
         self.code('REGISTRY')
 

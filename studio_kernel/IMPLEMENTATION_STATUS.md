@@ -1,5 +1,7 @@
 # Canonical kernel checkpoint
 
+Evidence continuation: Ed25519 receipt verification now backs operator-pinned authority/run/review/release callbacks. Verified PASS/FAIL execution observations can be imported with content-addressed proof retention. Task acceptance produces a gate only after current evidence, artifact bytes and signed independent task review pass; release remains separately controlled. See `EVIDENCE.md`. The actual enforcing host and full lifecycle trials remain pending.
+
 Connected continuation: `planning.py` now assembles canonical profile/fact/requirement/review inputs into risk, reviewed research-selection and dependency-ordered task proposals. It reports missing information, holds critical/unknown risk, checks coverage and preserves a history-ready record batch. `PLANNING.md` records its scope: deterministic assembly of recorded judgments, not reliable automatic applicability selection or authorization. The CLI planning→history→replay path is tested.
 
 Implemented: direct validation against the canonical candidate schema; exact record/digest reference resolution; structured fact conflicts; source/edge registry membership; candidate/input invalidation; host-receipt-dependent authority/run/release checks; byte-verified output artifacts; gate aggregation and effective release HOLD; transactional history, hash-linked canonical events, stale-writer exclusion and replay-derived snapshots.

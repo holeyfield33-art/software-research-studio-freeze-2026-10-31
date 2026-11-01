@@ -46,7 +46,7 @@ def invalidated(records, candidate=None):
 
 
 def validate(records, *, project_id, candidate=None, artifact_root=None,
-             authority_receipt=None, run_receipt=None, release_receipt=None, now=None):
+             authority_receipt=None, run_receipt=None, review_receipt=None, release_receipt=None, now=None):
     """Receipt callbacks must verify host-issued evidence, not record assertions.
 
     PASS means implemented consistency checks pass; it is not product readiness.
@@ -57,7 +57,12 @@ def validate(records, *, project_id, candidate=None, artifact_root=None,
         findings.append({'code': code, 'record': record, 'message': message, 'level': level})
     def report(stale=()):
         status = 'FAIL' if any(f['level'] == 'FAIL' for f in findings) else 'INCOMPLETE' if findings else 'PASS'
-        releases = [r for r in records if isinstance(r, dict) and r.get('kind') == 'ReleaseDecision' and isinstance(r.get('body'), dict)] if isinstance(records, list) else []
+        release_versions = [r for r in records if isinstance(r, dict) and r.get('kind') == 'ReleaseDecision' and isinstance(r.get('body'), dict) and isinstance(r.get('id'), str) and type(r.get('revision')) is int] if isinstance(records, list) else []
+        release_latest = {}
+        for r in release_versions:
+            if r['revision'] > release_latest.get(r['id'], {}).get('revision', 0):
+                release_latest[r['id']] = r
+        releases = list(release_latest.values())
         disposition = 'APPROVE' if releases and status == 'PASS' and all(r['body'].get('decision') == 'APPROVE' for r in releases) else 'HOLD' if releases else 'NOT_REQUESTED'
         return {'status': status, 'release_disposition': disposition, 'findings': findings, 'stale_sha256': sorted(stale), 'scope': 'Canonical structure and implemented semantic checks; not universal development acceptance'}
     if not isinstance(records, list):
@@ -226,6 +231,18 @@ def validate(records, *, project_id, candidate=None, artifact_root=None,
                 add('GATE_RESULT', rid, 'Gate outcome must be ' + expected)
             if b['status'] == 'PASS' and not b['review_refs']:
                 add('GATE_REVIEW', rid, 'No independent review evidence', 'INCOMPLETE')
+            if b['status'] == 'PASS':
+                for ref in b['review_refs']:
+                    review = resolve(ref, rid, 'DesignDecision')
+                    if review and (review_receipt is None or not review_receipt(review)):
+                        add('GATE_REVIEW_RECEIPT', rid, 'Gate review has no authenticated accepted-review receipt', 'INCOMPLETE')
+                    if review:
+                        for run in runs:
+                            if not run:
+                                continue
+                            packet = resolve(run['body']['packet_ref'], rid, 'TaskPacket')
+                            if packet and (review['owner'] == packet['owner'] or reference(packet) not in review['derived_from'] or reference(run) not in review['derived_from']):
+                                add('GATE_REVIEW_BINDING', rid, 'Review must bind exact task and execution and be owned independently of builder', 'INCOMPLETE')
         if kind == 'ReleaseDecision':
             gates = [resolve(ref, rid, 'GateDecision') for ref in b['required_gate_refs']]
             grant = resolve(b['authority_ref'], rid, 'Authority')

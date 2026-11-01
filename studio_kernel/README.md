@@ -4,6 +4,8 @@ This module targets the existing `architecture/UNIVERSAL-ARCH-001/contracts.sche
 
 Connected planning is now available through `python -m studio_kernel plan`; see `PLANNING.md` for the intake contract, reviewed risk/selection boundary, five synthetic examples and history handoff. Planning creates proposals, never execution permission.
 
+Signed evidence import and task acceptance are now available through `import-evidence` and `accept`; see `EVIDENCE.md` for public-key trust configuration, proof retention, review binding and limits. This supplies a concrete receipt-verification integration; a real enforcing/signing host adapter remains to be built.
+
 ## What works
 
 - Full declared Draft 2020-12 structural validation through `jsonschema` with format checking, using the canonical candidate schema unchanged.
