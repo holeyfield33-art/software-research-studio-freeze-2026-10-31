@@ -40,3 +40,10 @@ python -m unittest studio_kernel.test_receipts studio_kernel.test_planning studi
 ```
 
 A green suite does not establish real-project execution or production readiness.
+
+
+## Current entrypoints and greenfield experiments
+
+The repository root [README.md](README.md) and [current status](docs/CURRENT_STATUS.md) describe the **active** Studio implementation; historical freeze/handoff files remain archival. For real use, follow [Getting Started](docs/GETTING_STARTED.md). To examine a new build using the *documented* Studio lifecycle, see [Agent B ScanPlan](experiments/agent_b_scanplan/README.md) and its separate spec, decisions, evidence and test source. This experiment is not registered as a linked product, is not live scanning, and has not passed canonical kernel host acceptance.
+
+For greenfield work, **always** cover intended users, interface/UX (or justified N/A), requirement-to-task-to-oracle traceability, actual commands, exclusions and ownership of the release decision. Do not claim a full Studio lifecycle run from the greenfield project's local Python tests.

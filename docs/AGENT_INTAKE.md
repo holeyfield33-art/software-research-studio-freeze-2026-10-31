@@ -106,3 +106,8 @@ A message such as "003 finished" establishes claimed completion only. Require th
 Stop or hold if the target commit is unpinned for consequential claims; requirements contradict; source facts cannot be resolved; task authority/permissions are absent; critical risk is unreviewed; real oracles are unavailable; or verification lacks the required independent evidence. Report what is missing. Do not fabricate command results or mark skipped checks as passed.
 
 Studio may **evaluate** any consenting project. It must **not** create persistent "linked products" entries, reciprocal links, forks/submodules, dependency edges or target-repo documentation solely because an assessment occurred. Any actual integration is a separate, explicit decision with its own authority, design, tests and release gates.
+
+
+## 9. Greenfield experiment reference — no automatic acceptance
+
+[Agent B ScanPlan v0.1](../experiments/agent_b_scanplan/README.md) demonstrates *writing* an intake, UX/CLI interaction, requirement-to-task specification, positive/negative test cases, evidence log and explicit HOLD. This new offline utility is not a linked product and is not a vulnerability scanner. Its local 19-test result is an observed **project** check; it does not establish that Studio's canonical planner, host executor or task-bound independent receipt verification ran. A correct agent must preserve that boundary in any report, even when the newly built code works.

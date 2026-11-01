@@ -56,3 +56,8 @@ The process-interruption test exits a subprocess after writes but before commit,
 - DomainContract modules conservatively return INCOMPLETE until their pinned schemas and validators are registered. Unsupported capabilities cannot be accepted from wrapper shape alone.
 
 This checkpoint implements part of the canonical semantic/state kernel. It does not claim G3 acceptance, autonomous development readiness, a measured productivity improvement, selector reliability or production integration.
+
+
+## Current operator guides and experimental usage
+
+For current high-level status and honest release boundaries see [Studio current status](../docs/CURRENT_STATUS.md) and [Getting Started](../docs/GETTING_STARTED.md). The [Agent B ScanPlan greenfield experiment](../experiments/agent_b_scanplan/README.md) tests the documented intake/specification/change/testing workflow with a standalone offline Python CLI; **the kernel has not planned, executed or accepted this experiment**. Keep its local test results separate from the kernel's signed-evidence and host-execution gates. See [the current handoff](../docs/HANDOFF.md).
