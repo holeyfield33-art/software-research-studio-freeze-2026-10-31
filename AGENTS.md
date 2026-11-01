@@ -1,6 +1,6 @@
 # Software Research Studio — agent entrypoint
 
-**Scope:** This file governs new Studio agent work in this repository. **Primary purpose:** help frontier coding models infer missing product/engineering needs and make the smallest effective improvement for vibecoders. Start with [product intent](docs/PRODUCT_INTENT.md). Do not turn routine building or maintenance into compulsory lifecycle management or a long report. The 2026-10-31 freeze, its original checkpoint bytes, hashes, IDs and archived reports remain immutable. This file is an additive workflow instruction, not a modification of the frozen research or a grant to run tools.
+**Scope:** This file governs new Studio agent work in this repository. **Primary purpose:** help frontier coding models infer missing product/engineering needs and make the smallest effective improvement for vibecoders. Start with [product intent](docs/PRODUCT_INTENT.md) and [the adaptive repository knowledge contract](docs/REPOSITORY_KNOWLEDGE_LAYOUT.md). **Keep the existing Studio research and engine; pause new engine features.** Do not turn routine building or maintenance into compulsory lifecycle management or a long report. Existing SDLC patterns, canonical planning and evidence tools remain available when appropriate. The 2026-10-31 freeze, its original checkpoint bytes, hashes, IDs and archived reports remain immutable. This file is an additive workflow instruction, not a modification of the frozen research or a grant to run tools.
 
 ## Read order
 
