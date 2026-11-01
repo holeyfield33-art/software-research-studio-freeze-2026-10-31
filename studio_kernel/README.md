@@ -1,5 +1,7 @@
 # Canonical Studio kernel — initial implementation
 
+> **Agent intake/report routing:** Before evaluating a repository or interpreting an external checkpoint update, read [the universal agent intake contract](../docs/AGENT_INTAKE.md) and [the agent entrypoint](../AGENTS.md). The kernel does not choose a report type from a repository URL; default to a universal project assessment unless another deliverable is explicitly requested. No linked-product registration is implied.
+
 This module targets the existing `architecture/UNIVERSAL-ARCH-001/contracts.schema.json` directly. No new record dialect is introduced. The old `studio_contracts/` prototype remains a historical experiment; new kernel work belongs here. The architecture remains a candidate, and broader acceptance gates remain pending.
 
 Connected planning is now available through `python -m studio_kernel plan`; see `PLANNING.md` for the intake contract, reviewed risk/selection boundary, five synthetic examples and history handoff. Planning creates proposals, never execution permission.
