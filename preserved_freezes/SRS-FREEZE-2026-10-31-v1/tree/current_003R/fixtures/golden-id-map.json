@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "branches": {
+    "ai_agent": {
+      "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+      "selected_record_ids": [
+        "arch.agent_tool_boundary",
+        "gate.operational_rollback",
+        "gate.release_readiness",
+        "gate.requirements_acceptance",
+        "gate.security_risk_review",
+        "gate.unit_integration_execution",
+        "practice.change_maintenance",
+        "practice.ci_reproducible_release",
+        "practice.requirements_traceability",
+        "practice.test_strategy",
+        "practice.threat_modeling",
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.threat_model",
+        "reference.openai_agents_sdk",
+        "roadmap.dependency_aware_sequence",
+        "roadmap.risk_first_poc",
+        "software_type.ai_agents"
+      ],
+      "rejected_record_ids": [],
+      "rejected_requirement_ids": [
+        "feature.multi_agent_autonomy",
+        "feature.production_deployment",
+        "feature.vector_database"
+      ]
+    },
+    "authenticated_api": {
+      "fixture_id": "fixture.authenticated_single_service_api",
+      "selected_record_ids": [
+        "arch.client_server_api_boundary",
+        "arch.layered_modular",
+        "arch.minimal_viable_structure",
+        "gate.dependency_provenance",
+        "gate.release_readiness",
+        "gate.requirements_acceptance",
+        "gate.security_risk_review",
+        "gate.unit_integration_execution",
+        "practice.ci_reproducible_release",
+        "practice.requirements_traceability",
+        "practice.test_strategy",
+        "practice.threat_modeling",
+        "practice.version_control_review",
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "prompt.review_change",
+        "prompt.threat_model",
+        "reference.fastapi",
+        "roadmap.dependency_aware_sequence",
+        "roadmap.smallest_releasable_increment",
+        "sdlc.architecture_design",
+        "sdlc.discovery_scope",
+        "sdlc.implementation",
+        "sdlc.release",
+        "sdlc.requirements_risk",
+        "sdlc.verification",
+        "software_type.apis"
+      ],
+      "rejected_record_ids": [
+        "arch.event_queue",
+        "arch.multitenancy_isolation"
+      ],
+      "rejected_requirement_ids": [
+        "feature.billing",
+        "feature.kubernetes",
+        "feature.microservices",
+        "feature.queue"
+      ]
+    },
+    "conflict_missing_evidence": {
+      "fixture_id": "conflict_missing_evidence",
+      "selected_record_ids": [
+        "arch.minimal_viable_structure",
+        "gate.release_readiness",
+        "gate.unit_integration_execution",
+        "software_type.apis"
+      ],
+      "rejected_record_ids": [],
+      "rejected_requirement_ids": [
+        "apply_mobile_source_to_api",
+        "claim_tests_passed_from_repository_presence",
+        "requirement.unknown_telemetry_target"
+      ]
+    },
+    "offline_cli": {
+      "fixture_id": "offline_file_processing_cli_003",
+      "selected_record_ids": [
+        "arch.minimal_viable_structure",
+        "gate.requirements_acceptance",
+        "gate.unit_integration_execution",
+        "practice.dependency_secret_handling",
+        "practice.requirements_traceability",
+        "practice.test_strategy",
+        "prompt.add_test",
+        "prompt.implement_scoped_task",
+        "reference.ripgrep",
+        "roadmap.dependency_aware_sequence",
+        "roadmap.smallest_releasable_increment",
+        "sdlc.architecture_design",
+        "sdlc.discovery_scope",
+        "sdlc.implementation",
+        "sdlc.requirements_risk",
+        "sdlc.verification",
+        "software_type.cli_tools"
+      ],
+      "rejected_record_ids": [
+        "arch.client_server_api_boundary",
+        "arch.event_queue",
+        "arch.multitenancy_isolation",
+        "gate.operational_rollback",
+        "gate.release_readiness",
+        "gate.security_risk_review",
+        "sdlc.release"
+      ],
+      "rejected_requirement_ids": [
+        "feature.api_gateway",
+        "feature.authentication",
+        "feature.cloud_hosting",
+        "feature.container",
+        "feature.database",
+        "feature.multitenancy",
+        "feature.queue",
+        "feature.service_deployment"
+      ]
+    }
+  }
+}

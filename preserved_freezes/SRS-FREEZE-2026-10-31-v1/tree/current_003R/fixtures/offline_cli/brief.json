@@ -1,0 +1,57 @@
+{
+  "fixture_id": "offline_file_processing_cli_003",
+  "description": "Offline file-processing CLI with local filesystem input only; no network, service, account, or tenant boundary. No destructive-write behavior is authorized. Packaging and local recovery are conditional on distribution and write behavior. No tests, CI, or release execution occurred.",
+  "software_type_ids": [
+    "software_type.cli_tools"
+  ],
+  "attributes": {
+    "local_filesystem_input": true,
+    "network_service_boundary": false,
+    "account_boundary": false,
+    "tenant_boundary": false,
+    "destructive_write_authorized": false,
+    "package_distribution_planned": false,
+    "tests_executed": false,
+    "release_requested": false,
+    "persistent_shared_state": false,
+    "database_required": false,
+    "cloud_hosting_required": false,
+    "container_required": false,
+    "api_gateway_required": false,
+    "async_queue_required": false,
+    "service_deployment_required": false
+  },
+  "available_inputs": {
+    "input_source": "local filesystem",
+    "connectivity": "offline; no network/service boundary",
+    "identity": "no account or tenant boundary",
+    "write_authority": "non-destructive only",
+    "execution_evidence": "none"
+  },
+  "missing_inputs": [
+    "acceptance examples and performance constraints",
+    "packaging/distribution target",
+    "precise file formats and size limits",
+    "recovery requirements if future writes are authorized",
+    "selected dependencies and credential/build-input use",
+    "target platforms and runtime/toolchain",
+    "tests have not been executed",
+    "whether results are stdout, a new output path, or in-place changes"
+  ],
+  "prohibited_features": [
+    "feature.authentication",
+    "feature.multitenancy",
+    "feature.database",
+    "feature.cloud_hosting",
+    "feature.container",
+    "feature.api_gateway",
+    "feature.queue",
+    "feature.service_deployment"
+  ],
+  "evidence": {
+    "candidate_id": null,
+    "test_execution_artifact": null,
+    "approval_record": null
+  },
+  "acceptance_boundary": "Offline local-file CLI only. Require clear arguments/help, predictable stdout/stderr and exit status, bounded local input handling, and non-destructive defaults. Do not represent tests/CI/release as executed. Packaging and local recovery are conditional; no service rollback/deployment."
+}

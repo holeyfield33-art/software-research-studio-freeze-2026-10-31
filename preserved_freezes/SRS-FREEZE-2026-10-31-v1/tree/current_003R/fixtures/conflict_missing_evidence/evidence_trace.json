@@ -1,0 +1,282 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "traces": [
+    {
+      "knowledge_record_id": "software_type.apis",
+      "source_id": "source.apis.01",
+      "path": [
+        "software_type.apis",
+        "source.apis.01"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "Sections 9 (Method Definitions), 15 (Status Codes), and 6.4.1 (Content Semantics).",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "software_type.apis",
+      "source_id": "source.apis.02",
+      "path": [
+        "software_type.apis",
+        "source.apis.02"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "Introduction; Paths Object; Path Item Object; Operation Object; Responses Object; Security Scheme Object; version history entry 3.1.1.",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "software_type.apis",
+      "source_id": "source.apis.03",
+      "path": [
+        "software_type.apis",
+        "source.apis.03"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "Risk Description, API2:2023 Broken Authentication; API5:2023 Broken Function Level Authorization; API10:2023 Unsafe Consumption of APIs.",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.apis",
+        "arch.minimal_viable_structure",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.aws.segment_workload",
+      "path": [
+        "software_type.apis",
+        "arch.minimal_viable_structure",
+        "source.aws.segment_workload"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Page heading and opening scope; Implementation guidance; Common anti-patterns; closing implementation guidance",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "arch.minimal_viable_structure",
+      "source_id": "source.12factor.processes",
+      "path": [
+        "software_type.apis",
+        "arch.minimal_viable_structure",
+        "source.12factor.processes"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "VI. Processes; Execute the app as one or more stateless processes",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.fastapi.tests",
+      "path": [
+        "software_type.apis",
+        "gate.unit_integration_execution",
+        "source.fastapi.tests"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.ripgrep.regression",
+      "path": [
+        "software_type.apis",
+        "gate.unit_integration_execution",
+        "source.ripgrep.regression"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.agents.test",
+      "path": [
+        "software_type.apis",
+        "gate.unit_integration_execution",
+        "source.agents.test"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.unit_integration_execution",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.apis",
+        "gate.unit_integration_execution",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "gate.release_readiness",
+      "source_id": "source.nist.ssdf.v1_1",
+      "path": [
+        "software_type.apis",
+        "gate.release_readiness",
+        "source.nist.ssdf.v1_1"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "gate.release_readiness",
+      "source_id": "source.fastapi.ci",
+      "path": [
+        "software_type.apis",
+        "gate.release_readiness",
+        "source.fastapi.ci"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Workflow triggers, test matrix and coverage steps",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.release_readiness",
+      "source_id": "source.ripgrep.release",
+      "path": [
+        "software_type.apis",
+        "gate.release_readiness",
+        "source.ripgrep.release"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "gate.release_readiness",
+      "source_id": "source.agents.ci",
+      "path": [
+        "software_type.apis",
+        "gate.release_readiness",
+        "source.agents.ci"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "software_type.mobile_applications",
+      "source_id": "source.mobile_applications.01",
+      "path": [
+        "software_type.mobile_applications",
+        "source.mobile_applications.01"
+      ],
+      "predicates": [
+        "supported_by"
+      ],
+      "claim_locator": "Sections ‘Layered architecture,’ ‘UI layer,’ ‘Lifecycle,’ and ‘Testing.’",
+      "evidence_classification": "documented_guidance"
+    },
+    {
+      "knowledge_record_id": "sdlc.discovery_scope",
+      "source_id": "source.iso.12207.2026.summary",
+      "path": [
+        "software_type.apis",
+        "sdlc.discovery_scope",
+        "source.iso.12207.2026.summary"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+      "evidence_classification": "synthesis"
+    },
+    {
+      "knowledge_record_id": "reference.fastapi",
+      "source_id": "source.fastapi.tests",
+      "path": [
+        "software_type.apis",
+        "reference.fastapi",
+        "source.fastapi.tests"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "reference.fastapi",
+      "source_id": "source.fastapi.ci",
+      "path": [
+        "software_type.apis",
+        "reference.fastapi",
+        "source.fastapi.ci"
+      ],
+      "predicates": [
+        "exemplified_by",
+        "supported_by"
+      ],
+      "claim_locator": "Workflow triggers, test matrix and coverage steps",
+      "evidence_classification": "observed_repository_file"
+    },
+    {
+      "knowledge_record_id": "prompt.review_change",
+      "source_id": "source.github.copilot_task_practices",
+      "path": [
+        "software_type.apis",
+        "prompt.review_change",
+        "source.github.copilot_task_practices"
+      ],
+      "predicates": [
+        "applies_to",
+        "supported_by"
+      ],
+      "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+      "evidence_classification": "synthesis"
+    }
+  ]
+}

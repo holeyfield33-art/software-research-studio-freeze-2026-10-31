@@ -1,0 +1,77 @@
+[
+  {
+    "source_id": "source.openai.prompt_injection",
+    "title": "Designing AI agents to resist prompt injection",
+    "canonical_url": "https://openai.com/index/designing-agents-to-resist-prompt-injection/"
+  },
+  {
+    "source_id": "source.agents.instructions",
+    "title": "OpenAI Agents SDK AGENTS.md",
+    "canonical_url": "https://github.com/openai/openai-agents-python/blob/d27abe8972408a638e97422e9fd8066445bb7b21/AGENTS.md"
+  },
+  {
+    "source_id": "source.agents.test",
+    "title": "OpenAI Agents SDK tracing regression tests",
+    "canonical_url": "https://github.com/openai/openai-agents-python/blob/d27abe8972408a638e97422e9fd8066445bb7b21/tests/tracing/test_tracing_env_disable.py"
+  },
+  {
+    "source_id": "source.agents.ci",
+    "title": "OpenAI Agents SDK test workflow",
+    "canonical_url": "https://github.com/openai/openai-agents-python/blob/d27abe8972408a638e97422e9fd8066445bb7b21/.github/workflows/tests.yml"
+  },
+  {
+    "source_id": "source.nist.ssdf.v1_1",
+    "title": "Secure Software Development Framework (SSDF) Version 1.1",
+    "canonical_url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+  },
+  {
+    "source_id": "source.apis.01",
+    "title": "HTTP Semantics",
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+  },
+  {
+    "source_id": "source.apis.02",
+    "title": "OpenAPI Specification, Version 3.1.1",
+    "canonical_url": "https://spec.openapis.org/oas/v3.1.1.html"
+  },
+  {
+    "source_id": "source.apis.03",
+    "title": "OWASP Top 10 API Security Risks – 2023",
+    "canonical_url": "https://owasp.org/API-Security/editions/2023/en/0x11-t10/"
+  },
+  {
+    "source_id": "source.fastapi.tests",
+    "title": "FastAPI required body parameter tests",
+    "canonical_url": "https://github.com/fastapi/fastapi/blob/192b12197eb04c2b4a691cce7d87261b21716714/tests/test_request_params/test_body/test_required_str.py"
+  },
+  {
+    "source_id": "source.fastapi.ci",
+    "title": "FastAPI test workflow",
+    "canonical_url": "https://github.com/fastapi/fastapi/blob/192b12197eb04c2b4a691cce7d87261b21716714/.github/workflows/test.yml"
+  },
+  {
+    "source_id": "source.cli_tools.01",
+    "title": "Command Line Interface Guidelines",
+    "canonical_url": "https://clig.dev/"
+  },
+  {
+    "source_id": "source.ripgrep.regression",
+    "title": "ripgrep regression tests",
+    "canonical_url": "https://github.com/BurntSushi/ripgrep/blob/91f5d22ef48bde459d90a8c7dbeab416e97d0f2b/tests/regression.rs"
+  },
+  {
+    "source_id": "source.ripgrep.release",
+    "title": "ripgrep release workflow",
+    "canonical_url": "https://github.com/BurntSushi/ripgrep/blob/91f5d22ef48bde459d90a8c7dbeab416e97d0f2b/.github/workflows/release.yml"
+  },
+  {
+    "source_id": "source.aws.segment_workload",
+    "title": "REL03-BP01 Choose how to segment your workload",
+    "canonical_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_service_architecture_monolith_soa_microservice.html"
+  },
+  {
+    "source_id": "source.12factor.processes",
+    "title": "The Twelve-Factor App — Processes",
+    "canonical_url": "https://12factor.net/processes"
+  }
+]

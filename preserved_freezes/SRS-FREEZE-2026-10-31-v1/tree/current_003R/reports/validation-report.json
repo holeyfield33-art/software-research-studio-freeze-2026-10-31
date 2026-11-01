@@ -1,0 +1,166 @@
+{
+  "project": "STUDIO-KNOWLEDGE-003",
+  "scope": "research-only fixture/data QA; no Studio integration",
+  "dataset_version": "1.2.0",
+  "schema_version": "1.1.0",
+  "status": "PASS",
+  "dataset_validation": {
+    "status": "PASS",
+    "error_count": 0,
+    "counts": {
+      "software_types": 10,
+      "engineering_practices": 8,
+      "sdlc_stages": 7,
+      "architecture_patterns": 6,
+      "prompt_patterns": 6,
+      "roadmap_patterns": 3,
+      "verification_gates": 6,
+      "reference_projects": 3,
+      "sources": 65,
+      "relationships": 601,
+      "source_count": 65,
+      "relationship_count": 601,
+      "active_relationship_count": 598,
+      "superseded_relationship_count": 3
+    }
+  },
+  "fixture_validation": {
+    "status": "PASS",
+    "error_count": 0,
+    "fixture_count": 4,
+    "category_coverage": {
+      "software_type.ai_agents": 1,
+      "software_type.apis": 2,
+      "software_type.cli_tools": 1
+    },
+    "branches": [
+      {
+        "directory": "ai_agent",
+        "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+        "selected_record_count": 18,
+        "trace_count": 62,
+        "gate_outcomes": {
+          "gate.requirements_acceptance": "INCOMPLETE",
+          "gate.security_risk_review": "INCOMPLETE",
+          "gate.unit_integration_execution": "INCOMPLETE",
+          "gate.release_readiness": "INCOMPLETE",
+          "gate.operational_rollback": "INCOMPLETE"
+        },
+        "negative_cases": []
+      },
+      {
+        "directory": "authenticated_api",
+        "fixture_id": "fixture.authenticated_single_service_api",
+        "selected_record_count": 27,
+        "trace_count": 80,
+        "gate_outcomes": {
+          "gate.requirements_acceptance": "INCOMPLETE",
+          "gate.security_risk_review": "INCOMPLETE",
+          "gate.unit_integration_execution": "INCOMPLETE",
+          "gate.dependency_provenance": "INCOMPLETE",
+          "gate.release_readiness": "INCOMPLETE"
+        },
+        "negative_cases": []
+      },
+      {
+        "directory": "conflict_missing_evidence",
+        "fixture_id": "conflict_missing_evidence",
+        "selected_record_count": 4,
+        "trace_count": 19,
+        "gate_outcomes": {
+          "gate.unit_integration_execution": "INCOMPLETE",
+          "gate.release_readiness": "INCOMPLETE"
+        },
+        "negative_cases": [
+          {
+            "case_id": "mobile_source_cannot_support_api_claim",
+            "case_type": "stack_mismatch",
+            "expected_status": "INAPPLICABLE",
+            "derived_status": "INAPPLICABLE",
+            "reason": "Source is attached to the mobile-app software-type record, not the API record, and is scoped to another stack."
+          },
+          {
+            "case_id": "superseded_edition_without_adoption",
+            "case_type": "superseded_standard",
+            "expected_status": "INCOMPLETE",
+            "derived_status": "INCOMPLETE",
+            "reason": "Catalog currency is established, but adoption and normative applicability remain unresolved."
+          },
+          {
+            "case_id": "repository_test_source_without_run",
+            "case_type": "missing_test_execution",
+            "expected_status": "INCOMPLETE",
+            "derived_status": "INCOMPLETE",
+            "reason": "Pinned test and workflow sources are configuration only; no candidate-bound run result exists."
+          },
+          {
+            "case_id": "source_specific_guidance_is_not_a_universal_default",
+            "case_type": "source_tension",
+            "expected_status": "CONDITIONAL",
+            "derived_status": "CONDITIONAL",
+            "reason": "Different source scopes remain attributed; no universal architecture winner is inferred."
+          },
+          {
+            "case_id": "unknown_requirement_abstains",
+            "case_type": "unknown_requirement",
+            "expected_status": "INCOMPLETE",
+            "derived_status": "INCOMPLETE",
+            "reason": "No stable catalog match exists; the unknown requirement is not silently mapped to a recommendation."
+          }
+        ]
+      },
+      {
+        "directory": "offline_cli",
+        "fixture_id": "offline_file_processing_cli_003",
+        "selected_record_count": 17,
+        "trace_count": 49,
+        "gate_outcomes": {
+          "gate.requirements_acceptance": "INCOMPLETE",
+          "gate.unit_integration_execution": "INCOMPLETE"
+        },
+        "negative_cases": []
+      }
+    ]
+  },
+  "regression_tests": {
+    "status": "PASS",
+    "tests_run": 12,
+    "failures": 0,
+    "errors": 0
+  },
+  "checkpoint_preservation": {
+    "001_record_count": 45,
+    "002_record_count": 522,
+    "current_record_count": 715,
+    "001_missing_ids_by_partition": {},
+    "002_missing_ids_by_partition": {},
+    "all_001_ids_preserved": true,
+    "all_002_ids_preserved": true
+  },
+  "source_claim_review": {
+    "mapping_count": 15,
+    "dispositions": {
+      "CONFIRMED": 10,
+      "SYNTHESIS": 5
+    },
+    "failures": 0
+  },
+  "package_hygiene": {
+    "original_zip_files_embedded": false,
+    "required_verifier": "scripts/verify_fixtures.py",
+    "manifest": "manifest.json and detached manifest.sha256; final archive checksum is a detached sidecar",
+    "package_excludes": [
+      "__pycache__",
+      "*.pyc",
+      "*.tmp",
+      "original 001/002 ZIPs"
+    ]
+  },
+  "execution_claims": {
+    "tests_executed_for_products": false,
+    "ci_executed": false,
+    "release_executed": false,
+    "verification_gates_return_pass": false
+  },
+  "acceptance_boundary": "PASS indicates research dataset integrity and the narrow acceptance fixture contracts only; it is not production or category-wide readiness."
+}

@@ -1,0 +1,2772 @@
+{
+  "trace_version": "1.0.0",
+  "input_sha256": "04c245e5018af9fd07e8a1729526c3ff82aae3a87eafc45eba226332131ea400",
+  "rules_sha256": "5d365b3d4714f98eedfa8002644440aa095536b14d7769f32f8ef6d8f3df2eec",
+  "dataset_partition_sha256": {
+    "architecture_patterns.jsonl": "163677756cd30a08bbd5b0952915e8c981fd3aefc628fc8a9f524c679d7e2b39",
+    "engineering_practices.jsonl": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66",
+    "prompt_patterns.jsonl": "db5406b61cbb38f7d857065dafd9e287cfd32d4215ea2e53de103731dd8648ab",
+    "reference_projects.jsonl": "0fd1c4621a16136fb5750da78f7ac7d32490d3655c2bb3827350459530889171",
+    "relationships.jsonl": "05e8b75a515c2a586ffd798af8162a0effa200bc47e9e5bc292a23d0b6cbaec6",
+    "roadmap_patterns.jsonl": "ffc58f804d848f25b626fa6240ff40c375d863969ebf449b06d703fe43dd8a41",
+    "sdlc_stages.jsonl": "614662541ad76977a4a305fd500e70bce5973680d2941b30869c7f3f27fe29d5",
+    "software_types.jsonl": "5a59f96ddfc493d67867d46279ff27cb6626cd7ee27f3dbc5772dfeb149559ec",
+    "sources.jsonl": "9546a38f0b63fad87af49af995b1cbfa1393549e95d9236ea941d07d41a7b9b1",
+    "verification_gates.jsonl": "c6bca575a05382f66fb53d062c48c51a5b2c4cfb93bd8d53b9da8b0eb15bac5a"
+  },
+  "descriptive_text_effect": "ignored_non_authoritative_text_not_copied",
+  "rule_precedence": [
+    "R-INPUT-001",
+    "R-CATEGORY-001",
+    "R-EXCLUSION-001",
+    "R-AUTHORITY-001",
+    "R-EVIDENCE-001",
+    "R-STANDARD-001",
+    "R-AGENT-001",
+    "R-API-001",
+    "R-CLI-001",
+    "R-API-AUTH-001",
+    "R-AGENT-002",
+    "R-API-002",
+    "R-CLI-002",
+    "R-AGENT-003",
+    "R-API-003",
+    "R-API-004",
+    "R-BASE-001",
+    "R-RELEASE-001",
+    "R-TYPE-BASE-001",
+    "R-ARCH-001",
+    "R-PRACTICE-001",
+    "R-PRACTICE-002",
+    "R-ROADMAP-001",
+    "R-PROMPT-001",
+    "R-EXAMPLE-001",
+    "R-SCOPE-001"
+  ],
+  "selected_record_trace": [
+    {
+      "record_id": "arch.minimal_viable_structure",
+      "rule_id": "R-CLI-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0402",
+          "record_id": "arch.minimal_viable_structure",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0302",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.aws.segment_workload",
+              "claim_locator": "Page heading and opening scope; Implementation guidance; Common anti-patterns; closing implementation guidance",
+              "source_type": "Official architecture guidance",
+              "source_claims_supported": "AWS Well-Architected guidance compares monolith, SOA, and microservices segmentation. It describes potential microservice latency, distributed debugging/tracing and operational costs; calls tightly interdependent service meshes an anti-pattern; says monoliths should be rare and modular/evolvable; and recommends SOA or microservices when the workload and organization can support them. This supports conditional tradeoff analysis, not a universal modular-monolith default.",
+              "source_limitations": "AWS-specific advisory guidance, not a universal architecture rule or quantified cost model. The page expresses a preference for SOA/microservices when organizational and workload capability permit, while recognizing monoliths as rare cases; a modular-monolith-first recommendation is a separate cross-source synthesis.",
+              "relationship_id": "edge.0381",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.12factor.processes",
+              "claim_locator": "VI. Processes; Execute the app as one or more stateless processes",
+              "source_type": "Architecture methodology guidance",
+              "source_claims_supported": "Recommends stateless/share-nothing application processes and placing state that must persist in backing services. The page allows process memory or filesystem for brief single-transaction caches, but future requests or jobs must not rely on that process-local state remaining available.",
+              "source_limitations": "Twelve-Factor methodology guidance, not a universal architecture rule or a ban on all local files or transient caching. It does not by itself choose monolith versus services, prescribe a database, or prove an implementation follows the recommendation.",
+              "relationship_id": "edge.0382",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0127",
+          "record_id": "gate.requirements_acceptance",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0335",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0336",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0128",
+          "record_id": "gate.unit_integration_execution",
+          "sources": [
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0339",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0340",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0341",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0342",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.dependency_secret_handling",
+      "rule_id": "R-CLI-002",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0123",
+          "record_id": "practice.dependency_secret_handling",
+          "sources": [
+            {
+              "source_id": "source.github.dep_review",
+              "claim_locator": "About dependency review; enabling dependency review; dependency review action",
+              "source_type": "Product documentation",
+              "source_claims_supported": "Reviews dependency changes and known vulnerability information in pull requests; merge blocking depends on required configured checks and feature availability.",
+              "source_limitations": "GitHub-specific, supported manifests and data coverage vary; does not prove dependencies are safe.",
+              "relationship_id": "edge.0272",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.slsa.v1.verify",
+              "claim_locator": "How to verify; check SLSA build level; check expectations; optional recursive dependency check",
+              "source_type": "Technical specification guidance",
+              "source_claims_supported": "Artifact verification should bind trusted builder, signature, subject digest and expected source/build parameters; dependency recursion is optional in v1.0.",
+              "source_limitations": "Requires consumer trust policy and expected identity; dependency completeness is not guaranteed.",
+              "relationship_id": "edge.0273",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0274",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.cli_tools",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0121",
+          "record_id": "practice.requirements_traceability",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0269",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0270",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "rule_id": "R-PRACTICE-002",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0124",
+          "record_id": "practice.test_strategy",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0275",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0276",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0277",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0278",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.add_test",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0132",
+          "record_id": "prompt.add_test",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0314",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0315",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0316",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0390",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0131",
+          "record_id": "prompt.implement_scoped_task",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0311",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0312",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0313",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0388",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.github.copilot_task_practices",
+              "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Clear task problem, acceptance criteria and file/context directions aid delegation; broad, sensitive, ambiguous or domain-heavy tasks may be poor candidates for delegation.",
+              "source_limitations": "GitHub Copilot-specific advice; does not define a universal prompt contract.",
+              "relationship_id": "edge.0389",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "reference.ripgrep",
+      "rule_id": "R-EXAMPLE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.cli_tools"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0138",
+          "record_id": "reference.ripgrep",
+          "sources": [
+            {
+              "source_id": "source.ripgrep.readme",
+              "claim_locator": "Product description; performance rationale; building/testing",
+              "source_type": "Pinned repository documentation",
+              "source_claims_supported": "Documents CLI behavior, filtering defaults, implementation rationale and documented build/test commands.",
+              "source_limitations": "Not an independent benchmark; docs do not prove tests run.",
+              "relationship_id": "edge.0353",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0354",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.release",
+              "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+              "source_type": "Pinned release workflow",
+              "source_claims_supported": "Release workflow configuration includes tag-based version consistency check and multiple target builds.",
+              "source_limitations": "Configuration only; no release executed.",
+              "relationship_id": "edge.0355",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.instruction_inventory",
+              "claim_locator": "Git tree recursive endpoint plus root/subtree traversal; checked named agent-guidance paths",
+              "source_type": "Pinned repository tree inventory",
+              "source_claims_supported": "A complete path inventory at the pinned commit was built by traversing the root tree and each referenced subtree because the recursive API response was truncated. AI_POLICY.md was found as repository agent-guidance material; README.md, tests/regression.rs and .github/workflows/release.yml exist at the commit.",
+              "source_limitations": "The recursive endpoint alone is truncated; completeness relies on traversing the root and all subtree tree objects. This inventory establishes path presence, not AI_POLICY.md content or compliance. No tests or release were run.",
+              "relationship_id": "edge.800006",
+              "evidence_classification": "synthesized_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0137",
+          "record_id": "roadmap.dependency_aware_sequence",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0331",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0332",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.smallest_releasable_increment",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0136",
+          "record_id": "roadmap.smallest_releasable_increment",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0329",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0330",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.architecture_design",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.900044",
+          "record_id": "sdlc.architecture_design",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0292",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0293",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.discovery_scope",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0115",
+          "record_id": "sdlc.discovery_scope",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0288",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0289",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.implementation",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0117",
+          "record_id": "sdlc.implementation",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0294",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0295",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.requirements_risk",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0116",
+          "record_id": "sdlc.requirements_risk",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0290",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0291",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.verification",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": "edge.0118",
+          "record_id": "sdlc.verification",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0296",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0297",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "software_type.cli_tools",
+      "rule_id": "R-TYPE-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "local_filesystem_input",
+          "state": "true"
+        },
+        {
+          "fact_id": "offline_only",
+          "state": "true"
+        },
+        {
+          "fact_id": "network_service_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "account_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_boundary",
+          "state": "false"
+        },
+        {
+          "fact_id": "destructive_overwrite_requested",
+          "state": "true"
+        },
+        {
+          "fact_id": "destructive_write_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "network_upload_authorized",
+          "state": "false"
+        },
+        {
+          "fact_id": "library_distribution_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "package_distribution_planned",
+          "state": "false"
+        },
+        {
+          "fact_id": "distribution_target_known",
+          "state": "false"
+        },
+        {
+          "fact_id": "database_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "cloud_hosting_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "container_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "api_gateway_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "service_deployment_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.cli_tools",
+        "applicable_software_types": [
+          "software_type.cli_tools"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.cli_tools",
+          "applicability_relationship_id": null,
+          "record_id": "software_type.cli_tools",
+          "sources": [
+            {
+              "source_id": "source.cli_tools.01",
+              "claim_locator": "Introduction; Philosophy > Human-first design and Simple parts that work together; Ease of discovery; Signals and control characters; Help; Documentation",
+              "source_type": "Advisory web documentation",
+              "source_claims_supported": "The guide recommends designing command-line programs for human users while preserving composability, including conventional stdin/stdout/stderr, signals, and exit codes; it also recommends comprehensive help and examples to improve discoverability.",
+              "source_limitations": "Advisory design guidance rather than a normative standard. The page does not identify a publisher or publication/version date. It does not establish that every CLI should use the same packaging or privilege safeguards.",
+              "relationship_id": "edge.0248",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.cli_tools.02",
+              "claim_locator": "README.md at commit adbc8813901bba65827259daa8e22ff94ec1f30e, sections Overview and Concepts",
+              "source_type": "Public GitHub repository README",
+              "source_claims_supported": "Cobra describes itself as a Go library for creating CLI applications and documents command/argument/flag structure, subcommands, POSIX-style flags, help generation, and shell completion support.",
+              "source_limitations": "The README documents project-provided features; it does not prove any particular Cobra-based application implements them correctly, nor does it provide general recommendations for exit status or output streams. No release/version date is stated in the inspected README.",
+              "relationship_id": "edge.0249",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.cli_tools.03",
+              "claim_locator": "README.md at commit 91f5d22ef48bde459d90a8c7dbeab416e97d0f2b, opening description; sections Quick examples comparing tools and feature overview",
+              "source_type": "Public GitHub repository README",
+              "source_claims_supported": "The README describes ripgrep as a line-oriented recursive regex search tool, identifies its default filtering of ignored, hidden, and binary files, and documents platform support and command options/features.",
+              "source_limitations": "The README is project documentation, not an independent assessment. Performance statements and benchmarks are workload/system dependent. The cited repository URL does not specify a release, and no publication/version date was verified.",
+              "relationship_id": "edge.0250",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.cli_tools.04",
+              "claim_locator": "NAME; DESCRIPTION; Documentation tests; OPTIONS > Test Options",
+              "source_type": "Official command reference documentation",
+              "source_claims_supported": "The reference documents `cargo test` as compiling and executing package unit, integration, and documentation tests; it explains test-name and `--` argument forwarding, default test behavior, and options such as `--no-run` and `--no-fail-fast`.",
+              "source_limitations": "This documents Cargo command behavior, not CLI design generally. The page does not provide a publication date or identify a numbered documentation version.",
+              "relationship_id": "edge.0251",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_exclusions": [],
+  "dependency_edges": [
+    {
+      "from_record_id": "practice.dependency_secret_handling",
+      "to_record_id": "gate.dependency_provenance",
+      "predicate": "verified_by",
+      "relationship_id": "edge.0167",
+      "status": "INCOMPLETE",
+      "dependency_kind": "verification_obligation",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "practice.test_strategy",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "verified_by",
+      "relationship_id": "edge.0165",
+      "status": "LINKED",
+      "dependency_kind": "verification_obligation",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.add_test",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0175",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.add_test",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0173",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0172",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0170",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.dependency_provenance",
+      "predicate": "requires",
+      "relationship_id": "edge.0376",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0377",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.requirements_acceptance",
+      "predicate": "requires",
+      "relationship_id": "edge.0375",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.smallest_releasable_increment",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0374",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.smallest_releasable_increment",
+      "to_record_id": "gate.requirements_acceptance",
+      "predicate": "requires",
+      "relationship_id": "edge.0372",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.smallest_releasable_increment",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0373",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    }
+  ],
+  "dependency_gaps": [
+    "gate.dependency_provenance",
+    "gate.release_readiness"
+  ],
+  "related_context_edges": [
+    {
+      "from_record_id": "prompt.add_test",
+      "related_record_id": "practice.test_strategy",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0364",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.requirements_traceability",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0361",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.test_strategy",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0363",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.version_control_review",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0362",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "prompt.add_test",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0132",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.fastapi.tests",
+          "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+          "source_type": "Pinned test source",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "prompt.implement_scoped_task",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0131",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.fastapi.tests",
+          "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+          "source_type": "Pinned test source",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "prompt.investigate_failure",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0134",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.fastapi.tests",
+          "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+          "source_type": "Pinned test source",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "prompt.prepare_release",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0135",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.fastapi.tests",
+          "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+          "source_type": "Pinned test source",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "prompt.review_change",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0133",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.fastapi.tests",
+          "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+          "source_type": "Pinned test source",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "roadmap.dependency_aware_sequence",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0137",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "source_type": "Framework guide",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.cli_tools",
+      "related_record_id": "roadmap.smallest_releasable_increment",
+      "software_type_id": "software_type.cli_tools",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0136",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "source_type": "Framework guide",
+          "evidence_classification": null
+        }
+      ]
+    }
+  ],
+  "roadmap_task_edges": [
+    {
+      "task_id": "dep.discover",
+      "depends_on": [],
+      "dependency_type": "none"
+    },
+    {
+      "task_id": "inc.scope",
+      "depends_on": [],
+      "dependency_type": "none"
+    },
+    {
+      "task_id": "dep.map",
+      "depends_on": [
+        "dep.discover"
+      ],
+      "dependency_type": "mandatory"
+    },
+    {
+      "task_id": "inc.build",
+      "depends_on": [
+        "inc.scope"
+      ],
+      "dependency_type": "mandatory"
+    },
+    {
+      "task_id": "dep.prove",
+      "depends_on": [
+        "dep.map"
+      ],
+      "dependency_type": "conditional"
+    },
+    {
+      "task_id": "inc.verify",
+      "depends_on": [
+        "inc.build"
+      ],
+      "dependency_type": "mandatory"
+    },
+    {
+      "task_id": "dep.deliver",
+      "depends_on": [
+        "dep.map",
+        "dep.prove"
+      ],
+      "dependency_type": "conditional"
+    },
+    {
+      "task_id": "inc.release",
+      "depends_on": [
+        "inc.verify"
+      ],
+      "dependency_type": "mandatory_if_released"
+    }
+  ],
+  "notes": [
+    "No active produces edges were observed in the versioned baseline graph; the selector checked the predicate and reports none when absent.",
+    "Typed informs edges are traced as related context, never as hard prerequisites.",
+    "related_record_ids are descriptive context, not hard prerequisites.",
+    "No test, CI, deployment or release PASS is asserted."
+  ]
+}

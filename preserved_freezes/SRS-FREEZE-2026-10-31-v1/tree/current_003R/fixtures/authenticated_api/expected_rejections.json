@@ -1,0 +1,57 @@
+{
+  "fixture_id": "fixture.authenticated_single_service_api",
+  "rejected_requirements": [
+    {
+      "requirement_id": "feature.microservices",
+      "reason": "Explicitly prohibited by scenario; keep the design to a small single-service API.",
+      "source_record_ids": [
+        "arch.minimal_viable_structure"
+      ]
+    },
+    {
+      "requirement_id": "feature.kubernetes",
+      "reason": "Explicitly prohibited by scenario; keep the design to a small single-service API.",
+      "source_record_ids": [
+        "arch.minimal_viable_structure"
+      ]
+    },
+    {
+      "requirement_id": "feature.queue",
+      "reason": "Explicitly prohibited by scenario; keep the design to a small single-service API.",
+      "source_record_ids": [
+        "arch.minimal_viable_structure"
+      ]
+    },
+    {
+      "requirement_id": "feature.billing",
+      "reason": "Explicitly prohibited by scenario; keep the design to a small single-service API.",
+      "source_record_ids": [
+        "arch.minimal_viable_structure"
+      ]
+    }
+  ],
+  "rejected_records": [
+    {
+      "record_id": "arch.event_queue",
+      "status": "CONDITIONAL",
+      "reason": "Only select asynchronous queue architecture if evidence requires durability, bursts, or independent consumers; the brief says none is required.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "attributes.async_queue_required"
+        ]
+      }
+    },
+    {
+      "record_id": "arch.multitenancy_isolation",
+      "status": "CONDITIONAL",
+      "reason": "Only select a tenant-isolation design if independent tenant boundaries are required; the brief says the product is not multi-tenant.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "attributes.multi_tenant"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/studio-knowledge-003/relationship.schema.json",
+  "title": "STUDIO_KNOWLEDGE_003 Knowledge Graph Relationship",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "source_endpoint", "target_endpoint", "predicate", "scope_qualifier", "source_ids", "evidence_classification"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^edge\\.[0-9]{4,}$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "source_endpoint": {"type": "string", "minLength": 1},
+    "target_endpoint": {"type": "string", "minLength": 1},
+    "predicate": {"enum": ["applies_to", "requires", "verified_by", "implemented_with", "informs", "produces", "exemplified_by", "supported_by"]},
+    "scope_qualifier": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+    "evidence_classification": {"enum": ["documented_guidance", "observed_implementation", "tested_outcome", "synthesized_mapping", "documented_guidance_or_observed_mapping"]},
+    "status": {"enum": ["active", "superseded"]},
+    "supersession_reason": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if": {"required": ["status"], "properties": {"status": {"const": "superseded"}}}, "then": {"required": ["supersession_reason"]}}
+  ]
+}

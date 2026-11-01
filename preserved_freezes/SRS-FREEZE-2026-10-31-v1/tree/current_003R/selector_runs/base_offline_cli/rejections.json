@@ -1,0 +1,105 @@
+{
+  "output_version": "1.0.0",
+  "input_sha256": "d9ee3302b01dd50057b847443d395aae30ba99aaa1f126694e58501c95190c92",
+  "rejected_records": [
+    {
+      "record_id": "arch.client_server_api_boundary",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_NETWORK_SERVICE_BOUNDARY"
+    },
+    {
+      "record_id": "arch.event_queue",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_ASYNC_WORKLOAD"
+    },
+    {
+      "record_id": "arch.multitenancy_isolation",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_TENANT_BOUNDARY"
+    },
+    {
+      "record_id": "gate.operational_rollback",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_SERVICE_DEPLOYMENT"
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "CONDITIONAL",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_RELEASE_REQUEST"
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NOT_IN_CURRENT_RISK_SCOPE"
+    },
+    {
+      "record_id": "sdlc.release",
+      "status": "CONDITIONAL",
+      "rule_id": "R-CLI-001",
+      "reason_code": "NO_RELEASE_PLAN"
+    }
+  ],
+  "feature_decisions": [
+    {
+      "decision_id": "feature.api_gateway",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.authentication",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.cloud_hosting",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.container",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.database",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.multitenancy",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.queue",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.service_deployment",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    }
+  ],
+  "authority_decisions": [],
+  "unsupported_categories": [],
+  "missing_or_unknown_facts": [],
+  "unknown_fact_ids": [],
+  "conflicting_fact_ids": [],
+  "schema_errors": [],
+  "unverified_evidence_facts": []
+}

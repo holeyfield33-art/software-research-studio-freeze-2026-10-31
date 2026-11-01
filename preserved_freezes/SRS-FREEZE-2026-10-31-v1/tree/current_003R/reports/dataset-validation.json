@@ -1,0 +1,24 @@
+{
+  "dataset_version": "1.2.0",
+  "schema_version": "1.1.0",
+  "counts": {
+    "software_types": 10,
+    "engineering_practices": 8,
+    "sdlc_stages": 7,
+    "architecture_patterns": 6,
+    "prompt_patterns": 6,
+    "roadmap_patterns": 3,
+    "verification_gates": 6,
+    "reference_projects": 3,
+    "sources": 65,
+    "relationships": 601,
+    "source_count": 65,
+    "relationship_count": 601,
+    "active_relationship_count": 598,
+    "superseded_relationship_count": 3
+  },
+  "record_count": 715,
+  "error_count": 0,
+  "errors": [],
+  "status": "PASS"
+}

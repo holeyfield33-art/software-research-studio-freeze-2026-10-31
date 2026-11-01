@@ -1,0 +1,250 @@
+{
+  "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+  "selected_records": [
+    {
+      "record_id": "software_type.ai_agents",
+      "status": "RECOMMENDED",
+      "reason": "Category fits model-directed decisions in a bounded control loop; implementation choices remain requirement-driven.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "arch.agent_tool_boundary",
+      "status": "RECOMMENDED",
+      "reason": "Treat untrusted/model inputs as suggestions, enforce tool authority in application controls, validate authorization, bound actions, and require approval for high-impact effects.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "status": "INCOMPLETE",
+      "reason": "Define user goals, authority, acceptance criteria and trace controls to requirements before implementation.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "practice.threat_modeling",
+      "status": "RECOMMENDED",
+      "reason": "Model untrusted-content-to-tool side-effect paths, assets, trust boundaries, abuse cases and residual risks.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "status": "RECOMMENDED",
+      "reason": "Plan functional and security tests; authored SDK tests are not execution results.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "practice.ci_reproducible_release",
+      "status": "INCOMPLETE",
+      "reason": "Use candidate-bound CI evidence; pinned workflow establishes configuration only, not successful runs.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "practice.change_maintenance",
+      "status": "INCOMPLETE",
+      "reason": "Define owner/change and vulnerability handling, with review of tool boundaries and dependencies.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "status": "INCOMPLETE",
+      "reason": "No versioned requirements, acceptance criteria or owner disposition are supplied.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified",
+          "approval_record_present"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity, versioned requirements and acceptance criteria"
+      ]
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "status": "INCOMPLETE",
+      "reason": "No reviewed candidate-specific threat model or risk dispositions are supplied.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "reviewed threat model and risk dispositions"
+      ]
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "status": "INCOMPLETE",
+      "reason": "No candidate-bound test logs or results exist; test source proves assertions authored only.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified",
+          "tests_executed"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity, versioned requirements and acceptance criteria"
+      ]
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "INCOMPLETE",
+      "reason": "No candidate, execution evidence, release decision or approvals exist; CI workflow config is not a run.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified",
+          "tests_executed",
+          "approval_record_present"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity, versioned requirements and acceptance criteria"
+      ]
+    },
+    {
+      "record_id": "gate.operational_rollback",
+      "status": "INCOMPLETE",
+      "reason": "No deployment topology, rollback evidence, monitoring criteria or owner supplied.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "deployment topology, rollback target, health signals and owner"
+      ]
+    },
+    {
+      "record_id": "roadmap.risk_first_poc",
+      "status": "INCOMPLETE",
+      "reason": "Begin with a narrow, non-production proof of concept that validates trust boundaries and authorization before broadening capability.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "production_deployment_requested",
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "status": "INCOMPLETE",
+      "reason": "Sequence requirements and threat review before implementation, then tests and release evidence; no production rollout requested.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "production_deployment_requested",
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "status": "INCOMPLETE",
+      "reason": "Use a constrained implementation prompt with explicit context, unknowns, permissions and evidence reporting; prompt is not a security boundary.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "prompt.threat_model",
+      "status": "RECOMMENDED",
+      "reason": "Require explicit assumptions, source-to-sink threat scenarios, mitigations, residual risks and validation questions; stop on missing authority/boundary inputs.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      },
+      "unresolved_inputs": []
+    },
+    {
+      "record_id": "prompt.add_test",
+      "status": "INCOMPLETE",
+      "reason": "Ask for relevant regression tests and distinguish source-level assertions from actually executed results.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    },
+    {
+      "record_id": "reference.openai_agents_sdk",
+      "status": "INCOMPLETE",
+      "reason": "Pinned SDK is a reference for concepts and security/testing practices only, not a safety certification or implementation mandate.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "candidate_identified"
+        ]
+      },
+      "unresolved_inputs": [
+        "candidate identity"
+      ]
+    }
+  ],
+  "gate_outcomes": {
+    "gate.requirements_acceptance": "INCOMPLETE",
+    "gate.security_risk_review": "INCOMPLETE",
+    "gate.unit_integration_execution": "INCOMPLETE",
+    "gate.release_readiness": "INCOMPLETE",
+    "gate.operational_rollback": "INCOMPLETE"
+  }
+}

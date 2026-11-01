@@ -1,0 +1,43 @@
+{
+  "authoritative_checkpoint": "STUDIO-KNOWLEDGE-003R",
+  "authoritative_snapshot_dir": "current_003R/",
+  "boundaries": {
+    "D004_acquisition_archive": "excluded; ownership of that external vulnerability/advisory evidence remains a separate classification decision",
+    "D004_reference_sha256": "8bf7a6311e32ce803efb1cb6531c1a63a53eda2732a38d6bab486da6c52c3a7e",
+    "MOTHERSHIP": "separate project and separate evidence archive",
+    "cross_project_integration": "none made by this freeze"
+  },
+  "current_known_blockers": [
+    "misleading queue rationale when justification and owner both present",
+    "cross-field authority and authentication contradictions not detected consistently",
+    "malformed facts can raise unhandled AttributeError",
+    "unjustified tool/side-effect architecture work can survive explicit exclusions"
+  ],
+  "dataset_version": "1.2.0",
+  "freeze_id": "SRS-FREEZE-2026-10-31-v1",
+  "freeze_policy": "No edits to this baseline. Any new research or selector fixes require a separately named checkpoint and new manifest/digest.",
+  "frozen_at_utc": "2026-10-31",
+  "next_work": "003R2 directive packaged for future use only; not executed; no 004 started",
+  "project": "Software Research Studio / Block-Wise Studio knowledge research",
+  "selector_rules_version": "1.0.0",
+  "snapshot_totals": {
+    "active_relationships": 598,
+    "other_knowledge_records": 39,
+    "records": 715,
+    "relationships": 601,
+    "research_sources": 65,
+    "software_types": 10,
+    "superseded_relationships": 3
+  },
+  "type": "immutable archival baseline; no permission to integrate",
+  "validation": {
+    "dataset_schema_and_graph_validation": "PASS",
+    "dataset_validation_errors": 0,
+    "frozen_oracle_13_cases": "PASS according to prior independent checkpoint audit; not rerun during freeze",
+    "latest_manifest_files_verified": 151,
+    "latest_manifest_integrity": "PASS",
+    "novel_selection_generalization": "NO-GO (known 003R issues)",
+    "studio_integration": "NO-GO",
+    "uploaded_latest_zip_crc": "PASS"
+  }
+}

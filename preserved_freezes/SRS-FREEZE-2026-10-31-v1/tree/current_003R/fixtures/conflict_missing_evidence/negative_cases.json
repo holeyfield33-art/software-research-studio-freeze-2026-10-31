@@ -1,0 +1,76 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "cases": [
+    {
+      "case_id": "mobile_source_cannot_support_api_claim",
+      "case_type": "stack_mismatch",
+      "expected_status": "INAPPLICABLE",
+      "evidence_source_ids": [
+        "source.mobile_applications.01"
+      ],
+      "details": {
+        "target_software_type_id": "software_type.apis",
+        "source_claimed_scope": "Android/native mobile-app guidance",
+        "selection_policy": "Do not infer API behavior from a different software stack."
+      }
+    },
+    {
+      "case_id": "superseded_edition_without_adoption",
+      "case_type": "superseded_standard",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.iso.12207.2026.summary"
+      ],
+      "details": {
+        "claimed_current_edition": "ISO/IEC/IEEE 12207:2017",
+        "catalogued_current_edition": "ISO/IEC/IEEE 12207:2026",
+        "organization_adoption_known": false,
+        "full_normative_text_reviewed": false
+      }
+    },
+    {
+      "case_id": "repository_test_source_without_run",
+      "case_type": "missing_test_execution",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.fastapi.tests",
+        "source.fastapi.ci"
+      ],
+      "details": {
+        "gate_id": "gate.unit_integration_execution",
+        "candidate_id": null,
+        "test_execution_artifact": null,
+        "workflow_configuration_is_execution": false,
+        "expected_gate_outcome": "INCOMPLETE"
+      }
+    },
+    {
+      "case_id": "source_specific_guidance_is_not_a_universal_default",
+      "case_type": "source_tension",
+      "expected_status": "CONDITIONAL",
+      "evidence_source_ids": [
+        "source.aws.segment_workload",
+        "source.12factor.processes"
+      ],
+      "details": {
+        "architecture_record_id": "arch.minimal_viable_structure",
+        "decision_policy": "context_specific_options_only",
+        "rule": "Keep AWS workload segmentation and Twelve-Factor process-state guidance within their own scopes; neither independently proves a universal architecture choice."
+      }
+    },
+    {
+      "case_id": "unknown_requirement_abstains",
+      "case_type": "unknown_requirement",
+      "expected_status": "INCOMPLETE",
+      "evidence_source_ids": [
+        "source.github.copilot_task_practices"
+      ],
+      "details": {
+        "unknown_requirement_id": "requirement.unknown_telemetry_target",
+        "no_catalog_match": true,
+        "selection_policy": "abstain",
+        "rationale": "No stable record or source maps this requirement; clarify it or extend the reviewed catalog before recommending."
+      }
+    }
+  ]
+}

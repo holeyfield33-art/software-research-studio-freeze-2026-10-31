@@ -1,0 +1,497 @@
+Here is the **SRS-UX-002 / DeepSeek — Round 2 deliverable**: the smallest practical, in-repository UX Engineering Contract (UXEC) for the Software Research Studio toolkit. It corrects the three named Round 1 weaknesses — ARIA context-sensitivity, `data-req` as insufficient proof, and unscoped token enforcement — while preserving frozen 003R identifiers and requiring no MCP, external service, or new runtime. Everything here is **design and specification**, not executed code; no execution is claimed.
+
+---
+
+## 1. Versioned JSON Schema
+
+One schema file, `schema/uxec-0.1.0.schema.json`, covers requirements, component contracts, state transitions, and verification references. It uses JSON Schema 2020-12 because that dialect is already the practical baseline for versioned contract artifacts and can be validated by a stdlib subset without a runtime dependency. The schema is **versioned by `$id` and by a required `uxec_version` const**; a contract whose content changes without a version bump is a silent breaking change, so the validator separately enforces that invariant.
+
+### File tree (UXEC portion of the toolkit)
+
+```
+studio/
+├── uxec/
+│   ├── schema/
+│   │   ├── uxec-0.1.0.schema.json
+│   │   └── uxec-requirements-0.1.0.schema.json
+│   ├── contracts/
+│   │   ├── components/
+│   │   │   └── search-field/
+│   │   │       ├── contract.json
+│   │   │       └── tokens.json
+│   │   └── flows/
+│   │       └── query-builder/
+│   │           └── flow.json
+│   ├── requirements/
+│   │   └── requirements.json
+│   ├── gates/
+│   │   ├── gate-manifest.json
+│   │   └── baselines/
+│   │       └── uxec-baseline.json
+│   ├── fixtures/
+│   │   ├── positive/
+│   │   └── negative/
+│   ├── bin/
+│   │   └── uxec
+│   └── lib/
+│       ├── schema_check.py
+│       └── graph_check.py
+├── AGENTS.md
+└── .github/workflows/uxec.yml
+```
+
+### `uxec-0.1.0.schema.json` (abridged; the load-bearing sections)
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://studio.local/uxec/0.1.0/uxec.schema.json",
+  "title": "UX Engineering Contract 0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["uxec_version", "kind", "id", "status", "sources"],
+  "properties": {
+    "uxec_version": { "const": "0.1.0" },
+    "kind": { "enum": ["component", "flow"] },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]{1,63}$" },
+    "status": { "enum": ["hidden", "discoverable", "deprecated"] },
+    "sources": {
+      "type": "array", "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "tests": { "type": "array", "items": { "type": "string" } },
+    "related_003r": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^003R-[A-Za-z0-9._-]+$" }
+    },
+    "token_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "allowed"],
+      "properties": {
+        "scope": { "enum": ["global", "surface", "component"] },
+        "allowed": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "aria_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role_context", "required_attributes"],
+      "properties": {
+        "role_context": {
+          "enum": ["standalone", "inside-listbox", "inside-menu",
+                   "inside-toolbar", "inside-dialog", "inside-form"]
+        },
+        "required_attributes": {
+          "type": "array",
+          "items": {
+            "enum": ["aria-busy", "aria-disabled", "aria-expanded",
+                     "aria-controls", "aria-describedby", "focus-visible"]
+          }
+        },
+        "computed_role_expected": { "type": "string" }
+      }
+    },
+    "interaction_states": {
+      "type": "array",
+      "items": { "enum": ["idle", "hover", "focus", "active", "disabled",
+                           "loading", "error", "success", "empty"] }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref", "kind"],
+        "properties": {
+          "ref": { "type": "string" },
+          "kind": { "enum": ["test", "trace-link", "manual-review"] },
+          "requirement_ids": {
+            "type": "array", "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "state_machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["initial", "states"],
+      "properties": {
+        "initial": { "type": "string" },
+        "states": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["visual"],
+            "properties": {
+              "visual": { "type": "string" },
+              "on": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "flow" } } },
+      "then": { "required": ["state_machine"] }
+    }
+  ]
+}
+```
+
+**Requirements schema** (`uxec-requirements-0.1.0.schema.json`) is deliberately thin:
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://studio.local/uxec/0.1.0/requirements.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["uxec_version", "requirements"],
+  "properties": {
+    "uxec_version": { "const": "0.1.0" },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "statement", "status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^REQ-[A-Z0-9-]+$" },
+          "statement": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["active", "retired", "proposed"] },
+          "related_003r": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^003R-[A-Za-z0-9._-]+$" }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Design decisions that correct Round 1 weaknesses.** First, `aria_contract.role_context` makes ARIA context-sensitive: a `search-field` is `standalone` and requires `aria-busy` and `focus-visible`; the same primitive used `inside-listbox` requires `aria-controls` and a `computed_role_expected` of `combobox`, because the computed role is expected to change with context and a DOM-based test that ignores context can pass a semantically wrong element. Second, `token_scope` is mandatory and scoped (`global` / `surface` / `component`), so the validator cannot enforce a universal token allowlist against a surface that legitimately extends it; the gate applies only within the declared scope. Third, `verification` is a typed reference rather than a single `data-req` attribute, because `data-req` records intent, not proof — traceability and evidence are not synonymous.
+
+---
+
+## 2. Gate manifest
+
+`gates/gate-manifest.json` is the single authoritative declaration of gate policy. It distinguishes **blocking** from **advisory**, encodes **baseline ratcheting**, and names **exceptions** with attribution. This follows the pattern of gate inventories that record whether each gate uses a ratchet baseline or a pass/fail policy and whether it blocks or is advisory.
+
+```json
+{
+  "manifest_version": "0.1.0",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "contract-schema",
+      "job": "uxec-validate",
+      "policy": "blocking",
+      "ratchet": null,
+      "baseline_ref": null
+    },
+    {
+      "id": "G2",
+      "name": "token-scope",
+      "job": "uxec-validate",
+      "policy": "blocking",
+      "ratchet": "shrink-only",
+      "baseline_ref": "gates/baselines/uxec-baseline.json#token_scope_violations"
+    },
+    {
+      "id": "G3",
+      "name": "state-coverage",
+      "job": "uxec-validate",
+      "policy": "blocking",
+      "ratchet": "shrink-only",
+      "baseline_ref": "gates/baselines/uxec-baseline.json#missing_states"
+    },
+    {
+      "id": "G4",
+      "name": "trace-links",
+      "job": "uxec-validate",
+      "policy": "advisory",
+      "ratchet": null,
+      "baseline_ref": null,
+      "promotion_criterion": "zero stale links for 3 consecutive sprints"
+    },
+    {
+      "id": "G5",
+      "name": "source-existence",
+      "job": "uxec-validate",
+      "policy": "blocking",
+      "ratchet": null,
+      "baseline_ref": null
+    },
+    {
+      "id": "G6",
+      "name": "aria-context",
+      "job": "uxec-validate",
+      "policy": "advisory",
+      "ratchet": null,
+      "baseline_ref": null,
+      "promotion_criterion": "all discoverable components declare role_context"
+    }
+  ],
+  "exceptions": [
+    {
+      "gate": "G2",
+      "component": "query-builder/legacy-date-picker",
+      "reason": "inherited raw values; frozen until 2027-01-31",
+      "owner": "design-systems",
+      "expires": "2027-01-31"
+    }
+  ]
+}
+```
+
+**Baseline ratcheting is the adoption-survival mechanism.** A gate that is red on adoption day is switched off on day two, so the baseline is measured at the current state and only new violations are blocked. `uxec-baseline.json` records counts only — not a backlog to burn down — and the ratchet is shrink-only: the count may only decrease, and a regression above the baseline fails the gate.
+
+```json
+{
+  "baseline_version": "0.1.0",
+  "measured_at": "2026-10-31",
+  "token_scope_violations": 37,
+  "missing_states": 11,
+  "stale_trace_links": 4,
+  "notes": "Counts, not a to-do list. History is not back-filled."
+}
+```
+
+**Exceptions** are deliberate, attributable waivers with an owner and an expiry, applied after evaluation; they never silently alter the policy or its binding. An exception that expires without renewal degrades to a blocking failure.
+
+---
+
+## 3. Stdlib-first validator design
+
+`bin/uxec` is a Python 3.11+ executable with **zero third-party runtime dependencies** — the same posture as libraries that provide evidence-first evaluation with no third-party runtime deps. It uses only `json`, `pathlib`, `argparse`, `sys`, and `re`. It does **not** attempt full JSON Schema conformance; it implements the **exact keyword subset the UXEC schemas use**: `type`, `required`, `enum`, `const`, `pattern`, `minItems`, `minProperties`, `items`, `additionalProperties`, `properties`, `allOf`, `if/then`. This subset is sufficient for the published schemas and is the same subset used by other stdlib validators in this domain.
+
+### CLI contract
+
+```
+uxec validate [--root PATH] [--json] [--baseline PATH]
+```
+
+**Behavior:**
+
+- Loads `schema/uxec-0.1.0.schema.json` and every `*.json` contract under `contracts/`.
+- Validates contract shape against the schema.
+- **G1:** schema violation → `error`, exit `2`.
+- **G5:** any `sources` entry missing on disk → `error`, exit `2`.
+- **G2:** any token referenced outside the component’s `token_scope.allowed` → `error` unless the count is at or below the baseline, in which case `warning`.
+- **G3:** any `interaction_states` entry with no corresponding state in `state_machine.states` → `error` unless baseline-covered.
+- **G4:** any `verification.ref` whose target file or requirement ID no longer exists → `warning` (advisory).
+- **G6:** any component missing `aria_contract.role_context` → `warning` (advisory).
+- **Exit codes:** `0` = all blocking gates pass; `2` = at least one blocking gate failed; `1` = validator/internal error.
+- `--json` prints a single machine-readable result object to stdout; diagnostics go to stderr, following the discipline of keeping machine output separate from human text.
+
+### Machine-readable result format
+
+```json
+{
+  "uxec_version": "0.1.0",
+  "root": "/repo/studio/uxec",
+  "contracts_checked": 7,
+  "gates": [
+    {"id": "G1", "name": "contract-schema", "status": "pass", "findings": []},
+    {"id": "G2", "name": "token-scope", "status": "fail",
+     "findings": [
+       {"contract": "search-field", "path": "token_scope.allowed",
+        "message": "token color.brand.primary not in component scope",
+        "code": "G2-TOKEN-SCOPE"}
+     ]},
+    {"id": "G3", "name": "state-coverage", "status": "pass", "findings": []},
+    {"id": "G4", "name": "trace-links", "status": "warn",
+     "findings": [
+       {"contract": "query-builder", "message": "REQ-QB-07 not found",
+        "code": "G4-STALE-LINK"}
+     ]}
+  ],
+  "summary": {"pass": 4, "warn": 1, "fail": 1},
+  "exit_code": 2
+}
+```
+
+**Why this design is maintainable.** The validator is a single file, has no install step beyond Python, and can run in any CI runner or pre-commit hook. The gate manifest, not the code, is the policy surface; adding a gate is a manifest change plus one `check_*` function, not a rewrite. Structured findings carry stable codes so an agent or a human can retry deterministically — the same repair-contract pattern used by JSON contract validators that return field-specific repair hints.
+
+---
+
+## 4. Positive and negative fixtures
+
+Fixtures live under `uxec/fixtures/` and are exercised by `uxec validate --root fixtures/positive` (expect exit 0) and `uxec validate --root fixtures/negative/<case>` (expect the named gate to fail). Each negative fixture is a **seeded defect**, not a random bad file, so the test proves the gate catches the class of drift it claims to catch.
+
+| Fixture | Type | Seeded defect | Expected gate |
+|---|---|---|---|
+| `positive/minimal-component` | positive | none; valid `search-field` with scoped tokens and context-sensitive ARIA | exit 0 |
+| `positive/minimal-flow` | positive | valid `query-builder` state machine with every declared state present | exit 0 |
+| `negative/schema-unknown-field` | negative | `contract.json` contains `"colour": "..."` (unknown property) | G1 fail |
+| `negative/schema-missing-required` | negative | `sources` array removed | G1 fail |
+| `negative/source-missing` | negative | `sources` points to `src/SearchField.tsx` that does not exist | G5 fail |
+| `negative/invalid-id` | negative | `id` is `"Search_Field"` (underscore, capital) | G1 fail |
+| `negative/token-out-of-scope` | negative | `token_scope.scope: "component"` but token `space.400` is not in `allowed` | G2 fail |
+| `negative/missing-state` | negative | `interaction_states` includes `"error"` but `state_machine.states` has no `error` | G3 fail |
+| `negative/stale-trace-link` | negative | `verification.ref` names `REQ-QB-99`, absent from `requirements.json` | G4 warn |
+| `negative/aria-context-absent` | negative | component omits `aria_contract.role_context` | G6 warn |
+| `negative/gate-regression` | negative | baseline says `token_scope_violations: 37`, fixture has 40 | G2 fail (ratchet regression) |
+
+**Test runner contract.** The test file is a plain `unittest` module, not a framework-specific test. For each fixture it shells out to `bin/uxec validate --json`, parses the result, and asserts (a) the expected exit code, (b) the expected gate status, and (c) the expected finding `code`. This keeps the tests runnable with `python -m unittest discover` and nothing else.
+
+```python
+# uxec/tests/test_fixtures.py
+import json, subprocess, sys, unittest
+from pathlib import Path
+
+BIN = Path(__file__).parents[1] / "bin" / "uxec"
+
+class FixtureTests(unittest.TestCase):
+    def _run(self, root):
+        out = subprocess.run(
+            [sys.executable, str(BIN), "validate",
+             "--root", str(root), "--json"],
+            capture_output=True, text=True,
+        )
+        return out.returncode, json.loads(out.stdout)
+
+    def test_positive_minimal_component(self):
+        code, result = self._run(
+            Path(__file__).parents[1] / "fixtures/positive/minimal-component")
+        self.assertEqual(code, 0)
+        self.assertTrue(all(g["status"] == "pass" for g in result["gates"]))
+
+    def test_negative_missing_state(self):
+        code, result = self._run(
+            Path(__file__).parents[1] / "fixtures/negative/missing-state")
+        self.assertEqual(code, 2)
+        g3 = next(g for g in result["gates"] if g["id"] == "G3")
+        self.assertEqual(g3["status"], "fail")
+        self.assertEqual(g3["findings"][0]["code"], "G3-MISSING-STATE")
+```
+
+**Overfitting guard.** Negative fixtures are **not** the only evidence. A separate `negative/planted-defect` fixture is generated by mutating a known-good contract with a transformation that the gate does not specifically name (e.g., swapping two state transitions while preserving both state names). This is the negative-control discipline: a gate can fail the fixtures it was written for and still not cover the class it claims to cover.
+
+---
+
+## 5. Minimal agent instructions
+
+`AGENTS.md` at the repository root, plus a two-paragraph block that can be pasted into any agent system prompt. The instruction is minimal by design: it points at machine-readable artifacts rather than restating them in prose, because types, schemas, and tests are more precise agent instructions than natural-language descriptions.
+
+```markdown
+# AGENTS.md — UXEC
+
+Before implementing or modifying UI in this repository:
+
+1. Read `studio/uxec/contracts/` for the component or flow you are touching.
+   If no contract exists, stop and ask; do not invent one.
+2. Use only tokens listed in `token_scope.allowed` for that component's
+   `token_scope.scope`. Do not use raw hex, px, or primitive-tier values.
+3. Implement every entry in `interaction_states`. If a state has no
+   `state_machine.states` entry, the contract is incomplete — report it,
+   do not silently add a state.
+4. Apply `aria_contract.required_attributes` **in the declared
+   `role_context`**. The same attribute set is not valid across contexts;
+   if `computed_role_expected` is present, verify the computed role.
+5. Every element that satisfies a requirement must carry
+   `data-req="REQ-..."`. This records intent; it does not prove
+   compliance. Real proof is the `verification` entry.
+6. After implementing, run `python studio/uxec/bin/uxec validate --json`.
+   Treat any `fail` as work you have not finished. Treat `warn` as
+   something to report in your response, not to ignore.
+7. Do not modify `gates/gate-manifest.json`, `gates/baselines/`, or any
+   frozen `003R-*` identifier. If a gate blocks you, report the finding
+   code; do not weaken the gate.
+```
+
+**Why this is sufficient without MCP.** The agent reads files that are in the repository; the validator is a local command. The contract is still read **before** generation, which is the mechanism that turns review-time enforcement into generation-time constraint. The agent is told that `data-req` is intent, not proof, which corrects the Round 1 overclaim directly.
+
+---
+
+## 6. SurfaceTrace adoption plan (zero speculative refactoring)
+
+SurfaceTrace is treated as a **brownfield repository**. No existing component is rewritten, no historical contract is back-filled, and no token violations are “cleaned up” as a precondition. The plan has five steps, each with a concrete exit condition.
+
+**Step 0 — Inventory, not migration.** Enumerate the components and flows that already exist, and record which ones have a Storybook story, a test file, or neither. Output: `uxec/inventory.json`. Nothing is changed. Exit condition: every governed surface has an inventory entry with `has_story`, `has_test`, `has_contract` booleans.
+
+**Step 1 — Contract two components, chosen for representativeness.** Pick one leaf primitive (e.g., `search-field`) and one stateful flow (e.g., `query-builder`). Write their contracts by hand from what the code **already does**, not from what it should do. This is contract capture, not refactoring. Exit condition: both contracts pass G1 and G5; G2 and G3 may warn.
+
+**Step 2 — Baseline the ratchets at today.** Run `uxec validate --json`, record the counts in `uxec-baseline.json`, and commit the baseline as a human-committed artifact, not an auto-generated one. The gate must be green on inherited history. Exit condition: `G2` and `G3` pass at baseline; `G4` and `G6` are advisory.
+
+**Step 3 — Wire the advisory gates only.** Add `.github/workflows/uxec.yml` running `uxec validate --json`, but set G2–G6 to advisory for the first two sprints. G1 (schema) and G5 (source existence) are blocking from day one because they cannot be red on inherited history if the two contracted components are valid. Exit condition: CI green on `main`; no PR blocked by an advisory gate.
+
+**Step 4 — Promote one gate, one criterion at a time.** Promote G2 (token scope) to blocking after the baseline is stable and the two contracted components have zero token-scope violations. Promote G3 (state coverage) when the flow contract’s states are complete. G4 and G6 remain advisory until their `promotion_criterion` in the manifest is met. Exit condition: manifest change is a one-line diff with a recorded rationale.
+
+**Step 5 — Retrospective, then contract the next two components.** Record which gate caught which class of drift, and grade each fix as mechanical (gate criterion or fixture), standing instruction, or note; mechanical fixes are preferred because the check is the memory. Then repeat Step 1 for the next two surfaces. Exit condition: a written `docs/evidence/uxec-retro.md` with one entry per gate that fired.
+
+**What is explicitly out of scope.** No component is refactored to satisfy a contract. No historical token violation is fixed. No existing test is rewritten to match a contract. If a contract cannot be written for an existing component without changing it, that component is recorded as `status: "deprecated"` in the contract and excluded from blocking gates. This keeps the adoption delta-only and avoids the rewrite-before-baseline failure mode.
+
+---
+
+## 7. Threat model: false compliance, fabricated evidence, overfitted tests
+
+The threat model follows the discipline of naming the asset, the adversary, and a committed test per defense — prose is cheap, and every row must point at code.
+
+| Threat | Mechanism | Defense | Committed test |
+|---|---|---|---|
+| **False compliance via `data-req`** | An agent adds `data-req="REQ-001"` to an element that does not satisfy the requirement, and G4 sees a link and passes. | G4 checks that the `verification.ref` target exists and that the requirement is `active`; `data-req` is explicitly documented as intent, not proof. The contract’s `verification` entry is the evidence, and a `manual-review` verification cannot be satisfied by an attribute. | `test_fixtures.py::test_data_req_alone_is_not_compliance` — a fixture with `data-req` present and no valid `verification` ref must produce a G4 finding. |
+| **Fabricated evidence** | An agent writes a `verification.ref` pointing to a test file that exists but contains no assertion for the requirement. | G5 checks existence only; the **advisory** G4 checks that the referenced requirement ID resolves. The threat model states the limit: existence is not execution. A separate `uxec verify-tests --run` opt-in executes the referenced test file and records the result, but it is not part of the blocking path. | `test_fixtures.py::test_stale_trace_link` — a `verification.ref` to a missing requirement must warn; a `verification.ref` to an existing but empty test must not pass the opt-in `verify-tests` check. |
+| **Overfitted tests** | The negative fixtures are the only cases the validator is tuned to; a different mutation of the same class passes. | A **planted-defect** fixture generated by a mutation the gate does not name by field; the test asserts the gate still fails. The retrospective records whether the gate caught a class or only a fixture. | `test_fixtures.py::test_planted_defect_not_in_named_fixtures` — mutation swaps two state transitions while preserving state names; G3 must fail if coverage is genuinely broken, or the test records the gap explicitly. |
+| **Token-scope laundering** | An agent declares `token_scope.scope: "global"` for a component to bypass G2. | Scope is declared per contract and reviewed; a `global` scope on a leaf primitive is itself a G6 advisory finding (`scope-context-mismatch`), and the gate manifest can require `scope` to match the component tier. | `test_fixtures.py::test_global_scope_on_leaf_warns` — a leaf component with `scope: "global"` must produce a G6 warning, not a silent pass. |
+| **Gate weakening under pressure** | An agent under a deadline edits `gate-manifest.json` to change `blocking` to `advisory`, or raises the baseline. | The manifest and baseline are **frozen paths**: any PR touching them requires a `gate-change` label and a human reviewer; the CI job emits a warning naming the diff. Baseline raises are monotonic and terminating, and a refused write degrades to a warning without changing the verdict. | `test_fixtures.py::test_manifest_change_is_flagged` — a fixture diff touching `gate-manifest.json` must produce a `GATE-MANIFEST-CHANGED` warning from the CI wrapper (tested at the wrapper level, not the validator). |
+| **False all-clear from early exit** | The validator exits 0 before checking all contracts (e.g., on first pass). | The validator iterates all contracts and accumulates findings; it never short-circuits. The result object includes `contracts_checked`, and a mismatch between the discovered count and the checked count is an internal error (exit 1). | `test_fixtures.py::test_no_short_circuit` — a root with one valid and one invalid contract must report both, not stop at the valid one. |
+
+**What the threat model does not claim.** It does not claim the UXEC proves accessibility compliance, visual correctness, or runtime behavior. It claims the contract is **enforceable at the level of declared structure**, and that the gates are honest about the difference between a declared link and a verified behavior — which is the correction to the Round 1 position that `data-req` could prove compliance.
+
+---
+
+## 8. Implementation sequence, costs, and unresolved decisions
+
+**Implementation sequence (dependency-ordered):**
+
+1. `schema/uxec-0.1.0.schema.json` and `uxec-requirements-0.1.0.schema.json`.
+2. `lib/schema_check.py` (subset validator) and `bin/uxec` CLI shell.
+3. `gates/gate-manifest.json` with all gates initially `advisory`, plus an empty baseline.
+4. Positive fixtures (two contracts) and the `unittest` runner.
+5. Negative fixtures for G1, G5, G2, G3, G4, G6, and the planted-defect case.
+6. `AGENTS.md` and the `.github/workflows/uxec.yml` wrapper.
+7. SurfaceTrace Step 1 contracts, baseline capture, and advisory CI.
+8. Promotion of G1/G5 to blocking, then G2, then G3, per §6.
+
+**Costs (planning estimates, not measured outcomes):**
+
+| Item | Estimate | Basis |
+|---|---|---|
+| Schema authoring and review | 2–3 engineer-days | Two schemas, ~200 lines total, plus review |
+| Stdlib validator | 4–6 engineer-days | Subset parser, six gate checks, JSON result format, tests |
+| Fixtures | 2–3 engineer-days | 11 fixtures plus the planted-defect generator |
+| SurfaceTrace Step 1–2 (two contracts + baseline) | 3–5 engineer-days | Contract capture from existing code, not refactoring |
+| Ongoing per-new-component contract | 0.5–1 engineer-day | Contract authoring and fixture addition |
+| CI overhead | < 30 seconds per PR | Single Python process, no network, no install |
+
+These are **effort estimates for the experiment**, not productivity claims. No measured cycle-time or defect-density improvement is asserted.
+
+**Unresolved decisions:**
+
+1. **Whether G4 should ever become blocking.** The threat model shows that a link can exist and still be false evidence; making G4 blocking may create a false sense of proof. Current recommendation: keep G4 advisory until `verify-tests` is trusted, then decide.
+2. **Where the component-tier boundary lives.** `token_scope.scope` is declared in the contract, but the tier classification (`leaf` / `composite` / `surface`) is not yet machine-derived. Until it is, the `scope-context-mismatch` check is heuristic and advisory.
+3. **Whether `related_003r` should be validated against an external 003R registry.** The schema pattern-checks the identifier but does not resolve it. Resolving it would require a registry lookup, which the no-external-services constraint currently forbids. The identifier is preserved verbatim and never modified.
+4. **Baseline ownership.** The baseline is human-committed, but who owns the review of a baseline change — design systems or the platform team — is not settled in this document.
+5. **JSON Schema dialect coverage.** The stdlib validator implements a subset, not all of 2020-12. If a future contract needs `unevaluatedProperties` or `dependentSchemas`, the subset must be extended or a dev-only validator added, and the no-runtime-dependency posture must be re-examined.
+
+---
+
+## 9. What changed from Round 1
+
+| Round 1 weakness | Round 2 correction |
+|---|---|
+| ARIA semantics treated as a flat list of attributes | `aria_contract.role_context` makes the required set contextual; `computed_role_expected` captures context-dependent role mapping |
+| `data-req` implied as proof of compliance | `data-req` is intent; `verification` is evidence; G4 is advisory and honest about the limit of trace links |
+| Design tokens enforced universally | `token_scope` is mandatory and scoped; G2 applies only within the declared scope |
+
+Frozen 003R identifiers are referenced by pattern only (`^003R-[A-Za-z0-9._-]+$`), preserved verbatim, and never renamed or reinterpreted. No code in this deliverable was executed; the schemas, validator, fixtures, and tests are specifications to be implemented in the experiment.

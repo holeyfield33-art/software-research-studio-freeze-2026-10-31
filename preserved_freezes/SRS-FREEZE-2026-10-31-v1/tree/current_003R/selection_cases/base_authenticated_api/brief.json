@@ -1,0 +1,199 @@
+{
+  "input_contract_version": "1.0.0",
+  "software_type_ids": [
+    "software_type.apis"
+  ],
+  "facts": [
+    {
+      "fact_id": "api_gateway_required",
+      "state": "unknown",
+      "scope": "project",
+      "origin": "not_provided"
+    },
+    {
+      "fact_id": "approval_record_present",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "async_queue_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "authenticated_users",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "authentication_required",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "billing_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "candidate_identified",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "cloud_hosting_required",
+      "state": "unknown",
+      "scope": "project",
+      "origin": "not_provided"
+    },
+    {
+      "fact_id": "database_required",
+      "state": "unknown",
+      "scope": "project",
+      "origin": "not_provided"
+    },
+    {
+      "fact_id": "distinct_responsibilities",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "kubernetes_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "microservices_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "multi_tenant",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "network_api",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "operations_owner_available",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "persisted_records",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "public_read_only",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "queue_load_justification",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "reference_example_requested",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "release_plan_required",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "role_based_authorization",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "single_service",
+      "state": "true",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "tenant_isolation_required",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "tenant_mapping_evidence_known",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    },
+    {
+      "fact_id": "tests_executed",
+      "state": "false",
+      "scope": "project",
+      "origin": "explicit_scope"
+    }
+  ],
+  "authority": {
+    "high_impact_approver": {
+      "state": "unknown",
+      "principal_id": null,
+      "evidence_id": null
+    },
+    "write_scope_authorized": {
+      "state": "unknown",
+      "principal_id": null,
+      "evidence_id": null
+    }
+  },
+  "evidence": {
+    "candidate": {
+      "state": "unknown",
+      "candidate_id": null
+    },
+    "tests": {
+      "state": "false",
+      "candidate_id": null,
+      "execution_record_id": null,
+      "result": "not_run"
+    },
+    "approval": {
+      "state": "unknown",
+      "approval_record_id": null,
+      "approver_id": null
+    }
+  },
+  "standards": [],
+  "descriptive_text": {
+    "text": "A small, single-service API for authenticated users, role-based authorization, and persisted records.",
+    "authority": "non_authoritative"
+  },
+  "missing_inputs": [
+    "database choice",
+    "deployment target",
+    "gateway choice",
+    "language/framework selection",
+    "token or session scheme"
+  ]
+}

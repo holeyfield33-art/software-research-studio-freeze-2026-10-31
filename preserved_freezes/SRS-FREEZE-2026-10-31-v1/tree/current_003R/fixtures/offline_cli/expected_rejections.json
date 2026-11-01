@@ -1,0 +1,138 @@
+{
+  "fixture_id": "offline_file_processing_cli_003",
+  "rejected_requirements": [
+    {
+      "requirement_id": "feature.authentication",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.multitenancy",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.database",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.cloud_hosting",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.container",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.api_gateway",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.queue",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    },
+    {
+      "requirement_id": "feature.service_deployment",
+      "reason": "Explicitly excluded for this offline local-filesystem scope; not required by the stated product boundary.",
+      "source_record_ids": [
+        "software_type.cli_tools"
+      ]
+    }
+  ],
+  "rejected_records": [
+    {
+      "record_id": "arch.client_server_api_boundary",
+      "status": "INAPPLICABLE",
+      "reason": "No networked client/server/API boundary exists.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "network_service_boundary"
+        ]
+      }
+    },
+    {
+      "record_id": "arch.multitenancy_isolation",
+      "status": "INAPPLICABLE",
+      "reason": "No account or tenant boundary exists.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "tenant_boundary"
+        ]
+      }
+    },
+    {
+      "record_id": "arch.event_queue",
+      "status": "INAPPLICABLE",
+      "reason": "No network/service or asynchronous queue workload is in scope.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "network_service_boundary"
+        ]
+      }
+    },
+    {
+      "record_id": "gate.operational_rollback",
+      "status": "INAPPLICABLE",
+      "reason": "Service rollback/deployment is inapplicable to a local offline CLI; local recovery is conditional if destructive writes are later authorized.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "network_service_boundary"
+        ]
+      }
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "status": "INAPPLICABLE",
+      "reason": "The gate record is scoped to security-relevant network/service, agent, or security-product cases; this fixture has no such boundary or authorized destructive writes. Revisit if an adversarial-input or elevated file-impact threat model is established.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": []
+      }
+    },
+    {
+      "record_id": "sdlc.release",
+      "status": "CONDITIONAL",
+      "reason": "A release is not requested in this fixture; only add this stage/gate if distribution is later planned and a candidate exists.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "attributes.release_requested"
+        ]
+      }
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "CONDITIONAL",
+      "reason": "A release is not requested in this fixture; only add this stage/gate if distribution is later planned and a candidate exists.",
+      "branch_condition": {
+        "all_true": [],
+        "all_false": [
+          "attributes.release_requested"
+        ]
+      }
+    }
+  ]
+}

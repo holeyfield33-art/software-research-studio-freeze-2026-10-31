@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+  "rejected_requirements": [
+    {
+      "requirement_id": "feature.vector_database",
+      "reason": "Not requested and not necessary to meet the stated bounded-agent scope.",
+      "source_record_ids": [
+        "software_type.ai_agents"
+      ]
+    },
+    {
+      "requirement_id": "feature.multi_agent_autonomy",
+      "reason": "Explicitly out of scope; the task describes one AI agent, and multi-agent collaboration is not universally required.",
+      "source_record_ids": [
+        "software_type.ai_agents"
+      ]
+    },
+    {
+      "requirement_id": "feature.production_deployment",
+      "reason": "Explicitly unrequested; there is no candidate, release evidence or approval.",
+      "source_record_ids": [
+        "software_type.ai_agents",
+        "gate.release_readiness"
+      ]
+    }
+  ],
+  "rejected_records": []
+}

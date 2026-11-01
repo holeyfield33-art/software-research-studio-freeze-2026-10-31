@@ -1,0 +1,43 @@
+{
+  "fixture_id": "fixture.authenticated_single_service_api",
+  "description": "A small, single-service API for authenticated users, role-based authorization, and persisted records.",
+  "software_type_ids": [
+    "software_type.apis"
+  ],
+  "attributes": {
+    "single_service": true,
+    "authenticated_users": true,
+    "role_based_authorization": true,
+    "persisted_records": true,
+    "multi_tenant": false,
+    "async_queue_required": false,
+    "billing_required": false,
+    "microservices_required": false,
+    "kubernetes_required": false
+  },
+  "available_inputs": {
+    "service_shape": "single service",
+    "users": "authenticated users",
+    "authorization": "role-based",
+    "records": "persisted"
+  },
+  "missing_inputs": [
+    "database choice",
+    "deployment target",
+    "gateway choice",
+    "language/framework selection",
+    "token or session scheme"
+  ],
+  "prohibited_features": [
+    "feature.microservices",
+    "feature.kubernetes",
+    "feature.queue",
+    "feature.billing"
+  ],
+  "evidence": {
+    "candidate_id": null,
+    "test_execution_artifact": null,
+    "approval_record": null
+  },
+  "acceptance_boundary": "Propose an API-focused plan and deliverables; preserve undecided technology/deployment choices. Tests, CI, release and approval are not executed or passed."
+}

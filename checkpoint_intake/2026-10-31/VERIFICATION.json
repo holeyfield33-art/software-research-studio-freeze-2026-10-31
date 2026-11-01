@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "preserved_files": 10,
+  "archives_crc_verified": 3,
+  "member_hashes_verified": 145,
+  "internal_manifest_hashes_verified": 124,
+  "records_per_checkpoint": [
+    45,
+    522,
+    715
+  ],
+  "comparison_to_003R": "NOT RERUN: archive unavailable; prior audit preserved",
+  "round_2_reports_preserved": 2,
+  "gemini_round_2": "UNAVAILABLE"
+}

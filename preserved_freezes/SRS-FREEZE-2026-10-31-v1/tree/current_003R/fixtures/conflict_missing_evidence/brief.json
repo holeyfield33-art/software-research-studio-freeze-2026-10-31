@@ -1,0 +1,42 @@
+{
+  "fixture_id": "conflict_missing_evidence",
+  "description": "Negative controls for source-scope mismatch, standard-edition currency, missing candidate-bound test evidence, apparently conflicting architecture guidance, and unknown requirements. This is not a product recommendation. No tests, CI, or release were executed.",
+  "software_type_ids": [
+    "software_type.apis"
+  ],
+  "attributes": {
+    "authenticated_api": true,
+    "mobile_application": false,
+    "current_standard_verified": true,
+    "organization_standard_adoption_known": false,
+    "candidate_identity_available": false,
+    "test_execution_artifact_available": false,
+    "source_guidance_conflicts": true
+  },
+  "available_inputs": {
+    "target_category": "authenticated API",
+    "catalog_record": "ISO/IEC/IEEE 12207:2026 status and abstract",
+    "pinned_test_source": "FastAPI test source and workflow configuration"
+  },
+  "missing_inputs": [
+    "organization standard adoption",
+    "normative clauses reviewed",
+    "candidate identity",
+    "actual test execution artifact",
+    "project-specific architecture workload and team evidence",
+    "project-specific workload and organization evidence"
+  ],
+  "prohibited_features": [
+    "assert 12207-2017 is current",
+    "claim tests passed from source/configuration presence",
+    "apply mobile-only evidence to an API",
+    "select a universal architecture winner",
+    "auto-map unknown requirements"
+  ],
+  "evidence": {
+    "candidate_id": null,
+    "test_execution_artifact": null,
+    "approval_record": null
+  },
+  "acceptance_boundary": "Expected output is conditional selection and INCOMPLETE gate states; no compliance, test-pass, release, or universal architecture conclusion is allowed."
+}

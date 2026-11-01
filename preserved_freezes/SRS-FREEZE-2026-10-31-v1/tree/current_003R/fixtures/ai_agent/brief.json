@@ -1,0 +1,58 @@
+{
+  "fixture_id": "ai_agent_untrusted_content_bounded_write_003",
+  "description": "An AI agent reads untrusted external content, has read access and a bounded write-capable tool, and can cause side effects. It has no standing approval for high-impact actions. Design must state trust boundaries, authorization and approval, rollback/recovery, and test evidence conditions. No test or CI execution has occurred.",
+  "software_type_ids": [
+    "software_type.ai_agents"
+  ],
+  "attributes": {
+    "reads_untrusted_external_content": true,
+    "has_read_access": true,
+    "has_bounded_write_tool": true,
+    "can_cause_side_effects": true,
+    "high_impact_actions_need_approval": true,
+    "standing_high_impact_approval": false,
+    "vector_db_requested": false,
+    "multi_agent_autonomy_requested": false,
+    "production_deployment_requested": false,
+    "candidate_identified": false,
+    "tests_executed": false,
+    "approval_record_present": false
+  },
+  "available_inputs": {
+    "agent_form": "single AI agent; bounded control loop",
+    "untrusted_inputs": "external content",
+    "capabilities": [
+      "read access",
+      "bounded write-capable tool",
+      "side effects possible"
+    ],
+    "approval": "no standing approval for high-impact actions",
+    "source_audit": "15-source audit; pinned OpenAI Agents SDK commit d27abe8972408a638e97422e9fd8066445bb7b21",
+    "execution_status": "no test or CI execution evidence"
+  },
+  "missing_inputs": [
+    "approval record and named approver for any high-impact action",
+    "availability, scale, budget, regulatory and operational constraints",
+    "candidate identity",
+    "candidate identity, versioned requirements and acceptance criteria",
+    "candidate identity/revision and artifact digest",
+    "data sensitivity and trust boundaries in detail",
+    "deployment topology, rollback target, health signals and owner",
+    "deployment topology, rollback target, health signals and recovery owner",
+    "product goals and user workflows",
+    "reviewed threat model and risk dispositions",
+    "test plan, test run logs/results and CI run status",
+    "tool inventory, exact write scope, authorization model and side-effect impact"
+  ],
+  "prohibited_features": [
+    "feature.vector_database",
+    "feature.multi_agent_autonomy",
+    "feature.production_deployment"
+  ],
+  "evidence": {
+    "candidate_id": null,
+    "test_execution_artifact": null,
+    "approval_record": null
+  },
+  "acceptance_boundary": "Propose a conditional design and evidence plan only. Treat external content and model output as untrusted suggestions, never authorization; enforce least-privilege tool allowlisting and input/authorization validation in the application; bound iteration and side effects; require explicit, action-specific human approval before high-impact effects and do not infer approval. Define rollback/recovery, owner and health thresholds before release. Tests and CI require candidate-bound execution evidence; authored assertions and workflow configuration do not prove execution. Do not claim any gate PASS."
+}

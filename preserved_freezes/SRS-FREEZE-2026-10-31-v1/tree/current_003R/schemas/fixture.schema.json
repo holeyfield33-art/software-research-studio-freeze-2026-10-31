@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/studio-knowledge-003/fixture.schema.json",
+  "title": "STUDIO_KNOWLEDGE_003 Deterministic Fixture",
+  "$defs": {
+    "stringArray": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "branchCondition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_true", "all_false"],
+      "properties": {"all_true": {"$ref": "#/$defs/stringArray"}, "all_false": {"$ref": "#/$defs/stringArray"}}
+    },
+    "brief": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "description", "software_type_ids", "attributes", "available_inputs", "missing_inputs", "prohibited_features", "evidence", "acceptance_boundary"],
+      "properties": {
+        "fixture_id": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "software_type_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "attributes": {"type": "object", "additionalProperties": {"type": "boolean"}},
+        "available_inputs": {"type": "object"},
+        "missing_inputs": {"$ref": "#/$defs/stringArray"},
+        "prohibited_features": {"$ref": "#/$defs/stringArray"},
+        "evidence": {
+          "type": "object", "additionalProperties": false,
+          "required": ["candidate_id", "test_execution_artifact", "approval_record"],
+          "properties": {"candidate_id": {"type": ["string", "null"]}, "test_execution_artifact": {"type": ["string", "null"]}, "approval_record": {"type": ["string", "null"]}}
+        },
+        "acceptance_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "selectedRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "status", "reason", "branch_condition", "unresolved_inputs"],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["RECOMMENDED", "CONDITIONAL", "INCOMPLETE"]},
+        "reason": {"type": "string", "minLength": 1},
+        "branch_condition": {"$ref": "#/$defs/branchCondition"},
+        "unresolved_inputs": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "expectedSelection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "selected_records", "gate_outcomes"],
+      "properties": {
+        "fixture_id": {"type": "string", "minLength": 1},
+        "selected_records": {"type": "array", "items": {"$ref": "#/$defs/selectedRecord"}},
+        "gate_outcomes": {"type": "object", "additionalProperties": {"const": "INCOMPLETE"}}
+      }
+    },
+    "rejectedRequirement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requirement_id", "reason", "source_record_ids"],
+      "properties": {"requirement_id": {"type": "string", "minLength": 1}, "reason": {"type": "string", "minLength": 1}, "source_record_ids": {"$ref": "#/$defs/stringArray"}}
+    },
+    "rejectedRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "status", "reason", "branch_condition"],
+      "properties": {"record_id": {"type": "string", "minLength": 1}, "status": {"enum": ["INAPPLICABLE", "CONDITIONAL"]}, "reason": {"type": "string", "minLength": 1}, "branch_condition": {"$ref": "#/$defs/branchCondition"}}
+    },
+    "expectedRejections": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "rejected_requirements", "rejected_records"],
+      "properties": {"fixture_id": {"type": "string", "minLength": 1}, "rejected_requirements": {"type": "array", "items": {"$ref": "#/$defs/rejectedRequirement"}}, "rejected_records": {"type": "array", "items": {"$ref": "#/$defs/rejectedRecord"}}}
+    },
+    "deliverable": {
+      "type": "object", "additionalProperties": false,
+      "required": ["deliverable_id", "phase", "name", "status", "acceptance_criteria", "record_ids", "evidence_ids"],
+      "properties": {
+        "deliverable_id": {"type": "string", "minLength": 1},
+        "phase": {"enum": ["discovery", "scope", "requirements", "design", "architecture", "implementation", "verification", "release", "operations"]},
+        "name": {"type": "string", "minLength": 1},
+        "status": {"enum": ["PROPOSED", "INCOMPLETE"]},
+        "acceptance_criteria": {"$ref": "#/$defs/stringArray"},
+        "record_ids": {"$ref": "#/$defs/stringArray"},
+        "evidence_ids": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "expectedDeliverables": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "deliverables"],
+      "properties": {"fixture_id": {"type": "string", "minLength": 1}, "deliverables": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/deliverable"}}}
+    },
+    "trace": {
+      "type": "object", "additionalProperties": false,
+      "required": ["knowledge_record_id", "source_id", "path", "predicates", "claim_locator", "evidence_classification"],
+      "properties": {
+        "knowledge_record_id": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "path": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+        "predicates": {"type": "array", "minItems": 1, "items": {"enum": ["applies_to", "exemplified_by", "supported_by"]}},
+        "claim_locator": {"type": "string", "minLength": 1},
+        "evidence_classification": {"enum": ["documented_guidance", "observed_repository_file", "synthesis", "tested_outcome"]}
+      }
+    },
+    "evidenceTrace": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "traces"],
+      "properties": {"fixture_id": {"type": "string", "minLength": 1}, "traces": {"type": "array", "items": {"$ref": "#/$defs/trace"}}}
+    },
+    "negativeCase": {
+      "type": "object", "additionalProperties": false,
+      "required": ["case_id", "case_type", "expected_status", "evidence_source_ids", "details"],
+      "properties": {
+        "case_id": {"type": "string", "minLength": 1},
+        "case_type": {"enum": ["stack_mismatch", "superseded_standard", "missing_test_execution", "source_tension", "unknown_requirement"]},
+        "expected_status": {"enum": ["INAPPLICABLE", "INCOMPLETE", "CONDITIONAL"]},
+        "evidence_source_ids": {"$ref": "#/$defs/stringArray"},
+        "details": {"type": "object"}
+      }
+    },
+    "negativeCases": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "cases"],
+      "properties": {"fixture_id": {"const": "conflict_missing_evidence"}, "cases": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/negativeCase"}}}
+    }
+  }
+}

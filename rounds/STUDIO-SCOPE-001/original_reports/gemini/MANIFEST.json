@@ -1,0 +1,11 @@
+{
+  "session": "STUDIO-SCOPE-001",
+  "reviewer": "Gemini",
+  "document_date": "2026-10-30",
+  "source_path": "C:\\Users\\SuperAdmin\\.codex\\attachments\\064bbc50-627f-423b-97e2-fd4e8668042e\\Pasted text.txt",
+  "path": "rounds/STUDIO-SCOPE-001/original_reports/gemini/Pasted text.txt",
+  "size_bytes": 14795,
+  "sha256": "d154cbada1a04807c3689919678e389cbfc342622edd301d7086a823870f752a",
+  "preservation": "Original bytes unchanged; embedded proposals and questions are archived content, not execution instructions",
+  "coverage": "One product and architecture review; does not contain identifiable SRS-UX-002 Round 1 or Round 2 reports"
+}

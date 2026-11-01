@@ -1,0 +1,3566 @@
+{
+  "output_version": "1.0.0",
+  "input_sha256": "6d80886764aa964316d3fd289cb39164344b2d709e5907276e0d9809c0a0abfe",
+  "rules_version": "1.0.0",
+  "dataset_version": "1.2.0",
+  "overall_decision": {
+    "status": "RECOMMENDED",
+    "reason_codes": [],
+    "conflicting_fact_ids": [],
+    "missing_facts": [],
+    "unknown_fact_ids": []
+  },
+  "selected_records": [
+    {
+      "record_id": "arch.client_server_api_boundary",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications"
+        ]
+      },
+      "category": "architecture_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0068",
+          "record_id": "arch.client_server_api_boundary",
+          "sources": [
+            {
+              "source_id": "source.owasp.multitenant",
+              "claim_locator": "Key risks; tenant identification/context; database isolation strategies; RLS role and transaction scoping",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Tenant identity must be bound to authenticated membership; isolation strategies trade off; RLS can add defense in depth but privileged bypass roles and context propagation matter.",
+              "source_limitations": "Guidance is not a guarantee; implementation and database roles determine actual isolation.",
+              "relationship_id": "edge.0303",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.readme",
+              "claim_locator": "Project description; dependency/testing overview",
+              "source_type": "Pinned repository documentation",
+              "source_claims_supported": "Project describes Python API framework, Starlette/Pydantic dependencies and pytest/HTTPX testing ecosystem.",
+              "source_limitations": "Overview only; not independent implementation validation.",
+              "relationship_id": "edge.0304",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.apis.01",
+              "claim_locator": "Sections 9 (Method Definitions), 15 (Status Codes), and 6.4.1 (Content Semantics).",
+              "source_type": "Internet standard (RFC)",
+              "source_claims_supported": "Defines HTTP request method semantics and response status codes; explains that request and response content semantics depend on method, status code, and response fields. Supports HTTP request/response behavior, not the broader proposition that every API must have authentication, authorization, gateways, or persistence.",
+              "source_limitations": "A protocol specification, not implementation guidance for every API architecture. It does not establish that every API requires authentication, authorization, a gateway, or a persistence layer.",
+              "relationship_id": "edge.0383",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.apis.02",
+              "claim_locator": "Introduction; Paths Object; Path Item Object; Operation Object; Responses Object; Security Scheme Object; version history entry 3.1.1.",
+              "source_type": "API description specification",
+              "source_claims_supported": "Defines OpenAPI as a language-agnostic interface description for HTTP APIs; an OpenAPI Description formally describes an API surface and semantics and can support documentation, code generation, and testing. Its Paths and Operation structures describe API operations; security schemes describe declared security. Supports explicit API interface documentation, but does not require that all APIs use OpenAPI or a gateway or persistence.",
+              "source_limitations": "Describes an API rather than requiring a particular implementation, deployment topology, gateway, or persistence layer. Security scheme declaration does not establish that a particular scheme is adequate.",
+              "relationship_id": "edge.800000",
+              "evidence_classification": "synthesized_mapping"
+            },
+            {
+              "source_id": "source.apis.03",
+              "claim_locator": "Risk Description, API2:2023 Broken Authentication; API5:2023 Broken Function Level Authorization; API10:2023 Unsafe Consumption of APIs.",
+              "source_type": "Security risk guidance / project web page",
+              "source_claims_supported": "The 2023 API risk descriptions identify broken authentication and broken function-level authorization as API security risks; API10 explains that developers may trust third-party API data too much and use weaker security standards, enabling attacks through integrated services. Supports security risks and the need to address them, not a universal prescribed API architecture.",
+              "source_limitations": "Risk taxonomy and explanatory guidance, not a protocol or normative implementation standard. This cited page is the API Top 10 risk description and does not by itself prescribe a complete authentication or authorization design.",
+              "relationship_id": "edge.800001",
+              "evidence_classification": "synthesized_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "arch.layered_modular",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.developer_tools",
+          "software_type.libraries"
+        ]
+      },
+      "category": "architecture_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0069",
+          "record_id": "arch.layered_modular",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0305",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.aws.segment_workload",
+              "claim_locator": "Page heading and opening scope; Implementation guidance; Common anti-patterns; closing implementation guidance",
+              "source_type": "Official architecture guidance",
+              "source_claims_supported": "AWS Well-Architected guidance compares monolith, SOA, and microservices segmentation. It describes potential microservice latency, distributed debugging/tracing and operational costs; calls tightly interdependent service meshes an anti-pattern; says monoliths should be rare and modular/evolvable; and recommends SOA or microservices when the workload and organization can support them. This supports conditional tradeoff analysis, not a universal modular-monolith default.",
+              "source_limitations": "AWS-specific advisory guidance, not a universal architecture rule or quantified cost model. The page expresses a preference for SOA/microservices when organizational and workload capability permit, while recognizing monoliths as rare cases; a modular-monolith-first recommendation is a separate cross-source synthesis.",
+              "relationship_id": "edge.0385",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "arch.minimal_viable_structure",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "architecture_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0400",
+          "record_id": "arch.minimal_viable_structure",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0302",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.aws.segment_workload",
+              "claim_locator": "Page heading and opening scope; Implementation guidance; Common anti-patterns; closing implementation guidance",
+              "source_type": "Official architecture guidance",
+              "source_claims_supported": "AWS Well-Architected guidance compares monolith, SOA, and microservices segmentation. It describes potential microservice latency, distributed debugging/tracing and operational costs; calls tightly interdependent service meshes an anti-pattern; says monoliths should be rare and modular/evolvable; and recommends SOA or microservices when the workload and organization can support them. This supports conditional tradeoff analysis, not a universal modular-monolith default.",
+              "source_limitations": "AWS-specific advisory guidance, not a universal architecture rule or quantified cost model. The page expresses a preference for SOA/microservices when organizational and workload capability permit, while recognizing monoliths as rare cases; a modular-monolith-first recommendation is a separate cross-source synthesis.",
+              "relationship_id": "edge.0381",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.12factor.processes",
+              "claim_locator": "VI. Processes; Execute the app as one or more stateless processes",
+              "source_type": "Architecture methodology guidance",
+              "source_claims_supported": "Recommends stateless/share-nothing application processes and placing state that must persist in backing services. The page allows process memory or filesystem for brief single-transaction caches, but future requests or jobs must not rely on that process-local state remaining available.",
+              "source_limitations": "Twelve-Factor methodology guidance, not a universal architecture rule or a ban on all local files or transient caching. It does not by itself choose monolith versus services, prescribe a database, or prove an implementation follows the recommendation.",
+              "relationship_id": "edge.0382",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.dependency_provenance",
+      "status": "RECOMMENDED",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "verification_gates",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0073",
+          "record_id": "gate.dependency_provenance",
+          "sources": [
+            {
+              "source_id": "source.github.dep_review",
+              "claim_locator": "About dependency review; enabling dependency review; dependency review action",
+              "source_type": "Product documentation",
+              "source_claims_supported": "Reviews dependency changes and known vulnerability information in pull requests; merge blocking depends on required configured checks and feature availability.",
+              "source_limitations": "GitHub-specific, supported manifests and data coverage vary; does not prove dependencies are safe.",
+              "relationship_id": "edge.0343",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.slsa.v1.verify",
+              "claim_locator": "How to verify; check SLSA build level; check expectations; optional recursive dependency check",
+              "source_type": "Technical specification guidance",
+              "source_claims_supported": "Artifact verification should bind trusted builder, signature, subject digest and expected source/build parameters; dependency recursion is optional in v1.0.",
+              "source_limitations": "Requires consumer trust policy and expected identity; dependency completeness is not guaranteed.",
+              "relationship_id": "edge.0344",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "status": "RECOMMENDED",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "verification_gates",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0074",
+          "record_id": "gate.release_readiness",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0345",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.ci",
+              "claim_locator": "Workflow triggers, test matrix and coverage steps",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "CI workflow declares test jobs, a platform/Python/dependency matrix and coverage invocation.",
+              "source_limitations": "Workflow configuration is not evidence of passing execution.",
+              "relationship_id": "edge.0346",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.release",
+              "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+              "source_type": "Pinned release workflow",
+              "source_claims_supported": "Release workflow configuration includes tag-based version consistency check and multiple target builds.",
+              "source_limitations": "Configuration only; no release executed.",
+              "relationship_id": "edge.0347",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.ci",
+              "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "Workflow declares CI jobs, triggers and restricted token permission configuration.",
+              "source_limitations": "No run status verified.",
+              "relationship_id": "edge.0348",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "status": "RECOMMENDED",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "verification_gates",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0070",
+          "record_id": "gate.requirements_acceptance",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0335",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0336",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "status": "RECOMMENDED",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis"
+        ]
+      },
+      "category": "verification_gates",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0071",
+          "record_id": "gate.security_risk_review",
+          "sources": [
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0337",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0338",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "status": "RECOMMENDED",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "verification_gates",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0072",
+          "record_id": "gate.unit_integration_execution",
+          "sources": [
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0339",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0340",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0341",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0342",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.ci_reproducible_release",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "engineering_practices",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0067",
+          "record_id": "practice.ci_reproducible_release",
+          "sources": [
+            {
+              "source_id": "source.slsa.v1.verify",
+              "claim_locator": "How to verify; check SLSA build level; check expectations; optional recursive dependency check",
+              "source_type": "Technical specification guidance",
+              "source_claims_supported": "Artifact verification should bind trusted builder, signature, subject digest and expected source/build parameters; dependency recursion is optional in v1.0.",
+              "source_limitations": "Requires consumer trust policy and expected identity; dependency completeness is not guaranteed.",
+              "relationship_id": "edge.0281",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.ci",
+              "claim_locator": "Workflow triggers, test matrix and coverage steps",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "CI workflow declares test jobs, a platform/Python/dependency matrix and coverage invocation.",
+              "source_limitations": "Workflow configuration is not evidence of passing execution.",
+              "relationship_id": "edge.0282",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.release",
+              "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+              "source_type": "Pinned release workflow",
+              "source_claims_supported": "Release workflow configuration includes tag-based version consistency check and multiple target builds.",
+              "source_limitations": "Configuration only; no release executed.",
+              "relationship_id": "edge.0283",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.ci",
+              "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "Workflow declares CI jobs, triggers and restricted token permission configuration.",
+              "source_limitations": "No run status verified.",
+              "relationship_id": "edge.0284",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.google.sre.release",
+              "claim_locator": "Testing; Packaging; Rapid; Deployment",
+              "source_type": "Operational engineering guidance",
+              "source_claims_supported": "Describes rerunning tests on the release branch, audit trail, independent system tests of packaged artifacts, and coordinating canaries and rollback.",
+              "source_limitations": "Google SRE practice, not a universal policy.",
+              "relationship_id": "edge.0380",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.cli_tools",
+          "software_type.libraries"
+        ]
+      },
+      "category": "engineering_practices",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0062",
+          "record_id": "practice.requirements_traceability",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0269",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0270",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PRACTICE-002",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "engineering_practices",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0065",
+          "record_id": "practice.test_strategy",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0275",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0276",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0277",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0278",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.threat_modeling",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-004",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis"
+        ]
+      },
+      "category": "engineering_practices",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0066",
+          "record_id": "practice.threat_modeling",
+          "sources": [
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0279",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.multitenant",
+              "claim_locator": "Key risks; tenant identification/context; database isolation strategies; RLS role and transaction scoping",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Tenant identity must be bound to authenticated membership; isolation strategies trade off; RLS can add defense in depth but privileged bypass roles and context propagation matter.",
+              "source_limitations": "Guidance is not a guarantee; implementation and database roles determine actual isolation.",
+              "relationship_id": "edge.0280",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.version_control_review",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "engineering_practices",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0063",
+          "record_id": "practice.version_control_review",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0271",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.add_test",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "prompt_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0076",
+          "record_id": "prompt.add_test",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0314",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0315",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0316",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0390",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "prompt_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0075",
+          "record_id": "prompt.implement_scoped_task",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0311",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0312",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0313",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0388",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.github.copilot_task_practices",
+              "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Clear task problem, acceptance criteria and file/context directions aid delegation; broad, sensitive, ambiguous or domain-heavy tasks may be poor candidates for delegation.",
+              "source_limitations": "GitHub Copilot-specific advice; does not define a universal prompt contract.",
+              "relationship_id": "edge.0389",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.review_change",
+      "status": "RECOMMENDED",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "prompt_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0077",
+          "record_id": "prompt.review_change",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0317",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0318",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0319",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0391",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.github.copilot_task_practices",
+              "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Clear task problem, acceptance criteria and file/context directions aid delegation; broad, sensitive, ambiguous or domain-heavy tasks may be poor candidates for delegation.",
+              "source_limitations": "GitHub Copilot-specific advice; does not define a universal prompt contract.",
+              "relationship_id": "edge.0392",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.threat_model",
+      "status": "RECOMMENDED",
+      "rule_id": "R-API-004",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "prompt_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0078",
+          "record_id": "prompt.threat_model",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0320",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0321",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0322",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompt_injection",
+              "claim_locator": "Source-to-sink risk; Safe Url; sandboxed applications; confirmation for sensitive actions/transmissions",
+              "source_type": "Official security engineering article",
+              "source_claims_supported": "Describes prompt injection via untrusted content and recommends constraining actions, sandboxing/limits, and user confirmation or blocking for consequential actions and sensitive transmissions.",
+              "source_limitations": "First-party security article, not independent benchmark; apply to the actual tool/data threat model.",
+              "relationship_id": "edge.0393",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "reference.fastapi",
+      "status": "CONDITIONAL",
+      "rule_id": "R-EXAMPLE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.apis"
+        ]
+      },
+      "category": "reference_projects",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0083",
+          "record_id": "reference.fastapi",
+          "sources": [
+            {
+              "source_id": "source.fastapi.readme",
+              "claim_locator": "Project description; dependency/testing overview",
+              "source_type": "Pinned repository documentation",
+              "source_claims_supported": "Project describes Python API framework, Starlette/Pydantic dependencies and pytest/HTTPX testing ecosystem.",
+              "source_limitations": "Overview only; not independent implementation validation.",
+              "relationship_id": "edge.0350",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0351",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.fastapi.ci",
+              "claim_locator": "Workflow triggers, test matrix and coverage steps",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "CI workflow declares test jobs, a platform/Python/dependency matrix and coverage invocation.",
+              "source_limitations": "Workflow configuration is not evidence of passing execution.",
+              "relationship_id": "edge.0352",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.fastapi.instruction_inventory",
+              "claim_locator": "Git Trees API recursive inventory (truncated=false); named path scan and fixture path checks",
+              "source_type": "Pinned repository tree inventory",
+              "source_claims_supported": "A complete tracked-path inventory (3,570 entries; recursive response not truncated) at the pinned commit was scanned for AGENTS.md, CLAUDE.md, GEMINI.md, .github/copilot-instructions.md, .github/instructions paths and common equivalent agent-guidance names; none matched. README.md, the required-body test file and the test workflow exist at this commit.",
+              "source_limitations": "Path-existence/inventory evidence only; does not establish whether contributors use undocumented practices. No tests or CI were run.",
+              "relationship_id": "edge.800005",
+              "evidence_classification": "synthesized_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "status": "RECOMMENDED",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "roadmap_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0082",
+          "record_id": "roadmap.dependency_aware_sequence",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0331",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0332",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.smallest_releasable_increment",
+      "status": "RECOMMENDED",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "roadmap_patterns",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0081",
+          "record_id": "roadmap.smallest_releasable_increment",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0329",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0330",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.architecture_design",
+      "status": "RECOMMENDED",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0057",
+          "record_id": "sdlc.architecture_design",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0292",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0293",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.discovery_scope",
+      "status": "RECOMMENDED",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0055",
+          "record_id": "sdlc.discovery_scope",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0288",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0289",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.implementation",
+      "status": "RECOMMENDED",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0058",
+          "record_id": "sdlc.implementation",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0294",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0295",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.release",
+      "status": "RECOMMENDED",
+      "rule_id": "R-RELEASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0060",
+          "record_id": "sdlc.release",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0298",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0299",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.requirements_risk",
+      "status": "RECOMMENDED",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0056",
+          "record_id": "sdlc.requirements_risk",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0290",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0291",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "sdlc.verification",
+      "status": "RECOMMENDED",
+      "rule_id": "R-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "category": "sdlc_stages",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": "edge.0059",
+          "record_id": "sdlc.verification",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0296",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.iso.12207.2026.summary",
+              "claim_locator": "Status; Superseding; Board Approval; History > Published; opening abstract",
+              "source_type": "Official standard catalog status and abstract",
+              "source_claims_supported": "The official IEEE catalog lists ISO/IEC/IEEE 12207-2026 as an active standard, states that it supersedes 12207-2017, and lists board approval on 2026-02-12 and publication on 2026-04-15. The catalog abstract describes a common software life-cycle process framework and says users may compose a suitable life-cycle model from selected processes/stages.",
+              "source_limitations": "Catalog status and abstract only; the full normative clauses were not inspected. This does not establish which clauses an organization adopted, whether the standard is contractually or legally binding for a project, or whether any implementation conforms.",
+              "relationship_id": "edge.0297",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "software_type.apis",
+      "status": "RECOMMENDED",
+      "rule_id": "R-TYPE-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "network_api",
+          "state": "true"
+        },
+        {
+          "fact_id": "single_service",
+          "state": "true"
+        },
+        {
+          "fact_id": "authenticated_users",
+          "state": "true"
+        },
+        {
+          "fact_id": "role_based_authorization",
+          "state": "true"
+        },
+        {
+          "fact_id": "persisted_records",
+          "state": "true"
+        },
+        {
+          "fact_id": "public_read_only",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_tenant",
+          "state": "false"
+        },
+        {
+          "fact_id": "tenant_isolation_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "async_queue_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "queue_load_justification",
+          "state": "false"
+        },
+        {
+          "fact_id": "operations_owner_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "billing_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "microservices_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "kubernetes_required",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "true"
+        },
+        {
+          "fact_id": "authentication_required",
+          "state": "true"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.apis",
+        "applicable_software_types": [
+          "software_type.apis"
+        ]
+      },
+      "category": "software_types",
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.apis",
+          "applicability_relationship_id": null,
+          "record_id": "software_type.apis",
+          "sources": [
+            {
+              "source_id": "source.apis.01",
+              "claim_locator": "Sections 9 (Method Definitions), 15 (Status Codes), and 6.4.1 (Content Semantics).",
+              "source_type": "Internet standard (RFC)",
+              "source_claims_supported": "Defines HTTP request method semantics and response status codes; explains that request and response content semantics depend on method, status code, and response fields. Supports HTTP request/response behavior, not the broader proposition that every API must have authentication, authorization, gateways, or persistence.",
+              "source_limitations": "A protocol specification, not implementation guidance for every API architecture. It does not establish that every API requires authentication, authorization, a gateway, or a persistence layer.",
+              "relationship_id": "edge.0241",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.apis.02",
+              "claim_locator": "Introduction; Paths Object; Path Item Object; Operation Object; Responses Object; Security Scheme Object; version history entry 3.1.1.",
+              "source_type": "API description specification",
+              "source_claims_supported": "Defines OpenAPI as a language-agnostic interface description for HTTP APIs; an OpenAPI Description formally describes an API surface and semantics and can support documentation, code generation, and testing. Its Paths and Operation structures describe API operations; security schemes describe declared security. Supports explicit API interface documentation, but does not require that all APIs use OpenAPI or a gateway or persistence.",
+              "source_limitations": "Describes an API rather than requiring a particular implementation, deployment topology, gateway, or persistence layer. Security scheme declaration does not establish that a particular scheme is adequate.",
+              "relationship_id": "edge.0242",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.apis.03",
+              "claim_locator": "Risk Description, API2:2023 Broken Authentication; API5:2023 Broken Function Level Authorization; API10:2023 Unsafe Consumption of APIs.",
+              "source_type": "Security risk guidance / project web page",
+              "source_claims_supported": "The 2023 API risk descriptions identify broken authentication and broken function-level authorization as API security risks; API10 explains that developers may trust third-party API data too much and use weaker security standards, enabling attacks through integrated services. Supports security risks and the need to address them, not a universal prescribed API architecture.",
+              "source_limitations": "Risk taxonomy and explanatory guidance, not a protocol or normative implementation standard. This cited page is the API Top 10 risk description and does not by itself prescribe a complete authentication or authorization design.",
+              "relationship_id": "edge.0243",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gate_results": {
+    "gate.requirements_acceptance": "INCOMPLETE",
+    "gate.security_risk_review": "INCOMPLETE",
+    "gate.unit_integration_execution": "INCOMPLETE",
+    "gate.dependency_provenance": "INCOMPLETE",
+    "gate.release_readiness": "INCOMPLETE"
+  },
+  "deliverable_roles": [
+    {
+      "role_id": "deliverable.scope",
+      "phase": "discovery",
+      "status": "INCOMPLETE"
+    },
+    {
+      "role_id": "deliverable.design",
+      "phase": "design",
+      "status": "INCOMPLETE"
+    },
+    {
+      "role_id": "deliverable.implementation",
+      "phase": "implementation",
+      "status": "INCOMPLETE"
+    },
+    {
+      "role_id": "deliverable.tests",
+      "phase": "verification",
+      "status": "INCOMPLETE"
+    },
+    {
+      "role_id": "deliverable.release",
+      "phase": "release",
+      "status": "INCOMPLETE"
+    },
+    {
+      "role_id": "deliverable.queue_justification",
+      "phase": "design",
+      "status": "INCOMPLETE"
+    }
+  ],
+  "prompt_contract": {
+    "selected_prompt_record_ids": [
+      "prompt.add_test",
+      "prompt.implement_scoped_task",
+      "prompt.review_change",
+      "prompt.threat_model"
+    ],
+    "prompt_requirements": [
+      {
+        "record_id": "prompt.add_test",
+        "name": "Add test prompt contract",
+        "required_inputs": [
+          "behavior",
+          "expected_cases",
+          "test_conventions",
+          "target_paths",
+          "authorized_scope"
+        ],
+        "scope_conditions": "Conditional synthesis. Applicability and evidence are limited to the cited sources; no outcome is claimed without execution.",
+        "expected_deliverables": [
+          "test file/case summary",
+          "commands actually run",
+          "observed outcomes",
+          "coverage gaps"
+        ],
+        "verification_requirements": [
+          "Check outputs against the output contract; record commands and results only when observed."
+        ],
+        "source_ids": [
+          "source.nist.ssdf.v1_1",
+          "source.owasp.tm.cheatsheet",
+          "source.agents.instructions",
+          "source.openai.prompting_codex"
+        ]
+      },
+      {
+        "record_id": "prompt.implement_scoped_task",
+        "name": "Implement scoped task prompt contract",
+        "required_inputs": [
+          "task",
+          "acceptance_criteria",
+          "repo_context",
+          "constraints",
+          "authorized_paths"
+        ],
+        "scope_conditions": "Conditional synthesis. Applicability and evidence are limited to the cited sources; no outcome is claimed without execution.",
+        "expected_deliverables": [
+          "change summary",
+          "files changed",
+          "commands actually run and observed outcomes",
+          "unverified items"
+        ],
+        "verification_requirements": [
+          "Check outputs against the output contract; record commands and results only when observed."
+        ],
+        "source_ids": [
+          "source.nist.ssdf.v1_1",
+          "source.owasp.tm.cheatsheet",
+          "source.agents.instructions",
+          "source.openai.prompting_codex",
+          "source.github.copilot_task_practices"
+        ]
+      },
+      {
+        "record_id": "prompt.review_change",
+        "name": "Review change prompt contract",
+        "required_inputs": [
+          "base_revision",
+          "candidate_revision",
+          "diff",
+          "review_focus",
+          "requirements",
+          "test_evidence"
+        ],
+        "scope_conditions": "Conditional synthesis. Applicability and evidence are limited to the cited sources; no outcome is claimed without execution.",
+        "expected_deliverables": [
+          "ordered findings with severity and evidence",
+          "questions",
+          "unresolved risks",
+          "evidence not provided"
+        ],
+        "verification_requirements": [
+          "Check outputs against the output contract; record commands and results only when observed."
+        ],
+        "source_ids": [
+          "source.nist.ssdf.v1_1",
+          "source.owasp.tm.cheatsheet",
+          "source.agents.instructions",
+          "source.openai.prompting_codex",
+          "source.github.copilot_task_practices"
+        ]
+      },
+      {
+        "record_id": "prompt.threat_model",
+        "name": "Threat model prompt contract",
+        "required_inputs": [
+          "system_boundary",
+          "assets",
+          "data_flows",
+          "trust_boundaries",
+          "external_actors",
+          "deployment",
+          "known_controls"
+        ],
+        "scope_conditions": "Conditional synthesis. Applicability and evidence are limited to the cited sources; no outcome is claimed without execution.",
+        "expected_deliverables": [
+          "assumptions",
+          "threat scenarios",
+          "risk rationale",
+          "mitigations",
+          "residual risks",
+          "validation questions"
+        ],
+        "verification_requirements": [
+          "Check outputs against the output contract; record commands and results only when observed."
+        ],
+        "source_ids": [
+          "source.nist.ssdf.v1_1",
+          "source.owasp.tm.cheatsheet",
+          "source.agents.instructions",
+          "source.openai.prompt_injection"
+        ]
+      }
+    ],
+    "must_treat_descriptive_text_as_non_authoritative": true,
+    "must_not_infer_approval_from_model_or_content": true,
+    "must_not_claim_test_pass_without_candidate_bound_run": true,
+    "candidate_id": null
+  },
+  "roadmap_tasks_topological_order": [
+    {
+      "task_id": "dep.discover",
+      "title": "List outcomes, constraints, and candidate tasks",
+      "depends_on": [],
+      "dependency_type": "none",
+      "acceptance_criteria": [
+        "tasks are outcome-linked and bounded"
+      ],
+      "evidence_required": [
+        "scope and assumptions"
+      ],
+      "roadmap_record_id": "roadmap.dependency_aware_sequence"
+    },
+    {
+      "task_id": "inc.scope",
+      "title": "Confirm user outcome and acceptance evidence",
+      "depends_on": [],
+      "dependency_type": "none",
+      "acceptance_criteria": [
+        "owner approves bounded behavior and non-goals"
+      ],
+      "evidence_required": [
+        "versioned brief/decision"
+      ],
+      "roadmap_record_id": "roadmap.smallest_releasable_increment"
+    },
+    {
+      "task_id": "dep.map",
+      "title": "Classify hard prerequisites and optional enhancements",
+      "depends_on": [
+        "dep.discover"
+      ],
+      "dependency_type": "mandatory",
+      "acceptance_criteria": [
+        "each dependency has a rationale and owner"
+      ],
+      "evidence_required": [
+        "dependency graph with hard/optional labels"
+      ],
+      "roadmap_record_id": "roadmap.dependency_aware_sequence"
+    },
+    {
+      "task_id": "inc.build",
+      "title": "Implement one end-to-end usable slice",
+      "depends_on": [
+        "inc.scope"
+      ],
+      "dependency_type": "mandatory",
+      "acceptance_criteria": [
+        "user outcome works in target context"
+      ],
+      "evidence_required": [
+        "reviewed change linked to acceptance criteria"
+      ],
+      "roadmap_record_id": "roadmap.smallest_releasable_increment"
+    },
+    {
+      "task_id": "dep.prove",
+      "title": "Resolve highest-risk prerequisite or uncertainty",
+      "depends_on": [
+        "dep.map"
+      ],
+      "dependency_type": "conditional",
+      "acceptance_criteria": [
+        "decision rule is met or uncertainty explicitly remains"
+      ],
+      "evidence_required": [
+        "experiment/result or documented abstention"
+      ],
+      "roadmap_record_id": "roadmap.dependency_aware_sequence"
+    },
+    {
+      "task_id": "inc.verify",
+      "title": "Verify the candidate slice",
+      "depends_on": [
+        "inc.build"
+      ],
+      "dependency_type": "mandatory",
+      "acceptance_criteria": [
+        "applicable required checks have actual results"
+      ],
+      "evidence_required": [
+        "candidate-linked test/security outputs; unresolved items"
+      ],
+      "roadmap_record_id": "roadmap.smallest_releasable_increment"
+    },
+    {
+      "task_id": "dep.deliver",
+      "title": "Deliver next feasible value slice",
+      "depends_on": [
+        "dep.map",
+        "dep.prove"
+      ],
+      "dependency_type": "conditional",
+      "acceptance_criteria": [
+        "acceptance criteria and relevant gates are met"
+      ],
+      "evidence_required": [
+        "candidate-linked verification and release evidence"
+      ],
+      "roadmap_record_id": "roadmap.dependency_aware_sequence"
+    },
+    {
+      "task_id": "inc.release",
+      "title": "Release or explicitly hold the increment",
+      "depends_on": [
+        "inc.verify"
+      ],
+      "dependency_type": "mandatory_if_released",
+      "acceptance_criteria": [
+        "release authority decision and recovery path recorded"
+      ],
+      "evidence_required": [
+        "artifact identity; approval; rollout/rollback evidence where applicable"
+      ],
+      "roadmap_record_id": "roadmap.smallest_releasable_increment"
+    }
+  ],
+  "roadmap_cycle_nodes": [],
+  "standard_reviews": []
+}

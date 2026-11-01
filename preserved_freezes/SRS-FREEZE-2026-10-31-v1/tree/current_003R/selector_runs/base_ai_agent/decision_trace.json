@@ -1,0 +1,2508 @@
+{
+  "trace_version": "1.0.0",
+  "input_sha256": "cfea63218583fa7df22da4436625d63cdb2b5fcd43f5d14aa14391a1617a9cd6",
+  "rules_sha256": "5d365b3d4714f98eedfa8002644440aa095536b14d7769f32f8ef6d8f3df2eec",
+  "dataset_partition_sha256": {
+    "architecture_patterns.jsonl": "163677756cd30a08bbd5b0952915e8c981fd3aefc628fc8a9f524c679d7e2b39",
+    "engineering_practices.jsonl": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66",
+    "prompt_patterns.jsonl": "db5406b61cbb38f7d857065dafd9e287cfd32d4215ea2e53de103731dd8648ab",
+    "reference_projects.jsonl": "0fd1c4621a16136fb5750da78f7ac7d32490d3655c2bb3827350459530889171",
+    "relationships.jsonl": "05e8b75a515c2a586ffd798af8162a0effa200bc47e9e5bc292a23d0b6cbaec6",
+    "roadmap_patterns.jsonl": "ffc58f804d848f25b626fa6240ff40c375d863969ebf449b06d703fe43dd8a41",
+    "sdlc_stages.jsonl": "614662541ad76977a4a305fd500e70bce5973680d2941b30869c7f3f27fe29d5",
+    "software_types.jsonl": "5a59f96ddfc493d67867d46279ff27cb6626cd7ee27f3dbc5772dfeb149559ec",
+    "sources.jsonl": "9546a38f0b63fad87af49af995b1cbfa1393549e95d9236ea941d07d41a7b9b1",
+    "verification_gates.jsonl": "c6bca575a05382f66fb53d062c48c51a5b2c4cfb93bd8d53b9da8b0eb15bac5a"
+  },
+  "descriptive_text_effect": "ignored_non_authoritative_text_not_copied",
+  "rule_precedence": [
+    "R-INPUT-001",
+    "R-CATEGORY-001",
+    "R-EXCLUSION-001",
+    "R-AUTHORITY-001",
+    "R-EVIDENCE-001",
+    "R-STANDARD-001",
+    "R-AGENT-001",
+    "R-API-001",
+    "R-CLI-001",
+    "R-API-AUTH-001",
+    "R-AGENT-002",
+    "R-API-002",
+    "R-CLI-002",
+    "R-AGENT-003",
+    "R-API-003",
+    "R-API-004",
+    "R-BASE-001",
+    "R-RELEASE-001",
+    "R-TYPE-BASE-001",
+    "R-ARCH-001",
+    "R-PRACTICE-001",
+    "R-PRACTICE-002",
+    "R-ROADMAP-001",
+    "R-PROMPT-001",
+    "R-EXAMPLE-001",
+    "R-SCOPE-001"
+  ],
+  "selected_record_trace": [
+    {
+      "record_id": "arch.agent_tool_boundary",
+      "rule_id": "R-AGENT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.ai_agents",
+          "software_type.developer_tools",
+          "software_type.security_products"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0012",
+          "record_id": "arch.agent_tool_boundary",
+          "sources": [
+            {
+              "source_id": "source.agents.policy",
+              "claim_locator": "Private vulnerability reporting; scope; trust boundaries and security review",
+              "source_type": "Pinned security policy",
+              "source_claims_supported": "Private vulnerability reporting route and stated risk scope, including agent tools/MCP, sessions, tracing, dependencies, CI and publishing.",
+              "source_limitations": "A policy does not prove controls are effective or vulnerabilities absent.",
+              "relationship_id": "edge.0308",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0309",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0310",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.openai.prompt_injection",
+              "claim_locator": "Source-to-sink risk; Safe Url; sandboxed applications; confirmation for sensitive actions/transmissions",
+              "source_type": "Official security engineering article",
+              "source_claims_supported": "Describes prompt injection via untrusted content and recommends constraining actions, sandboxing/limits, and user confirmation or blocking for consequential actions and sensitive transmissions.",
+              "source_limitations": "First-party security article, not independent benchmark; apply to the actual tool/data threat model.",
+              "relationship_id": "edge.0387",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.800004",
+              "evidence_classification": "synthesized_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.operational_rollback",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.ai_agents",
+          "software_type.security_products"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0017",
+          "record_id": "gate.operational_rollback",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0349",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.google.sre.release",
+              "claim_locator": "Testing; Packaging; Rapid; Deployment",
+              "source_type": "Operational engineering guidance",
+              "source_claims_supported": "Describes rerunning tests on the release branch, audit trail, independent system tests of packaged artifacts, and coordinating canaries and rollback.",
+              "source_limitations": "Google SRE practice, not a universal policy.",
+              "relationship_id": "edge.0396",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.google.sre.canary",
+              "claim_locator": "Selecting and evaluating metrics; representative and attributable metrics; canary analysis and rollback",
+              "source_type": "Operational engineering guidance",
+              "source_claims_supported": "Recommends comparing candidate and control using representative attributable service metrics; anomalous candidate outcomes can prompt pausing, rollback or human escalation.",
+              "source_limitations": "No universal thresholds; service-specific metric selection required.",
+              "relationship_id": "edge.0397",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.release_readiness",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0016",
+          "record_id": "gate.release_readiness",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0345",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.ci",
+              "claim_locator": "Workflow triggers, test matrix and coverage steps",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "CI workflow declares test jobs, a platform/Python/dependency matrix and coverage invocation.",
+              "source_limitations": "Workflow configuration is not evidence of passing execution.",
+              "relationship_id": "edge.0346",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.release",
+              "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+              "source_type": "Pinned release workflow",
+              "source_claims_supported": "Release workflow configuration includes tag-based version consistency check and multiple target builds.",
+              "source_limitations": "Configuration only; no release executed.",
+              "relationship_id": "edge.0347",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.ci",
+              "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "Workflow declares CI jobs, triggers and restricted token permission configuration.",
+              "source_limitations": "No run status verified.",
+              "relationship_id": "edge.0348",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.requirements_acceptance",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.900165",
+          "record_id": "gate.requirements_acceptance",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0335",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0336",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.security_risk_review",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0013",
+          "record_id": "gate.security_risk_review",
+          "sources": [
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0337",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0338",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "gate.unit_integration_execution",
+      "rule_id": "R-EVIDENCE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0014",
+          "record_id": "gate.unit_integration_execution",
+          "sources": [
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0339",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0340",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0341",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0342",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.change_maintenance",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.900030",
+          "record_id": "practice.change_maintenance",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0286",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.policy",
+              "claim_locator": "Private vulnerability reporting; scope; trust boundaries and security review",
+              "source_type": "Pinned security policy",
+              "source_claims_supported": "Private vulnerability reporting route and stated risk scope, including agent tools/MCP, sessions, tracing, dependencies, CI and publishing.",
+              "source_limitations": "A policy does not prove controls are effective or vulnerabilities absent.",
+              "relationship_id": "edge.0287",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.ci_reproducible_release",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0010",
+          "record_id": "practice.ci_reproducible_release",
+          "sources": [
+            {
+              "source_id": "source.slsa.v1.verify",
+              "claim_locator": "How to verify; check SLSA build level; check expectations; optional recursive dependency check",
+              "source_type": "Technical specification guidance",
+              "source_claims_supported": "Artifact verification should bind trusted builder, signature, subject digest and expected source/build parameters; dependency recursion is optional in v1.0.",
+              "source_limitations": "Requires consumer trust policy and expected identity; dependency completeness is not guaranteed.",
+              "relationship_id": "edge.0281",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.ci",
+              "claim_locator": "Workflow triggers, test matrix and coverage steps",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "CI workflow declares test jobs, a platform/Python/dependency matrix and coverage invocation.",
+              "source_limitations": "Workflow configuration is not evidence of passing execution.",
+              "relationship_id": "edge.0282",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.release",
+              "claim_locator": "Tag trigger, version check, cross-platform binaries and assets",
+              "source_type": "Pinned release workflow",
+              "source_claims_supported": "Release workflow configuration includes tag-based version consistency check and multiple target builds.",
+              "source_limitations": "Configuration only; no release executed.",
+              "relationship_id": "edge.0283",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.ci",
+              "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "Workflow declares CI jobs, triggers and restricted token permission configuration.",
+              "source_limitations": "No run status verified.",
+              "relationship_id": "edge.0284",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.google.sre.release",
+              "claim_locator": "Testing; Packaging; Rapid; Deployment",
+              "source_type": "Operational engineering guidance",
+              "source_claims_supported": "Describes rerunning tests on the release branch, audit trail, independent system tests of packaged artifacts, and coordinating canaries and rollback.",
+              "source_limitations": "Google SRE practice, not a universal policy.",
+              "relationship_id": "edge.0380",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.requirements_traceability",
+      "rule_id": "R-PRACTICE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.cli_tools",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.900001",
+          "record_id": "practice.requirements_traceability",
+          "sources": [
+            {
+              "source_id": "source.nasa.npr7150_2d.ch4",
+              "claim_locator": "4.1.1-4.1.7; 4.2.1-4.2.4; 4.3.1-4.3.2; 4.4.1-4.4.8; 4.5.1",
+              "source_type": "Agency procedural requirements",
+              "source_claims_supported": "NASA project manager responsibility for requirements, ongoing validation/change handling; architecture/design/code trace; static analysis, unit test, release version description where applicable.",
+              "source_limitations": "Normative only within directive applicability and approved tailoring; not universal outside NASA.",
+              "relationship_id": "edge.0269",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0270",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.test_strategy",
+      "rule_id": "R-PRACTICE-002",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0009",
+          "record_id": "practice.test_strategy",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0275",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.fastapi.tests",
+              "claim_locator": "Parameterized TestClient cases; status/body and OpenAPI schema assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete tests are authored for required body parameter behavior and generated schema.",
+              "source_limitations": "Test source presence does not establish test execution or pass status.",
+              "relationship_id": "edge.0276",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ripgrep.regression",
+              "claim_locator": "Issue-linked rgtest cases and stdout/error assertions",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "Concrete regression test code covers issue-associated CLI behavior, including filesystem/ignore cases.",
+              "source_limitations": "Not executed in this research.",
+              "relationship_id": "edge.0277",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0278",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "practice.threat_modeling",
+      "rule_id": "R-AGENT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0007",
+          "record_id": "practice.threat_modeling",
+          "sources": [
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0279",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.multitenant",
+              "claim_locator": "Key risks; tenant identification/context; database isolation strategies; RLS role and transaction scoping",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Tenant identity must be bound to authenticated membership; isolation strategies trade off; RLS can add defense in depth but privileged bypass roles and context propagation matter.",
+              "source_limitations": "Guidance is not a guarantee; implementation and database roles determine actual isolation.",
+              "relationship_id": "edge.0280",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.add_test",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0019",
+          "record_id": "prompt.add_test",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0314",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0315",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0316",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0390",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.implement_scoped_task",
+      "rule_id": "R-PROMPT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0018",
+          "record_id": "prompt.implement_scoped_task",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0311",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0312",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0313",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompting_codex",
+              "claim_locator": "Prompting Codex; Fix a bug; Write a test; Do a local code review; Verification",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Examples recommend specifying target behavior/context, test or reproduction details, constraints and verification; prompts can ask the coding agent to run and report checks.",
+              "source_limitations": "Product examples, not a universal prompt schema or security boundary.",
+              "relationship_id": "edge.0388",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.github.copilot_task_practices",
+              "claim_locator": "Well-scoped issues; choosing tasks; researching, planning, iterating; custom instructions",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "Clear task problem, acceptance criteria and file/context directions aid delegation; broad, sensitive, ambiguous or domain-heavy tasks may be poor candidates for delegation.",
+              "source_limitations": "GitHub Copilot-specific advice; does not define a universal prompt contract.",
+              "relationship_id": "edge.0389",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "prompt.threat_model",
+      "rule_id": "R-AGENT-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0021",
+          "record_id": "prompt.threat_model",
+          "sources": [
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0320",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.owasp.tm.cheatsheet",
+              "claim_locator": "Overview; system modeling; threat identification; mitigation; review and validation",
+              "source_type": "Security guidance",
+              "source_claims_supported": "Models system boundaries, data flows, stores, processes, external entities, threats and mitigations; no one universally accepted process.",
+              "source_limitations": "Adaptable guidance; not a compliance standard.",
+              "relationship_id": "edge.0321",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0322",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.openai.prompt_injection",
+              "claim_locator": "Source-to-sink risk; Safe Url; sandboxed applications; confirmation for sensitive actions/transmissions",
+              "source_type": "Official security engineering article",
+              "source_claims_supported": "Describes prompt injection via untrusted content and recommends constraining actions, sandboxing/limits, and user confirmation or blocking for consequential actions and sensitive transmissions.",
+              "source_limitations": "First-party security article, not independent benchmark; apply to the actual tool/data threat model.",
+              "relationship_id": "edge.0393",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "reference.openai_agents_sdk",
+      "rule_id": "R-EXAMPLE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.ai_agents"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0026",
+          "record_id": "reference.openai_agents_sdk",
+          "sources": [
+            {
+              "source_id": "source.agents.readme",
+              "claim_locator": "Core concepts and first agent examples",
+              "source_type": "Pinned repository documentation",
+              "source_claims_supported": "Project describes agents, instructions, tools, guardrails, handoffs, sessions and tracing.",
+              "source_limitations": "Description is not an independent safety assessment; example was not run.",
+              "relationship_id": "edge.0356",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.policy",
+              "claim_locator": "Private vulnerability reporting; scope; trust boundaries and security review",
+              "source_type": "Pinned security policy",
+              "source_claims_supported": "Private vulnerability reporting route and stated risk scope, including agent tools/MCP, sessions, tracing, dependencies, CI and publishing.",
+              "source_limitations": "A policy does not prove controls are effective or vulnerabilities absent.",
+              "relationship_id": "edge.0357",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.instructions",
+              "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+              "source_type": "Pinned agent/contributor instructions",
+              "source_claims_supported": "Repository agent instructions include explicit security checklist and evidence expectations.",
+              "source_limitations": "Instructions are written policy, not proof every workflow follows them.",
+              "relationship_id": "edge.0358",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.test",
+              "claim_locator": "At the pinned commit: test_trace_lifecycle_logging_omits_caller_data assertions on captured records/messages; test_disabled_span_logging_respects_data_policy.",
+              "source_type": "Pinned test source",
+              "source_claims_supported": "The pinned test file contains regression assertions that selected caller-provided trace lifecycle values (workflow name, trace ID, and metadata canary) are absent from captured log records/messages; a separate span data-policy test checks captured span output. This describes authored assertions only.",
+              "source_limitations": "No tests or CI were run; file presence is not a pass result.",
+              "relationship_id": "edge.0359",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.ci",
+              "claim_locator": "Workflow triggers, read-only permissions, lint/typecheck and Python test matrix",
+              "source_type": "Pinned CI workflow",
+              "source_claims_supported": "Workflow declares CI jobs, triggers and restricted token permission configuration.",
+              "source_limitations": "No run status verified.",
+              "relationship_id": "edge.0360",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.agents.instruction_inventory",
+              "claim_locator": "Pinned Git tree enumeration using git ls-tree -r; fixture paths checked at the same commit",
+              "source_type": "Pinned repository tree inventory",
+              "source_claims_supported": "A complete tracked-path inventory at the pinned commit found root AGENTS.md and CLAUDE.md plus docs/agents.md and localized docs/ja/agents.md, docs/ko/agents.md and docs/zh/agents.md. README.md, SECURITY.md, AGENTS.md, the tracing test and tests workflow exist at the commit.",
+              "source_limitations": "The recursive GitHub API response is truncated; completeness relies on a local complete tree listing at the pinned commit. Only AGENTS.md content was separately reviewed; other listed files are path-presence findings. No tests or CI were run.",
+              "relationship_id": "edge.800007",
+              "evidence_classification": "synthesized_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.dependency_aware_sequence",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0024",
+          "record_id": "roadmap.dependency_aware_sequence",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0331",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0332",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "roadmap.risk_first_poc",
+      "rule_id": "R-ROADMAP-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.web_applications",
+          "software_type.saas",
+          "software_type.apis",
+          "software_type.mobile_applications",
+          "software_type.cli_tools",
+          "software_type.developer_tools",
+          "software_type.ai_agents",
+          "software_type.security_products",
+          "software_type.data_pipelines",
+          "software_type.libraries"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": "edge.0025",
+          "record_id": "roadmap.risk_first_poc",
+          "sources": [
+            {
+              "source_id": "source.scrum.guide.2020",
+              "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+              "source_type": "Framework guide",
+              "source_claims_supported": "Backlog is ordered/emergent; increments must be usable and meet Definition of Done; planning forecast depends on past performance, capacity and DoD.",
+              "source_limitations": "Does not prescribe universal dependency graph, estimation formula, or story acceptance syntax.",
+              "relationship_id": "edge.0333",
+              "evidence_classification": "documented_guidance"
+            },
+            {
+              "source_id": "source.nist.ssdf.v1_1",
+              "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+              "source_type": "Federal guidance publication",
+              "source_claims_supported": "SSDF is recommended high-level guidance integrable into SDLCs; covers security requirements/risk modeling, code protection, secure coding/review/testing, release integrity and vulnerability response.",
+              "source_limitations": "Guidance, not universal mandate unless adopted by policy, contract or regulation. Does not define universal stage gates.",
+              "relationship_id": "edge.0334",
+              "evidence_classification": "documented_guidance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "software_type.ai_agents",
+      "rule_id": "R-TYPE-BASE-001",
+      "predicate_matches": [
+        {
+          "fact_id": "reads_untrusted_external_content",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_read_access",
+          "state": "true"
+        },
+        {
+          "fact_id": "has_bounded_write_tool",
+          "state": "true"
+        },
+        {
+          "fact_id": "can_cause_side_effects",
+          "state": "true"
+        },
+        {
+          "fact_id": "high_impact_action_possible",
+          "state": "true"
+        },
+        {
+          "fact_id": "approval_required_for_high_impact",
+          "state": "true"
+        },
+        {
+          "fact_id": "approver_available",
+          "state": "false"
+        },
+        {
+          "fact_id": "vector_database_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "multi_agent_autonomy_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "production_deployment_requested",
+          "state": "false"
+        },
+        {
+          "fact_id": "release_plan_required",
+          "state": "false"
+        }
+      ],
+      "scope_conditions": {
+        "software_type_id": "software_type.ai_agents",
+        "applicable_software_types": [
+          "software_type.ai_agents"
+        ]
+      },
+      "evidence_paths": [
+        {
+          "software_type_id": "software_type.ai_agents",
+          "applicability_relationship_id": null,
+          "record_id": "software_type.ai_agents",
+          "sources": [
+            {
+              "source_id": "source.ai_agents.01",
+              "claim_locator": "“Choose your starting point”; “Compare agent runtime options”; sections describing Agents API and Agents SDK.",
+              "source_type": "Official product documentation",
+              "source_claims_supported": "The page describes agents as systems that can plan and complete tasks using tools, work with other agents, and maintain context; it compares runtime options by orchestration, state management, tools, and execution environment.",
+              "source_limitations": "Product documentation describes OpenAI runtime options and capabilities, not a vendor-neutral agent definition or a tested implementation. It does not establish that every agent must use tools, multi-agent collaboration, or persistent state.",
+              "relationship_id": "edge.0256",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ai_agents.02",
+              "claim_locator": "“Core benefits” section, including bullets on mixing deterministic and agentic steps, persistence, human-in-the-loop, and memory.",
+              "source_type": "Official framework documentation",
+              "source_claims_supported": "The documentation states LangGraph provides infrastructure for long-running, stateful workflows or agents and supports mixing deterministic and agentic steps, persistence/resumption, human oversight, and short- and long-term memory.",
+              "source_limitations": "Describes the LangGraph framework's stated capabilities; it is not a general requirement or independently tested evidence of those capabilities in a particular application.",
+              "relationship_id": "edge.0257",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ai_agents.03",
+              "claim_locator": "“Tracing,” “Traces and spans,” and “Default tracing” sections in docs/tracing.md at the stated commit.",
+              "source_type": "Official SDK repository documentation file",
+              "source_claims_supported": "The SDK documentation says tracing records events during agent runs, including model generations, tool calls, handoffs, guardrails, and custom events; it defines traces as workflow-level operations composed of spans and lists the operations traced by default.",
+              "source_limitations": "This is implementation-specific SDK documentation, not general agent architecture guidance. Tracing is enabled by default in the described SDK, but may be disabled; the documentation notes that tracing is unavailable for organizations using APIs under a Zero Data Retention policy. Repository file and current main HEAD were inspected; no software was executed.",
+              "relationship_id": "edge.0258",
+              "evidence_classification": "observed_implementation"
+            },
+            {
+              "source_id": "source.ai_agents.04",
+              "claim_locator": "Page introduction and “Agentic AI – Threats and Mitigations” heading; dated February 17, 2025.",
+              "source_type": "Security guidance / resource page",
+              "source_claims_supported": "The page describes the resource as the first in a series of OWASP Agentic Security Initiative guides, intended to provide a threat-model-based reference to emerging agentic threats and discuss mitigations.",
+              "source_limitations": "The page's stated purpose does not by itself verify any particular threat scenario or mitigation's effectiveness. It is guidance, not a formal standard or evidence from a tested system.",
+              "relationship_id": "edge.0259",
+              "evidence_classification": "observed_implementation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_exclusions": [],
+  "dependency_edges": [
+    {
+      "from_record_id": "practice.ci_reproducible_release",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "verified_by",
+      "relationship_id": "edge.0168",
+      "status": "LINKED",
+      "dependency_kind": "verification_obligation",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "practice.test_strategy",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "verified_by",
+      "relationship_id": "edge.0165",
+      "status": "LINKED",
+      "dependency_kind": "verification_obligation",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "practice.threat_modeling",
+      "to_record_id": "gate.security_risk_review",
+      "predicate": "verified_by",
+      "relationship_id": "edge.0166",
+      "status": "LINKED",
+      "dependency_kind": "verification_obligation",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.add_test",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0175",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.add_test",
+      "to_record_id": "gate.security_risk_review",
+      "predicate": "requires",
+      "relationship_id": "edge.0174",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.add_test",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0173",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0172",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "to_record_id": "gate.security_risk_review",
+      "predicate": "requires",
+      "relationship_id": "edge.0171",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0170",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.threat_model",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0181",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.threat_model",
+      "to_record_id": "gate.security_risk_review",
+      "predicate": "requires",
+      "relationship_id": "edge.0180",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.threat_model",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0179",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.dependency_provenance",
+      "predicate": "requires",
+      "relationship_id": "edge.0376",
+      "status": "INCOMPLETE",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.release_readiness",
+      "predicate": "requires",
+      "relationship_id": "edge.0377",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.dependency_aware_sequence",
+      "to_record_id": "gate.requirements_acceptance",
+      "predicate": "requires",
+      "relationship_id": "edge.0375",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.risk_first_poc",
+      "to_record_id": "gate.security_risk_review",
+      "predicate": "requires",
+      "relationship_id": "edge.0378",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "roadmap.risk_first_poc",
+      "to_record_id": "gate.unit_integration_execution",
+      "predicate": "requires",
+      "relationship_id": "edge.0379",
+      "status": "LINKED",
+      "dependency_kind": "hard_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "evidence_classification": null
+        }
+      ]
+    }
+  ],
+  "dependency_gaps": [
+    "gate.dependency_provenance"
+  ],
+  "related_context_edges": [
+    {
+      "from_record_id": "prompt.add_test",
+      "related_record_id": "practice.test_strategy",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0364",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.requirements_traceability",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0361",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.test_strategy",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0363",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.implement_scoped_task",
+      "related_record_id": "practice.version_control_review",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0362",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "prompt.threat_model",
+      "related_record_id": "practice.threat_modeling",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0367",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.nist.ssdf.v1_1",
+          "claim_locator": "Sections 2-3; PO/PS/PW/RV practice headings, especially PW.1, PW.5, PW.7-PW.8 and RV.1-RV.3",
+          "source_type": "Federal guidance publication",
+          "evidence_classification": null
+        },
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.add_test",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0019",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.implement_scoped_task",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0018",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.investigate_failure",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0022",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.prepare_release",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0023",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.review_change",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0020",
+      "status": "CONTEXT_ONLY",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "prompt.threat_model",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0021",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.agents.instructions",
+          "claim_locator": "Security checklist; CI permissions; publishing; evidence and handoff",
+          "source_type": "Pinned agent/contributor instructions",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "roadmap.dependency_aware_sequence",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0024",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "source_type": "Framework guide",
+          "evidence_classification": null
+        }
+      ]
+    },
+    {
+      "from_record_id": "software_type.ai_agents",
+      "related_record_id": "roadmap.risk_first_poc",
+      "software_type_id": "software_type.ai_agents",
+      "origin": "typed_relationship",
+      "predicate": "informs",
+      "relationship_id": "edge.0025",
+      "status": "LINKED",
+      "dependency_kind": "related_context_not_prerequisite",
+      "source_paths": [
+        {
+          "source_id": "source.scrum.guide.2020",
+          "claim_locator": "Product Backlog; Sprint Planning; Increment; Definition of Done; Sprint Review",
+          "source_type": "Framework guide",
+          "evidence_classification": null
+        }
+      ]
+    }
+  ],
+  "roadmap_task_edges": [
+    {
+      "task_id": "dep.discover",
+      "depends_on": [],
+      "dependency_type": "none"
+    },
+    {
+      "task_id": "poc.assumption",
+      "depends_on": [],
+      "dependency_type": "none"
+    },
+    {
+      "task_id": "dep.map",
+      "depends_on": [
+        "dep.discover"
+      ],
+      "dependency_type": "mandatory"
+    },
+    {
+      "task_id": "poc.design",
+      "depends_on": [
+        "poc.assumption"
+      ],
+      "dependency_type": "mandatory"
+    },
+    {
+      "task_id": "dep.prove",
+      "depends_on": [
+        "dep.map"
+      ],
+      "dependency_type": "conditional"
+    },
+    {
+      "task_id": "poc.run",
+      "depends_on": [
+        "poc.design"
+      ],
+      "dependency_type": "conditional"
+    },
+    {
+      "task_id": "dep.deliver",
+      "depends_on": [
+        "dep.map",
+        "dep.prove"
+      ],
+      "dependency_type": "conditional"
+    },
+    {
+      "task_id": "poc.decision",
+      "depends_on": [
+        "poc.run"
+      ],
+      "dependency_type": "mandatory"
+    }
+  ],
+  "notes": [
+    "No active produces edges were observed in the versioned baseline graph; the selector checked the predicate and reports none when absent.",
+    "Typed informs edges are traced as related context, never as hard prerequisites.",
+    "related_record_ids are descriptive context, not hard prerequisites.",
+    "No test, CI, deployment or release PASS is asserted."
+  ]
+}

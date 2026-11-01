@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "mutations": [
+    {
+      "control": "recommended_status_flip",
+      "test_id": "test_mutation_flip_recommended_status_is_detected",
+      "description": "A fixed independent oracle must reject a changed RECOMMENDED status.",
+      "status": "PASS"
+    },
+    {
+      "control": "critical_rejection_reason_reversal",
+      "test_id": "test_mutation_reverse_rejection_reason_is_detected",
+      "description": "Typed rejection rationale must match the fixed independent oracle.",
+      "status": "PASS"
+    },
+    {
+      "control": "fabricated_test_or_deployment_PASS",
+      "test_id": "test_mutation_fake_pass_is_rejected_by_output_schema",
+      "description": "PASS is rejected by the output contract; source files or workflow configuration are not execution evidence.",
+      "status": "PASS"
+    },
+    {
+      "control": "descriptive_text_conflict",
+      "test_id": "test_mutation_free_text_cannot_override_structured_facts",
+      "description": "Adversarial descriptive prose is ignored and omitted; structured decisions remain unchanged.",
+      "status": "PASS"
+    }
+  ],
+  "expected_control_behavior": "The first three unsafe mutations are caught; the descriptive-text mutation has no decision effect and is explicitly ignored."
+}

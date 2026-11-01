@@ -1,0 +1,69 @@
+{
+  "retrieval_date": "2026-10-31",
+  "audits": [
+    {
+      "repository": "fastapi/fastapi",
+      "commit": "192b12197eb04c2b4a691cce7d87261b21716714",
+      "tree_complete": true,
+      "instruction_paths": [],
+      "method": "Git Trees API at the pinned commit returned truncated=false (3,570 entries); scan checked AGENTS.md, CLAUDE.md, GEMINI.md, .github/copilot-instructions.md, .github/instructions paths and common equivalents. Exact fixture paths were checked against the same tree.",
+      "evidence_urls": [
+        "https://api.github.com/repos/fastapi/fastapi/git/trees/192b12197eb04c2b4a691cce7d87261b21716714?recursive=1",
+        "https://github.com/fastapi/fastapi/tree/192b12197eb04c2b4a691cce7d87261b21716714"
+      ],
+      "fixture_paths": [
+        "README.md",
+        "tests/test_request_params/test_body/test_required_str.py",
+        ".github/workflows/test.yml"
+      ],
+      "tests_run": false
+    },
+    {
+      "repository": "BurntSushi/ripgrep",
+      "commit": "91f5d22ef48bde459d90a8c7dbeab416e97d0f2b",
+      "tree_complete": true,
+      "instruction_paths": [
+        "AI_POLICY.md"
+      ],
+      "method": "Recursive GitHub API tree response was truncated. Completeness was obtained by traversing the pinned root tree and every referenced subtree object and scanning all 226 file paths. Fixture paths were checked at the same commit.",
+      "evidence_urls": [
+        "https://api.github.com/repos/BurntSushi/ripgrep/git/trees/91f5d22ef48bde459d90a8c7dbeab416e97d0f2b?recursive=1",
+        "https://api.github.com/repos/BurntSushi/ripgrep/git/trees/91f5d22ef48bde459d90a8c7dbeab416e97d0f2b",
+        "https://github.com/BurntSushi/ripgrep/blob/91f5d22ef48bde459d90a8c7dbeab416e97d0f2b/AI_POLICY.md"
+      ],
+      "fixture_paths": [
+        "README.md",
+        "tests/regression.rs",
+        ".github/workflows/release.yml"
+      ],
+      "tests_run": false
+    },
+    {
+      "repository": "openai/openai-agents-python",
+      "commit": "d27abe8972408a638e97422e9fd8066445bb7b21",
+      "tree_complete": true,
+      "instruction_paths": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "docs/agents.md",
+        "docs/ja/agents.md",
+        "docs/ko/agents.md",
+        "docs/zh/agents.md"
+      ],
+      "method": "Recursive GitHub API response was truncated; a complete local pinned checkout was enumerated with git ls-tree -r --name-only HEAD and fixture paths were verified with git cat-file -e HEAD:<path>.",
+      "evidence_urls": [
+        "https://api.github.com/repos/openai/openai-agents-python/git/trees/d27abe8972408a638e97422e9fd8066445bb7b21?recursive=1",
+        "https://github.com/openai/openai-agents-python/tree/d27abe8972408a638e97422e9fd8066445bb7b21",
+        "https://github.com/openai/openai-agents-python/blob/d27abe8972408a638e97422e9fd8066445bb7b21/AGENTS.md"
+      ],
+      "fixture_paths": [
+        "README.md",
+        "SECURITY.md",
+        "AGENTS.md",
+        "tests/tracing/test_tracing_env_disable.py",
+        ".github/workflows/tests.yml"
+      ],
+      "tests_run": false
+    }
+  ]
+}

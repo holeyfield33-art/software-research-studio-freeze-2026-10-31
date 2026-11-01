@@ -1,0 +1,39 @@
+{
+  "output_version": "1.0.0",
+  "input_sha256": "6acc111f525988cf9edf8e1c0af8797fb9841cbb0c00fecff72ab1ffb8a8d431",
+  "rejected_records": [],
+  "feature_decisions": [
+    {
+      "decision_id": "feature.multi_agent_autonomy",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    },
+    {
+      "decision_id": "feature.production_deployment",
+      "status": "INCOMPLETE",
+      "rule_id": "R-EVIDENCE-001",
+      "reason_code": "NO_CANDIDATE_BOUND_TESTS_OR_APPROVAL"
+    },
+    {
+      "decision_id": "feature.vector_database",
+      "status": "INAPPLICABLE",
+      "rule_id": "R-EXCLUSION-001",
+      "reason_code": "EXPLICITLY_OUT_OF_SCOPE"
+    }
+  ],
+  "authority_decisions": [
+    {
+      "decision_id": "feature.high_impact_write",
+      "status": "INCOMPLETE",
+      "rule_id": "R-AUTHORITY-001",
+      "reason_code": "ACCOUNTABLE_APPROVER_EVIDENCE_MISSING"
+    }
+  ],
+  "unsupported_categories": [],
+  "missing_or_unknown_facts": [],
+  "unknown_fact_ids": [],
+  "conflicting_fact_ids": [],
+  "schema_errors": [],
+  "unverified_evidence_facts": []
+}

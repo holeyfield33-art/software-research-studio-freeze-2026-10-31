@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "archive_sha256": "a39b30fee3304e843b0291770efe7a42e993d733c3c09d5321ea5f2d53e6ad04",
+  "archive_size_bytes": 1679281,
+  "extracted_files_byte_identical": 177,
+  "inventory_files_verified": 175,
+  "manifest_003R_hashes_verified": 151,
+  "original_001_002_003_archives_identical": true,
+  "original_003R_archive_sha256": "5fea1fe5e8f19064df7ee9af4386aeb85046003c99ee83f9b4569432f0992aa8",
+  "dataset_003_to_003R_partitions_identical": 10,
+  "parsed_records": 715,
+  "relationships": 601,
+  "nested_zip_crc_checks": 8,
+  "common_credential_pattern_scan": {
+    "files_scanned": 495,
+    "findings": 0,
+    "scope": "Common key patterns only; not exhaustive privacy review"
+  },
+  "behavioral_validation": "NOT RERUN; archival verification only",
+  "gemini_round_2": "Not contained in recovered freeze"
+}
