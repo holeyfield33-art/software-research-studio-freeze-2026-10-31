@@ -35,3 +35,7 @@ The included test suite checks these locally; it does not prove absence of every
 ## Studio lifecycle and decisions
 
 Read [SPEC.md](SPEC.md), [DECISIONS.md](DECISIONS.md) and [EVIDENCE.md](EVIDENCE.md). They describe the greenfield intake, requirements, CLI user experience, risks, research rationale, task sequence, independent oracles, test execution and release **HOLD**. This experiment exercises the **documented Studio workflow**; it has **not** run Studio's canonical `studio_kernel plan`, authenticated host receipts or kernel acceptance gate. Those remain future gates, not hidden achievements.
+
+## STUDIO-PILOT-002 — Unicode error-contract regression
+
+A bounded follow-up repaired one malformed-input crash: escaped unpaired Unicode surrogates in free-text fields now raise a controlled `IntakeError`. Four regression tests were added; **23/23 local tests passed** after an intentional red phase (1 failure, 4 errors). The four-case demo output is unchanged. [Read the exact trial report and evidence](trials/STUDIO-PILOT-002/README.md). This is local program evidence only: Studio canonical `plan`, independent host receipts and a comparative baseline remain NOT_RUN; release remains HOLD.
