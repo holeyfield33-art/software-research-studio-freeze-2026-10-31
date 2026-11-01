@@ -15,6 +15,14 @@ This file records **additive Studio development changes**. Frozen research manif
 
 `SRS-FREEZE-2026-10-31-v1` and `STUDIO-KNOWLEDGE-003R` remain immutable. Novel-input selector generalization and product integration remain NO-GO. MOTHERSHIP/D-004 remain separate.
 
+
+### Studio purpose and operator experience correction
+
+- Defined the product as **contextual engineering knowledge and decision support for frontier models helping vibecoders**, rather than an autonomous SDLC controller.
+- Set `MODEL_ASSISTED_ENGINEERING` as default for normal build/fix/maintain requests. Formal assessment reports and canonical planning are optional/intensity-dependent.
+- Updated README, agent intake, getting started, experiment scorecard, current status and handoff without changing frozen research or partial runtime kernel.
+- Reviewed Aletheia Boundary's SDLC/playbook/checkpoint files and proposed a **role-based, adaptive repository knowledge layout** so agents find current context without reading scattered reports. Existing research and canonical Studio engine remain in place; new feature expansion paused. Initial 19-test ScanPlan MVP and merged 23-test follow-up PR #8 remain distinct; no quantified performance increase claimed.
+
 ### STUDIO-PILOT-002 — bounded Unicode input repair
 
 - Added a failing negative-control suite for escaped unpaired surrogates in four free-text inputs (red phase: 1 failure, 4 errors).

@@ -22,6 +22,13 @@ A default `UNIVERSAL_PROJECT_ASSESSMENT` report structure now governs new repo a
 
 Legacy `NEW_THREAD_HANDOFF.md` describes the 2026-10-31 archival state and must not be rewritten as a modern status document.
 
+
+## Product-purpose correction — authoritative for new agent sessions
+
+Read [PRODUCT_INTENT.md](PRODUCT_INTENT.md) first. Studio is not meant to *run* a development lifecycle or turn frontier coding models into workflow operators; it supplies trusted, task-appropriate software engineering/product knowledge so the model can **infer missing needs and make surgical build or maintenance changes for vibecoders**. Default coding mode is `MODEL_ASSISTED_ENGINEERING`, with normal tooling and proportional checks. A lengthy report, canonical kernel invocation or independent signature is not a prerequisite to routine engineering assistance. Formal workflows still apply when requested or justified by risk.
+
+**Revised immediate direction:** pause Studio feature and engine expansion. Keep the existing kernel and 715-record research. Review the [Boundary-informed adaptive repository knowledge layout](REPOSITORY_KNOWLEDGE_LAYOUT.md) and consolidate agent entry, current project truth, relevant SDLC and historical evidence **without moving code or rewriting research**. Boundary is a read-only case study; propose a careful migration before changing it. ScanPlan PR #8 was merged into Studio main as a scoped code-and-evidence change; its local evidence remains separate from product readiness.
+
 ## Latest bounded trial
 
 [STUDIO-PILOT-002](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/README.md) contains the first red→green ScanPlan validation change (23/23 local tests PASS) and reproducible exact file/log identities. It remains **INCOMPLETE** as a Studio kernel lifecycle trial: canonical reviewed planning, enforcing signing host, independent task-bound review and [comparison baseline](../experiments/agent_b_scanplan/trials/STUDIO-PILOT-002/COMPARISON_PROTOCOL.md) have not run. Do not promote a local builder test into a signed acceptance or production release claim.
