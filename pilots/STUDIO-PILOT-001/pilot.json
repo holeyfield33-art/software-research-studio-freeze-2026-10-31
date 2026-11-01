@@ -1,0 +1,84 @@
+{
+  "pilot_id": "STUDIO-PILOT-001",
+  "schema_version": "pilot-evidence/v1",
+  "report_type": "UNIVERSAL_PROJECT_ASSESSMENT",
+  "observed_at_utc": "2026-11-01T16:40:00Z",
+  "target": {
+    "repository": "holeyfield33-art/mcp-behavior",
+    "commit": "0634e209d98fcf29f688f7a294ae73e5cec6b552",
+    "relationship": "temporary_assessment_subject",
+    "permanent_product_link": false
+  },
+  "studio": {
+    "repository": "holeyfield33-art/software-research-studio",
+    "commit": "eea09fb27ee2d9afec36e889d7eb68c5cdc69cd2",
+    "freeze_id": "SRS-FREEZE-2026-10-31-v1",
+    "registry": "STUDIO-KNOWLEDGE-003R",
+    "selector_generalization": "NO-GO",
+    "product_integration": "NO-GO"
+  },
+  "scope": "read-only remote inspection and a Studio-side report-evidence contract; no target repository edits or runtime deployment",
+  "decision": "HOLD",
+  "execution_authority": "NOT_GRANTED",
+  "lifecycle": {
+    "discovery": "DECLARED",
+    "requirements": "OBSERVED",
+    "ux_ui": "CLI_API_ERGONOMICS_APPLICABLE",
+    "architecture": "OBSERVED",
+    "implementation": "OBSERVED",
+    "verification": "INCOMPLETE",
+    "release": "HOLD",
+    "operations": "INCOMPLETE",
+    "maintenance": "DECLARED"
+  },
+  "risk_dimensions": {
+    "severity": "UNKNOWN",
+    "exposure": "UNKNOWN",
+    "reversibility": "UNKNOWN",
+    "data_sensitivity": "UNKNOWN",
+    "privilege": "CONSEQUENTIAL",
+    "operational_dependence": "UNKNOWN",
+    "external_side_effects": "CONSEQUENTIAL",
+    "novelty": "UNKNOWN",
+    "uncertainty": "HIGH"
+  },
+  "research_choices": [
+    {"id": "practice.test_strategy", "status": "PROPOSED", "reason": "Behavioral controls require independent negative controls", "review": "PENDING"},
+    {"id": "gate.unit_integration_execution", "status": "PROPOSED", "reason": "No executed hosted test jobs for current target revision", "review": "PENDING"},
+    {"id": "gate.release_readiness", "status": "PROPOSED", "reason": "Full external acceptance matrix not complete", "review": "PENDING"}
+  ],
+  "evidence": [
+    {
+      "id": "E1", "kind": "SOURCE_INSPECTION", "status": "OBSERVED", "source": "https://github.com/holeyfield33-art/mcp-behavior/blob/0634e209d98fcf29f688f7a294ae73e5cec6b552/pyproject.toml", "file_blob_sha": "54a7385fff9b0b1b23a73a48c1b2cf7e89e286e0", "claim": "Python package metadata states development version 0.2.0.dev5 and Python 3.11+"
+    },
+    {
+      "id": "E2", "kind": "SOURCE_INSPECTION", "status": "OBSERVED", "source": "https://github.com/holeyfield33-art/mcp-behavior/blob/0634e209d98fcf29f688f7a294ae73e5cec6b552/docs/ROADMAP.md", "file_blob_sha": "35c5eff9f214a45acf6cfe83ed3b6e2e4a6d1774", "claim": "Release is gated on external observation matrix and fixed real-subject acceptance"
+    },
+    {
+      "id": "E3", "kind": "SOURCE_INSPECTION", "status": "OBSERVED", "source": "https://github.com/holeyfield33-art/mcp-behavior/blob/0634e209d98fcf29f688f7a294ae73e5cec6b552/docs/STATUS.md", "file_blob_sha": "27f7b269b0c865b939d67c1c8c2c83790a8dc51b", "claim": "Product records containment UNKNOWN and no broad production claim"
+    },
+    {
+      "id": "E4", "kind": "CI_METADATA", "status": "NOT_RUN", "source": "https://github.com/holeyfield33-art/mcp-behavior/actions/runs/41325740177", "head_sha": "0634e209d98fcf29f688f7a294ae73e5cec6b552", "reported_conclusion": "failure", "job_count": 2, "executed_steps": 0, "claim": "No CI test steps ran in the observed jobs; code test outcome unverified"
+    },
+    {
+      "id": "E5", "kind": "PRIOR_REPORT", "status": "DECLARED", "source": "user-stated corrected report; bytes not provided to this pilot", "claim": "A corrected universal assessment exists; it has not been reviewed or reproduced here"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1", "goal": "Prevent Studio from treating unexecuted CI, mapping-only reports, or unauthenticated release claims as verified universal pilot acceptance", "owner": "Studio builder", "state": "PROPOSED", "allowed_paths": ["pilots/STUDIO-PILOT-001/"], "forbidden_operations": ["edit_target_repo", "deploy", "approve_release", "link_products"], "requires": ["E1", "E2", "E3", "E4"], "acceptance": "A validator accepts the scoped intake and rejects four deliberate misreports"
+    },
+    {
+      "id": "T2", "goal": "Review the corrected agent report and map its selected work to canonical Studio plan records", "owner": "Studio reviewer", "state": "BLOCKED", "blocked_on": "corrected_report_not_available", "requires": ["E5"], "acceptance": "Report provenance and candidate identity verified; risk review recorded before any target change"
+    },
+    {
+      "id": "T3", "goal": "Execute one authorized bounded change and independent target-repo verification", "owner": "trusted host + independent reviewer", "state": "BLOCKED", "blocked_on": "execution_host_and_authority_not_established", "requires": ["T2"], "acceptance": "Host receipt, changed artifact hash, independently verified oracle, task-bound review, and explicit HOLD/GO recorded"
+    }
+  ],
+  "verification": [
+    {"id": "V1", "name": "GitHub target metadata and source inspection", "executed": true, "status": "PASS", "evidence_refs": ["E1", "E2", "E3"]},
+    {"id": "V2", "name": "Target local Python regression suite", "executed": false, "status": "NOT_RUN", "evidence_refs": []},
+    {"id": "V3", "name": "Hosted CI execution at target revision", "executed": false, "status": "NOT_RUN", "evidence_refs": ["E4"]},
+    {"id": "V4", "name": "Execution-host receipt and task acceptance", "executed": false, "status": "INCOMPLETE", "evidence_refs": []}
+  ]
+}
