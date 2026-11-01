@@ -1,6 +1,6 @@
 # Studio current status and next gates
 
-**Date:** 2026-11-01. **Current phase:** research-integrity and kernel baseline established; real-world lifecycle proof **incomplete**.
+**Date:** 2026-11-01. **Current phase:** research baseline and partial kernel exist; **Studio's effect on frontier-model engineering quality has not yet been measured**. Lifecycle artifacts are supporting tools, not the objective. See [product intent](PRODUCT_INTENT.md).
 
 | Concern | Status | Evidence boundary |
 |---|---|---|
@@ -18,8 +18,8 @@ An agent's report is not a verified code change. A plan's COMPLETE status is not
 
 ## Smallest next milestones
 
-1. **Greenfield lifecycle replay:** turn the ScanPlan assessment/spec into reviewed canonical kernel records, verify the task-graph and risk unknowns, and persist a history event.
-2. **Independent execution/receipt gate:** on a clearly authorized local host, execute exactly one bounded verification action for a pinned candidate, retain evidence, and check receipt authority and output bytes.
-3. **Measured comparison:** run the same small change with and without Studio, compare acceptance-criteria coverage, observed defects, agent interventions and minutes/tokens. Do not claim the target 50–75% boost until the comparison has replicable results.
+1. **Evaluate the actual model-assistance value:** give separate frontier-model sessions the same natural, under-specified vibecoder request, with and without curated Studio context. Ask for a working change, not a report.
+2. **Score engineering outcomes:** independent acceptance, relevant omissions discovered, unnecessary modifications, regressions, user clarifications, UX fit and actual time/token cost.
+3. **Improve knowledge selection:** use the evidence to determine which research records helped, distracted or caused feature creep; repair applicability before automating recommendations. Canonical planning and trusted receipts remain optional supporting gates where risk warrants them. No 50–75% improvement claim without comparable trials.
 
 No product links, Stage 004 expansion, additional autonomous scanners or deployment work are authorized by these milestones.
