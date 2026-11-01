@@ -58,6 +58,10 @@ For ordinary work, first inspect only enough context to understand the product t
 
 If working with the kernel CLI, read [planning](../studio_kernel/PLANNING.md) and [evidence](../studio_kernel/EVIDENCE.md) first. It requires validated canonical inputs and trusted receipts for acceptance. It does **not** inspect repositories, run arbitrary projects or sign real execution.
 
+### Maintenance and security-testing reference
+
+For ordinary build, review, deployment and maintenance work, consult [the OWASP-informed phase coverage and repository maintenance contract](REPOSITORY_KNOWLEDGE_LAYOUT.md#owasp-security-testing-coverage-task-aware-not-mandatory-bureaucracy) only for controls relevant to the product and change. Consider early security standards/measurements, ambiguous requirements, architecture review, code walkthrough versus detailed code review, deployed configuration, operational health, dependency updates and post-change checks. Use a single current STATUS file for state, immutable evidence where appropriate, and truthful NOT_RUN/UNKNOWN statuses. Do not assert full OWASP coverage or compel every small task to produce every artifact.
+
 ## 5. Comprehensive assessment/report layout — only when requested
 
 **Routine coding requests should not produce this report.** Return the requested working result, the highest-leverage inferred gaps and tests. Only an explicit report/audit needs the following header:

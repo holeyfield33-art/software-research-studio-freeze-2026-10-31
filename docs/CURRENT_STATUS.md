@@ -12,6 +12,10 @@
 | Greenfield baseline | Archived original Studio pilot: 19 initial + 23 follow-up local tests; canonical integration remains HOLD | [historical Studio copy](../experiments/agent_b_scanplan/README.md); ongoing project development in [independent ScanPlan repository](https://github.com/holeyfield33-art/ScanPlan) |
 | General product integration and release | **NO-GO** | No independent complete lifecycle trial, approved selector, or production authorization |
 
+## OWASP testing-process review — documentation alignment, not certification
+
+The supplied OWASP Web Security Testing Framework outlines checks before development, during design, development, deployment and maintenance/operations. [The repository knowledge layout](REPOSITORY_KNOWLEDGE_LAYOUT.md) now has an explicit five-phase crosswalk and repository-maintenance section with triggers, ownership, health reviews, security/configuration checks and post-change verification. This fills an **agent-facing guidance gap**, not the current Studio kernel's trusted-host/selection limitations or proof of operational implementation. Studio engine/feature expansion remains paused.
+
 ## What not to infer
 
 An agent's report is not a verified code change. A plan's COMPLETE status is not execution authorization; a signature without a truthful trusted host is not complete evidence. A GitHub Actions workflow that never runs steps is NOT_RUN, not a passing or failing application suite. The example scanner does not scan real targets. No performance multiplier or commercial value claim has been measured.

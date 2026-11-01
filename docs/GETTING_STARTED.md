@@ -10,6 +10,10 @@
 - A research checkpoint -> `RESEARCH_CHECKPOINT_REVIEW`: hashes, original IDs, negative controls and separate accept/hold.
 - An architecture crosswalk -> `CROSS_PROJECT_MAPPING` only on an explicit request.
 
+## Maintaining an existing repository
+
+Use [the reusable repository-maintenance guidance](REPOSITORY_KNOWLEDGE_LAYOUT.md) for patching, updating dependencies, security/CI hygiene, release verification and periodic health checks. A fresh agent should read the project's README, AGENTS, single STATUS and relevant SDLC before making a surgical change. Select only applicable checks and record actual before/after evidence; do not create another current-status page or mandatory maintenance daemon.
+
 ## 2. Optional: run the experimental Studio kernel checks (Python 3.10+)
 
 ```bash
