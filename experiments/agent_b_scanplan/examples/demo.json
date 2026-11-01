@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "project_id": "demo-fixture",
+  "subject": "A disposable local inventory tool",
+  "scope": {"review_owner": "independent-reviewer", "fixture_only": true, "network_allowed": false},
+  "threats": [
+    {"id": "PB01", "kind": "path_traversal", "component": "file path resolver", "observation": "Unknown handling for paths outside declared root"},
+    {"id": "AU01", "kind": "tool_authority", "component": "request authorization", "observation": "Caller identity may be user supplied"},
+    {"id": "PI01", "kind": "prompt_injection", "component": "untrusted file text", "observation": "Instruction-like text appears in a fixture"},
+    {"id": "SE01", "kind": "secret_exposure", "component": "report exporter", "observation": "Sensitive fields might escape via diagnostics"}
+  ]
+}
