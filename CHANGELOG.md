@@ -29,3 +29,9 @@ This file records **additive Studio development changes**. Frozen research manif
 - Rejected surrogate code points at input validation; added four tests and reproduced **23/23 PASS** with unchanged deterministic example output.
 - Preserved exact local source Git blob identity and machine-readable executed-command evidence; published a scoped trial record and an unexecuted A/B protocol.
 - Marked canonical Studio planning, trusted signed host evidence and independent baseline as **NOT_RUN**; no GO or productivity gain claim.
+
+### Standalone greenfield extraction / documentation boundary
+
+- Verified the independent [ScanPlan repository](https://github.com/holeyfield33-art/ScanPlan), created from the Studio-born greenfield experiment; its exact baseline core matches the Studio Unicode-corrected blob.
+- Preserved `experiments/agent_b_scanplan/` as historical sample/evidence rather than a second active application repository. ScanPlan merged its local test/CI portability PR #1 (24/24 local Linux tests, hosted CI job steps NOT_RUN) and now owns active development and status independently.
+- No changes to Studio runtime engine, frozen research, selectors, checkpoints, or ScanPlan application code in this Studio documentation update. Studio feature expansion stays paused.
