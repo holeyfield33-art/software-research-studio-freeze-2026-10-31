@@ -1,0 +1,23 @@
+{
+  "contract_version": "0.1.0",
+  "record_types": {
+    "fact": {"subject": "text", "scope": "text", "value": "any", "knowledge": ["known", "unknown", "conflicting"], "revision": "text"},
+    "requirement": {"need": "text", "acceptance": "text", "owner": "text", "oracle": "text"},
+    "decision": {"facts": "refs", "outcome": ["selected", "excluded", "needs_evidence", "conflicting"], "rationale": "text", "predicate_version": "text", "research": "research_refs"},
+    "task": {"objective": "text", "requirements": "refs", "prerequisites": "refs", "actions": "texts", "paths": "texts", "grant": "text", "budget_steps": "positive_integer", "stop_conditions": "texts", "candidate_revision": "text", "acceptance_gate": "ref"},
+    "attempt": {"task": "ref", "outcome": ["running", "succeeded", "failed", "interrupted"], "actions": "texts", "paths": "texts", "steps_used": "nonnegative_integer", "candidate_revision": "text", "actor": "text", "tool_version": "text", "detail": "text"},
+    "artifact": {"path": "text", "sha256": "digest", "revision": "text", "requirements": "refs", "producer": "ref"},
+    "evidence": {"requirements": "refs", "property": "text", "method": "text", "candidate_revision": "text", "result": ["PASS", "FAIL", "BLOCKED", "NOT_RUN"], "origin": ["proposed", "observed", "executed", "reviewed"], "environment": "text", "input_sha256": "digest", "output_sha256": "digest", "reviewer": "text"},
+    "finding": {"requirements": "refs", "severity": ["critical", "high", "medium", "low"], "disposition": ["open", "resolved"], "scope": "text", "candidate_revision": "text", "detail": "text", "remediation": "text", "resolution_evidence": "refs"},
+    "gate": {"requirements": "refs", "evidence": "refs", "result": ["PASS", "FAIL", "BLOCKED", "NOT_RUN", "NOT_APPLICABLE"], "rationale": "text", "reviewer": "text"}
+  },
+  "task_transitions": {
+    "planned": ["ready", "blocked", "cancelled"],
+    "ready": ["running", "blocked", "cancelled"],
+    "running": ["review", "blocked", "cancelled"],
+    "blocked": ["ready", "cancelled"],
+    "review": ["complete", "ready", "blocked", "cancelled"],
+    "complete": [],
+    "cancelled": []
+  }
+}

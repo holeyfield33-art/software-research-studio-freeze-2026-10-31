@@ -1,0 +1,192 @@
+{
+  "contract_version": "0.1.0",
+  "project": {
+    "id": "example-ui-correction",
+    "categories": [
+      "software_type.web_applications"
+    ],
+    "entry_stage": "sdlc.verification",
+    "candidate_revision": "example-revision-1",
+    "outcomes": [
+      "Preserve the latest user edit when responses arrive out of order"
+    ],
+    "non_goals": [
+      "No platform-wide refactor or unrelated feature"
+    ],
+    "owners": [
+      "example-owner"
+    ]
+  },
+  "records": [
+    {
+      "id": "example-ui-correction:fact",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "fact",
+      "data": {
+        "subject": "requested-behavior",
+        "scope": "ui",
+        "value": "Preserve the latest user edit when responses arrive out of order",
+        "knowledge": "known",
+        "revision": "example-revision-1"
+      }
+    },
+    {
+      "id": "example-ui-correction:requirement",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "requirement",
+      "data": {
+        "need": "Preserve the latest user edit when responses arrive out of order",
+        "acceptance": "A deliberately reordered response cannot replace a newer edit; keyboard interaction remains usable",
+        "owner": "example-owner",
+        "oracle": "Independently specified expected result for supplied valid and invalid inputs"
+      }
+    },
+    {
+      "id": "example-ui-correction:decision",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-ui-correction:requirement",
+          "version": 1
+        }
+      ],
+      "type": "decision",
+      "data": {
+        "facts": [
+          {
+            "id": "example-ui-correction:fact",
+            "version": 1
+          }
+        ],
+        "outcome": "selected",
+        "rationale": "This bounded increment requires explicit acceptance and test planning",
+        "predicate_version": "manual-example-1",
+        "research": [
+          {
+            "id": "practice.test_strategy",
+            "checkpoint": "STUDIO-KNOWLEDGE-003R",
+            "partition_sha256": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-ui-correction:task",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "planned",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-ui-correction:decision",
+          "version": 1
+        }
+      ],
+      "type": "task",
+      "data": {
+        "objective": "Preserve the latest user edit when responses arrive out of order",
+        "requirements": [
+          {
+            "id": "example-ui-correction:requirement",
+            "version": 1
+          }
+        ],
+        "prerequisites": [],
+        "actions": [
+          "read",
+          "edit",
+          "test"
+        ],
+        "paths": [
+          "ui"
+        ],
+        "grant": "example-grant",
+        "budget_steps": 20,
+        "stop_conditions": [
+          "Stop on unexpected access requirement or contradictory facts"
+        ],
+        "candidate_revision": "example-revision-1",
+        "acceptance_gate": {
+          "id": "example-ui-correction:gate",
+          "version": 1
+        }
+      }
+    },
+    {
+      "id": "example-ui-correction:evidence",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "evidence",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-ui-correction:requirement",
+            "version": 1
+          }
+        ],
+        "property": "A deliberately reordered response cannot replace a newer edit; keyboard interaction remains usable",
+        "method": "Synthetic placeholder; actual commands and captured outputs required during real work",
+        "candidate_revision": "example-revision-1",
+        "result": "NOT_RUN",
+        "origin": "proposed",
+        "environment": "example environment, not executed",
+        "input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "output_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reviewer": "fixture-author"
+      }
+    },
+    {
+      "id": "example-ui-correction:gate",
+      "version": 1,
+      "project_id": "example-ui-correction",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "gate",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-ui-correction:requirement",
+            "version": 1
+          }
+        ],
+        "evidence": [
+          {
+            "id": "example-ui-correction:evidence",
+            "version": 1
+          }
+        ],
+        "result": "NOT_RUN",
+        "rationale": "No implementation or behavioral execution claimed",
+        "reviewer": "fixture-author"
+      }
+    }
+  ],
+  "events": []
+}

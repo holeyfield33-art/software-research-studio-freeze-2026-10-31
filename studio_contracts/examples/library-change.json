@@ -1,0 +1,192 @@
+{
+  "contract_version": "0.1.0",
+  "project": {
+    "id": "example-library-change",
+    "categories": [
+      "software_type.libraries"
+    ],
+    "entry_stage": "sdlc.requirements_risk",
+    "candidate_revision": "example-revision-1",
+    "outcomes": [
+      "Extend an existing public function without breaking supported callers"
+    ],
+    "non_goals": [
+      "No platform-wide refactor or unrelated feature"
+    ],
+    "owners": [
+      "example-owner"
+    ]
+  },
+  "records": [
+    {
+      "id": "example-library-change:fact",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "fact",
+      "data": {
+        "subject": "requested-behavior",
+        "scope": "library",
+        "value": "Extend an existing public function without breaking supported callers",
+        "knowledge": "known",
+        "revision": "example-revision-1"
+      }
+    },
+    {
+      "id": "example-library-change:requirement",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "requirement",
+      "data": {
+        "need": "Extend an existing public function without breaking supported callers",
+        "acceptance": "Existing callers retain behavior; new input and unsupported input cases match the interface contract",
+        "owner": "example-owner",
+        "oracle": "Independently specified expected result for supplied valid and invalid inputs"
+      }
+    },
+    {
+      "id": "example-library-change:decision",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-library-change:requirement",
+          "version": 1
+        }
+      ],
+      "type": "decision",
+      "data": {
+        "facts": [
+          {
+            "id": "example-library-change:fact",
+            "version": 1
+          }
+        ],
+        "outcome": "selected",
+        "rationale": "This bounded increment requires explicit acceptance and test planning",
+        "predicate_version": "manual-example-1",
+        "research": [
+          {
+            "id": "practice.test_strategy",
+            "checkpoint": "STUDIO-KNOWLEDGE-003R",
+            "partition_sha256": "6b1db6ac1f51cdb9b57764aca11881a9c1c7bb0ff36a7773f802488fb2339f66"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example-library-change:task",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "planned",
+      "supersedes": null,
+      "depends_on": [
+        {
+          "id": "example-library-change:decision",
+          "version": 1
+        }
+      ],
+      "type": "task",
+      "data": {
+        "objective": "Extend an existing public function without breaking supported callers",
+        "requirements": [
+          {
+            "id": "example-library-change:requirement",
+            "version": 1
+          }
+        ],
+        "prerequisites": [],
+        "actions": [
+          "read",
+          "edit",
+          "test"
+        ],
+        "paths": [
+          "library"
+        ],
+        "grant": "example-grant",
+        "budget_steps": 20,
+        "stop_conditions": [
+          "Stop on unexpected access requirement or contradictory facts"
+        ],
+        "candidate_revision": "example-revision-1",
+        "acceptance_gate": {
+          "id": "example-library-change:gate",
+          "version": 1
+        }
+      }
+    },
+    {
+      "id": "example-library-change:evidence",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "evidence",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-library-change:requirement",
+            "version": 1
+          }
+        ],
+        "property": "Existing callers retain behavior; new input and unsupported input cases match the interface contract",
+        "method": "Synthetic placeholder; actual commands and captured outputs required during real work",
+        "candidate_revision": "example-revision-1",
+        "result": "NOT_RUN",
+        "origin": "proposed",
+        "environment": "example environment, not executed",
+        "input_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "output_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reviewer": "fixture-author"
+      }
+    },
+    {
+      "id": "example-library-change:gate",
+      "version": 1,
+      "project_id": "example-library-change",
+      "created_by": "fixture-author",
+      "provenance": "Synthetic example; no real execution or authority claimed",
+      "status": "current",
+      "supersedes": null,
+      "depends_on": [],
+      "type": "gate",
+      "data": {
+        "requirements": [
+          {
+            "id": "example-library-change:requirement",
+            "version": 1
+          }
+        ],
+        "evidence": [
+          {
+            "id": "example-library-change:evidence",
+            "version": 1
+          }
+        ],
+        "result": "NOT_RUN",
+        "rationale": "No implementation or behavioral execution claimed",
+        "reviewer": "fixture-author"
+      }
+    }
+  ],
+  "events": []
+}

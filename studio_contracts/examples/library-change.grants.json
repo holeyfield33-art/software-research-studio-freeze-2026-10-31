@@ -1,0 +1,14 @@
+{
+  "example-grant": {
+    "project_id": "example-library-change",
+    "actions": [
+      "read",
+      "edit",
+      "test"
+    ],
+    "paths": [
+      "library"
+    ],
+    "max_steps": 20
+  }
+}

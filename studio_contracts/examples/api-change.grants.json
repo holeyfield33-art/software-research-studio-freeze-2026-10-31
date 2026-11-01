@@ -1,0 +1,14 @@
+{
+  "example-grant": {
+    "project_id": "example-api-change",
+    "actions": [
+      "read",
+      "edit",
+      "test"
+    ],
+    "paths": [
+      "api"
+    ],
+    "max_steps": 20
+  }
+}

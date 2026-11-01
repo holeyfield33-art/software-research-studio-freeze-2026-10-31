@@ -1,0 +1,14 @@
+{
+  "example-grant": {
+    "project_id": "example-pipeline-recovery",
+    "actions": [
+      "read",
+      "edit",
+      "test"
+    ],
+    "paths": [
+      "pipeline"
+    ],
+    "max_steps": 20
+  }
+}
