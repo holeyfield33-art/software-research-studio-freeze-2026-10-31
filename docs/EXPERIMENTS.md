@@ -6,9 +6,9 @@ Experiments test whether **the same capable coding model is a more context-aware
 
 [Read the pilot](../pilots/STUDIO-PILOT-001/README.md). Uses MCP Behavior as a **temporary pinned repository assessment subject**; it does not alter or link the target repo. The early evidence-envelope validator had 7 local tests passed. Task execution, full canonical planning and external signed acceptance remain NOT_RUN.
 
-## New-build pilot: Agent B ScanPlan v0.1
+## Historical new-build pilot: Agent B ScanPlan v0.1
 
-[Open the standalone code sample](../experiments/agent_b_scanplan/README.md). A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. The initial 19-test suite and the scoped 23-test follow-up passed locally; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
+[Open the preserved Studio sample](../experiments/agent_b_scanplan/README.md). The independently maintained [ScanPlan repository](https://github.com/holeyfield33-art/ScanPlan) was created from this Studio-born greenfield baseline (a broad idea plus Studio knowledge, not a detailed implementation prompt). It carries its own README, AGENTS.md, PRODUCT, SDLC, STATUS, tests and origin evidence; the Studio sample is no longer the active application source. A small offline CLI accepts threat hypotheses and proposes reviewer-owned positive/negative tests with independent oracles. It **never scans** a website or network. The initial 19-test suite and the scoped 23-test follow-up passed locally; the generated four-case sample is deterministic and retains HOLD status. This is a new greenfield experiment *inspired by* the earlier Agent B threat-to-test idea, not linked code or a merged product.
 
 **Studio comparison scorecard (not yet measured):** independently scored overlooked requirements, correct working result, surgical edit scope, regressions, UX/product fit, test quality, user clarifications, actual time/tokens and unnecessary feature additions. No claimed 50–75% productivity gain without a measured baseline and repeatable comparison.
 
