@@ -30,7 +30,7 @@ If the user's intent spans two modes, provide the primary requested deliverable 
 
 ## Maintenance and OWASP-informed engineering
 
-For repository upkeep, dependency changes, releases, incident response and health checks, use the [repository maintenance section](docs/REPOSITORY_KNOWLEDGE_LAYOUT.md#repository-maintenance--standard-section-for-studio-assisted-projects) in the existing knowledge-layout guide. It covers OWASP testing phases, task-selected security standards, before/after change verification, periodic health review and one living STATUS authority. Apply it by product type/risk, not as compulsory paperwork or an engine feature. A release/testing claim requires observed evidence.
+For repository upkeep, dependency changes, releases, incident response and health checks, use the [repository maintenance section](docs/REPOSITORY_KNOWLEDGE_LAYOUT.md) in the existing knowledge-layout guide. It covers OWASP testing phases, task-selected security standards, before/after change verification, periodic health review and one living STATUS authority. Apply it by product type/risk, not as compulsory paperwork or an engine feature. A release/testing claim requires observed evidence.
 
 ## Runbook
 
