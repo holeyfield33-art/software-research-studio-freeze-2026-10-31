@@ -12,7 +12,7 @@
 | `architecture/UNIVERSAL-ARCH-001/` | Evidence-linked universal lifecycle, schema, risk policy and gates | Design **candidate**, not full verified product |
 | `studio_kernel/` | Canonical record checking, reviewed planning, SQLite history/replay and signed evidence acceptance | Implemented partial kernel; trusted execution host and end-to-end trials **missing** |
 | `pilots/STUDIO-PILOT-001/` | Existing-repository intake/evidence-contract pilot | Started; narrow negative-control gate passed; lifecycle completion **HOLD** |
-| `experiments/agent_b_scanplan/` | New greenfield CLI build exercising the documented Studio workflow | Offline prototype and tests; no network scanning or Studio host execution |
+| `experiments/agent_b_scanplan/` | New greenfield CLI build exercising the documented Studio workflow | Offline prototype and 19 local tests; no network scanning or Studio host execution |
 | `docs/` | Current intake, user guides, status and handoff | Active instructions |
 
 The root-level `FROZEN_STATE.json`, `VERIFY_FREEZE.py` and `NEW_THREAD_HANDOFF.md` are historical archival artifacts. Do not rewrite them to pretend the original freeze changed, and do not use them as the latest operating instructions. The frozen archive itself must remain byte-identical. MOTHERSHIP and D-004 are separate evidence domains.
