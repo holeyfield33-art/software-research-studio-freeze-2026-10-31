@@ -33,6 +33,10 @@ class ScanPlanTests(unittest.TestCase):
     def test_unknown_kind_rejected(self):
         x = copy.deepcopy(BASE); x["threats"][0]["kind"] = "remote_shell"
         with self.assertRaises(IntakeError): build_plan(x)
+    def test_malformed_kind_type_rejected(self):
+        for kind in ([], {}, 3, None):
+            x = copy.deepcopy(BASE); x["threats"][0]["kind"] = kind
+            with self.assertRaises(IntakeError): build_plan(x)
     def test_duplicate_id_rejected(self):
         x = copy.deepcopy(BASE); x["threats"][0]["id"] = x["threats"][1]["id"]
         with self.assertRaises(IntakeError): build_plan(x)
