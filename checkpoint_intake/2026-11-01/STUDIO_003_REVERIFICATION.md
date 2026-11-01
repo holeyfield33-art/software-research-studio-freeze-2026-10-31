@@ -19,8 +19,8 @@ Extracted safely to an isolated scratch directory; the uploaded ZIP itself was n
 | Command / check | Observed result |
 |---|---|
 | `python scripts/verify_manifest.py --root .` | PASS, 77 files, zero errors |
-| `python scripts/validate_dataset.py --report <scratch/dataset-validation.json>` | PASS, 715 records, 601 relationships, 65 sources, zero errors |
-| `python scripts/verify_fixtures.py --report <scratch/fixture-validation.json>` | PASS, 4 branches, zero errors |
+| `python scripts/validate_dataset.py --report /tmp/srs003-dataset-validation.json` | PASS, 715 records, 601 relationships, 65 sources, zero errors |
+| `python scripts/verify_fixtures.py --report /tmp/srs003-fixture-validation.json` | PASS, 4 branches, zero errors |
 | `python scripts/run_regression_tests.py` | PASS, 12 tests, zero failures/errors |
 | Direct SHA-256 replay of 77 manifest entries and manifest digest | PASS |
 | Compared all 003 dataset IDs against embedded checkpoint 001 and 002 record indexes | PASS, **45/45** and **522/522** preserved; zero missing |
